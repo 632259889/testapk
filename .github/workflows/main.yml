@@ -1,9 +1,6 @@
 name: Build and Sign APK from Smali
 
-on:
-  push:
-    tags:
-      - v*
+on: push
 
 jobs:
   build:
