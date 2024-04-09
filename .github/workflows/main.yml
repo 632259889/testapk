@@ -48,3 +48,4 @@ jobs:
           artifacts: "output/*.apk"
           token: ${{ secrets.TOKEN }}
           generateReleaseNotes: true
+          
