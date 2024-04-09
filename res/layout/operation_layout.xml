@@ -1,0 +1,108 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout android:gravity="bottom" android:orientation="vertical" android:id="@id/operate_container" android:layout_width="fill_parent" android:layout_height="fill_parent"
+  xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto">
+    <FrameLayout android:id="@id/top_bar" android:background="#ff000000" android:layout_width="fill_parent" android:layout_height="@dimen/title_bar_height" android:layout_alignParentTop="true">
+        <ImageView android:layout_gravity="center|left" android:id="@id/back_btn" android:visibility="invisible" android:layout_width="25.0dip" android:layout_height="25.0dip" android:layout_marginLeft="8.0dip" android:src="@drawable/ic_activity_back" />
+        <TextView android:textSize="16.0dip" android:textColor="@color/accent_color" android:gravity="center" android:layout_gravity="center|right" android:id="@id/save_btn" android:visibility="invisible" android:layout_width="wrap_content" android:layout_height="fill_parent" android:layout_marginRight="16.0dip" android:text="@string/save" />
+    </FrameLayout>
+    <RelativeLayout android:gravity="center" android:layout_gravity="center_vertical" android:id="@id/show" android:background="#ff000000" android:layout_width="fill_parent" android:layout_height="0.0dip" android:layout_weight="1.0">
+        <com.cutout.gesture.views.GestureFrameLayout android:id="@id/origin_gestureView" android:layout_width="fill_parent" android:layout_height="fill_parent">
+            <FrameLayout android:layout_width="fill_parent" android:layout_height="fill_parent">
+                <com.photo.adjustbody.PhotoSurfaceView android:id="@id/origin" android:layout_width="fill_parent" android:layout_height="fill_parent" />
+                <View android:layout_gravity="center" android:id="@id/compare_view" android:background="#00000000" android:layout_width="fill_parent" android:layout_height="fill_parent" />
+                <com.photo.adjustbody.SlimerWaistView android:id="@id/slimWaist_line" android:layout_width="fill_parent" android:layout_height="fill_parent" />
+                <com.photo.adjustbody.PlumpBreastView android:id="@id/plumper_line" android:layout_width="fill_parent" android:layout_height="fill_parent" />
+                <com.photo.adjustbody.AdjustLegView android:id="@id/operate_line" android:layout_width="fill_parent" android:layout_height="fill_parent" />
+                <com.photo.adjustbody.AbdominalMusclesView android:id="@id/cover_muscle" android:layout_width="fill_parent" android:layout_height="fill_parent" />
+            </FrameLayout>
+        </com.cutout.gesture.views.GestureFrameLayout>
+        <ImageButton android:id="@id/compareBtn" android:background="@drawable/ic_edit_compare" android:visibility="gone" android:layout_width="32.0dip" android:layout_height="32.0dip" android:layout_marginBottom="8.0dip" android:layout_alignParentBottom="true" android:layout_marginEnd="16.0dip" android:layout_alignParentEnd="true" />
+        <LinearLayout android:id="@id/ll_step" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginBottom="8.0dip" android:layout_alignParentBottom="true" android:layout_centerHorizontal="true">
+            <ImageButton android:id="@id/lastBtn" android:background="@drawable/btn_last" android:visibility="invisible" android:layout_width="30.0dip" android:layout_height="30.0dip" android:layout_marginEnd="35.0dip" />
+            <ImageButton android:id="@id/nextBtn" android:background="@drawable/btn_next" android:visibility="invisible" android:layout_width="30.0dip" android:layout_height="30.0dip" />
+        </LinearLayout>
+        <com.base.common.loading.RotateLoading android:id="@id/loading_image" android:padding="2.0dip" android:visibility="gone" android:layout_width="60.0dip" android:layout_height="60.0dip" android:layout_centerInParent="true" app:loading_color="@color/accent_color" app:loading_speed="12" app:loading_width="2.0dip" />
+    </RelativeLayout>
+    <LinearLayout android:orientation="vertical" android:id="@id/slimerWaist_ll" android:background="@color/second_bottom_bar_color" android:visibility="gone" android:layout_width="fill_parent" android:layout_height="wrap_content">
+        <LinearLayout android:gravity="center_vertical" android:orientation="horizontal" android:layout_width="fill_parent" android:layout_height="90.0dip" android:layout_marginStart="15.0dip" android:layout_marginEnd="15.0dip">
+            <ImageView android:layout_width="25.0dip" android:layout_height="25.0dip" android:src="@drawable/icon_left_small_body" />
+            <SeekBar android:layout_gravity="center" android:id="@id/slim_body" android:layout_width="0.0dip" android:layout_height="wrap_content" android:layout_marginLeft="10.0dip" android:layout_marginRight="10.0dip" android:maxHeight="2.0dip" android:progress="0" android:progressDrawable="@drawable/layerlist_drawable_seekbar_progress" android:minHeight="2.0dip" android:thumb="@drawable/selector_seekbar_drawable_thumb" android:layout_weight="1.0" />
+            <ImageView android:layout_width="25.0dip" android:layout_height="25.0dip" android:src="@drawable/icon_right_small_body" />
+        </LinearLayout>
+    </LinearLayout>
+    <LinearLayout android:orientation="vertical" android:id="@id/plump_ll" android:background="@color/second_bottom_bar_color" android:visibility="gone" android:layout_width="fill_parent" android:layout_height="wrap_content">
+        <LinearLayout android:layout_gravity="center_vertical" android:orientation="horizontal" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginTop="10.0dip" android:layout_marginStart="15.0dip" android:layout_marginEnd="16.0dip">
+            <ImageView android:layout_width="25.0dip" android:layout_height="25.0dip" android:src="@drawable/icon_left_selected" />
+            <SeekBar android:layout_gravity="center" android:id="@id/circle_size" android:layout_width="0.0dip" android:layout_height="wrap_content" android:layout_marginLeft="10.0dip" android:layout_marginRight="10.0dip" android:maxHeight="2.0dip" android:progress="0" android:progressDrawable="@drawable/layerlist_drawable_seekbar_progress" android:minHeight="2.0dip" android:thumb="@drawable/selector_seekbar_drawable_thumb" android:layout_weight="1.0" />
+            <ImageView android:layout_width="25.0dip" android:layout_height="25.0dip" android:src="@drawable/icon_right_selected" />
+        </LinearLayout>
+        <LinearLayout android:layout_gravity="center_vertical" android:orientation="horizontal" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginTop="15.0dip" android:layout_marginBottom="10.0dip" android:layout_marginStart="15.0dip" android:layout_marginEnd="15.0dip">
+            <ImageView android:layout_width="25.0dip" android:layout_height="25.0dip" android:src="@drawable/icon_left_ebhabce_boob_butt" />
+            <SeekBar android:layout_gravity="center" android:id="@id/plumper" android:layout_width="0.0dip" android:layout_height="wrap_content" android:layout_marginLeft="10.0dip" android:layout_marginRight="10.0dip" android:maxHeight="2.0dip" android:progress="0" android:progressDrawable="@drawable/layerlist_drawable_seekbar_progress" android:minHeight="2.0dip" android:thumb="@drawable/selector_seekbar_drawable_thumb" android:layout_weight="1.0" />
+            <ImageView android:layout_width="25.0dip" android:layout_height="25.0dip" android:src="@drawable/icon_right_ebhabce_boob_butt" />
+        </LinearLayout>
+    </LinearLayout>
+    <LinearLayout android:orientation="vertical" android:id="@id/longLeg_ll" android:background="@color/second_bottom_bar_color" android:visibility="gone" android:layout_width="fill_parent" android:layout_height="wrap_content">
+        <LinearLayout android:layout_gravity="center_vertical" android:orientation="horizontal" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginTop="10.0dip" android:layout_marginStart="15.0dip" android:layout_marginEnd="15.0dip">
+            <ImageView android:layout_width="25.0dip" android:layout_height="25.0dip" android:src="@drawable/icon_left_long_legs" />
+            <SeekBar android:layout_gravity="center" android:id="@id/changeStrength" android:layout_width="0.0dip" android:layout_height="wrap_content" android:layout_marginLeft="10.0dip" android:layout_marginRight="10.0dip" android:maxHeight="2.0dip" android:progress="0" android:progressDrawable="@drawable/layerlist_drawable_seekbar_progress" android:minHeight="2.0dip" android:thumb="@drawable/selector_seekbar_drawable_thumb" android:layout_weight="1.0" />
+            <ImageView android:layout_width="25.0dip" android:layout_height="25.0dip" android:src="@drawable/icon_right_long_legs" />
+        </LinearLayout>
+        <LinearLayout android:layout_gravity="center_vertical" android:orientation="horizontal" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginTop="15.0dip" android:layout_marginBottom="10.0dip" android:layout_marginStart="15.0dip" android:layout_marginEnd="15.0dip">
+            <ImageView android:layout_width="25.0dip" android:layout_height="25.0dip" android:src="@drawable/icon_left_slim_legs" />
+            <SeekBar android:layout_gravity="center" android:id="@id/slimWaist" android:layout_width="0.0dip" android:layout_height="wrap_content" android:layout_marginLeft="10.0dip" android:layout_marginRight="10.0dip" android:maxHeight="2.0dip" android:progress="0" android:progressDrawable="@drawable/layerlist_drawable_seekbar_progress" android:minHeight="2.0dip" android:thumb="@drawable/selector_seekbar_drawable_thumb" android:layout_weight="1.0" />
+            <ImageView android:layout_width="25.0dip" android:layout_height="25.0dip" android:src="@drawable/icon_right_slim_legs" />
+        </LinearLayout>
+    </LinearLayout>
+    <LinearLayout android:orientation="vertical" android:id="@id/tattoo_muscle_ll" android:background="@color/dark_seek_divider_color" android:visibility="gone" android:layout_width="fill_parent" android:layout_height="110.0dip">
+        <HorizontalScrollView android:id="@id/tattoos_tab_layout" android:scrollbars="none" android:layout_width="fill_parent" android:layout_height="wrap_content" android:overScrollMode="never">
+            <LinearLayout android:gravity="center" android:orientation="horizontal" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="2.0dip" android:layout_marginBottom="2.0dip">
+                <FrameLayout android:layout_gravity="center" android:orientation="vertical" android:id="@id/tattoos_skeleton" android:layout_width="wrap_content" android:layout_height="30.0dip" android:layout_marginStart="@dimen/filters_tab_margin">
+                    <TextView android:textSize="14.0dip" android:textColor="#ffffffff" android:gravity="center" android:layout_gravity="center" android:id="@id/tattoos_skeleton_text" android:paddingTop="3.0dip" android:paddingBottom="3.0dip" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/tattoos_skeleton" android:paddingStart="12.0dip" android:paddingEnd="12.0dip" android:layout_marginStart="3.0dip" android:layout_marginEnd="3.0dip" />
+                </FrameLayout>
+                <FrameLayout android:layout_gravity="center" android:orientation="vertical" android:id="@id/tattoos_constellation" android:layout_width="wrap_content" android:layout_height="30.0dip" android:layout_marginStart="@dimen/filters_tab_margin">
+                    <TextView android:textSize="14.0dip" android:textColor="#ffffffff" android:gravity="center" android:layout_gravity="center" android:id="@id/tattoos_constellation_text" android:paddingTop="3.0dip" android:paddingBottom="3.0dip" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/tattoos_constellation" android:paddingStart="12.0dip" android:paddingEnd="12.0dip" android:layout_marginStart="3.0dip" android:layout_marginEnd="3.0dip" />
+                    <ImageView android:layout_gravity="end|bottom|center" android:id="@id/download_constellation" android:layout_width="15.0dip" android:layout_height="15.0dip" android:src="@drawable/ic_download" android:layout_marginEnd="10.0dip" />
+                    <com.base.common.loading.RotateLoading android:layout_gravity="center" android:id="@id/loading_constellation" android:padding="2.0dip" android:layout_width="25.0dip" android:layout_height="25.0dip" app:loading_speed="12" app:loading_width="2.0dip" />
+                </FrameLayout>
+                <FrameLayout android:layout_gravity="center" android:orientation="vertical" android:id="@id/tattoos_gorgeous" android:layout_width="wrap_content" android:layout_height="30.0dip" android:layout_marginStart="@dimen/filters_tab_margin">
+                    <TextView android:textSize="14.0dip" android:textColor="#ffffffff" android:gravity="center" android:layout_gravity="center" android:id="@id/tattoos_gorgeous_text" android:paddingTop="3.0dip" android:paddingBottom="3.0dip" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/tattoos_gorgeous" android:paddingStart="12.0dip" android:paddingEnd="12.0dip" android:layout_marginStart="3.0dip" android:layout_marginEnd="3.0dip" />
+                    <ImageView android:layout_gravity="end|bottom|center" android:id="@id/download_gorgeous" android:layout_width="15.0dip" android:layout_height="15.0dip" android:src="@drawable/ic_download" android:layout_marginEnd="10.0dip" />
+                    <com.base.common.loading.RotateLoading android:layout_gravity="center" android:id="@id/loading_gorgeous" android:padding="2.0dip" android:layout_width="25.0dip" android:layout_height="25.0dip" app:loading_speed="12" app:loading_width="2.0dip" />
+                </FrameLayout>
+                <FrameLayout android:layout_gravity="center" android:orientation="vertical" android:id="@id/tattoos_abs" android:layout_width="wrap_content" android:layout_height="30.0dip" android:layout_marginStart="@dimen/filters_tab_margin">
+                    <TextView android:textSize="14.0dip" android:textColor="#ffffffff" android:gravity="center" android:layout_gravity="center" android:id="@id/tattoos_abs_text" android:paddingTop="3.0dip" android:paddingBottom="3.0dip" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/tattoos_abs" android:paddingStart="12.0dip" android:paddingEnd="12.0dip" android:layout_marginStart="3.0dip" android:layout_marginEnd="3.0dip" />
+                    <ImageView android:layout_gravity="end|bottom|center" android:id="@id/download_abs" android:layout_width="15.0dip" android:layout_height="15.0dip" android:src="@drawable/ic_download" android:layout_marginEnd="10.0dip" />
+                    <com.base.common.loading.RotateLoading android:layout_gravity="center" android:id="@id/loading_abs" android:padding="2.0dip" android:layout_width="25.0dip" android:layout_height="25.0dip" app:loading_speed="12" app:loading_width="2.0dip" />
+                </FrameLayout>
+            </LinearLayout>
+        </HorizontalScrollView>
+        <androidx.recyclerview.widget.RecyclerView android:id="@id/muscle_list" android:scrollbars="none" android:layout_width="fill_parent" android:layout_height="80.0dip" android:overScrollMode="never" />
+    </LinearLayout>
+    <LinearLayout android:orientation="vertical" android:id="@id/bottom_operation_bar" android:background="@color/top_and_bottom_bar_color" android:layout_width="fill_parent" android:layout_height="wrap_content">
+        <LinearLayout android:id="@id/selected_kind_ll" android:layout_width="fill_parent" android:layout_height="70.0dip">
+            <ImageView android:layout_gravity="center_vertical" android:id="@id/back_to_up" android:layout_width="25.0dip" android:layout_height="25.0dip" android:src="@drawable/ic_activity_back" android:layout_marginStart="8.0dip" />
+            <LinearLayout android:gravity="center" android:orientation="vertical" android:id="@id/slim_body_ll" android:layout_width="0.0dip" android:layout_height="fill_parent" android:layout_weight="1.0">
+                <ImageView android:gravity="center_horizontal" android:id="@id/slim_body_ib" android:background="@drawable/icon_small_waist" android:layout_width="26.0dip" android:layout_height="26.0dip" android:layout_marginStart="30.0dip" android:layout_marginEnd="30.0dip" />
+                <TextView android:textSize="12.0dip" android:textColor="#ffffffff" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/small_waist" />
+            </LinearLayout>
+            <LinearLayout android:gravity="center" android:orientation="vertical" android:id="@id/plumper_ll" android:layout_width="0.0dip" android:layout_height="fill_parent" android:layout_weight="1.0">
+                <ImageView android:id="@id/plumper_ib" android:background="@drawable/icon_large_chest" android:layout_width="26.0dip" android:layout_height="26.0dip" android:layout_marginStart="30.0dip" android:layout_marginEnd="30.0dip" />
+                <TextView android:textSize="12.0dip" android:textColor="#ffffffff" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/large_chest" />
+            </LinearLayout>
+            <LinearLayout android:gravity="center" android:orientation="vertical" android:id="@id/longerLeg_ll" android:layout_width="0.0dip" android:layout_height="fill_parent" android:layout_weight="1.0">
+                <ImageView android:id="@id/longerLeg_ib" android:background="@drawable/icon_long_legs" android:layout_width="26.0dip" android:layout_height="26.0dip" android:layout_marginStart="30.0dip" android:layout_marginEnd="30.0dip" />
+                <TextView android:textSize="12.0dip" android:textColor="#ffffffff" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/long_legs" />
+            </LinearLayout>
+            <LinearLayout android:gravity="center" android:orientation="vertical" android:id="@id/tattoo_ll" android:layout_width="0.0dip" android:layout_height="fill_parent" android:layout_weight="1.0">
+                <ImageView android:id="@id/tattoo_ib" android:background="@drawable/icon_tattoos" android:layout_width="26.0dip" android:layout_height="26.0dip" android:layout_marginStart="30.0dip" android:layout_marginEnd="30.0dip" />
+                <TextView android:textSize="12.0dip" android:textColor="#ffffffff" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/tattoos" />
+            </LinearLayout>
+        </LinearLayout>
+        <LinearLayout android:gravity="center_vertical" android:id="@id/done_or_cancel" android:visibility="gone" android:layout_width="fill_parent" android:layout_height="50.0dip">
+            <ImageButton android:layout_gravity="center_vertical" android:id="@id/cancelBtn" android:background="@drawable/btn_exit" android:layout_width="35.0dip" android:layout_height="35.0dip" android:layout_marginStart="7.0dip" />
+            <TextView android:textSize="14.0dip" android:textColor="#ffffffff" android:layout_gravity="center_vertical" android:id="@id/selected_kind_tv" android:layout_width="0.0dip" android:layout_height="wrap_content" android:layout_weight="1.0" android:textAlignment="center" />
+            <ImageButton android:layout_gravity="center_vertical" android:id="@id/doneBtn" android:background="@drawable/btn_commit" android:layout_width="35.0dip" android:layout_height="35.0dip" android:layout_marginEnd="11.0dip" />
+        </LinearLayout>
+    </LinearLayout>
+</LinearLayout>

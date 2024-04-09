@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout android:orientation="vertical" android:background="@color/white" android:layout_width="fill_parent" android:layout_height="fill_parent" android:layoutDirection="ltr"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <ScrollView android:scrollbars="none" android:layout_width="fill_parent" android:layout_height="0.0dip" android:layout_weight="1.0" android:overScrollMode="never">
+        <LinearLayout android:orientation="vertical" android:layout_width="fill_parent" android:layout_height="wrap_content">
+            <FrameLayout android:layout_width="fill_parent" android:layout_height="300.0dip">
+                <androidx.viewpager.widget.ViewPager android:id="@id/viewPager" android:scrollbars="none" android:layout_width="fill_parent" android:layout_height="fill_parent" android:overScrollMode="never" />
+                <RelativeLayout android:layout_gravity="start|bottom|center" android:background="#30000000" android:layout_width="fill_parent" android:layout_height="40.0dip">
+                    <ImageView android:id="@id/banner_icon" android:layout_width="30.0dip" android:layout_height="30.0dip" android:layout_marginLeft="17.0dip" android:layout_alignParentLeft="true" android:layout_centerVertical="true" />
+                    <TextView android:textSize="18.0dip" android:textColor="#ffffffff" android:gravity="center_vertical" android:id="@id/banner_text" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginLeft="4.0dip" android:layout_toRightOf="@id/banner_icon" android:layout_centerVertical="true" />
+                </RelativeLayout>
+                <FrameLayout android:id="@id/close" android:layout_width="60.0dip" android:layout_height="60.0dip" android:layout_alignParentTop="true" android:layout_alignParentStart="true">
+                    <ImageView android:layout_gravity="center" android:layout_width="25.0dip" android:layout_height="25.0dip" android:src="@drawable/ic_splashprime_close" />
+                </FrameLayout>
+            </FrameLayout>
+            <LinearLayout android:gravity="center" android:orientation="horizontal" android:id="@id/dot_horizontal" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginTop="8.0dip" />
+            <LinearLayout android:gravity="start" android:layout_gravity="center_horizontal" android:orientation="vertical" android:layout_width="wrap_content" android:layout_height="wrap_content">
+                <TextView android:textSize="34.0dip" android:textColor="#ff9d5fff" android:gravity="center" android:layout_gravity="center_horizontal" android:id="@id/free_text" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="CameraS VIP" />
+                <TextView android:textSize="17.0dip" android:textColor="#ff808080" android:gravity="start" android:id="@id/desc_1" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="1.  Over 100 awesome stickers" />
+                <TextView android:textSize="17.0dip" android:textColor="#ff808080" android:gravity="start" android:id="@id/desc_2" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="2. Enjoy tons of amazing filters" />
+                <TextView android:textSize="17.0dip" android:textColor="#ff808080" android:gravity="start" android:id="@id/desc_3" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="3. Removed Ads" />
+                <TextView android:textSize="17.0dip" android:textColor="#ff808080" android:gravity="start" android:id="@id/desc_4" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="4. Get update continually" />
+            </LinearLayout>
+            <FrameLayout android:layout_width="fill_parent" android:layout_height="62.0dip" android:layout_marginTop="15.0dip" android:layout_marginStart="30.0dip" android:layout_marginEnd="30.0dip">
+                <RelativeLayout android:id="@id/prime_monthly" android:background="@drawable/ic_prime_normal_bg" android:layout_width="fill_parent" android:layout_height="fill_parent">
+                    <LinearLayout android:gravity="start|center" android:orientation="vertical" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_centerVertical="true" android:layout_marginStart="10.0dip" android:layout_marginEnd="10.0dip" android:layout_toEndOf="@id/check_monthly">
+                        <com.base.common.UI.MarqueeTextView android:textSize="15.0dip" android:textColor="#ff888888" android:ellipsize="marquee" android:gravity="start|center" android:id="@id/text1" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="3.0dip" android:singleLine="true" android:marqueeRepeatLimit="marquee_forever" />
+                        <TextView android:textSize="12.0dip" android:textColor="#ffb9b8b8" android:gravity="center" android:id="@id/text2" android:visibility="gone" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="MONTHLY" />
+                    </LinearLayout>
+                    <ImageView android:id="@id/check_monthly" android:layout_width="34.0dip" android:layout_height="34.0dip" android:src="@drawable/ic_uncheck" android:layout_centerVertical="true" android:layout_marginStart="10.0dip" android:layout_alignParentStart="true" />
+                </RelativeLayout>
+            </FrameLayout>
+            <FrameLayout android:layout_width="fill_parent" android:layout_height="62.0dip" android:layout_marginTop="15.0dip" android:layout_marginStart="30.0dip" android:layout_marginEnd="30.0dip">
+                <RelativeLayout android:id="@id/prime_year" android:background="@drawable/ic_prime_normal_bg" android:layout_width="fill_parent" android:layout_height="fill_parent">
+                    <LinearLayout android:gravity="start|center" android:orientation="vertical" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_centerVertical="true" android:layout_marginStart="10.0dip" android:layout_marginEnd="10.0dip" android:layout_toEndOf="@id/check_year">
+                        <com.base.common.UI.MarqueeTextView android:textSize="15.0dip" android:textColor="#ff888888" android:ellipsize="marquee" android:gravity="start|center" android:id="@id/text3" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="3.0dip" android:singleLine="true" android:marqueeRepeatLimit="marquee_forever" />
+                        <TextView android:textSize="10.0dip" android:textColor="#ffb9b8b8" android:gravity="start|center" android:id="@id/text4" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="2.0dip" />
+                    </LinearLayout>
+                    <ImageView android:id="@id/check_year" android:layout_width="34.0dip" android:layout_height="34.0dip" android:src="@drawable/ic_check" android:layout_centerVertical="true" android:layout_marginStart="10.0dip" android:layout_alignParentStart="true" />
+                </RelativeLayout>
+            </FrameLayout>
+            <FrameLayout android:id="@id/prime" android:background="@drawable/ic_prime_btn_bg" android:layout_width="fill_parent" android:layout_height="62.0dip" android:layout_marginTop="15.0dip" android:layout_marginBottom="20.0dip" android:layout_marginStart="30.0dip" android:layout_marginEnd="30.0dip">
+                <ImageView android:layout_gravity="start" android:id="@id/prime_shinner" android:visibility="invisible" android:layout_width="fill_parent" android:layout_height="fill_parent" android:src="@drawable/ic_prime_shinner" />
+                <LinearLayout android:gravity="center" android:orientation="vertical" android:background="@drawable/prime_ripple_effect" android:layout_width="fill_parent" android:layout_height="fill_parent">
+                    <TextView android:textSize="17.0dip" android:textColor="#ffffffff" android:gravity="center" android:layout_gravity="center" android:id="@id/prime_text" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="CONTINUE" />
+                    <TextView android:textSize="13.0dip" android:textColor="#8dffffff" android:gravity="center" android:layout_gravity="center" android:id="@id/prime_text2" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="3-day free trial" />
+                </LinearLayout>
+                <ImageView android:layout_gravity="end|center" android:background="@drawable/ic_prime_btn_go" android:layout_width="20.0dip" android:layout_height="20.0dip" android:layout_marginEnd="15.0dip" />
+            </FrameLayout>
+            <TextView android:textSize="16.0dip" android:textColor="#ffb9b8b8" android:gravity="start" android:layout_gravity="center" android:id="@id/detail_text" android:paddingTop="25.0dip" android:paddingBottom="25.0dip" android:visibility="gone" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="Subscription details" android:paddingStart="30.0dip" android:paddingEnd="30.0dip" />
+        </LinearLayout>
+    </ScrollView>
+</LinearLayout>

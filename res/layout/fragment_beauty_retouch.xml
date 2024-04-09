@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout android:gravity="center" android:orientation="vertical" android:background="@color/second_bottom_bar_color" android:layout_width="fill_parent" android:layout_height="fill_parent"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <FrameLayout android:layout_gravity="center" android:id="@id/retouch_seekbar_touch_layout" android:layout_width="fill_parent" android:layout_height="35.0dip">
+        <SeekBar android:layout_gravity="center" android:id="@id/retouch_seekbar" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginLeft="10.0dip" android:layout_marginRight="10.0dip" android:maxHeight="1.0dip" android:max="100" android:progressDrawable="@drawable/layerlist_drawable_seekbar_progress" android:minHeight="1.0dip" android:thumb="@drawable/selector_seekbar_drawable_thumb" />
+    </FrameLayout>
+</LinearLayout>

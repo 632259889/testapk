@@ -1,0 +1,137 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout android:orientation="vertical" android:layout_width="fill_parent" android:layout_height="fill_parent"
+  xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto">
+    <FrameLayout android:id="@id/banner" android:background="@color/top_and_bottom_bar_color" android:layout_width="fill_parent" android:layout_height="@dimen/title_bar_height" android:layout_alignParentTop="true">
+        <ImageView android:layout_gravity="start|center" android:id="@id/back_btn" android:layout_width="25.0dip" android:layout_height="25.0dip" android:src="@drawable/ic_activity_back" android:rotationY="@integer/rotation" android:layout_marginStart="8.0dip" />
+        <TextView android:textSize="16.0dip" android:textColor="@color/text_color" android:gravity="center" android:layout_gravity="center" android:id="@id/title" android:visibility="gone" android:layout_width="wrap_content" android:layout_height="fill_parent" android:text="@string/edit" />
+        <LinearLayout android:layout_gravity="end|center" android:id="@id/prime" android:background="@drawable/shape_pro_bg" android:visibility="gone" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginEnd="110.0dip">
+            <ImageView android:layout_gravity="center" android:padding="1.0dip" android:layout_width="23.0dip" android:layout_height="23.0dip" android:src="@drawable/ic_pro_icon" android:layout_marginStart="4.0dip" />
+            <TextView android:textSize="16.0dip" android:textColor="#ffffffff" android:layout_gravity="center" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="Pro" android:layout_marginStart="5.0dip" android:layout_marginEnd="5.0dip" />
+        </LinearLayout>
+        <LinearLayout android:layout_gravity="end|center" android:id="@id/coin_layout" android:background="@drawable/shape_coin_bg" android:visibility="gone" android:layout_width="wrap_content" android:layout_height="25.0dip" android:layout_marginEnd="110.0dip">
+            <ImageView android:layout_gravity="center" android:layout_width="18.0dip" android:layout_height="18.0dip" android:src="@drawable/ic_coin" android:layout_marginStart="4.0dip" />
+            <TextView android:textSize="16.0dip" android:textColor="#ffffffff" android:layout_gravity="center" android:id="@id/coin_text" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="20" android:layout_marginStart="7.0dip" android:layout_marginEnd="7.0dip" />
+            <ImageView android:layout_gravity="center" android:layout_width="16.0dip" android:layout_height="16.0dip" android:src="@drawable/ic_add_coin" android:layout_marginEnd="4.0dip" />
+        </LinearLayout>
+        <ImageView android:layout_gravity="end|center" android:id="@id/reset_btn" android:layout_width="26.0dip" android:layout_height="26.0dip" android:src="@drawable/ic_reset" android:layout_marginEnd="65.0dip" />
+        <TextView android:textSize="16.0dip" android:textColor="@color/accent_color" android:gravity="center" android:layout_gravity="end|center" android:id="@id/save_btn" android:layout_width="wrap_content" android:layout_height="fill_parent" android:text="@string/save" android:layout_marginEnd="16.0dip" />
+    </FrameLayout>
+    <LinearLayout android:orientation="vertical" android:id="@id/bottom_layout" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_alignParentBottom="true">
+        <com.edit.imageeditlibrary.editimage.view.CustomViewPager android:id="@id/bottom_gallery" android:background="@color/top_and_bottom_bar_color" android:scrollbars="none" android:layout_width="fill_parent" android:layout_height="70.0dip" android:overScrollMode="never" />
+        <RelativeLayout android:id="@id/bottom_btn_layout" android:background="@color/top_and_bottom_bar_color" android:visibility="gone" android:layout_width="fill_parent" android:layout_height="50.0dip">
+            <ImageView android:id="@id/btn_exit" android:layout_width="35.0dip" android:layout_height="35.0dip" android:layout_marginLeft="7.0dip" android:src="@drawable/btn_exit" android:layout_alignParentLeft="true" android:layout_centerVertical="true" />
+            <TextView android:textSize="14.0dip" android:textColor="@color/function_item_text_color_white" android:id="@id/current_edit_name" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_centerHorizontal="true" android:layout_centerVertical="true" />
+            <ImageView android:id="@id/btn_commit" android:visibility="gone" android:layout_width="35.0dip" android:layout_height="35.0dip" android:layout_marginRight="14.0dip" android:src="@drawable/btn_commit" android:layout_alignParentRight="true" android:layout_centerVertical="true" />
+        </RelativeLayout>
+    </LinearLayout>
+    <FrameLayout android:id="@id/work_space" android:background="@color/middle_view_bg_color" android:layout_width="fill_parent" android:layout_height="fill_parent" android:layout_above="@id/bottom_layout" android:layout_below="@id/banner">
+        <com.base.common.imagezoom.ImageViewTouch android:layout_gravity="center" android:id="@id/main_image" android:layout_width="fill_parent" android:layout_height="fill_parent" />
+        <View android:layout_gravity="center" android:id="@id/compare_view" android:background="#00000000" android:layout_width="fill_parent" android:layout_height="fill_parent" />
+        <com.edit.imageeditlibrary.editimage.view.StickerView android:layout_gravity="center" android:id="@id/sticker_panel" android:visibility="gone" android:layout_width="fill_parent" android:layout_height="fill_parent" />
+        <com.edit.imageeditlibrary.editimage.ui.TextStickerView android:layout_gravity="center" android:id="@id/text_sticker_panel" android:visibility="gone" android:layout_width="fill_parent" android:layout_height="fill_parent" />
+        <com.edit.imageeditlibrary.editimage.view.tag.TagStickerView android:layout_gravity="center" android:id="@id/tag_sticker_panel" android:visibility="gone" android:layout_width="fill_parent" android:layout_height="fill_parent" />
+        <com.edit.imageeditlibrary.editimage.view.CropImageView android:layout_gravity="center" android:id="@id/crop_panel" android:visibility="gone" android:layout_width="fill_parent" android:layout_height="fill_parent" />
+        <LinearLayout android:layout_gravity="center" android:orientation="horizontal" android:id="@id/mirror_layout" android:visibility="gone" android:layout_width="fill_parent" android:layout_height="fill_parent">
+            <com.edit.imageeditlibrary.editimage.view.MirrorLeftView android:layout_gravity="center" android:id="@id/mirror_left" android:layout_width="0.0dip" android:layout_height="fill_parent" android:layout_weight="1.0" />
+            <com.edit.imageeditlibrary.editimage.view.MirrorRightView android:layout_gravity="center" android:id="@id/mirror_right" android:layout_width="0.0dip" android:layout_height="fill_parent" android:layout_weight="1.0" />
+        </LinearLayout>
+        <LinearLayout android:layout_gravity="center" android:orientation="vertical" android:id="@id/mirror_square_layout" android:visibility="gone" android:layout_width="fill_parent" android:layout_height="fill_parent">
+            <LinearLayout android:id="@id/mirror_square_top_layout" android:layout_width="fill_parent" android:layout_height="fill_parent">
+                <com.edit.imageeditlibrary.editimage.view.MirrorTopLeftView android:layout_gravity="center" android:id="@id/mirror_top_left" android:layout_width="0.0dip" android:layout_height="fill_parent" android:layout_weight="1.0" />
+                <com.edit.imageeditlibrary.editimage.view.MirrorTopRightView android:layout_gravity="center" android:id="@id/mirror_top_right" android:layout_width="0.0dip" android:layout_height="fill_parent" android:layout_weight="1.0" />
+            </LinearLayout>
+            <LinearLayout android:id="@id/mirror_square_bottom_layout" android:layout_width="fill_parent" android:layout_height="fill_parent">
+                <com.edit.imageeditlibrary.editimage.view.MirrorBottomLeftView android:layout_gravity="center" android:id="@id/mirror_bottom_left" android:layout_width="0.0dip" android:layout_height="fill_parent" android:layout_weight="1.0" />
+                <com.edit.imageeditlibrary.editimage.view.MirrorBottomRightView android:layout_gravity="center" android:id="@id/mirror_bottom_right" android:layout_width="0.0dip" android:layout_height="fill_parent" android:layout_weight="1.0" />
+            </LinearLayout>
+        </LinearLayout>
+        <com.edit.imageeditlibrary.editimage.view.RotateImageView android:layout_gravity="center" android:id="@id/rotate_panel" android:visibility="gone" android:layout_width="fill_parent" android:layout_height="fill_parent" />
+        <com.cutout.gesture.views.GestureFrameLayout android:layout_gravity="center" android:id="@id/paint_gestureView" android:visibility="gone" android:layout_width="fill_parent" android:layout_height="fill_parent">
+            <com.edit.imageeditlibrary.editimage.view.DoodleView android:layout_gravity="center" android:id="@id/custom_paint_view" android:visibility="gone" android:layout_width="fill_parent" android:layout_height="fill_parent" />
+        </com.cutout.gesture.views.GestureFrameLayout>
+        <com.edit.imageeditlibrary.editimage.view.FrameView android:layout_gravity="center" android:id="@id/frame_panel" android:visibility="gone" android:layout_width="fill_parent" android:layout_height="fill_parent" />
+        <com.edit.imageeditlibrary.editimage.view.ColorMatrixImageView android:layout_gravity="center" android:id="@id/color_matrix_panel" android:visibility="gone" android:layout_width="fill_parent" android:layout_height="fill_parent" />
+        <FrameLayout android:layout_width="fill_parent" android:layout_height="fill_parent">
+            <com.edit.imageeditlibrary.tiltshift.SquareRelativeLayout android:layout_gravity="center" android:id="@id/tilt_shift_panel_layout" android:layout_width="fill_parent" android:layout_height="fill_parent">
+                <com.edit.imageeditlibrary.editimage.view.TiltShiftImageView android:id="@id/tilt_shift_panel" android:layout_width="fill_parent" android:layout_height="fill_parent" android:scaleType="fitCenter" />
+                <RelativeLayout android:id="@id/layout_blur" android:layout_width="fill_parent" android:layout_height="fill_parent" />
+            </com.edit.imageeditlibrary.tiltshift.SquareRelativeLayout>
+        </FrameLayout>
+        <com.edit.imageeditlibrary.editimage.view.VignetteImageView android:layout_gravity="center" android:id="@id/vignette_panel" android:visibility="gone" android:layout_width="fill_parent" android:layout_height="fill_parent" />
+        <com.edit.imageeditlibrary.editimage.view.BackgroundView android:layout_gravity="center" android:id="@id/background_panel" android:visibility="gone" android:layout_width="fill_parent" android:layout_height="fill_parent" />
+        <com.edit.imageeditlibrary.editimage.view.BorderView android:layout_gravity="center" android:id="@id/border_panel" android:visibility="gone" android:layout_width="fill_parent" android:layout_height="fill_parent" />
+        <com.edit.imageeditlibrary.editimage.view.FlareView android:layout_gravity="center" android:id="@id/flare_panel" android:visibility="gone" android:layout_width="fill_parent" android:layout_height="fill_parent" />
+        <com.base.common.imagezoom.ImageViewTouch android:layout_gravity="center" android:id="@id/compare_image" android:visibility="gone" android:layout_width="fill_parent" android:layout_height="fill_parent" />
+    </FrameLayout>
+    <FrameLayout android:background="#401c1c1c" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_alignBottom="@id/work_space">
+        <LinearLayout android:id="@id/border_bg_layout" android:visibility="gone" android:layout_width="fill_parent" android:layout_height="wrap_content">
+            <androidx.recyclerview.widget.RecyclerView android:layout_gravity="center_vertical" android:id="@id/border_bg_list" android:scrollbars="none" android:layout_width="fill_parent" android:layout_height="50.0dip" android:overScrollMode="never" />
+        </LinearLayout>
+    </FrameLayout>
+    <FrameLayout android:background="#401c1c1c" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_alignBottom="@id/work_space">
+        <LinearLayout android:id="@id/adjust_seekbar_layout" android:visibility="gone" android:layout_width="fill_parent" android:layout_height="60.0dip">
+            <ImageView android:layout_gravity="center_vertical" android:id="@id/adjust_back_to_type" android:visibility="gone" android:layout_width="40.0dip" android:layout_height="wrap_content" android:src="@drawable/image_edit_back" android:rotation="-90.0" />
+            <FrameLayout android:layout_gravity="center" android:id="@id/adjust_seekbar_touch_layout" android:layout_width="fill_parent" android:layout_height="fill_parent">
+                <SeekBar android:layout_gravity="center" android:id="@id/adjust_seekbar" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginLeft="30.0dip" android:layout_marginRight="30.0dip" android:maxHeight="2.0dip" android:max="100" android:progressDrawable="@drawable/layerlist_drawable_seekbar_progress" android:minHeight="2.0dip" android:thumb="@drawable/selector_seekbar_drawable_thumb" />
+            </FrameLayout>
+        </LinearLayout>
+    </FrameLayout>
+    <FrameLayout android:background="#401c1c1c" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_alignBottom="@id/work_space">
+        <LinearLayout android:id="@id/rotate_seekbar_layout" android:visibility="gone" android:layout_width="fill_parent" android:layout_height="60.0dip">
+            <ImageView android:layout_gravity="center_vertical" android:id="@id/rotate_back_to_type" android:visibility="gone" android:layout_width="40.0dip" android:layout_height="wrap_content" android:src="@drawable/image_edit_back" android:rotation="-90.0" />
+            <FrameLayout android:layout_gravity="center" android:id="@id/rotate_seekbar_touch_layout" android:layout_width="fill_parent" android:layout_height="fill_parent">
+                <SeekBar android:layout_gravity="center" android:id="@id/rotate_seekbar" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginLeft="30.0dip" android:layout_marginRight="30.0dip" android:maxHeight="2.0dip" android:max="90" android:progressDrawable="@drawable/layerlist_drawable_seekbar_progress" android:minHeight="2.0dip" android:thumb="@drawable/selector_seekbar_drawable_thumb" />
+            </FrameLayout>
+        </LinearLayout>
+    </FrameLayout>
+    <FrameLayout android:background="#401c1c1c" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_alignBottom="@id/work_space">
+        <LinearLayout android:id="@id/vignette_seekbar_layout" android:visibility="gone" android:layout_width="fill_parent" android:layout_height="60.0dip">
+            <ImageView android:layout_gravity="center_vertical" android:id="@id/vignette_back_to_type" android:visibility="gone" android:layout_width="40.0dip" android:layout_height="wrap_content" android:src="@drawable/image_edit_back" android:rotation="-90.0" />
+            <FrameLayout android:layout_gravity="center" android:id="@id/vignette_seekbar_touch_layout" android:layout_width="fill_parent" android:layout_height="fill_parent">
+                <SeekBar android:layout_gravity="center" android:id="@id/vignette_seekbar" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginLeft="30.0dip" android:layout_marginRight="30.0dip" android:maxHeight="2.0dip" android:max="100" android:progressDrawable="@drawable/layerlist_drawable_seekbar_progress" android:minHeight="2.0dip" android:thumb="@drawable/selector_seekbar_drawable_thumb" />
+            </FrameLayout>
+        </LinearLayout>
+    </FrameLayout>
+    <FrameLayout android:background="#401c1c1c" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_alignBottom="@id/work_space">
+        <LinearLayout android:id="@id/paint_stokewidth_seekbar_layout" android:visibility="gone" android:layout_width="fill_parent" android:layout_height="60.0dip">
+            <FrameLayout android:layout_gravity="center" android:id="@id/paint_stokewidth_seekbar_touch_layout" android:layout_width="fill_parent" android:layout_height="fill_parent" android:layout_marginLeft="30.0dip" android:layout_marginRight="30.0dip">
+                <com.base.common.imageanim.MySeekBarView android:layout_gravity="center" android:id="@id/paint_stokewidth_seekbar" android:layout_width="fill_parent" android:layout_height="25.0dip" android:layout_marginLeft="10.0dip" android:layout_marginRight="10.0dip" />
+            </FrameLayout>
+        </LinearLayout>
+    </FrameLayout>
+    <FrameLayout android:background="#401c1c1c" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_alignBottom="@id/work_space">
+        <LinearLayout android:id="@id/filter_seekbar_layout" android:visibility="gone" android:layout_width="fill_parent" android:layout_height="60.0dip">
+            <FrameLayout android:layout_gravity="center" android:id="@id/filter_alpha_seekbar_touch_layout" android:layout_width="fill_parent" android:layout_height="fill_parent" android:layout_marginLeft="30.0dip" android:layout_marginRight="30.0dip">
+                <SeekBar android:layout_gravity="center" android:id="@id/filter_alpha_seekbar" android:layout_width="fill_parent" android:layout_height="wrap_content" android:maxHeight="2.0dip" android:max="100" android:progressDrawable="@drawable/layerlist_drawable_seekbar_progress" android:minHeight="2.0dip" android:thumb="@drawable/selector_seekbar_drawable_thumb" />
+            </FrameLayout>
+        </LinearLayout>
+    </FrameLayout>
+    <TextView android:textSize="35.0dip" android:textColor="#ffffffff" android:gravity="end|center" android:id="@id/filter_alpha_text" android:visibility="gone" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_margin="220.0dip" android:shadowColor="#80000000" android:shadowDx="5.0" android:shadowDy="5.0" android:shadowRadius="10.0" android:layout_centerHorizontal="true" />
+    <FrameLayout android:background="#401c1c1c" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_alignBottom="@id/work_space">
+        <LinearLayout android:id="@id/tilt_shift_blur_seekbar_layout" android:visibility="gone" android:layout_width="fill_parent" android:layout_height="60.0dip">
+            <FrameLayout android:layout_gravity="center" android:id="@id/tilt_shift_blur_seekbar_touch_layout" android:layout_width="fill_parent" android:layout_height="fill_parent" android:layout_marginLeft="30.0dip" android:layout_marginRight="30.0dip">
+                <SeekBar android:layout_gravity="center" android:id="@id/tilt_shift_blur_seekbar" android:layout_width="fill_parent" android:layout_height="wrap_content" android:maxHeight="2.0dip" android:max="100" android:progressDrawable="@drawable/layerlist_drawable_seekbar_progress" android:minHeight="2.0dip" android:thumb="@drawable/selector_seekbar_drawable_thumb" />
+            </FrameLayout>
+        </LinearLayout>
+    </FrameLayout>
+    <FrameLayout android:background="#401c1c1c" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_alignBottom="@id/work_space">
+        <LinearLayout android:id="@id/frame_seekbar_layout" android:visibility="gone" android:layout_width="fill_parent" android:layout_height="60.0dip">
+            <FrameLayout android:layout_gravity="center" android:id="@id/frame_seekbar_touch_layout" android:layout_width="fill_parent" android:layout_height="fill_parent" android:layout_marginLeft="30.0dip" android:layout_marginRight="30.0dip">
+                <SeekBar android:layout_gravity="center" android:id="@id/frame_seekbar" android:layout_width="fill_parent" android:layout_height="wrap_content" android:maxHeight="2.0dip" android:max="100" android:progressDrawable="@drawable/layerlist_drawable_seekbar_progress" android:minHeight="2.0dip" android:thumb="@drawable/selector_seekbar_drawable_thumb" />
+            </FrameLayout>
+        </LinearLayout>
+    </FrameLayout>
+    <TextView android:textSize="35.0dip" android:textColor="#ffffffff" android:gravity="end|center" android:id="@id/tilt_shift_blur_text" android:visibility="gone" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_margin="220.0dip" android:shadowColor="#80000000" android:shadowDx="5.0" android:shadowDy="5.0" android:shadowRadius="10.0" android:layout_centerHorizontal="true" />
+    <TextView android:textSize="35.0dip" android:textColor="#ffffffff" android:gravity="end|center" android:id="@id/adjust_progress_text" android:visibility="gone" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_margin="220.0dip" android:shadowColor="#80000000" android:shadowDx="5.0" android:shadowDy="5.0" android:shadowRadius="10.0" android:layout_centerHorizontal="true" />
+    <TextView android:textSize="35.0dip" android:textColor="#ffffffff" android:gravity="end|center" android:id="@id/rotate_degree_text" android:visibility="gone" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_margin="220.0dip" android:shadowColor="#80000000" android:shadowDx="5.0" android:shadowDy="5.0" android:shadowRadius="10.0" android:layout_centerHorizontal="true" />
+    <TextView android:textSize="35.0dip" android:textColor="#ffffffff" android:gravity="end|center" android:id="@id/frame_alpha_text" android:visibility="gone" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_margin="220.0dip" android:shadowColor="#80000000" android:shadowDx="5.0" android:shadowDy="5.0" android:shadowRadius="10.0" android:layout_centerHorizontal="true" />
+    <TextView android:textSize="35.0dip" android:textColor="#ffffffff" android:gravity="end|center" android:id="@id/flare_alpha_text" android:visibility="gone" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_margin="220.0dip" android:shadowColor="#80000000" android:shadowDx="5.0" android:shadowDy="5.0" android:shadowRadius="10.0" android:layout_centerHorizontal="true" />
+    <FrameLayout android:id="@id/compare_btn" android:visibility="gone" android:layout_width="50.0dip" android:layout_height="50.0dip" android:layout_marginBottom="60.0dip" android:layout_alignBottom="@id/work_space" android:layout_marginEnd="8.0dip" android:layout_alignParentEnd="true">
+        <ImageView android:layout_gravity="center" android:id="@id/compare_icon" android:layout_width="30.0dip" android:layout_height="30.0dip" android:src="@drawable/ic_edit_compare" />
+    </FrameLayout>
+    <FrameLayout android:id="@id/original_compare_btn" android:visibility="gone" android:layout_width="50.0dip" android:layout_height="50.0dip" android:layout_marginBottom="80.0dip" android:layout_alignBottom="@id/work_space" android:layout_marginEnd="8.0dip" android:layout_alignParentEnd="true">
+        <ImageView android:layout_gravity="center" android:id="@id/original_compare_icon" android:layout_width="30.0dip" android:layout_height="30.0dip" android:src="@drawable/ic_edit_compare" />
+    </FrameLayout>
+    <com.base.common.loading.RotateLoading android:id="@id/loading_image" android:padding="2.0dip" android:visibility="gone" android:layout_width="60.0dip" android:layout_height="60.0dip" android:layout_centerInParent="true" app:loading_color="@color/accent_color" app:loading_speed="12" app:loading_width="2.0dip" />
+    <com.zmagicc.example.fontlibs.FontTextStickerEditLayout android:id="@id/text_sticker_edit_layout" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_alignParentBottom="true" />
+</RelativeLayout>

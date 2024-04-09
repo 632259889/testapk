@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout android:id="@id/root_view" android:background="#ffffffff" android:layout_width="fill_parent" android:layout_height="fill_parent"
+  xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto">
+    <FrameLayout android:layout_gravity="center|top" android:layout_width="fill_parent" android:layout_height="fill_parent">
+        <ImageView android:layout_gravity="center|top" android:id="@id/image" android:layout_width="wrap_content" android:layout_height="wrap_content" />
+    </FrameLayout>
+    <FrameLayout android:layout_gravity="bottom" android:id="@id/bottom_layout" android:layout_width="fill_parent" android:layout_height="140.0dip">
+        <LinearLayout android:gravity="bottom|center" android:orientation="horizontal" android:id="@id/btn_layout" android:visibility="gone" android:layout_width="fill_parent" android:layout_height="120.0dip">
+            <LinearLayout android:gravity="center" android:orientation="vertical" android:id="@id/cancel_layout" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="3.0dip">
+                <ImageView android:layout_gravity="center" android:id="@id/btn_cancel" android:layout_width="35.0dip" android:layout_height="35.0dip" android:src="@drawable/bg_exit_video" />
+                <TextView android:textSize="14.0dip" android:textColor="#ffffffff" android:id="@id/back_text" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="Back" />
+            </LinearLayout>
+            <LinearLayout android:gravity="center" android:orientation="vertical" android:layout_width="wrap_content" android:layout_height="wrap_content">
+                <FrameLayout android:layout_width="70.0dip" android:layout_height="70.0dip" android:layout_marginStart="70.0dip" android:layout_marginEnd="70.0dip">
+                    <FrameLayout android:layout_gravity="center" android:id="@id/save_layout" android:layout_width="fill_parent" android:layout_height="fill_parent">
+                        <ImageView android:layout_gravity="center" android:id="@id/btn_save" android:layout_width="fill_parent" android:layout_height="fill_parent" android:src="@drawable/bg_showpic_download" />
+                        <ImageView android:layout_gravity="center" android:layout_width="50.0dip" android:layout_height="50.0dip" android:src="@drawable/ic_showpicture_download" />
+                    </FrameLayout>
+                    <com.magiccamera.zfunction.main.loading.RotateLoading android:layout_gravity="center" android:id="@id/progress_bar" android:padding="2.0dip" android:layout_width="60.0dip" android:layout_height="60.0dip" app:loading_color="@color/s2_accent_color" app:loading_speed="14" app:loading_width="3.0dip" />
+                </FrameLayout>
+                <TextView android:textSize="14.0dip" android:textColor="#ffffffff" android:id="@id/save_text" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="Save" />
+            </LinearLayout>
+            <LinearLayout android:gravity="center" android:orientation="vertical" android:id="@id/edit_layout" android:layout_width="wrap_content" android:layout_height="wrap_content">
+                <ImageView android:layout_gravity="center" android:id="@id/btn_edit" android:layout_width="40.0dip" android:layout_height="40.0dip" android:src="@drawable/bg_edit_picture" />
+                <TextView android:textSize="14.0dip" android:textColor="#ffffffff" android:id="@id/edit_text" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="Edit" />
+            </LinearLayout>
+        </LinearLayout>
+        <LinearLayout android:orientation="vertical" android:id="@id/my_snackbar" android:background="#ffffffff" android:visibility="gone" android:layout_width="fill_parent" android:layout_height="wrap_content">
+            <LinearLayout android:gravity="center_vertical" android:orientation="horizontal" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginTop="10.0dip">
+                <LinearLayout android:gravity="center" android:orientation="vertical" android:id="@id/facebook" android:layout_width="0.0dip" android:layout_height="wrap_content" android:layout_weight="1.0">
+                    <ImageView android:layout_width="40.0dip" android:layout_height="40.0dip" android:src="@drawable/share_facebook_icon" />
+                    <TextView android:textSize="13.0dip" android:textColor="#ff808080" android:gravity="center" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="10.0dip" android:text="Facebook" />
+                </LinearLayout>
+                <LinearLayout android:gravity="center" android:orientation="vertical" android:id="@id/whatsapp" android:layout_width="0.0dip" android:layout_height="wrap_content" android:layout_weight="1.0">
+                    <ImageView android:layout_width="40.0dip" android:layout_height="40.0dip" android:src="@drawable/share_whatsapp_icon" />
+                    <TextView android:textSize="13.0dip" android:textColor="#ff808080" android:gravity="center" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="10.0dip" android:text="Whatsapp" />
+                </LinearLayout>
+                <LinearLayout android:gravity="center" android:orientation="vertical" android:id="@id/instagram" android:layout_width="0.0dip" android:layout_height="wrap_content" android:layout_weight="1.0">
+                    <ImageView android:layout_width="40.0dip" android:layout_height="40.0dip" android:src="@drawable/share_instagram_icon" />
+                    <TextView android:textSize="13.0dip" android:textColor="#ff808080" android:gravity="center" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="10.0dip" android:text="Instagram" />
+                </LinearLayout>
+                <LinearLayout android:gravity="center" android:orientation="vertical" android:id="@id/twitter" android:layout_width="0.0dip" android:layout_height="wrap_content" android:layout_weight="1.0">
+                    <ImageView android:layout_width="40.0dip" android:layout_height="40.0dip" android:src="@drawable/share_twitter_icon" />
+                    <TextView android:textSize="13.0dip" android:textColor="#ff808080" android:gravity="center" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="10.0dip" android:text="Twitter" />
+                </LinearLayout>
+                <LinearLayout android:gravity="center" android:orientation="vertical" android:id="@id/more_share" android:layout_width="0.0dip" android:layout_height="wrap_content" android:layout_weight="1.0">
+                    <ImageView android:layout_width="40.0dip" android:layout_height="40.0dip" android:src="@drawable/share_more_icon" />
+                    <TextView android:textSize="13.0dip" android:textColor="#ff808080" android:gravity="center" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="10.0dip" android:text="More" />
+                </LinearLayout>
+            </LinearLayout>
+            <LinearLayout android:gravity="center" android:id="@id/down_btn" android:layout_width="fill_parent" android:layout_height="wrap_content">
+                <ImageView android:layout_gravity="center" android:layout_width="38.0dip" android:layout_height="26.0dip" android:layout_marginTop="15.0dip" android:layout_marginBottom="15.0dip" android:src="@drawable/down_back" />
+            </LinearLayout>
+        </LinearLayout>
+    </FrameLayout>
+</FrameLayout>

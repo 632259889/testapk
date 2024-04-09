@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout android:gravity="center" android:orientation="vertical" android:background="@drawable/dialog_bg" android:layout_width="fill_parent" android:layout_height="fill_parent"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <RelativeLayout android:id="@id/layout" android:background="@drawable/ic_share_bg" android:layout_width="fill_parent" android:layout_height="wrap_content">
+        <FrameLayout android:id="@id/logo_layout" android:layout_width="89.0dip" android:layout_height="89.0dip" android:layout_marginTop="15.0dip" android:layout_centerHorizontal="true">
+            <ImageView android:id="@id/logo" android:layout_width="fill_parent" android:layout_height="fill_parent" android:src="@drawable/new_6" />
+        </FrameLayout>
+        <ImageView android:id="@id/close" android:layout_width="28.0dip" android:layout_height="28.0dip" android:layout_marginTop="6.0dip" android:src="@drawable/ic_share_close" android:layout_alignParentTop="true" android:layout_marginEnd="6.0dip" android:layout_alignParentEnd="true" />
+        <TextView android:textSize="23.0dip" android:textColor="#fff87a7e" android:gravity="center" android:id="@id/text" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="17.0dip" android:layout_marginRight="20.0dip" android:text="Share with friends to get this sticker!" android:layout_below="@id/logo_layout" android:layout_centerHorizontal="true" android:layout_marginStart="20.0dip" />
+        <TextView android:textSize="17.0dip" android:textColor="#ffffeff0" android:gravity="center" android:id="@id/share" android:background="@drawable/ic_share_btn_bg" android:layout_width="170.0dip" android:layout_height="43.0dip" android:layout_marginTop="48.0dip" android:layout_marginBottom="20.0dip" android:text="GO" android:layout_below="@id/text" android:layout_centerHorizontal="true" />
+    </RelativeLayout>
+</LinearLayout>

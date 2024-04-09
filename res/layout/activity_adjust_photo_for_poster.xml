@@ -1,0 +1,172 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout android:orientation="vertical" android:layout_width="fill_parent" android:layout_height="fill_parent"
+  xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto">
+    <FrameLayout android:id="@id/top_layout" android:background="#ff0b0b0b" android:layout_width="fill_parent" android:layout_height="@dimen/title_bar_height" android:layout_alignParentTop="true">
+        <ImageView android:layout_gravity="start|center" android:id="@id/back_btn" android:layout_width="25.0dip" android:layout_height="25.0dip" android:src="@drawable/ic_activity_back" android:rotationY="@integer/rotation" android:layout_marginStart="8.0dip" />
+    </FrameLayout>
+    <FrameLayout android:id="@id/work_space" android:background="#ff3c3c3c" android:layout_width="fill_parent" android:layout_height="fill_parent" android:layout_above="@id/bootom_layout" android:layout_below="@id/top_layout">
+        <jp.co.cyberagent.android.gpuimage.GPUImageView android:layout_gravity="center" android:id="@id/gpuimage_view" android:layout_width="fill_parent" android:layout_height="fill_parent" />
+        <FrameLayout android:layout_gravity="top" android:id="@id/curve_layout" android:layout_width="fill_parent" android:layout_height="wrap_content">
+            <com.adjust.CurveView android:layout_gravity="center" android:id="@id/curveimage_view" android:visibility="gone" android:layout_width="fill_parent" android:layout_height="fill_parent" />
+        </FrameLayout>
+        <com.adjust.HSLView android:layout_gravity="center" android:id="@id/hslimage_view" android:visibility="gone" android:layout_width="fill_parent" android:layout_height="fill_parent" />
+        <com.base.common.imagezoom.ImageViewTouch android:layout_gravity="center" android:id="@id/main_image" android:layout_width="fill_parent" android:layout_height="fill_parent" />
+        <com.adjust.AdjustImageView android:layout_gravity="center" android:id="@id/adjust_view" android:visibility="gone" android:layout_width="fill_parent" android:layout_height="fill_parent" />
+    </FrameLayout>
+    <LinearLayout android:orientation="vertical" android:id="@id/bootom_layout" android:background="#ff0b0b0b" android:layout_width="fill_parent" android:layout_height="70.0dip" android:layout_above="@id/cancel_done_layout">
+        <HorizontalScrollView android:id="@id/adjust_content" android:scrollbars="none" android:layout_width="fill_parent" android:layout_height="fill_parent" android:overScrollMode="never">
+            <LinearLayout android:gravity="center_vertical" android:layout_gravity="center_vertical" android:orientation="horizontal" android:layout_width="wrap_content" android:layout_height="fill_parent">
+                <LinearLayout android:gravity="center" android:orientation="vertical" android:id="@id/adjust_contrast" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginStart="25.0dip">
+                    <ImageView android:id="@id/contrast_image" android:background="@drawable/ic_contrast_icon" android:layout_width="27.0dip" android:layout_height="27.0dip" />
+                    <TextView android:textSize="12.0dip" android:textColor="@color/text_color_white" android:id="@id/contrast_text" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="2.0dip" android:text="Contrast" />
+                </LinearLayout>
+                <LinearLayout android:gravity="center" android:orientation="vertical" android:id="@id/adjust_saturation" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginStart="40.0dip">
+                    <ImageView android:id="@id/saturation_image" android:background="@drawable/ic_saturation_icon" android:layout_width="27.0dip" android:layout_height="27.0dip" />
+                    <TextView android:textSize="12.0dip" android:textColor="@color/text_color_white" android:id="@id/saturation_text" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="2.0dip" android:text="Saturation" />
+                </LinearLayout>
+                <LinearLayout android:gravity="center" android:orientation="vertical" android:id="@id/adjust_brightness" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginStart="40.0dip">
+                    <ImageView android:id="@id/brightness_image" android:background="@drawable/ic_brightness_icon" android:layout_width="27.0dip" android:layout_height="27.0dip" />
+                    <TextView android:textSize="12.0dip" android:textColor="@color/text_color_white" android:id="@id/brightness_text" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="2.0dip" android:text="Brightness" />
+                </LinearLayout>
+                <LinearLayout android:gravity="center" android:orientation="vertical" android:id="@id/adjust_tone" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginStart="40.0dip">
+                    <ImageView android:id="@id/tone_image" android:background="@drawable/ic_tone_icon" android:layout_width="27.0dip" android:layout_height="27.0dip" />
+                    <TextView android:textSize="12.0dip" android:textColor="@color/text_color_white" android:id="@id/tone_text" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="2.0dip" android:text="Tone" />
+                </LinearLayout>
+                <LinearLayout android:gravity="center" android:orientation="vertical" android:id="@id/hsl_button" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginStart="40.0dip">
+                    <ImageView android:id="@id/hsl_image" android:background="@drawable/ic_hsl_icon" android:layout_width="26.0dip" android:layout_height="26.0dip" />
+                    <TextView android:textSize="12.0dip" android:textColor="@color/text_color_white" android:id="@id/hsl_text" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="2.0dip" android:text="HSL" />
+                </LinearLayout>
+                <LinearLayout android:gravity="center" android:orientation="vertical" android:id="@id/hue_button" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginStart="40.0dip">
+                    <ImageView android:id="@id/hue_image" android:background="@drawable/ic_hue_icon" android:layout_width="26.0dip" android:layout_height="26.0dip" />
+                    <TextView android:textSize="12.0dip" android:textColor="@color/text_color_white" android:id="@id/hue_text" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="2.0dip" android:text="HUE" />
+                </LinearLayout>
+                <LinearLayout android:gravity="center" android:orientation="vertical" android:id="@id/curve_button" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginStart="40.0dip">
+                    <ImageView android:id="@id/curve_image" android:background="@drawable/ic_curve_icon" android:layout_width="26.0dip" android:layout_height="26.0dip" />
+                    <TextView android:textSize="12.0dip" android:textColor="@color/text_color_white" android:id="@id/curve_text" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="2.0dip" android:text="Curve" />
+                </LinearLayout>
+                <LinearLayout android:gravity="center" android:orientation="vertical" android:id="@id/sharpness_button" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginStart="40.0dip">
+                    <ImageView android:id="@id/sharpness_image" android:background="@drawable/ic_sharpness_icon" android:layout_width="26.0dip" android:layout_height="26.0dip" />
+                    <TextView android:textSize="12.0dip" android:textColor="@color/text_color_white" android:id="@id/sharpness_text" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="2.0dip" android:text="Sharpness" />
+                </LinearLayout>
+                <LinearLayout android:gravity="center" android:orientation="vertical" android:id="@id/brightness_button" android:visibility="gone" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginStart="40.0dip">
+                    <ImageView android:id="@id/brightness_image" android:background="@drawable/ic_tone_icon" android:layout_width="26.0dip" android:layout_height="26.0dip" />
+                    <TextView android:textSize="12.0dip" android:textColor="@color/text_color_white" android:id="@id/brightness_text" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="2.0dip" android:text="Brightness" />
+                </LinearLayout>
+                <LinearLayout android:gravity="center" android:orientation="vertical" android:id="@id/white_balance_button" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginStart="40.0dip" android:layout_marginEnd="25.0dip">
+                    <ImageView android:id="@id/white_balance_image" android:background="@drawable/ic_white_balance_icon" android:layout_width="26.0dip" android:layout_height="26.0dip" />
+                    <TextView android:textSize="12.0dip" android:textColor="@color/text_color_white" android:id="@id/white_balance_text" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="2.0dip" android:text="White Balance" />
+                </LinearLayout>
+            </LinearLayout>
+        </HorizontalScrollView>
+    </LinearLayout>
+    <com.base.common.loading.RotateLoading android:id="@id/loading_image" android:padding="2.0dip" android:visibility="gone" android:layout_width="60.0dip" android:layout_height="60.0dip" android:layout_centerInParent="true" app:loading_color="@color/accent_color" app:loading_speed="12" app:loading_width="2.0dip" />
+    <TextView android:textSize="35.0dip" android:textColor="#ffffffff" android:gravity="end|center" android:id="@id/adjust_value_text" android:visibility="gone" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_margin="220.0dip" android:shadowColor="#80000000" android:shadowDx="5.0" android:shadowDy="5.0" android:shadowRadius="10.0" android:layout_centerHorizontal="true" />
+    <LinearLayout android:orientation="vertical" android:id="@id/adjust_layout" android:background="#401c1c1c" android:visibility="gone" android:layout_width="fill_parent" android:layout_height="45.0dip" android:layout_above="@id/bootom_layout">
+        <LinearLayout android:gravity="center" android:layout_width="fill_parent" android:layout_height="fill_parent">
+            <SeekBar android:layout_gravity="center" android:id="@id/adjust_seekbar" android:visibility="invisible" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginLeft="40.0dip" android:layout_marginRight="40.0dip" android:maxHeight="2.0dip" android:max="100" android:progress="0" android:progressDrawable="@drawable/layerlist_drawable_seekbar_progress" android:minHeight="2.0dip" android:thumb="@drawable/selector_seekbar_drawable_thumb" />
+        </LinearLayout>
+    </LinearLayout>
+    <LinearLayout android:orientation="vertical" android:id="@id/hsl_bar" android:background="#401c1c1c" android:visibility="gone" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_above="@id/bootom_layout">
+        <LinearLayout android:orientation="horizontal" android:id="@id/hsl_choose_color_range" android:layout_width="fill_parent" android:layout_height="wrap_content">
+            <FrameLayout android:layout_width="0.0dip" android:layout_height="wrap_content" android:layout_weight="1.0">
+                <ImageButton android:layout_gravity="center" android:id="@id/hsl_choose_red" android:background="@drawable/ic_adjust_hsl_01" android:layout_width="23.0dip" android:layout_height="23.0dip" android:layout_marginTop="10.0dip" android:layout_marginBottom="10.0dip" android:src="@drawable/shape_hsl_chosen_btn" />
+            </FrameLayout>
+            <FrameLayout android:layout_width="0.0dip" android:layout_height="wrap_content" android:layout_weight="1.0">
+                <ImageButton android:layout_gravity="center" android:id="@id/hsl_choose_orange" android:background="@drawable/ic_adjust_hsl_02" android:layout_width="23.0dip" android:layout_height="23.0dip" android:layout_marginTop="10.0dip" android:layout_marginBottom="10.0dip" android:src="@drawable/shape_hsl_chosen_btn" />
+            </FrameLayout>
+            <FrameLayout android:layout_width="0.0dip" android:layout_height="wrap_content" android:layout_weight="1.0">
+                <ImageButton android:layout_gravity="center" android:id="@id/hsl_choose_yellow" android:background="@drawable/ic_adjust_hsl_03" android:layout_width="23.0dip" android:layout_height="23.0dip" android:layout_marginTop="10.0dip" android:layout_marginBottom="10.0dip" android:src="@drawable/shape_hsl_chosen_btn" />
+            </FrameLayout>
+            <FrameLayout android:layout_width="0.0dip" android:layout_height="wrap_content" android:layout_weight="1.0">
+                <ImageButton android:layout_gravity="center" android:id="@id/hsl_choose_green" android:background="@drawable/ic_adjust_hsl_04" android:layout_width="23.0dip" android:layout_height="23.0dip" android:layout_marginTop="10.0dip" android:layout_marginBottom="10.0dip" android:src="@drawable/shape_hsl_chosen_btn" />
+            </FrameLayout>
+            <FrameLayout android:layout_width="0.0dip" android:layout_height="wrap_content" android:layout_weight="1.0">
+                <ImageButton android:layout_gravity="center" android:id="@id/hsl_choose_blue" android:background="@drawable/ic_adjust_hsl_05" android:layout_width="23.0dip" android:layout_height="23.0dip" android:layout_marginTop="10.0dip" android:layout_marginBottom="10.0dip" android:src="@drawable/shape_hsl_chosen_btn" />
+            </FrameLayout>
+            <FrameLayout android:layout_width="0.0dip" android:layout_height="wrap_content" android:layout_weight="1.0">
+                <ImageButton android:layout_gravity="center" android:id="@id/hsl_choose_indigo" android:background="@drawable/ic_adjust_hsl_06" android:layout_width="23.0dip" android:layout_height="23.0dip" android:layout_marginTop="10.0dip" android:layout_marginBottom="10.0dip" android:src="@drawable/shape_hsl_chosen_btn" />
+            </FrameLayout>
+            <FrameLayout android:layout_width="0.0dip" android:layout_height="wrap_content" android:layout_weight="1.0">
+                <ImageButton android:layout_gravity="center" android:id="@id/hsl_choose_purple" android:background="@drawable/ic_adjust_hsl_07" android:layout_width="23.0dip" android:layout_height="23.0dip" android:layout_marginTop="10.0dip" android:layout_marginBottom="10.0dip" android:src="@drawable/shape_hsl_chosen_btn" />
+            </FrameLayout>
+            <FrameLayout android:layout_width="0.0dip" android:layout_height="wrap_content" android:layout_weight="1.0">
+                <ImageButton android:layout_gravity="center" android:id="@id/hsl_choose_pink" android:background="@drawable/ic_adjust_hsl_08" android:layout_width="23.0dip" android:layout_height="23.0dip" android:layout_marginTop="10.0dip" android:layout_marginBottom="10.0dip" android:src="@drawable/shape_hsl_chosen_btn" />
+            </FrameLayout>
+        </LinearLayout>
+        <LinearLayout android:orientation="vertical" android:paddingBottom="5.0dip" android:layout_width="fill_parent" android:layout_height="wrap_content">
+            <LinearLayout android:gravity="center_vertical" android:layout_width="fill_parent" android:layout_height="30.0dip" android:layout_marginTop="5.0dip">
+                <TextView android:textSize="12.0dip" android:textColor="@color/white_text_color" android:gravity="start" android:layout_width="60.0dip" android:layout_height="wrap_content" android:text="Hue" android:layout_marginStart="30.0dip" />
+                <com.adjust.RangeSeekBar android:id="@id/hsl_control_hue_seekBar" android:layout_width="210.0dip" android:layout_height="wrap_content" android:layout_marginStart="20.0dip" app:range_rsb_gravity="center" app:range_rsb_indicator_height="0.0dip" app:range_rsb_max="45.0" app:range_rsb_min="-45.0" app:range_rsb_mode="single" app:range_rsb_progress_drawable="@drawable/shape_hsl_color_range_progress" app:range_rsb_progress_drawable_default="@drawable/shape_hsl_color_range_progress" app:range_rsb_thumb_height="15.0dip" app:range_rsb_thumb_scale_ratio="1.2" app:range_rsb_thumb_width="15.0dip" />
+            </LinearLayout>
+            <LinearLayout android:gravity="center_vertical" android:layout_width="fill_parent" android:layout_height="30.0dip" android:layout_marginTop="5.0dip">
+                <TextView android:textSize="12.0dip" android:textColor="@color/white_text_color" android:gravity="start" android:layout_width="60.0dip" android:layout_height="wrap_content" android:text="Saturation" android:layout_marginStart="30.0dip" />
+                <com.adjust.RangeSeekBar android:id="@id/hsl_control_saturation_seekBar" android:layout_width="210.0dip" android:layout_height="wrap_content" android:layout_marginStart="20.0dip" app:range_rsb_gravity="center" app:range_rsb_indicator_height="0.0dip" app:range_rsb_max="0.1" app:range_rsb_min="-0.1" app:range_rsb_mode="single" app:range_rsb_progress_drawable="@drawable/shape_chroma_progress" app:range_rsb_progress_drawable_default="@drawable/shape_chroma_progress" app:range_rsb_thumb_height="15.0dip" app:range_rsb_thumb_scale_ratio="1.2" app:range_rsb_thumb_width="15.0dip" />
+            </LinearLayout>
+            <LinearLayout android:gravity="center_vertical" android:layout_width="fill_parent" android:layout_height="30.0dip" android:layout_marginTop="5.0dip">
+                <TextView android:textSize="12.0dip" android:textColor="@color/white_text_color" android:gravity="start" android:layout_width="60.0dip" android:layout_height="wrap_content" android:text="Lightness" android:layout_marginStart="30.0dip" />
+                <com.adjust.RangeSeekBar android:id="@id/hsl_control_lightness_seekBar" android:layout_width="210.0dip" android:layout_height="wrap_content" android:layout_marginStart="20.0dip" app:range_rsb_gravity="center" app:range_rsb_indicator_height="0.0dip" app:range_rsb_max="0.1" app:range_rsb_min="-0.1" app:range_rsb_mode="single" app:range_rsb_progress_drawable="@drawable/shape_hsl_lightness_seekbar" app:range_rsb_progress_drawable_default="@drawable/shape_hsl_lightness_seekbar" app:range_rsb_thumb_height="15.0dip" app:range_rsb_thumb_scale_ratio="1.2" app:range_rsb_thumb_width="15.0dip" />
+            </LinearLayout>
+        </LinearLayout>
+    </LinearLayout>
+    <LinearLayout android:orientation="vertical" android:id="@id/hue_bar" android:background="#401c1c1c" android:paddingBottom="5.0dip" android:visibility="gone" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_above="@id/bootom_layout">
+        <LinearLayout android:gravity="center_vertical" android:orientation="horizontal" android:layout_width="fill_parent" android:layout_height="30.0dip" android:layout_marginTop="10.0dip">
+            <TextView android:textSize="12.0dip" android:textColor="@color/white_text_color" android:gravity="start" android:layout_width="50.0dip" android:layout_height="wrap_content" android:text="HUE" android:layout_marginStart="30.0dip" />
+            <com.adjust.RangeSeekBar android:id="@id/hue_seekBar" android:layout_width="220.0dip" android:layout_height="wrap_content" android:layout_marginStart="20.0dip" app:range_rsb_gravity="center" app:range_rsb_indicator_height="0.0dip" app:range_rsb_max="361.0" app:range_rsb_min="0.0" app:range_rsb_mode="single" app:range_rsb_progress_drawable="@drawable/ic_progress_hue" app:range_rsb_progress_drawable_default="@drawable/ic_progress_hue" app:range_rsb_thumb_height="16.399994dip" app:range_rsb_thumb_scale_ratio="1.2" app:range_rsb_thumb_width="16.399994dip" />
+        </LinearLayout>
+        <LinearLayout android:gravity="center_vertical" android:orientation="horizontal" android:layout_width="fill_parent" android:layout_height="30.0dip" android:layout_marginTop="5.0dip">
+            <TextView android:textSize="12.0dip" android:textColor="@color/white_text_color" android:gravity="start" android:layout_width="50.0dip" android:layout_height="wrap_content" android:text="Chroma" android:layout_marginStart="30.0dip" />
+            <com.adjust.RangeSeekBar android:id="@id/chroma_seekBar" android:layout_width="220.0dip" android:layout_height="wrap_content" android:layout_marginStart="20.0dip" app:range_rsb_gravity="center" app:range_rsb_indicator_height="0.0dip" app:range_rsb_max="2.0" app:range_rsb_min="1.0" app:range_rsb_mode="single" app:range_rsb_progress_drawable="@drawable/shape_chroma_progress" app:range_rsb_progress_drawable_default="@drawable/shape_chroma_progress" app:range_rsb_thumb_height="16.399994dip" app:range_rsb_thumb_scale_ratio="1.2" app:range_rsb_thumb_width="16.399994dip" />
+        </LinearLayout>
+    </LinearLayout>
+    <LinearLayout android:gravity="center_vertical" android:orientation="horizontal" android:id="@id/curve_rgb_bar" android:background="#401c1c1c" android:visibility="gone" android:layout_width="fill_parent" android:layout_height="60.0dip" android:layout_above="@id/bootom_layout" android:paddingStart="10.0dip" android:paddingEnd="10.0dip">
+        <FrameLayout android:id="@id/curve_bar_rgb" android:layout_width="0.0dip" android:layout_height="wrap_content" android:layout_weight="1.0">
+            <ImageView android:layout_gravity="center" android:layout_width="30.0dip" android:layout_height="30.0dip" android:src="@drawable/ic_adjust_curve_white" />
+            <ImageView android:layout_gravity="center" android:id="@id/curve_bar_rgb_selected" android:layout_width="30.0dip" android:layout_height="30.0dip" android:src="@drawable/shape_round_item_bg" />
+        </FrameLayout>
+        <FrameLayout android:id="@id/curve_bar_red" android:layout_width="0.0dip" android:layout_height="wrap_content" android:layout_weight="1.0">
+            <ImageView android:layout_gravity="center" android:layout_width="30.0dip" android:layout_height="30.0dip" android:src="@drawable/ic_adjust_curve_red" />
+            <ImageView android:layout_gravity="center" android:id="@id/curve_bar_red_selected" android:visibility="invisible" android:layout_width="30.0dip" android:layout_height="30.0dip" android:src="@drawable/shape_round_item_bg" />
+        </FrameLayout>
+        <FrameLayout android:id="@id/curve_bar_green" android:layout_width="0.0dip" android:layout_height="wrap_content" android:layout_weight="1.0">
+            <ImageView android:layout_gravity="center" android:layout_width="30.0dip" android:layout_height="30.0dip" android:src="@drawable/ic_adjust_curve_green" />
+            <ImageView android:layout_gravity="center" android:id="@id/curve_bar_green_selected" android:visibility="invisible" android:layout_width="30.0dip" android:layout_height="30.0dip" android:src="@drawable/shape_round_item_bg" />
+        </FrameLayout>
+        <FrameLayout android:id="@id/curve_bar_blue" android:layout_width="0.0dip" android:layout_height="wrap_content" android:layout_weight="1.0">
+            <ImageView android:layout_gravity="center" android:layout_width="30.0dip" android:layout_height="30.0dip" android:src="@drawable/ic_adjust_curve_blue" />
+            <ImageView android:layout_gravity="center" android:id="@id/curve_bar_blue_selected" android:visibility="invisible" android:layout_width="30.0dip" android:layout_height="30.0dip" android:src="@drawable/shape_round_item_bg" />
+        </FrameLayout>
+        <FrameLayout android:layout_width="0.0dip" android:layout_height="wrap_content" android:layout_weight="1.0">
+            <ImageButton android:layout_gravity="center" android:id="@id/curve_bar_resetBtn" android:background="@drawable/ic_adjust_curve_reset" android:layout_width="30.0dip" android:layout_height="30.0dip" />
+        </FrameLayout>
+    </LinearLayout>
+    <LinearLayout android:gravity="center_vertical" android:orientation="vertical" android:id="@id/sharpness_layout" android:background="#401c1c1c" android:visibility="gone" android:layout_width="fill_parent" android:layout_height="45.0dip" android:layout_above="@id/bootom_layout">
+        <LinearLayout android:gravity="center" android:layout_width="fill_parent" android:layout_height="fill_parent">
+            <SeekBar android:layout_gravity="center" android:id="@id/sharpness_seekBar" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginLeft="40.0dip" android:layout_marginRight="40.0dip" android:maxHeight="2.0dip" android:max="10" android:progress="0" android:progressDrawable="@drawable/layerlist_drawable_seekbar_progress" android:minHeight="2.0dip" android:thumb="@drawable/selector_seekbar_drawable_thumb" />
+        </LinearLayout>
+    </LinearLayout>
+    <LinearLayout android:orientation="vertical" android:id="@id/brightness_layout" android:background="#401c1c1c" android:paddingBottom="5.0dip" android:visibility="gone" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_above="@id/bootom_layout">
+        <LinearLayout android:gravity="center_vertical" android:orientation="horizontal" android:layout_width="fill_parent" android:layout_height="30.0dip" android:layout_marginTop="10.0dip">
+            <TextView android:textSize="12.0dip" android:textColor="@color/white_text_color" android:gravity="start" android:layout_width="60.0dip" android:layout_height="wrap_content" android:text="Highlight" android:layout_marginStart="30.0dip" />
+            <SeekBar android:layout_gravity="center_vertical" android:id="@id/highlight_seekBar" android:layout_width="210.0dip" android:layout_height="wrap_content" android:layout_marginTop="3.0dip" android:maxHeight="2.0dip" android:max="10" android:progress="0" android:progressDrawable="@drawable/layerlist_drawable_seekbar_progress" android:minHeight="2.0dip" android:thumb="@drawable/selector_seekbar_drawable_thumb" android:layout_marginStart="20.0dip" />
+        </LinearLayout>
+        <LinearLayout android:gravity="center_vertical" android:orientation="horizontal" android:layout_width="fill_parent" android:layout_height="30.0dip" android:layout_marginTop="5.0dip">
+            <TextView android:textSize="12.0dip" android:textColor="@color/white_text_color" android:gravity="start" android:layout_width="60.0dip" android:layout_height="wrap_content" android:text="Shadow" android:layout_marginStart="30.0dip" />
+            <SeekBar android:layout_gravity="center_vertical" android:id="@id/shadow_seekBar" android:layout_width="210.0dip" android:layout_height="wrap_content" android:layout_marginTop="3.0dip" android:maxHeight="2.0dip" android:max="10" android:progress="0" android:progressDrawable="@drawable/layerlist_drawable_seekbar_progress" android:minHeight="2.0dip" android:thumb="@drawable/selector_seekbar_drawable_thumb" android:layout_marginStart="20.0dip" />
+        </LinearLayout>
+    </LinearLayout>
+    <LinearLayout android:orientation="vertical" android:id="@id/white_balance_bar" android:background="#401c1c1c" android:paddingBottom="5.0dip" android:visibility="gone" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_above="@id/bootom_layout">
+        <LinearLayout android:gravity="center_vertical" android:orientation="horizontal" android:layout_width="fill_parent" android:layout_height="30.0dip" android:layout_marginTop="10.0dip">
+            <TextView android:textSize="12.0dip" android:textColor="@color/white_text_color" android:ellipsize="end" android:gravity="start" android:layout_width="60.0dip" android:layout_height="wrap_content" android:text="Temperature" android:singleLine="true" android:layout_marginStart="30.0dip" />
+            <com.adjust.StepInRangeSeekBar android:id="@id/temperature_seekBar" android:layout_width="215.0dip" android:layout_height="wrap_content" android:layout_marginStart="20.0dip" app:range_rsb_gravity="center" app:range_rsb_indicator_height="0.0dip" app:range_rsb_max="5.0" app:range_rsb_min="-5.0" app:range_rsb_mode="single" app:range_rsb_progress_drawable="@drawable/ic_balance_temperature" app:range_rsb_progress_drawable_default="@drawable/ic_balance_temperature" app:range_rsb_step_auto_bonding="true" app:range_rsb_steps="10" app:range_rsb_thumb_height="16.399994dip" app:range_rsb_thumb_scale_ratio="1.2" app:range_rsb_thumb_width="16.399994dip" />
+        </LinearLayout>
+        <LinearLayout android:gravity="center_vertical" android:orientation="horizontal" android:layout_width="fill_parent" android:layout_height="30.0dip" android:layout_marginTop="5.0dip">
+            <TextView android:textSize="12.0dip" android:textColor="@color/white_text_color" android:gravity="start" android:layout_width="60.0dip" android:layout_height="wrap_content" android:text="Tint" android:layout_marginStart="30.0dip" />
+            <com.adjust.StepInRangeSeekBar android:id="@id/tint_seekBar" android:layout_width="215.0dip" android:layout_height="wrap_content" android:layout_marginStart="20.0dip" app:range_rsb_gravity="center" app:range_rsb_indicator_height="0.0dip" app:range_rsb_max="5.0" app:range_rsb_min="-5.0" app:range_rsb_mode="single" app:range_rsb_progress_drawable="@drawable/ic_balance_tint_line" app:range_rsb_progress_drawable_default="@drawable/ic_balance_tint_line" app:range_rsb_step_auto_bonding="true" app:range_rsb_steps="10" app:range_rsb_thumb_height="16.399994dip" app:range_rsb_thumb_scale_ratio="1.2" app:range_rsb_thumb_width="16.399994dip" />
+        </LinearLayout>
+    </LinearLayout>
+    <LinearLayout android:gravity="center_vertical" android:id="@id/cancel_done_layout" android:background="#ff0b0b0b" android:layout_width="fill_parent" android:layout_height="50.0dip" android:layout_alignParentBottom="true">
+        <ImageView android:id="@id/cancelBtn" android:background="@drawable/adjust_cancel_btn" android:layout_width="35.0dip" android:layout_height="35.0dip" android:layout_marginStart="7.0dip" />
+        <TextView android:textSize="14.0dip" android:textColor="@color/white_text_color" android:id="@id/select_text" android:layout_width="0.0dip" android:layout_height="wrap_content" android:text="Adjust" android:layout_weight="1.0" android:textAlignment="center" />
+        <ImageView android:id="@id/doneBtn" android:background="@drawable/adjust_done_btn" android:layout_width="35.0dip" android:layout_height="35.0dip" android:layout_marginEnd="13.0dip" />
+    </LinearLayout>
+</RelativeLayout>

@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout android:orientation="vertical" android:layout_width="fill_parent" android:layout_height="fill_parent"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <FrameLayout android:id="@id/banner" android:background="@color/top_and_bottom_bar_color" android:layout_width="fill_parent" android:layout_height="@dimen/title_bar_height" android:layout_alignParentTop="true">
+        <ImageView android:layout_gravity="start|center" android:id="@id/back_btn" android:layout_width="25.0dip" android:layout_height="25.0dip" android:src="@drawable/ic_activity_back" android:rotationY="@integer/rotation" android:layout_marginStart="8.0dip" />
+        <TextView android:textSize="16.0dip" android:textColor="#ffffffff" android:gravity="center" android:layout_gravity="center" android:id="@id/title" android:layout_width="wrap_content" android:layout_height="fill_parent" android:text="@string/Store" />
+    </FrameLayout>
+    <FrameLayout android:layout_width="fill_parent" android:layout_height="fill_parent">
+        <androidx.recyclerview.widget.RecyclerView android:id="@id/filter_group_lists" android:background="#ff313131" android:paddingBottom="3.0dip" android:layout_width="fill_parent" android:layout_height="fill_parent" android:overScrollMode="never" />
+        <FrameLayout android:layout_gravity="bottom" android:id="@id/prime_banner_layout" android:visibility="gone" android:layout_width="fill_parent" android:layout_height="60.0dip" android:layout_above="@id/bottom_layout">
+            <ImageView android:layout_width="fill_parent" android:layout_height="fill_parent" android:src="@drawable/ic_prime_banner_bg" android:scaleType="centerCrop" />
+            <ImageView android:layout_gravity="end|center|top" android:id="@id/prime_banner_close" android:layout_width="23.0dip" android:layout_height="23.0dip" android:layout_marginTop="7.0dip" android:src="@drawable/ic_prime_banner_close" android:layout_marginEnd="7.0dip" />
+            <LinearLayout android:gravity="start|center" android:layout_gravity="start|center" android:orientation="vertical" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginStart="30.0dip">
+                <TextView android:textSize="16.0dip" android:textColor="#fffffefe" android:gravity="start" android:layout_gravity="start" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="Upgrade Prime Version" />
+            </LinearLayout>
+            <TextView android:textSize="14.0dip" android:textColor="#fffffefe" android:layout_gravity="end|center" android:background="@drawable/shape_prime_btn_bg" android:paddingTop="5.0dip" android:paddingBottom="5.0dip" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="Upgrade Now" android:paddingStart="8.0dip" android:paddingEnd="8.0dip" android:layout_marginEnd="50.0dip" />
+        </FrameLayout>
+    </FrameLayout>
+</LinearLayout>

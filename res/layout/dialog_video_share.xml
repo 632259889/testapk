@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout android:orientation="vertical" android:background="@drawable/dialog_bg" android:layout_width="fill_parent" android:layout_height="wrap_content"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <TextView android:textSize="15.0dip" android:textColor="#ff4c4c4c" android:gravity="center" android:layout_gravity="center" android:id="@id/share_video" android:background="@drawable/ripple_with_mask" android:layout_width="fill_parent" android:layout_height="50.0dip" android:text="Share video" />
+    <View android:background="#fff4f4f4" android:layout_width="fill_parent" android:layout_height="1.0dip" />
+    <TextView android:textSize="15.0dip" android:textColor="#ff4c4c4c" android:gravity="center" android:layout_gravity="center" android:id="@id/share_gif" android:background="@drawable/ripple_with_mask" android:padding="10.0dip" android:layout_width="fill_parent" android:layout_height="50.0dip" android:text="Share gif" />
+    <View android:background="#fff4f4f4" android:layout_width="fill_parent" android:layout_height="1.0dip" />
+    <TextView android:textSize="15.0dip" android:textColor="#ff4c4c4c" android:gravity="center" android:layout_gravity="center" android:id="@id/share_cancel" android:background="@drawable/ripple_with_mask" android:padding="10.0dip" android:layout_width="fill_parent" android:layout_height="50.0dip" android:text="Cancel" />
+</LinearLayout>

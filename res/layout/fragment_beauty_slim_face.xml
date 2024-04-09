@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout android:gravity="center" android:orientation="horizontal" android:background="@color/second_bottom_bar_color" android:layout_width="fill_parent" android:layout_height="fill_parent"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <LinearLayout android:gravity="center" android:orientation="vertical" android:id="@id/ll_face_mode" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginStart="16.0dip">
+        <ImageView android:textColor="#ffffffff" android:gravity="center" android:id="@id/iv_face_mode" android:layout_width="30.0dip" android:layout_height="30.0dip" android:src="@drawable/beauty_ic_face_mode_a" />
+        <TextView android:textSize="12.0dip" android:textColor="#ffffffff" android:gravity="center" android:id="@id/tv_face_mode" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="2.0dip" android:text="@string/face_mode1" />
+    </LinearLayout>
+    <FrameLayout android:layout_gravity="center" android:id="@id/slim_face_seekbar_touch_layout" android:layout_width="0.0dip" android:layout_height="fill_parent" android:layout_weight="1.0">
+        <SeekBar android:layout_gravity="center" android:id="@id/sb_slim_face_size" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginLeft="10.0dip" android:layout_marginRight="10.0dip" android:maxHeight="2.0dip" android:max="60" android:progressDrawable="@drawable/layerlist_drawable_seekbar_progress" android:minHeight="2.0dip" android:thumb="@drawable/selector_seekbar_drawable_thumb" />
+        <TextView android:textSize="12.0dip" android:textColor="#ffff0000" android:gravity="center" android:layout_gravity="center" android:id="@id/tv_slim_face_noface" android:visibility="gone" android:layout_width="fill_parent" android:layout_height="wrap_content" android:text="@string/no_face" />
+    </FrameLayout>
+    <LinearLayout android:gravity="center" android:orientation="vertical" android:id="@id/ll_auto_manual" android:visibility="gone" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginEnd="20.0dip">
+        <ImageView android:id="@id/iv_auto_manual" android:layout_width="30.0dip" android:layout_height="30.0dip" android:src="@drawable/beauty_ic_manual" />
+        <TextView android:textSize="12.0dip" android:textColor="#ffffffff" android:gravity="center" android:id="@id/tv_automanual" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="2.0dip" android:text="@string/manual" />
+    </LinearLayout>
+</LinearLayout>

@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8"?>
+<animation-list android:oneshot="false"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <item android:duration="50" android:drawable="@drawable/ic_sticker_s_press_00000" />
+    <item android:duration="50" android:drawable="@drawable/ic_sticker_s_press_00001" />
+    <item android:duration="50" android:drawable="@drawable/ic_sticker_s_press_00002" />
+    <item android:duration="50" android:drawable="@drawable/ic_sticker_s_press_00003" />
+    <item android:duration="50" android:drawable="@drawable/ic_sticker_s_press_00004" />
+    <item android:duration="50" android:drawable="@drawable/ic_sticker_s_press_00005" />
+    <item android:duration="50" android:drawable="@drawable/ic_sticker_s_press_00006" />
+    <item android:duration="50" android:drawable="@drawable/ic_sticker_s_press_00007" />
+    <item android:duration="50" android:drawable="@drawable/ic_sticker_s_press_00008" />
+    <item android:duration="50" android:drawable="@drawable/ic_sticker_s_press_00009" />
+    <item android:duration="50" android:drawable="@drawable/ic_sticker_s_press_00010" />
+    <item android:duration="50" android:drawable="@drawable/ic_sticker_s_press_00011" />
+    <item android:duration="50" android:drawable="@drawable/ic_sticker_s_press_00012" />
+    <item android:duration="50" android:drawable="@drawable/ic_sticker_s_press_00013" />
+    <item android:duration="50" android:drawable="@drawable/ic_sticker_s_press_00014" />
+    <item android:duration="50" android:drawable="@drawable/ic_sticker_s_press_00015" />
+    <item android:duration="50" android:drawable="@drawable/ic_sticker_s_press_00016" />
+    <item android:duration="50" android:drawable="@drawable/ic_sticker_s_press_00017" />
+    <item android:duration="50" android:drawable="@drawable/ic_sticker_s_press_00018" />
+    <item android:duration="50" android:drawable="@drawable/ic_sticker_s_press_00019" />
+    <item android:duration="50" android:drawable="@drawable/ic_sticker_s_press_00020" />
+    <item android:duration="50" android:drawable="@drawable/ic_sticker_s_press_00021" />
+</animation-list>

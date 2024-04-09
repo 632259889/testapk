@@ -1,0 +1,251 @@
+<?xml version="1.0" encoding="utf-8" standalone="no"?><manifest xmlns:android="http://schemas.android.com/apk/res/android" android:compileSdkVersion="33" android:compileSdkVersionCodename="13" package="camera.s.beauty.ggg" platformBuildVersionCode="33" platformBuildVersionName="13">
+    <uses-feature android:glEsVersion="0x00020000" android:required="true"/>
+    <uses-feature android:name="android.hardware.camera" android:required="true"/>
+    <uses-feature android:name="android.hardware.camera.autofocus" android:required="false"/>
+    <uses-feature android:name="android.hardware.camera.flash" android:required="false"/>
+    <uses-feature android:name="android.hardware.microphone" android:required="false"/>
+    <uses-permission android:name="android.permission.CAMERA"/>
+    <uses-permission android:name="android.permission.FLASHLIGHT"/>
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"/>
+    <uses-permission android:maxSdkVersion="33" android:name="android.permission.READ_EXTERNAL_STORAGE"/>
+    <uses-permission android:name="android.permission.READ_MEDIA_IMAGES"/>
+    <uses-permission android:name="android.permission.READ_MEDIA_VIDEO"/>
+    <uses-permission android:name="android.permission.RECORD_AUDIO"/>
+    <uses-permission android:name="android.permission.VIBRATE"/>
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE"/>
+    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE"/>
+    <uses-permission android:name="android.permission.INTERNET"/>
+    <queries>
+        <intent>
+            <action android:name="android.intent.action.MAIN"/>
+        </intent>
+        <intent>
+            <action android:name="android.intent.action.VIEW"/>
+        </intent>
+        <intent>
+            <action android:name="android.intent.action.VIEW"/>
+            <category android:name="android.intent.category.BROWSABLE"/>
+            <data android:scheme="https"/>
+        </intent>
+        <intent>
+            <action android:name="android.support.customtabs.action.CustomTabsService"/>
+        </intent>
+        <!-- <package android:name="com.facebook.katana"/> -->
+    </queries>
+    <uses-permission android:name="com.google.android.gms.permission.AD_ID"/>
+    <uses-permission android:name="android.permission.WAKE_LOCK"/>
+    <uses-permission android:name="android.permission.FOREGROUND_SERVICE"/>
+    <application android:allowBackup="false" android:appComponentFactory="androidx.core.app.CoreComponentFactory" android:hardwareAccelerated="true" android:icon="@mipmap/ic_launcher" android:label="@string/app_name" android:largeHeap="true" android:name="com.magiccamera.zfunction.main.ui.CameraApplication" android:roundIcon="@mipmap/ic_launcher" android:supportsRtl="true" android:theme="@style/ApplicationTheme">
+        <meta-data android:name="com.google.mlkit.vision.DEPENDENCIES" android:value="face"/>
+        <!-- <meta-data android:name="UMENG_APPKEY" android:value="5fb4809573749c24fd9b8376"/>
+        <meta-data android:name="UMENG_CHANNEL" android:value="googleplay"/> -->
+        <meta-data android:name="android.max_aspect" android:value="2.1"/>
+        <meta-data android:name="com.google.android.gms.ads.APPLICATION_ID" android:value="ca-app-pub-3940256099942544~3347511713"/>
+        <uses-library android:name="org.apache.http.legacy" android:required="false"/>
+        <activity android:clearTaskOnLaunch="true" android:configChanges="screenLayout|screenSize|smallestScreenSize" android:exported="true" android:launchMode="singleTask" android:maxAspectRatio="2.1" android:minAspectRatio="1.6" android:name="com.magiccamera.zfunction.main.ui.CameraPreviewActivity" android:resizeableActivity="false" android:screenOrientation="portrait" android:theme="@style/ActivityTheme">
+            <intent-filter>
+                <action android:name="android.media.action.IMAGE_CAPTURE"/>
+                <category android:name="android.intent.category.DEFAULT"/>
+            </intent-filter>
+            <intent-filter>
+                <action android:name="android.media.action.IMAGE_CAPTURE_SECURE"/>
+                <category android:name="android.intent.category.DEFAULT"/>
+            </intent-filter>
+            <intent-filter>
+                <action android:name="android.media.action.STILL_IMAGE_CAMERA"/>
+                <category android:name="android.intent.category.DEFAULT"/>
+            </intent-filter>
+            <intent-filter>
+                <action android:name="android.media.action.STILL_IMAGE_CAMERA_SECURE"/>
+                <category android:name="android.intent.category.DEFAULT"/>
+            </intent-filter>
+            <intent-filter>
+                <action android:name="android.media.action.VIDEO_CAMERA"/>
+                <category android:name="android.intent.category.DEFAULT"/>
+            </intent-filter>
+            <intent-filter>
+                <action android:name="android.media.action.VIDEO_CAPTURE"/>
+                <category android:name="android.intent.category.DEFAULT"/>
+            </intent-filter>
+        </activity>
+        <activity android:configChanges="screenLayout|screenSize|smallestScreenSize" android:maxAspectRatio="2.1" android:minAspectRatio="1.6" android:name="com.zimage.zselector.VideoActivity" android:resizeableActivity="false" android:screenOrientation="portrait"/>
+        <activity android:configChanges="screenLayout|screenSize|smallestScreenSize" android:maxAspectRatio="2.1" android:minAspectRatio="1.6" android:name="com.zimage.zselector.videoclip.VideoTrimActivity" android:resizeableActivity="false" android:screenOrientation="portrait"/>
+        <activity android:configChanges="screenLayout|screenSize|smallestScreenSize" android:maxAspectRatio="2.1" android:minAspectRatio="1.6" android:name="com.magiccamera.zfunction.main.ui.ShowVideoActivity" android:resizeableActivity="false" android:screenOrientation="portrait" android:theme="@style/VideoActivityTheme"/>
+        <activity android:configChanges="screenLayout|screenSize|smallestScreenSize" android:maxAspectRatio="2.1" android:minAspectRatio="1.6" android:name="com.magiccamera.zfunction.main.ui.ShowPictureActivity" android:resizeableActivity="false" android:screenOrientation="portrait" android:theme="@style/VideoActivityTheme"/>
+        <activity android:configChanges="keyboardHidden|orientation|screenLayout|screenSize|smallestScreenSize" android:exported="true" android:maxAspectRatio="2.1" android:minAspectRatio="1.6" android:name="com.zimage.zselector.ImageProductionActivity" android:resizeableActivity="false" android:screenOrientation="portrait">
+            <intent-filter>
+                <action android:name="android.intent.action.PICK"/>
+                <category android:name="android.intent.category.DEFAULT"/>
+                <data android:mimeType="image/*"/>
+            </intent-filter>
+            <intent-filter>
+                <action android:name="android.intent.action.GET_CONTENT"/>
+                <category android:name="android.intent.category.DEFAULT"/>
+                <data android:mimeType="image/*"/>
+            </intent-filter>
+        </activity>
+        <activity android:configChanges="screenLayout|screenSize|smallestScreenSize" android:maxAspectRatio="2.1" android:minAspectRatio="1.6" android:name="com.zimage.zselector.ShowProductionImageActivity" android:resizeableActivity="false" android:screenOrientation="portrait"/>
+        <activity android:configChanges="screenLayout|screenSize|smallestScreenSize" android:maxAspectRatio="2.1" android:minAspectRatio="1.6" android:name="com.magiccamera.zfunction.main.ui.SettingsActivity" android:resizeableActivity="false" android:screenOrientation="portrait" android:theme="@style/SettingsActivityTheme"/>
+        <activity android:configChanges="screenLayout|screenSize|smallestScreenSize" android:exported="true" android:maxAspectRatio="2.1" android:minAspectRatio="1.6" android:name="com.edit.imageeditlibrary.editimage.EditImageActivity" android:resizeableActivity="false" android:screenOrientation="portrait" android:theme="@style/GalleryActivityTheme" android:windowSoftInputMode="adjustPan">
+            <intent-filter>
+                <action android:name="android.intent.action.SEND"/>
+                <action android:name="android.intent.action.EDIT"/>
+                <category android:name="android.intent.category.DEFAULT"/>
+                <data android:mimeType="image/*"/>
+            </intent-filter>
+        </activity>
+        <activity android:configChanges="screenLayout|screenSize|smallestScreenSize" android:maxAspectRatio="2.1" android:minAspectRatio="1.6" android:name="com.base.common.ShareActivity" android:resizeableActivity="false" android:screenOrientation="portrait" android:theme="@style/GalleryActivityTheme"/>
+        <activity android:configChanges="screenLayout|screenSize|smallestScreenSize" android:maxAspectRatio="2.1" android:minAspectRatio="1.6" android:name="com.base.common.imageanim.PicViewActivity" android:resizeableActivity="false" android:theme="@style/PicViewTheme"/>
+        <activity android:configChanges="screenLayout|screenSize|smallestScreenSize" android:maxAspectRatio="2.1" android:minAspectRatio="1.6" android:name="com.edit.imageeditlibrary.editimage.FilterShop.FilterShopActivity" android:resizeableActivity="false" android:screenOrientation="portrait"/>
+        <activity android:configChanges="screenLayout|screenSize|smallestScreenSize" android:maxAspectRatio="2.1" android:minAspectRatio="1.6" android:name="com.feedback.FeedbackMainActivity" android:resizeableActivity="false" android:screenOrientation="portrait" android:theme="@style/SettingsActivityTheme" android:windowSoftInputMode="adjustPan"/>
+
+        <activity android:configChanges="screenLayout|screenSize|smallestScreenSize" android:exported="true" android:maxAspectRatio="2.1" android:minAspectRatio="1.6" android:name="com.magiccamera.zfunction.main.privacy.HelpActivity" android:resizeableActivity="false" android:screenOrientation="portrait">
+            <intent-filter>
+                <action android:name="android.intent.action.VIEW"/>
+                <category android:name="android.intent.category.DEFAULT"/>
+                <data android:host="privacy_help" android:scheme="camera.s.beauty.ggg"/>
+            </intent-filter>
+        </activity>
+        <activity android:configChanges="screenLayout|screenSize|smallestScreenSize" android:maxAspectRatio="2.1" android:minAspectRatio="1.6" android:name="com.magiccamera.zfunction.main.ui.ManageStickerActivity" android:resizeableActivity="false" android:screenOrientation="portrait"/>
+        <activity android:configChanges="screenLayout|screenSize|smallestScreenSize" android:maxAspectRatio="2.1" android:minAspectRatio="1.6" android:name="com.magiccamera.zfunction.main.homepage.CameraHomePageActivity" android:resizeableActivity="false" android:screenOrientation="portrait" android:theme="@style/ActivityTheme"  android:exported="true">
+          <intent-filter>
+              <action android:name="android.intent.action.MAIN"/>
+              <category android:name="android.intent.category.LAUNCHER"/>
+          </intent-filter>
+        </activity>
+        <activity android:configChanges="screenLayout|screenSize|smallestScreenSize" android:maxAspectRatio="2.1" android:minAspectRatio="1.6" android:name="com.cutout.CutOutActivity" android:resizeableActivity="false" android:screenOrientation="portrait" android:theme="@style/GalleryActivityTheme"/>
+        <activity android:configChanges="screenLayout|screenSize|smallestScreenSize" android:maxAspectRatio="2.1" android:minAspectRatio="1.6" android:name="com.cutout.CutOutEditActivity" android:resizeableActivity="false" android:screenOrientation="portrait" android:theme="@style/GalleryActivityTheme"/>
+        <activity android:configChanges="screenLayout|screenSize|smallestScreenSize" android:maxAspectRatio="2.1" android:minAspectRatio="1.6" android:name="image.beauty.com.imagebeauty.BeautyActivity" android:resizeableActivity="false" android:screenOrientation="portrait" android:theme="@style/GalleryActivityTheme"/>
+        <activity android:configChanges="screenLayout|screenSize|smallestScreenSize" android:maxAspectRatio="2.1" android:minAspectRatio="1.6" android:name="com.picture.squarephoto.SquarePhotoActivity" android:resizeableActivity="false" android:screenOrientation="portrait" android:theme="@style/GalleryActivityTheme"/>
+        <activity android:configChanges="screenLayout|screenSize|smallestScreenSize" android:maxAspectRatio="2.1" android:minAspectRatio="1.6" android:name="com.photo.adjustbody.AdjustLegActivity" android:resizeableActivity="false" android:screenOrientation="portrait" android:theme="@style/GalleryActivityTheme"/>
+        <activity android:configChanges="screenLayout|screenSize|smallestScreenSize" android:maxAspectRatio="2.1" android:minAspectRatio="1.6" android:name="com.spiral.SpiralActivity" android:resizeableActivity="false" android:screenOrientation="portrait" android:theme="@style/GalleryActivityTheme"/>
+        <activity android:configChanges="screenLayout|screenSize|smallestScreenSize" android:maxAspectRatio="2.1" android:minAspectRatio="1.6" android:name="com.zmagicc.example.doodle.MappingActivity" android:resizeableActivity="false" android:screenOrientation="portrait" android:theme="@style/GalleryActivityTheme"/>
+        <activity android:configChanges="screenLayout|screenSize|smallestScreenSize" android:maxAspectRatio="2.1" android:minAspectRatio="1.6" android:name="com.zmagicc.example.effectlibrary.VagueActivity" android:resizeableActivity="false" android:screenOrientation="portrait" android:theme="@style/GalleryActivityTheme"/>
+        <activity android:configChanges="screenLayout|screenSize|smallestScreenSize" android:maxAspectRatio="2.1" android:minAspectRatio="1.6" android:name="com.zmagicc.example.blendexposure.DoubleExposureActivity" android:resizeableActivity="false" android:screenOrientation="portrait" android:theme="@style/GalleryActivityTheme"/>
+        <activity android:configChanges="screenLayout|screenSize|smallestScreenSize" android:maxAspectRatio="2.1" android:minAspectRatio="1.6" android:name="com.zmagicc.example.blendexposure.ExposureChangeActivity" android:resizeableActivity="false" android:screenOrientation="portrait" android:theme="@style/GalleryActivityTheme"/>
+        <activity android:configChanges="screenLayout|screenSize|smallestScreenSize" android:maxAspectRatio="2.1" android:minAspectRatio="1.6" android:name="com.photo.cropandrotate.CropAndRotateActivity" android:resizeableActivity="false" android:screenOrientation="portrait" android:theme="@style/GalleryActivityTheme"/>
+        <activity android:configChanges="screenLayout|screenSize|smallestScreenSize" android:maxAspectRatio="2.1" android:minAspectRatio="1.6" android:name="com.adjust.AdjustPhotoActivity" android:resizeableActivity="false" android:screenOrientation="portrait" android:theme="@style/GalleryActivityTheme"/>
+        <activity android:configChanges="screenLayout|screenSize|smallestScreenSize" android:maxAspectRatio="2.1" android:minAspectRatio="1.6" android:name="com.color.splash.colorsplash.activity.SplashActivity" android:resizeableActivity="false" android:screenOrientation="portrait" android:theme="@style/GalleryActivityTheme"/>
+        <activity android:configChanges="screenLayout|screenSize|smallestScreenSize" android:maxAspectRatio="2.1" android:minAspectRatio="1.6" android:name="com.color.splash.colorsplash.activity.BlurPhotoActivity" android:resizeableActivity="false" android:screenOrientation="portrait" android:theme="@style/GalleryActivityTheme"/>
+        <activity android:configChanges="keyboardHidden|orientation|screenLayout|screenSize|smallestScreenSize" android:maxAspectRatio="2.1" android:minAspectRatio="1.6" android:name="com.gallery.editimagesingleselector.ImageSingleSelectorActivity" android:resizeableActivity="false" android:screenOrientation="portrait"/>
+        <activity android:configChanges="keyboardHidden|orientation|screenLayout|screenSize|smallestScreenSize" android:maxAspectRatio="2.1" android:minAspectRatio="1.6" android:name="com.gallery.imageselector.ImageSelectorActivity" android:resizeableActivity="false" android:screenOrientation="portrait"/>
+        <activity android:configChanges="screenLayout|screenSize|smallestScreenSize" android:maxAspectRatio="2.1" android:minAspectRatio="1.6" android:name="com.collage.photolib.collage.PuzzleActivity" android:resizeableActivity="false" android:screenOrientation="portrait" android:theme="@style/GalleryActivityTheme" android:windowSoftInputMode="adjustPan"/>
+        <activity android:configChanges="screenLayout|screenSize|smallestScreenSize" android:maxAspectRatio="2.1" android:minAspectRatio="1.6" android:name="com.photo.blur.BlurActivity" android:resizeableActivity="false" android:screenOrientation="portrait" android:theme="@style/GalleryActivityTheme"/>
+        <activity android:configChanges="screenLayout|screenSize|smallestScreenSize" android:maxAspectRatio="2.1" android:minAspectRatio="1.6" android:name="com.photo.clipboard.ClipboardActivity" android:resizeableActivity="false" android:screenOrientation="portrait" android:theme="@style/GalleryActivityTheme"/>
+        <activity android:configChanges="screenLayout|screenSize|smallestScreenSize" android:maxAspectRatio="2.1" android:minAspectRatio="1.6" android:name="com.photo.clipboard.ClipboardScaleActivity" android:resizeableActivity="false" android:screenOrientation="portrait" android:theme="@style/GalleryActivityTheme"/>
+        <activity android:configChanges="screenLayout|screenSize|smallestScreenSize" android:maxAspectRatio="2.1" android:minAspectRatio="1.6" android:name="com.photo.clipboard.ClipboardShapeActivity" android:resizeableActivity="false" android:screenOrientation="portrait" android:theme="@style/GalleryActivityTheme"/>
+        <activity android:configChanges="screenLayout|screenSize|smallestScreenSize" android:maxAspectRatio="2.1" android:minAspectRatio="1.6" android:name="com.edit.imageeditlibrary.editimage.StickerStoreActivity" android:resizeableActivity="false" android:screenOrientation="portrait"/>
+        <activity android:configChanges="screenLayout|screenSize|smallestScreenSize" android:maxAspectRatio="2.1" android:minAspectRatio="1.6" android:name="com.spiral.SpiralStoreActivity" android:resizeableActivity="false" android:screenOrientation="portrait"/>
+        <activity android:configChanges="screenLayout|screenSize|smallestScreenSize" android:maxAspectRatio="2.1" android:minAspectRatio="1.6" android:name="com.zmagicc.example.blendexposure.BackgroundStoreActivity" android:resizeableActivity="false" android:screenOrientation="portrait"/>
+        <activity android:configChanges="screenLayout|screenSize|smallestScreenSize" android:maxAspectRatio="2.1" android:minAspectRatio="1.6" android:name="com.zmagicc.example.effectlibrary.EffectActivity" android:resizeableActivity="false" android:screenOrientation="portrait"/>
+        <activity android:configChanges="screenLayout|screenSize|smallestScreenSize" android:maxAspectRatio="2.1" android:minAspectRatio="1.6" android:name="com.zmagicc.example.effectlibrary.EffectStoreActivity" android:resizeableActivity="false" android:screenOrientation="portrait"/>
+        <service android:exported="false" android:name="com.feedback.FeedbackGetFeedBackService"/>
+        <provider android:authorities="camera.s.beauty.ggg.fileprovider" android:exported="false" android:grantUriPermissions="true" android:name="androidx.core.content.FileProvider">
+            <meta-data android:name="android.support.FILE_PROVIDER_PATHS" android:resource="@xml/file_paths"/>
+        </provider>
+        <service android:exported="true" android:name="com.magiccamera.zfunction.main.live.OpJobService" android:permission="android.permission.BIND_JOB_SERVICE"/>
+        <activity android:excludeFromRecents="true" android:launchMode="singleInstance" android:name="com.magiccamera.zfunction.main.live.OpActivity" android:resizeableActivity="false" android:theme="@style/OpTheme"/>
+        <receiver android:exported="true" android:name="com.magiccamera.zfunction.main.live.OpReceiver" android:process=":process1">
+            <intent-filter>
+                <action android:name="android.intent.action.ACTION_POWER_CONNECTED"/>
+                <action android:name="android.intent.action.ACTION_POWER_DISCONNECTED"/>
+            </intent-filter>
+        </receiver>
+        <service android:directBootAware="true" android:exported="false" android:name="com.google.mlkit.common.internal.MlKitComponentDiscoveryService">
+            <meta-data android:name="com.google.firebase.components:com.google.mlkit.vision.face.internal.FaceRegistrar" android:value="com.google.firebase.components.ComponentRegistrar"/>
+            <meta-data android:name="com.google.firebase.components:com.google.mlkit.vision.segmentation.internal.SegmentationRegistrar" android:value="com.google.firebase.components.ComponentRegistrar"/>
+            <meta-data android:name="com.google.firebase.components:com.google.mlkit.vision.common.internal.VisionCommonRegistrar" android:value="com.google.firebase.components.ComponentRegistrar"/>
+            <meta-data android:name="com.google.firebase.components:com.google.mlkit.common.internal.CommonComponentRegistrar" android:value="com.google.firebase.components.ComponentRegistrar"/>
+        </service>
+        <activity android:configChanges="keyboardHidden|orientation|screenSize" android:exported="false" android:multiprocess="true" android:name="com.common.code.util.UtilsTransActivity" android:theme="@style/ActivityTranslucent" android:windowSoftInputMode="stateAlwaysHidden"/>
+        <service android:exported="false" android:name="com.common.code.util.MessengerUtils$ServerService">
+            <intent-filter>
+                <action android:name="camera.s.beauty.ggg.messenger"/>
+            </intent-filter>
+        </service>
+        <provider android:authorities="camera.s.beauty.ggg.mlkitinitprovider" android:exported="false" android:initOrder="99" android:name="com.google.mlkit.common.internal.MlKitInitProvider"/>
+        <service android:exported="false" android:name="com.google.android.datatransport.runtime.backends.TransportBackendDiscovery">
+            <meta-data android:name="backend:com.google.android.datatransport.cct.CctBackendFactory" android:value="cct"/>
+        </service>
+        <service android:exported="false" android:name="com.google.android.datatransport.runtime.scheduling.jobscheduling.JobInfoSchedulerService" android:permission="android.permission.BIND_JOB_SERVICE"/>
+        <receiver android:exported="false" android:name="com.google.android.datatransport.runtime.scheduling.jobscheduling.AlarmManagerSchedulerBroadcastReceiver"/>
+        <activity android:exported="false" android:name="com.google.android.gms.common.api.GoogleApiActivity" android:theme="@android:style/Theme.Translucent.NoTitleBar"/>
+        <meta-data android:name="com.google.android.gms.ads.flag.OPTIMIZE_INITIALIZATION" android:value="true"/>
+        <meta-data android:name="com.google.android.gms.ads.flag.OPTIMIZE_AD_LOADING" android:value="true"/>
+        <activity android:autoRemoveFromRecents="true" android:excludeFromRecents="true" android:exported="false" android:launchMode="standard" android:name="com.da.config.activity.AppRecommendActivity" android:screenOrientation="portrait" android:theme="@style/Recommend_Style"/>
+        <activity android:configChanges="keyboard|keyboardHidden|orientation|screenLayout|screenSize|smallestScreenSize|uiMode" android:exported="false" android:name="com.google.android.gms.ads.AdActivity" android:theme="@android:style/Theme.Translucent"/>
+        <provider android:authorities="camera.s.beauty.ggg.mobileadsinitprovider" android:exported="false" android:initOrder="100" android:name="com.google.android.gms.ads.MobileAdsInitProvider"/>
+        <service android:enabled="true" android:exported="false" android:name="com.google.android.gms.ads.AdService"/>
+        <!-- <activity android:configChanges="keyboardHidden|orientation|screenSize" android:exported="false" android:name="com.facebook.ads.AudienceNetworkActivity" android:theme="@android:style/Theme.Translucent.NoTitleBar"/>
+        <provider android:authorities="camera.s.beauty.ggg.AudienceNetworkContentProvider" android:exported="false" android:name="com.facebook.ads.AudienceNetworkContentProvider"/> -->
+        <meta-data android:name="com.google.android.gms.version" android:value="@integer/google_play_services_version"/>
+        <activity android:enabled="false" android:exported="true" android:name="com.xxlaguide.yyguide.HomeReset">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN"/>
+                <category android:name="android.intent.category.HOME"/>
+                <category android:name="android.intent.category.DEFAULT"/>
+            </intent-filter>
+        </activity>
+        <activity android:excludeFromRecents="true" android:exported="false" android:name="com.xxlaguide.yyguide.GuideSetDefaultActivity" android:taskAffinity="" android:theme="@style/GuidePageTransparentTheme"/>
+        <activity android:excludeFromRecents="true" android:exported="false" android:name="com.xxlaguide.yyguide.GuideSetDefaultSelectorActivity" android:theme="@style/GuideSetDefaultSelectorTheme"/>
+        <activity android:excludeFromRecents="true" android:exported="false" android:name="com.xxlaguide.yyguide.BringToFrontActivity" android:taskAffinity="" android:theme="@style/GuideSetDefaultSelectorTheme"/>
+        <provider android:authorities="camera.s.beauty.ggg.com.squareup.picasso" android:exported="false" android:name="com.squareup.picasso.PicassoProvider"/>
+        <provider android:authorities="camera.s.beauty.ggg.androidx-startup" android:exported="false" android:name="androidx.startup.InitializationProvider">
+            <meta-data android:name="androidx.work.WorkManagerInitializer" android:value="androidx.startup"/>
+        </provider>
+        <service android:directBootAware="false" android:enabled="@bool/enable_system_alarm_service_default" android:exported="false" android:name="androidx.work.impl.background.systemalarm.SystemAlarmService"/>
+        <service android:directBootAware="false" android:enabled="@bool/enable_system_job_service_default" android:exported="true" android:name="androidx.work.impl.background.systemjob.SystemJobService" android:permission="android.permission.BIND_JOB_SERVICE"/>
+        <service android:directBootAware="false" android:enabled="@bool/enable_system_foreground_service_default" android:exported="false" android:name="androidx.work.impl.foreground.SystemForegroundService"/>
+        <receiver android:directBootAware="false" android:enabled="true" android:exported="false" android:name="androidx.work.impl.utils.ForceStopRunnable$BroadcastReceiver"/>
+        <receiver android:directBootAware="false" android:enabled="false" android:exported="false" android:name="androidx.work.impl.background.systemalarm.ConstraintProxy$BatteryChargingProxy">
+            <intent-filter>
+                <action android:name="android.intent.action.ACTION_POWER_CONNECTED"/>
+                <action android:name="android.intent.action.ACTION_POWER_DISCONNECTED"/>
+            </intent-filter>
+        </receiver>
+        <receiver android:directBootAware="false" android:enabled="false" android:exported="false" android:name="androidx.work.impl.background.systemalarm.ConstraintProxy$BatteryNotLowProxy">
+            <intent-filter>
+                <action android:name="android.intent.action.BATTERY_OKAY"/>
+                <action android:name="android.intent.action.BATTERY_LOW"/>
+            </intent-filter>
+        </receiver>
+        <receiver android:directBootAware="false" android:enabled="false" android:exported="false" android:name="androidx.work.impl.background.systemalarm.ConstraintProxy$StorageNotLowProxy">
+            <intent-filter>
+                <action android:name="android.intent.action.DEVICE_STORAGE_LOW"/>
+                <action android:name="android.intent.action.DEVICE_STORAGE_OK"/>
+            </intent-filter>
+        </receiver>
+        <receiver android:directBootAware="false" android:enabled="false" android:exported="false" android:name="androidx.work.impl.background.systemalarm.ConstraintProxy$NetworkStateProxy">
+            <intent-filter>
+                <action android:name="android.net.conn.CONNECTIVITY_CHANGE"/>
+            </intent-filter>
+        </receiver>
+        <receiver android:directBootAware="false" android:enabled="false" android:exported="false" android:name="androidx.work.impl.background.systemalarm.RescheduleReceiver">
+            <intent-filter>
+                <action android:name="android.intent.action.BOOT_COMPLETED"/>
+                <action android:name="android.intent.action.TIME_SET"/>
+                <action android:name="android.intent.action.TIMEZONE_CHANGED"/>
+            </intent-filter>
+        </receiver>
+        <receiver android:directBootAware="false" android:enabled="@bool/enable_system_alarm_service_default" android:exported="false" android:name="androidx.work.impl.background.systemalarm.ConstraintProxyUpdateReceiver">
+            <intent-filter>
+                <action android:name="androidx.work.impl.background.systemalarm.UpdateProxies"/>
+            </intent-filter>
+        </receiver>
+        <receiver android:directBootAware="false" android:enabled="true" android:exported="true" android:name="androidx.work.impl.diagnostics.DiagnosticsReceiver" android:permission="android.permission.DUMP">
+            <intent-filter>
+                <action android:name="androidx.work.diagnostics.REQUEST_DIAGNOSTICS"/>
+            </intent-filter>
+        </receiver>
+        <provider android:authorities="camera.s.beauty.ggg.lifecycle-process" android:exported="false" android:multiprocess="true" android:name="androidx.lifecycle.ProcessLifecycleOwnerInitializer"/>
+        <service android:directBootAware="true" android:exported="false" android:name="androidx.room.MultiInstanceInvalidationService"/>
+        <activity android:enabled="false" android:exported="false" android:launchMode="singleInstance" android:name="com.google.android.play.core.missingsplits.PlayCoreMissingSplitsActivity" android:process=":playcore_missing_splits_activity" android:stateNotNeeded="true"/>
+        <activity android:enabled="false" android:exported="false" android:name="com.google.android.play.core.common.PlayCoreDialogWrapperActivity" android:stateNotNeeded="true" android:theme="@style/Theme.PlayCore.Transparent"/>
+        <service android:enabled="false" android:exported="true" android:name="com.google.android.play.core.assetpacks.AssetPackExtractionService"/>
+        <!-- <meta-data android:name="com.android.dynamic.apk.fused.modules" android:value="base"/> -->
+        <!-- <meta-data android:name="com.android.stamp.source" android:value="https://play.google.com/store"/>
+        <meta-data android:name="com.android.stamp.type" android:value="STAMP_TYPE_STANDALONE_APK"/> -->
+        <!-- <meta-data android:name="com.android.vending.splits" android:resource="@xml/splits0"/>
+        <meta-data android:name="com.android.vending.derived.apk.id" android:value="7"/> -->
+    </application>
+</manifest>

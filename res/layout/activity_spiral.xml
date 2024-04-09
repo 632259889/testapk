@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout android:orientation="vertical" android:layout_width="fill_parent" android:layout_height="fill_parent"
+  xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto">
+    <FrameLayout android:id="@id/banner" android:background="@color/top_and_bottom_bar_color" android:layout_width="fill_parent" android:layout_height="@dimen/title_bar_height" android:layout_alignParentTop="true">
+        <ImageView android:layout_gravity="start|center" android:id="@id/back_btn" android:layout_width="25.0dip" android:layout_height="25.0dip" android:src="@drawable/ic_activity_back" android:rotationY="@integer/rotation" android:layout_marginStart="8.0dip" />
+        <TextView android:textSize="16.0dip" android:textColor="@color/accent_color" android:gravity="center" android:layout_gravity="end|center" android:id="@id/save_btn" android:layout_width="wrap_content" android:layout_height="fill_parent" android:text="@string/save" android:layout_marginEnd="16.0dip" />
+        <ImageView android:layout_gravity="end|center|top" android:id="@id/prime_icon" android:visibility="gone" android:layout_width="20.0dip" android:layout_height="20.0dip" android:layout_marginTop="8.0dip" android:src="@drawable/ic_sticker_prime" android:layout_marginEnd="12.0dip" />
+    </FrameLayout>
+    <FrameLayout android:id="@id/image_layout" android:background="#ff000000" android:layout_width="fill_parent" android:layout_height="0.0dip" android:layout_weight="1.0">
+        <com.base.common.imagezoom.ImageViewTouch android:layout_gravity="center" android:id="@id/main_back_image" android:layout_width="fill_parent" android:layout_height="fill_parent" />
+        <com.spiral.SpiralBackgroundView android:layout_gravity="center" android:id="@id/spiral_back" android:layout_width="fill_parent" android:layout_height="fill_parent" />
+        <com.base.common.imagezoom.ImageViewTouch android:layout_gravity="center" android:id="@id/main_front_image" android:layout_width="fill_parent" android:layout_height="fill_parent" />
+        <com.spiral.SpiralForegroundView android:layout_gravity="center" android:id="@id/spiral_front" android:layout_width="fill_parent" android:layout_height="fill_parent" />
+        <com.base.common.loading.RotateLoading android:layout_gravity="center" android:id="@id/loading_image" android:padding="2.0dip" android:visibility="gone" android:layout_width="60.0dip" android:layout_height="60.0dip" app:loading_color="@color/accent_color" app:loading_speed="12" app:loading_width="2.0dip" />
+    </FrameLayout>
+    <FrameLayout android:background="@color/top_and_bottom_bar_color" android:layout_width="fill_parent" android:layout_height="45.0dip">
+        <ImageView android:layout_gravity="start|center" android:id="@id/btn_adjust" android:layout_width="30.0dip" android:layout_height="30.0dip" android:src="@drawable/ic_spiral_adjust" android:layout_marginStart="10.0dip" />
+        <ImageView android:layout_gravity="end|center" android:id="@id/btn_cutout" android:layout_width="30.0dip" android:layout_height="30.0dip" android:src="@drawable/ic_cutout_icon" android:layout_marginEnd="10.0dip" />
+    </FrameLayout>
+    <FrameLayout android:background="@color/top_and_bottom_bar_color" android:layout_width="fill_parent" android:layout_height="134.0dip">
+        <LinearLayout android:gravity="center" android:orientation="vertical" android:id="@id/resource_layout" android:layout_width="fill_parent" android:layout_height="fill_parent">
+            <androidx.recyclerview.widget.RecyclerView android:id="@id/resource_recycler" android:scrollbars="none" android:layout_width="wrap_content" android:layout_height="wrap_content" android:overScrollMode="never" />
+        </LinearLayout>
+        <LinearLayout android:orientation="vertical" android:id="@id/adjust_layout" android:background="@color/top_and_bottom_bar_color" android:visibility="gone" android:layout_width="fill_parent" android:layout_height="fill_parent">
+            <LinearLayout android:orientation="vertical" android:layout_width="fill_parent" android:layout_height="wrap_content">
+                <LinearLayout android:gravity="center" android:layout_gravity="center" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginTop="15.0dip">
+                    <TextView android:textSize="12.0dip" android:textColor="#ffffffff" android:layout_gravity="center" android:layout_width="60.0dip" android:layout_height="wrap_content" android:text="Hue" android:layout_marginStart="15.0dip" />
+                    <com.spiral.seekbar.RangeSeekBar android:id="@id/hue_seekBar" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginStart="17.0dip" android:layout_marginEnd="17.0dip" app:rsb_gravity="center" app:rsb_indicator_height="0.0dip" app:rsb_max="360.0" app:rsb_min="0.0" app:rsb_mode="single" app:rsb_progress_drawable="@drawable/progress_hue" app:rsb_progress_drawable_default="@drawable/progress_hue" app:rsb_thumb_height="15.0dip" app:rsb_thumb_scale_ratio="1.0" app:rsb_thumb_width="15.0dip" />
+                </LinearLayout>
+                <LinearLayout android:gravity="center" android:layout_gravity="center" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginTop="25.0dip">
+                    <TextView android:textSize="12.0dip" android:textColor="#ffffffff" android:layout_gravity="center" android:layout_width="60.0dip" android:layout_height="wrap_content" android:text="@string/saturation" android:layout_marginStart="15.0dip" />
+                    <SeekBar android:layout_gravity="center" android:id="@id/saturation_seekbar" android:layout_width="fill_parent" android:layout_height="wrap_content" android:maxHeight="2.0dip" android:max="100" android:progress="100" android:progressDrawable="@drawable/layerlist_drawable_seekbar_progress" android:minHeight="2.0dip" android:thumb="@drawable/selector_seekbar_drawable_thumb" android:layout_marginStart="11.0dip" android:layout_marginEnd="11.0dip" />
+                </LinearLayout>
+            </LinearLayout>
+        </LinearLayout>
+        <com.base.common.loading.RotateLoading android:layout_gravity="center" android:id="@id/loading_thumb" android:padding="2.0dip" android:visibility="gone" android:layout_width="60.0dip" android:layout_height="60.0dip" app:loading_color="@color/accent_color" app:loading_speed="12" app:loading_width="2.0dip" />
+        <TextView android:textSize="12.0dip" android:textColor="#ffffffff" android:layout_gravity="center" android:id="@id/loading_thumb_progress" android:visibility="gone" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="0%" />
+    </FrameLayout>
+</LinearLayout>

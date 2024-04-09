@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout android:orientation="vertical" android:layout_width="fill_parent" android:layout_height="fill_parent"
+  xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto">
+    <LinearLayout android:orientation="horizontal" android:id="@id/ll_top" android:background="@color/top_and_bottom_bar_color" android:layout_width="fill_parent" android:layout_height="@dimen/title_bar_height">
+        <ImageView android:layout_gravity="start|center" android:id="@id/iv_blur_back" android:layout_width="25.0dip" android:layout_height="25.0dip" android:src="@drawable/ic_activity_back" android:layout_marginStart="8.0dip" />
+        <TextView android:textSize="20.0dip" android:gravity="center" android:layout_gravity="center" android:layout_width="fill_parent" android:layout_height="fill_parent" android:layout_weight="1.0" />
+        <TextView android:textSize="16.0dip" android:textColor="@color/accent_color" android:gravity="center" android:layout_gravity="center|right" android:id="@id/tv_blur_save" android:layout_width="wrap_content" android:layout_height="fill_parent" android:text="@string/save" android:layout_marginEnd="16.0dip" />
+    </LinearLayout>
+    <FrameLayout android:id="@id/work_space" android:layout_width="fill_parent" android:layout_height="0.0dip" android:layout_weight="1.0">
+        <com.color.splash.colorsplash.view.BlurView android:id="@id/blur_view" android:background="@color/middle_view_bg_color" android:layout_width="fill_parent" android:layout_height="fill_parent" />
+        <com.base.common.loading.RotateLoading android:layout_gravity="center" android:id="@id/loading_image" android:padding="2.0dip" android:visibility="gone" android:layout_width="60.0dip" android:layout_height="60.0dip" app:loading_color="@color/accent_color" app:loading_speed="12" app:loading_width="2.0dip" />
+    </FrameLayout>
+    <LinearLayout android:gravity="center" android:orientation="vertical" android:background="@color/second_bottom_bar_color" android:layout_width="fill_parent" android:layout_height="wrap_content">
+        <LinearLayout android:gravity="center" android:orientation="horizontal" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginTop="4.0dip">
+            <ImageView android:layout_width="30.0dip" android:layout_height="30.0dip" android:layout_marginLeft="40.0dip" android:src="@drawable/ic_shade" />
+            <FrameLayout android:id="@id/sb_shade_touch_layout" android:layout_width="fill_parent" android:layout_height="25.0dip" android:layout_marginLeft="6.0dip" android:layout_marginRight="40.0dip">
+                <SeekBar android:layout_gravity="center" android:id="@id/sb_shade" android:layout_width="fill_parent" android:layout_height="wrap_content" android:maxHeight="2.0dip" android:max="25" android:progressDrawable="@drawable/layerlist_drawable_seekbar_progress" android:minHeight="2.0dip" android:thumb="@drawable/selector_seekbar_drawable_thumb" />
+            </FrameLayout>
+        </LinearLayout>
+        <LinearLayout android:gravity="center" android:orientation="horizontal" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginTop="4.0dip" android:layout_marginBottom="4.0dip">
+            <ImageView android:layout_width="30.0dip" android:layout_height="30.0dip" android:layout_marginLeft="40.0dip" android:src="@drawable/ic_blur" />
+            <FrameLayout android:id="@id/sb_blur_touch_layout" android:layout_width="fill_parent" android:layout_height="25.0dip" android:layout_marginLeft="6.0dip" android:layout_marginRight="40.0dip">
+                <SeekBar android:layout_gravity="center" android:id="@id/sb_blur" android:layout_width="fill_parent" android:layout_height="wrap_content" android:maxHeight="2.0dip" android:max="100" android:progressDrawable="@drawable/layerlist_drawable_seekbar_progress" android:minHeight="2.0dip" android:thumb="@drawable/selector_seekbar_drawable_thumb" />
+            </FrameLayout>
+        </LinearLayout>
+    </LinearLayout>
+    <androidx.recyclerview.widget.RecyclerView android:layout_gravity="center" android:id="@id/rv_shape" android:background="@color/top_and_bottom_bar_color" android:scrollbars="none" android:fadingEdge="none" android:layout_width="wrap_content" android:layout_height="88.0dip" android:overScrollMode="never" />
+</LinearLayout>

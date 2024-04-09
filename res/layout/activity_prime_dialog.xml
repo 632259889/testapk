@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout android:background="#80000000" android:layout_width="fill_parent" android:layout_height="fill_parent" android:layoutDirection="ltr"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <LinearLayout android:layout_gravity="center" android:orientation="vertical" android:background="@drawable/ic_prime_dialog_bg" android:layout_width="330.0dip" android:layout_height="wrap_content">
+        <TextView android:textSize="25.0dip" android:textColor="#ff505050" android:layout_gravity="start" android:id="@id/detail_title" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="180.0dip" android:text="Upgrade to remove Ad" android:layout_marginStart="30.0dip" />
+        <TextView android:textSize="15.0dip" android:textColor="#ff666666" android:layout_gravity="center_horizontal" android:id="@id/detail_text" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="12.0dip" android:text="To keep this app developing, we popup some Ad,  you can upgrade to VIP to remove Ad FOREVER, thanks for your support!" android:lineSpacingExtra="6.0dip" android:layout_marginStart="30.0dip" android:layout_marginEnd="30.0dip" />
+        <LinearLayout android:gravity="center_vertical" android:orientation="horizontal" android:id="@id/check" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginTop="10.0dip" android:layout_marginStart="30.0dip" android:layout_marginEnd="30.0dip">
+            <ImageView android:id="@id/check_icon" android:layout_width="20.0dip" android:layout_height="20.0dip" android:src="@drawable/ic_prime_dialog_uncheck" />
+            <TextView android:textSize="12.0dip" android:textColor="#ff808080" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="Don't remind me again" android:layout_marginStart="8.0dip" />
+        </LinearLayout>
+        <LinearLayout android:gravity="center_horizontal" android:orientation="vertical" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginTop="20.0dip" android:layout_marginBottom="16.0dip">
+            <TextView android:textSize="15.0dip" android:textColor="#ffffffff" android:gravity="center" android:id="@id/go_vip" android:background="@drawable/ic_s10_rate_dialog_btn" android:layout_width="220.0dip" android:layout_height="45.0dip" android:text="Upgrade to VIP" />
+            <TextView android:textSize="15.0dip" android:textColor="#ff8e8e8e" android:gravity="center" android:id="@id/later" android:background="@null" android:layout_width="220.0dip" android:layout_height="20.0dip" android:layout_marginTop="16.0dip" android:text="Later" />
+        </LinearLayout>
+    </LinearLayout>
+</FrameLayout>

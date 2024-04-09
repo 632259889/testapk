@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout android:layout_width="60.0dip" android:layout_height="60.0dip" android:layout_marginTop="3.0dip" android:layout_marginBottom="3.0dip" android:layout_marginStart="4.0dip" android:layout_marginEnd="4.0dip"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <ImageView android:layout_gravity="center" android:id="@id/icon" android:layout_width="59.0dip" android:layout_height="59.0dip" android:scaleType="centerCrop" />
+    <View android:layout_gravity="center" android:background="@drawable/item_image_bg" android:layout_width="59.0dip" android:layout_height="59.0dip" />
+    <View android:layout_gravity="center" android:id="@id/icon_select" android:background="@drawable/item_select_bg" android:visibility="gone" android:layout_width="60.0dip" android:layout_height="60.0dip" />
+    <ImageView android:layout_gravity="end|center|top" android:id="@id/prime_icon" android:visibility="gone" android:layout_width="16.0dip" android:layout_height="16.0dip" android:layout_marginTop="2.0dip" android:src="@drawable/ic_prime_tab" android:layout_marginEnd="2.0dip" />
+</FrameLayout>

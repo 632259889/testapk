@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.collage.photolib.collage.RatioFrameLayout android:layout_gravity="center" android:id="@id/fl_workplace" android:layout_width="fill_parent" android:layout_height="fill_parent"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <com.collage.photolib.collage.view.SpliceLayout android:id="@id/splice_workplace" android:visibility="gone" android:layout_width="fill_parent" android:layout_height="fill_parent">
+        <LinearLayout android:layout_gravity="center" android:orientation="vertical" android:id="@id/splice_v_workplace" android:layout_width="wrap_content" android:layout_height="wrap_content">
+            <com.collage.photolib.collage.view.SpliceItemView1 android:layout_gravity="center" android:id="@id/splice_item_v_1" android:visibility="gone" android:layout_width="wrap_content" android:layout_height="wrap_content" />
+            <com.collage.photolib.collage.view.SpliceItemView2 android:layout_gravity="center" android:id="@id/splice_item_v_2" android:visibility="gone" android:layout_width="wrap_content" android:layout_height="wrap_content" />
+            <com.collage.photolib.collage.view.SpliceItemView3 android:layout_gravity="center" android:id="@id/splice_item_v_3" android:visibility="gone" android:layout_width="wrap_content" android:layout_height="wrap_content" />
+            <com.collage.photolib.collage.view.SpliceItemView4 android:layout_gravity="center" android:id="@id/splice_item_v_4" android:visibility="gone" android:layout_width="wrap_content" android:layout_height="wrap_content" />
+            <com.collage.photolib.collage.view.SpliceItemView5 android:layout_gravity="center" android:id="@id/splice_item_v_5" android:visibility="gone" android:layout_width="wrap_content" android:layout_height="wrap_content" />
+            <com.collage.photolib.collage.view.SpliceItemView6 android:layout_gravity="center" android:id="@id/splice_item_v_6" android:visibility="gone" android:layout_width="wrap_content" android:layout_height="wrap_content" />
+            <com.collage.photolib.collage.view.SpliceItemView7 android:layout_gravity="center" android:id="@id/splice_item_v_7" android:visibility="gone" android:layout_width="wrap_content" android:layout_height="wrap_content" />
+            <com.collage.photolib.collage.view.SpliceItemView8 android:layout_gravity="center" android:id="@id/splice_item_v_8" android:visibility="gone" android:layout_width="wrap_content" android:layout_height="wrap_content" />
+            <com.collage.photolib.collage.view.SpliceItemView9 android:layout_gravity="center" android:id="@id/splice_item_v_9" android:visibility="gone" android:layout_width="wrap_content" android:layout_height="wrap_content" />
+        </LinearLayout>
+        <LinearLayout android:layout_gravity="center" android:orientation="horizontal" android:id="@id/splice_h_workplace" android:visibility="gone" android:layout_width="wrap_content" android:layout_height="wrap_content">
+            <com.collage.photolib.collage.view.SpliceItemView1 android:layout_gravity="center" android:id="@id/splice_item_h_1" android:visibility="gone" android:layout_width="wrap_content" android:layout_height="wrap_content" />
+            <com.collage.photolib.collage.view.SpliceItemView2 android:layout_gravity="center" android:id="@id/splice_item_h_2" android:visibility="gone" android:layout_width="wrap_content" android:layout_height="wrap_content" />
+            <com.collage.photolib.collage.view.SpliceItemView3 android:layout_gravity="center" android:id="@id/splice_item_h_3" android:visibility="gone" android:layout_width="wrap_content" android:layout_height="wrap_content" />
+            <com.collage.photolib.collage.view.SpliceItemView4 android:layout_gravity="center" android:id="@id/splice_item_h_4" android:visibility="gone" android:layout_width="wrap_content" android:layout_height="wrap_content" />
+            <com.collage.photolib.collage.view.SpliceItemView5 android:layout_gravity="center" android:id="@id/splice_item_h_5" android:visibility="gone" android:layout_width="wrap_content" android:layout_height="wrap_content" />
+            <com.collage.photolib.collage.view.SpliceItemView6 android:layout_gravity="center" android:id="@id/splice_item_h_6" android:visibility="gone" android:layout_width="wrap_content" android:layout_height="wrap_content" />
+            <com.collage.photolib.collage.view.SpliceItemView7 android:layout_gravity="center" android:id="@id/splice_item_h_7" android:visibility="gone" android:layout_width="wrap_content" android:layout_height="wrap_content" />
+            <com.collage.photolib.collage.view.SpliceItemView8 android:layout_gravity="center" android:id="@id/splice_item_h_8" android:visibility="gone" android:layout_width="wrap_content" android:layout_height="wrap_content" />
+            <com.collage.photolib.collage.view.SpliceItemView9 android:layout_gravity="center" android:id="@id/splice_item_h_9" android:visibility="gone" android:layout_width="wrap_content" android:layout_height="wrap_content" />
+        </LinearLayout>
+    </com.collage.photolib.collage.view.SpliceLayout>
+    <FrameLayout android:layout_gravity="center" android:id="@id/puzzle_workplace" android:layout_width="fill_parent" android:layout_height="fill_parent">
+        <com.collage.photolib.FreePuzzle.FreePuzzleView android:id="@id/free_puzzle_view" android:background="@android:color/white" android:visibility="gone" android:layout_width="fill_parent" android:layout_height="fill_parent" />
+        <com.collage.photolib.puzzle.PuzzleView android:layout_gravity="center" android:id="@id/puzzle_view" android:background="@android:color/white" android:visibility="gone" android:layout_width="fill_parent" android:layout_height="fill_parent" />
+        <com.collage.photolib.FreePath.FreePathView android:id="@id/free_path_view" android:background="@android:color/white" android:visibility="gone" android:layout_width="fill_parent" android:layout_height="fill_parent" />
+    </FrameLayout>
+    <com.collage.photolib.collage.view.TextStickerView android:layout_gravity="center" android:id="@id/textStickerView_collage" android:visibility="gone" android:layout_width="fill_parent" android:layout_height="fill_parent" />
+    <com.collage.photolib.collage.view.StickerView android:layout_gravity="center" android:id="@id/sticker_panel_collage" android:visibility="gone" android:layout_width="fill_parent" android:layout_height="fill_parent" />
+    <com.edit.imageeditlibrary.editimage.view.tag.TagStickerView android:layout_gravity="center" android:id="@id/tag_sticker_collage" android:visibility="gone" android:layout_width="fill_parent" android:layout_height="fill_parent" />
+    <com.cutout.gesture.views.GestureFrameLayout android:layout_gravity="center" android:id="@id/doodle_gestureView" android:visibility="gone" android:layout_width="fill_parent" android:layout_height="fill_parent">
+        <com.edit.imageeditlibrary.editimage.view.DoodleView android:layout_gravity="center" android:id="@id/custom_paint_view_collage" android:visibility="gone" android:layout_width="fill_parent" android:layout_height="fill_parent" />
+    </com.cutout.gesture.views.GestureFrameLayout>
+</com.collage.photolib.collage.RatioFrameLayout>

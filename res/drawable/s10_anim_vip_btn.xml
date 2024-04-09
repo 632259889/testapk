@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<animation-list android:oneshot="false"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <item android:duration="100" android:drawable="@drawable/join_vip_00000" />
+    <item android:duration="100" android:drawable="@drawable/join_vip_00001" />
+    <item android:duration="100" android:drawable="@drawable/join_vip_00002" />
+    <item android:duration="100" android:drawable="@drawable/join_vip_00003" />
+    <item android:duration="100" android:drawable="@drawable/join_vip_00004" />
+    <item android:duration="100" android:drawable="@drawable/join_vip_00005" />
+    <item android:duration="100" android:drawable="@drawable/join_vip_00006" />
+    <item android:duration="100" android:drawable="@drawable/join_vip_00007" />
+    <item android:duration="100" android:drawable="@drawable/join_vip_00008" />
+    <item android:duration="100" android:drawable="@drawable/join_vip_00009" />
+    <item android:duration="100" android:drawable="@drawable/join_vip_00010" />
+    <item android:duration="100" android:drawable="@drawable/join_vip_00011" />
+</animation-list>

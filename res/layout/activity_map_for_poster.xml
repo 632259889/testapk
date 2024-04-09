@@ -1,0 +1,123 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout android:layout_width="fill_parent" android:layout_height="fill_parent"
+  xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto">
+    <LinearLayout android:id="@id/Tool" android:background="#ff0b0b0b" android:layout_width="fill_parent" android:layout_height="55.0dip" android:layout_alignParentTop="true" android:layout_alignParentStart="true">
+        <ImageView android:layout_gravity="start|center" android:id="@id/back_btn" android:layout_width="25.0dip" android:layout_height="25.0dip" android:src="@drawable/ic_activity_back" android:layout_marginStart="8.0dip" />
+    </LinearLayout>
+    <com.doodle.gesture.views.GestureFrameLayout android:layout_gravity="center" android:id="@id/myViewL" android:background="#ff3c3c3c" android:layout_width="fill_parent" android:layout_height="fill_parent" android:layout_above="@id/layout" android:layout_below="@id/Tool">
+        <com.zmagicc.example.doodle.MyView android:layout_gravity="center" android:id="@id/MyView" android:layout_width="fill_parent" android:layout_height="fill_parent" />
+    </com.doodle.gesture.views.GestureFrameLayout>
+    <LinearLayout android:orientation="vertical" android:id="@id/sideLL" android:background="#80000000" android:paddingLeft="11.0dip" android:paddingRight="11.0dip" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_above="@id/layout">
+        <RelativeLayout android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginTop="5.0dip">
+            <ImageView android:id="@id/IvUndo" android:layout_width="30.0dip" android:layout_height="30.0dip" android:src="@drawable/doodle_undo_inactive" />
+            <ImageView android:id="@id/IvRedo" android:layout_width="30.0dip" android:layout_height="30.0dip" android:layout_marginLeft="8.0dip" android:src="@drawable/doodle_redo_inactive" android:layout_toRightOf="@id/IvUndo" />
+            <ImageView android:id="@id/IvPaint" android:layout_width="30.0dip" android:layout_height="30.0dip" android:src="@drawable/ic_doodle_paint_selected" android:layout_toLeftOf="@id/IvEraser" />
+            <ImageView android:id="@id/IvEraser" android:layout_width="30.0dip" android:layout_height="30.0dip" android:layout_marginLeft="5.0dip" android:src="@drawable/ic_doodle_eraser_normal" android:layout_alignParentRight="true" />
+        </RelativeLayout>
+        <LinearLayout android:orientation="vertical" android:id="@id/SeekbarL" android:visibility="gone" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginTop="5.0dip" android:layout_marginStart="4.0dip">
+            <LinearLayout android:gravity="center_vertical" android:orientation="horizontal" android:id="@id/PaintHardLL" android:visibility="visible" android:layout_width="fill_parent" android:layout_height="wrap_content">
+                <TextView android:textSize="12.0dip" android:textColor="#ffffffff" android:gravity="start|center" android:layout_gravity="start|center" android:layout_width="85.0dip" android:layout_height="wrap_content" android:text="Hardness" />
+                <SeekBar android:id="@id/SeekbarPaintHard" android:layout_width="fill_parent" android:layout_height="wrap_content" android:maxHeight="2.0dip" android:max="99" android:progress="99" android:progressDrawable="@drawable/layerlist_drawable_seekbar_progress" android:minHeight="2.0dip" android:thumb="@drawable/selector_seekbar_drawable_thumb" android:layout_weight="1.0" />
+                <ImageView android:layout_gravity="center_vertical" android:visibility="invisible" android:layout_width="30.0dip" android:layout_height="30.0dip" android:src="@drawable/ic_doodle_up" />
+            </LinearLayout>
+            <LinearLayout android:gravity="center_vertical" android:orientation="horizontal" android:layout_width="fill_parent" android:layout_height="wrap_content">
+                <TextView android:textSize="12.0dip" android:textColor="#ffffffff" android:gravity="start|center" android:layout_gravity="start|center" android:layout_width="85.0dip" android:layout_height="wrap_content" android:text="Transparency" />
+                <SeekBar android:id="@id/SeekbarPaintAlpha" android:layout_width="fill_parent" android:layout_height="wrap_content" android:maxHeight="2.0dip" android:max="255" android:progress="255" android:progressDrawable="@drawable/layerlist_drawable_seekbar_progress" android:minHeight="2.0dip" android:thumb="@drawable/selector_seekbar_drawable_thumb" android:layout_weight="1.0" />
+                <ImageView android:layout_gravity="center_vertical" android:visibility="invisible" android:layout_width="30.0dip" android:layout_height="30.0dip" android:src="@drawable/ic_doodle_up" />
+            </LinearLayout>
+        </LinearLayout>
+        <LinearLayout android:gravity="center_vertical" android:orientation="horizontal" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginStart="4.0dip">
+            <TextView android:textSize="12.0dip" android:textColor="#ffffffff" android:gravity="start|center" android:layout_gravity="start|center" android:layout_width="85.0dip" android:layout_height="wrap_content" android:text="Size" />
+            <SeekBar android:id="@id/SeekbarPaintSize" android:layout_width="fill_parent" android:layout_height="wrap_content" android:maxHeight="2.0dip" android:max="300" android:progress="40" android:progressDrawable="@drawable/layerlist_drawable_seekbar_progress" android:minHeight="2.0dip" android:thumb="@drawable/selector_seekbar_drawable_thumb" android:layout_weight="1.0" />
+            <ImageView android:layout_gravity="center_vertical" android:id="@id/IvOpen" android:layout_width="30.0dip" android:layout_height="30.0dip" android:src="@drawable/ic_doodle_up" />
+        </LinearLayout>
+    </LinearLayout>
+    <LinearLayout android:gravity="center" android:orientation="vertical" android:id="@id/layout" android:background="#ff0b0b0b" android:layout_width="fill_parent" android:layout_height="110.0dip" android:layout_above="@id/Rl">
+        <androidx.recyclerview.widget.RecyclerView android:id="@id/RvColorBtn" android:scrollbars="none" android:layout_width="fill_parent" android:layout_height="wrap_content" android:overScrollMode="never" android:paddingStart="6.0dip" android:paddingEnd="6.0dip" />
+        <HorizontalScrollView android:layout_gravity="center_vertical" android:id="@id/HSL1" android:scrollbars="none" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginTop="10.0dip" android:overScrollMode="never">
+            <LinearLayout android:layout_gravity="center_vertical" android:layout_width="fill_parent" android:layout_height="wrap_content">
+                <androidx.cardview.widget.CardView android:layout_gravity="center" android:layout_width="40.0dip" android:layout_height="40.0dip" android:layout_marginStart="6.0dip" app:cardCornerRadius="6.0dip">
+                    <ImageView android:id="@id/P1Btn" android:layout_width="40.0dip" android:layout_height="40.0dip" android:src="@drawable/brush_01" />
+                    <ImageView android:id="@id/P1BtnBG" android:background="@drawable/bg_image_green" android:layout_width="40.0dip" android:layout_height="40.0dip" />
+                </androidx.cardview.widget.CardView>
+                <androidx.cardview.widget.CardView android:layout_gravity="center" android:layout_width="40.0dip" android:layout_height="40.0dip" android:layout_marginStart="10.0dip" app:cardCornerRadius="6.0dip">
+                    <ImageView android:id="@id/P3Btn" android:layout_width="40.0dip" android:layout_height="40.0dip" android:src="@drawable/brush_02" />
+                    <ImageView android:id="@id/P3BtnBG" android:background="@drawable/bg_image_green" android:visibility="gone" android:layout_width="40.0dip" android:layout_height="40.0dip" />
+                    <ImageView android:layout_gravity="end|center|top" android:id="@id/P3Btn_prime_icon" android:visibility="gone" android:layout_width="16.0dip" android:layout_height="16.0dip" android:layout_marginTop="2.0dip" android:src="@drawable/ic_prime_tab" android:layout_marginEnd="2.0dip" />
+                </androidx.cardview.widget.CardView>
+                <androidx.cardview.widget.CardView android:layout_gravity="center" android:layout_width="40.0dip" android:layout_height="40.0dip" android:layout_marginStart="10.0dip" app:cardCornerRadius="6.0dip">
+                    <ImageView android:id="@id/P4Btn" android:layout_width="40.0dip" android:layout_height="40.0dip" android:src="@drawable/brush_04" />
+                    <ImageView android:id="@id/P4BtnBG" android:background="@drawable/bg_image_green" android:visibility="gone" android:layout_width="40.0dip" android:layout_height="40.0dip" />
+                    <ImageView android:layout_gravity="end|center|top" android:id="@id/P4Btn_prime_icon" android:visibility="gone" android:layout_width="16.0dip" android:layout_height="16.0dip" android:layout_marginTop="2.0dip" android:src="@drawable/ic_prime_tab" android:layout_marginEnd="2.0dip" />
+                </androidx.cardview.widget.CardView>
+                <androidx.cardview.widget.CardView android:layout_gravity="center" android:layout_width="40.0dip" android:layout_height="40.0dip" android:layout_marginStart="10.0dip" app:cardCornerRadius="6.0dip">
+                    <ImageView android:id="@id/P6Btn" android:layout_width="40.0dip" android:layout_height="40.0dip" android:src="@drawable/brush_03" />
+                    <ImageView android:id="@id/P6BtnBG" android:background="@drawable/bg_image_green" android:visibility="gone" android:layout_width="40.0dip" android:layout_height="40.0dip" />
+                    <ImageView android:layout_gravity="end|center|top" android:id="@id/P6Btn_prime_icon" android:visibility="gone" android:layout_width="16.0dip" android:layout_height="16.0dip" android:layout_marginTop="2.0dip" android:src="@drawable/ic_prime_tab" android:layout_marginEnd="2.0dip" />
+                </androidx.cardview.widget.CardView>
+                <androidx.cardview.widget.CardView android:layout_gravity="center" android:layout_width="40.0dip" android:layout_height="40.0dip" android:layout_marginStart="10.0dip" app:cardCornerRadius="6.0dip">
+                    <ImageView android:id="@id/P5Btn" android:layout_width="40.0dip" android:layout_height="40.0dip" android:src="@drawable/brush_05" />
+                    <ImageView android:id="@id/P5BtnBG" android:background="@drawable/bg_image_green" android:visibility="gone" android:layout_width="40.0dip" android:layout_height="40.0dip" />
+                    <ImageView android:layout_gravity="end|center|top" android:id="@id/P5Btn_prime_icon" android:visibility="gone" android:layout_width="16.0dip" android:layout_height="16.0dip" android:layout_marginTop="2.0dip" android:src="@drawable/ic_prime_tab" android:layout_marginEnd="2.0dip" />
+                </androidx.cardview.widget.CardView>
+                <androidx.cardview.widget.CardView android:layout_gravity="center" android:layout_width="40.0dip" android:layout_height="40.0dip" android:layout_marginStart="10.0dip" app:cardCornerRadius="6.0dip">
+                    <ImageView android:id="@id/P7Btn" android:layout_width="40.0dip" android:layout_height="40.0dip" android:src="@drawable/brush_06" />
+                    <ImageView android:id="@id/P7BtnBG" android:background="@drawable/bg_image_green" android:visibility="gone" android:layout_width="40.0dip" android:layout_height="40.0dip" />
+                    <ImageView android:layout_gravity="end|center|top" android:id="@id/P7Btn_prime_icon" android:visibility="gone" android:layout_width="16.0dip" android:layout_height="16.0dip" android:layout_marginTop="2.0dip" android:src="@drawable/ic_prime_tab" android:layout_marginEnd="2.0dip" />
+                </androidx.cardview.widget.CardView>
+                <androidx.cardview.widget.CardView android:layout_gravity="center" android:layout_width="40.0dip" android:layout_height="40.0dip" android:layout_marginStart="10.0dip" app:cardCornerRadius="6.0dip">
+                    <ImageView android:id="@id/P8Btn" android:layout_width="40.0dip" android:layout_height="40.0dip" android:src="@drawable/brush_07" />
+                    <ImageView android:id="@id/P8BtnBG" android:background="@drawable/bg_image_green" android:visibility="gone" android:layout_width="40.0dip" android:layout_height="40.0dip" />
+                    <ImageView android:layout_gravity="end|center|top" android:id="@id/P8Btn_prime_icon" android:visibility="gone" android:layout_width="16.0dip" android:layout_height="16.0dip" android:layout_marginTop="2.0dip" android:src="@drawable/ic_prime_tab" android:layout_marginEnd="2.0dip" />
+                </androidx.cardview.widget.CardView>
+                <androidx.cardview.widget.CardView android:layout_gravity="center" android:layout_width="40.0dip" android:layout_height="40.0dip" android:layout_marginStart="10.0dip" app:cardCornerRadius="6.0dip">
+                    <ImageView android:id="@id/P9Btn" android:layout_width="40.0dip" android:layout_height="40.0dip" android:src="@drawable/brush_08" />
+                    <ImageView android:id="@id/P9BtnBG" android:background="@drawable/bg_image_green" android:visibility="gone" android:layout_width="40.0dip" android:layout_height="40.0dip" />
+                    <ImageView android:layout_gravity="end|center|top" android:id="@id/P9Btn_prime_icon" android:visibility="gone" android:layout_width="16.0dip" android:layout_height="16.0dip" android:layout_marginTop="2.0dip" android:src="@drawable/ic_prime_tab" android:layout_marginEnd="2.0dip" />
+                </androidx.cardview.widget.CardView>
+                <androidx.cardview.widget.CardView android:layout_gravity="center" android:layout_width="40.0dip" android:layout_height="40.0dip" android:layout_marginStart="10.0dip" app:cardCornerRadius="6.0dip">
+                    <ImageView android:id="@id/P10Btn" android:layout_width="40.0dip" android:layout_height="40.0dip" android:src="@drawable/brush_09" />
+                    <ImageView android:id="@id/P10BtnBG" android:background="@drawable/bg_image_green" android:visibility="gone" android:layout_width="40.0dip" android:layout_height="40.0dip" />
+                    <ImageView android:layout_gravity="end|center|top" android:id="@id/P10Btn_prime_icon" android:visibility="gone" android:layout_width="16.0dip" android:layout_height="16.0dip" android:layout_marginTop="2.0dip" android:src="@drawable/ic_prime_tab" android:layout_marginEnd="2.0dip" />
+                </androidx.cardview.widget.CardView>
+                <androidx.cardview.widget.CardView android:layout_gravity="center" android:layout_width="40.0dip" android:layout_height="40.0dip" android:layout_marginStart="10.0dip" app:cardCornerRadius="6.0dip">
+                    <ImageView android:id="@id/P11Btn" android:layout_width="40.0dip" android:layout_height="40.0dip" android:src="@drawable/brush_10" />
+                    <ImageView android:id="@id/P11BtnBG" android:background="@drawable/bg_image_green" android:visibility="gone" android:layout_width="40.0dip" android:layout_height="40.0dip" />
+                    <ImageView android:layout_gravity="end|center|top" android:id="@id/P11Btn_prime_icon" android:visibility="gone" android:layout_width="16.0dip" android:layout_height="16.0dip" android:layout_marginTop="2.0dip" android:src="@drawable/ic_prime_tab" android:layout_marginEnd="2.0dip" />
+                </androidx.cardview.widget.CardView>
+                <androidx.cardview.widget.CardView android:layout_gravity="center" android:layout_width="40.0dip" android:layout_height="40.0dip" android:layout_marginStart="10.0dip" app:cardCornerRadius="6.0dip">
+                    <ImageView android:id="@id/P12Btn" android:layout_width="40.0dip" android:layout_height="40.0dip" android:src="@drawable/brush_11" />
+                    <ImageView android:id="@id/P12BtnBG" android:background="@drawable/bg_image_green" android:visibility="gone" android:layout_width="40.0dip" android:layout_height="40.0dip" />
+                    <ImageView android:layout_gravity="end|center|top" android:id="@id/P12Btn_prime_icon" android:visibility="gone" android:layout_width="16.0dip" android:layout_height="16.0dip" android:layout_marginTop="2.0dip" android:src="@drawable/ic_prime_tab" android:layout_marginEnd="2.0dip" />
+                </androidx.cardview.widget.CardView>
+                <androidx.cardview.widget.CardView android:layout_gravity="center" android:layout_width="40.0dip" android:layout_height="40.0dip" android:layout_marginStart="10.0dip" app:cardCornerRadius="6.0dip">
+                    <ImageView android:id="@id/P13Btn" android:layout_width="40.0dip" android:layout_height="40.0dip" android:src="@drawable/brush_12" />
+                    <ImageView android:id="@id/P13BtnBG" android:background="@drawable/bg_image_green" android:visibility="gone" android:layout_width="40.0dip" android:layout_height="40.0dip" />
+                    <ImageView android:layout_gravity="end|center|top" android:id="@id/P13Btn_prime_icon" android:visibility="gone" android:layout_width="16.0dip" android:layout_height="16.0dip" android:layout_marginTop="2.0dip" android:src="@drawable/ic_prime_tab" android:layout_marginEnd="2.0dip" />
+                </androidx.cardview.widget.CardView>
+                <androidx.cardview.widget.CardView android:layout_gravity="center" android:layout_width="40.0dip" android:layout_height="40.0dip" android:layout_marginStart="10.0dip" android:layout_marginEnd="6.0dip" app:cardCornerRadius="6.0dip">
+                    <ImageView android:id="@id/P14Btn" android:layout_width="40.0dip" android:layout_height="40.0dip" android:src="@drawable/brush_13" />
+                    <ImageView android:id="@id/P14BtnBG" android:background="@drawable/bg_image_green" android:visibility="gone" android:layout_width="40.0dip" android:layout_height="40.0dip" />
+                    <ImageView android:layout_gravity="end|center|top" android:id="@id/P14Btn_prime_icon" android:visibility="gone" android:layout_width="16.0dip" android:layout_height="16.0dip" android:layout_marginTop="2.0dip" android:src="@drawable/ic_prime_tab" android:layout_marginEnd="2.0dip" />
+                </androidx.cardview.widget.CardView>
+            </LinearLayout>
+        </HorizontalScrollView>
+        <androidx.recyclerview.widget.RecyclerView android:layout_gravity="center_vertical" android:id="@id/RvSC" android:visibility="gone" android:scrollbars="none" android:layout_width="fill_parent" android:layout_height="wrap_content" android:overScrollMode="never" android:layout_marginStart="8.0dip" android:layout_marginEnd="8.0dip" />
+    </LinearLayout>
+    <RelativeLayout android:id="@id/Rl" android:background="#ff0b0b0b" android:layout_width="fill_parent" android:layout_height="50.0dip" android:layout_alignParentBottom="true">
+        <ImageView android:id="@id/ic_close" android:layout_width="35.0dip" android:layout_height="35.0dip" android:layout_marginLeft="7.0dip" android:src="@drawable/btn_exit" android:layout_alignParentLeft="true" android:layout_centerVertical="true" />
+        <ImageView android:id="@id/ic_confirm" android:layout_width="35.0dip" android:layout_height="35.0dip" android:layout_marginRight="11.0dip" android:src="@drawable/btn_commit" android:layout_alignParentRight="true" android:layout_centerVertical="true" />
+        <LinearLayout android:gravity="center" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginLeft="80.0dip" android:layout_marginRight="80.0dip" android:layout_centerInParent="true" android:layout_centerHorizontal="true">
+            <RelativeLayout android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_weight="1.0">
+                <TextView android:textSize="12.0dip" android:textColor="#ff1359f1" android:id="@id/BasePaint" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="Base brush" android:layout_centerInParent="true" />
+                <TextView android:textSize="2.0dip" android:textColor="#ff1359f1" android:id="@id/BaseText" android:background="@drawable/doodle_bg_hide" android:layout_width="45.0dip" android:layout_height="1.0dip" android:layout_marginTop="15.0dip" android:text="￣" android:layout_below="@id/BasePaint" android:layout_centerHorizontal="true" />
+            </RelativeLayout>
+            <RelativeLayout android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_weight="1.0">
+                <TextView android:textSize="12.0dip" android:textColor="#ffffffff" android:id="@id/SCPaint" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="Material pen" android:layout_centerInParent="true" />
+                <TextView android:textSize="2.0dip" android:textColor="#ff1359f1" android:id="@id/SCText" android:background="@drawable/doodle_bg_hide" android:visibility="gone" android:layout_width="45.0dip" android:layout_height="1.0dip" android:layout_marginTop="15.0dip" android:text="￣" android:layout_below="@id/SCPaint" android:layout_centerHorizontal="true" />
+            </RelativeLayout>
+        </LinearLayout>
+    </RelativeLayout>
+    <com.zmagicc.example.doodle.CircleView android:id="@id/circleView" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_centerInParent="true" />
+    <com.base.common.loading.RotateLoading android:id="@id/loading_view" android:padding="2.0dip" android:visibility="gone" android:layout_width="60.0dip" android:layout_height="60.0dip" android:layout_centerInParent="true" app:loading_color="#ff1359f1" app:loading_speed="12" app:loading_width="2.0dip" />
+</RelativeLayout>

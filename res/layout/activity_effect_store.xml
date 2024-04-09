@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout android:orientation="vertical" android:background="@color/middle_view_bg_color" android:layout_width="fill_parent" android:layout_height="fill_parent"
+  xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto">
+    <FrameLayout android:id="@id/banner" android:background="@color/top_and_bottom_bar_color" android:layout_width="fill_parent" android:layout_height="@dimen/title_bar_height" android:layout_alignParentTop="true">
+        <ImageView android:layout_gravity="start|center" android:id="@id/back_btn" android:layout_width="25.0dip" android:layout_height="25.0dip" android:src="@drawable/ic_activity_back" android:rotationY="@integer/rotation" android:layout_marginStart="8.0dip" />
+        <TextView android:textSize="16.0dip" android:textColor="@color/white_text_color" android:gravity="center" android:layout_gravity="center" android:id="@id/title" android:layout_width="wrap_content" android:layout_height="fill_parent" android:text="Effect" />
+    </FrameLayout>
+    <androidx.recyclerview.widget.RecyclerView android:id="@id/effect_list" android:scrollbars="none" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="10.0dip" android:layout_below="@id/banner" android:layout_centerHorizontal="true" android:overScrollMode="never" />
+    <com.base.common.loading.RotateLoading android:id="@id/loading_effect" android:padding="2.0dip" android:visibility="gone" android:layout_width="60.0dip" android:layout_height="60.0dip" android:layout_centerInParent="true" app:loading_color="@color/accent_color" app:loading_speed="12" app:loading_width="2.0dip" />
+</RelativeLayout>

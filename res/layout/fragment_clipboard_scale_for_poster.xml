@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout android:orientation="vertical" android:layout_width="fill_parent" android:layout_height="fill_parent"
+  xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto">
+    <LinearLayout android:orientation="vertical" android:background="#ff0b0b0b" android:layout_width="fill_parent" android:layout_height="wrap_content">
+        <HorizontalScrollView android:layout_gravity="center" android:scrollbars="none" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginTop="10.0dip" android:layout_marginBottom="3.0dip" android:overScrollMode="never">
+            <LinearLayout android:gravity="center" android:orientation="horizontal" android:layout_width="wrap_content" android:layout_height="fill_parent">
+                <LinearLayout android:gravity="center" android:orientation="vertical" android:id="@id/crop_custom" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginStart="10.0dip">
+                    <ImageView android:id="@id/crop_custom_image" android:layout_width="60.0dip" android:layout_height="60.0dip" android:src="@drawable/ic_clipboard_scale_original" />
+                    <TextView android:textSize="12.0dip" android:textColor="#ff7e7d7b" android:id="@id/crop_custom_text" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="2.0dip" android:text="Original" />
+                </LinearLayout>
+                <LinearLayout android:gravity="center" android:orientation="vertical" android:id="@id/crop_1_1" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginStart="10.0dip">
+                    <ImageView android:id="@id/crop_1_1_image" android:layout_width="60.0dip" android:layout_height="60.0dip" android:src="@drawable/ic_clipboard_scale_1_1" />
+                    <TextView android:textSize="12.0dip" android:textColor="#ff7e7d7b" android:id="@id/crop_1_1_text" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="2.0dip" android:text="1:1" />
+                </LinearLayout>
+                <LinearLayout android:gravity="center" android:orientation="vertical" android:id="@id/crop_4_5" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginStart="10.0dip">
+                    <ImageView android:id="@id/crop_4_5_image" android:layout_width="60.0dip" android:layout_height="60.0dip" android:src="@drawable/ic_clipboard_scale_4_5" />
+                    <TextView android:textSize="12.0dip" android:textColor="#ff7e7d7b" android:id="@id/crop_4_5_text" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="2.0dip" android:text="4:5" />
+                </LinearLayout>
+                <LinearLayout android:gravity="center" android:orientation="vertical" android:id="@id/crop_4_3" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginStart="10.0dip">
+                    <ImageView android:id="@id/crop_4_3_image" android:layout_width="60.0dip" android:layout_height="60.0dip" android:src="@drawable/ic_clipboard_scale_4_3" />
+                    <TextView android:textSize="12.0dip" android:textColor="#ff7e7d7b" android:id="@id/crop_4_3_text" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="2.0dip" android:text="4:3" />
+                </LinearLayout>
+                <LinearLayout android:gravity="center" android:orientation="vertical" android:id="@id/crop_2_1" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginStart="10.0dip">
+                    <ImageView android:id="@id/crop_2_1_image" android:layout_width="60.0dip" android:layout_height="60.0dip" android:src="@drawable/ic_clipboard_scale_2_1" />
+                    <TextView android:textSize="12.0dip" android:textColor="#ff7e7d7b" android:id="@id/crop_2_1_text" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="2.0dip" android:text="2:1" />
+                </LinearLayout>
+                <LinearLayout android:gravity="center" android:orientation="vertical" android:id="@id/crop_2_3" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginStart="10.0dip">
+                    <ImageView android:id="@id/crop_2_3_image" android:layout_width="60.0dip" android:layout_height="60.0dip" android:src="@drawable/ic_clipboard_scale_2_3" />
+                    <TextView android:textSize="12.0dip" android:textColor="#ff7e7d7b" android:id="@id/crop_2_3_text" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="2.0dip" android:text="2:3" />
+                </LinearLayout>
+                <LinearLayout android:gravity="center" android:orientation="vertical" android:id="@id/crop_cover" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginStart="10.0dip">
+                    <ImageView android:id="@id/crop_cover_image" android:layout_width="60.0dip" android:layout_height="60.0dip" android:src="@drawable/ic_clipboard_scale_cover" />
+                    <TextView android:textSize="12.0dip" android:textColor="#ff7e7d7b" android:id="@id/crop_cover_text" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="2.0dip" android:text="Cover" />
+                </LinearLayout>
+                <LinearLayout android:gravity="center" android:orientation="vertical" android:id="@id/crop_16_9" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginStart="10.0dip">
+                    <ImageView android:id="@id/crop_16_9_image" android:layout_width="60.0dip" android:layout_height="60.0dip" android:src="@drawable/ic_clipboard_scale_16_9" />
+                    <TextView android:textSize="12.0dip" android:textColor="#ff7e7d7b" android:id="@id/crop_16_9_text" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="2.0dip" android:text="16:9" />
+                </LinearLayout>
+                <LinearLayout android:gravity="center" android:orientation="vertical" android:id="@id/crop_9_16" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginStart="10.0dip">
+                    <ImageView android:id="@id/crop_9_16_image" android:layout_width="60.0dip" android:layout_height="60.0dip" android:src="@drawable/ic_clipboard_scale_9_16" />
+                    <TextView android:textSize="12.0dip" android:textColor="#ff7e7d7b" android:id="@id/crop_9_16_text" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="2.0dip" android:text="9:16" />
+                </LinearLayout>
+                <LinearLayout android:gravity="center" android:orientation="vertical" android:id="@id/crop_3_4" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginStart="10.0dip">
+                    <ImageView android:id="@id/crop_3_4_image" android:layout_width="60.0dip" android:layout_height="60.0dip" android:src="@drawable/ic_clipboard_scale_3_4" />
+                    <TextView android:textSize="12.0dip" android:textColor="#ff7e7d7b" android:id="@id/crop_3_4_text" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="2.0dip" android:text="3:4" />
+                </LinearLayout>
+                <LinearLayout android:gravity="center" android:orientation="vertical" android:id="@id/crop_3_2" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginStart="10.0dip" android:layout_marginEnd="10.0dip">
+                    <ImageView android:id="@id/crop_3_2_image" android:layout_width="60.0dip" android:layout_height="60.0dip" android:src="@drawable/ic_clipboard_scale_3_2" />
+                    <TextView android:textSize="12.0dip" android:textColor="#ff7e7d7b" android:id="@id/crop_3_2_text" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="2.0dip" android:text="3:2" />
+                </LinearLayout>
+            </LinearLayout>
+        </HorizontalScrollView>
+    </LinearLayout>
+    <RelativeLayout android:visibility="gone" android:layout_width="fill_parent" android:layout_height="50.0dip">
+        <ImageView android:id="@id/btn_exit" android:layout_width="35.0dip" android:layout_height="35.0dip" android:layout_marginLeft="7.0dip" android:src="@drawable/btn_exit" android:layout_alignParentLeft="true" android:layout_centerVertical="true" />
+        <TextView android:textSize="14.0dip" android:textColor="@color/function_item_text_color_white" android:id="@id/current_edit_name" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="Scale" android:layout_centerHorizontal="true" android:layout_centerVertical="true" />
+        <ImageView android:id="@id/btn_commit" android:layout_width="35.0dip" android:layout_height="35.0dip" android:layout_marginRight="14.0dip" android:src="@drawable/btn_commit" android:layout_alignParentRight="true" android:layout_centerVertical="true" />
+    </RelativeLayout>
+</LinearLayout>

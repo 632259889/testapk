@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginBottom="10.0dip" android:layout_marginStart="5.0dip" android:layout_marginEnd="5.0dip"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <View android:layout_gravity="center" android:id="@id/item_bg" android:background="@drawable/item_normal_bg" android:layout_width="50.0dip" android:layout_height="50.0dip" />
+    <ImageView android:layout_gravity="center" android:id="@id/item" android:layout_width="50.0dip" android:layout_height="50.0dip" />
+    <View android:layout_gravity="center" android:id="@id/item_select" android:background="@drawable/item_select_bg" android:visibility="gone" android:layout_width="50.0dip" android:layout_height="50.0dip" />
+    <FrameLayout android:id="@id/prime_icon_layout" android:layout_width="50.0dip" android:layout_height="50.0dip">
+        <ImageView android:layout_gravity="end|center|top" android:id="@id/prime_icon" android:visibility="gone" android:layout_width="16.0dip" android:layout_height="16.0dip" android:layout_marginTop="2.0dip" android:src="@drawable/ic_prime_tab" android:layout_marginEnd="2.0dip" />
+    </FrameLayout>
+</FrameLayout>

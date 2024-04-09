@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout android:id="@id/sticker_tab_root" android:paddingTop="4.0dip" android:paddingBottom="4.0dip" android:layout_width="wrap_content" android:layout_height="wrap_content" android:paddingStart="10.0dip" android:paddingEnd="5.0dip"
+  xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto">
+    <ImageView android:layout_gravity="center" android:id="@id/sticker_tab" android:layout_width="35.0dip" android:layout_height="35.0dip" android:scaleType="centerCrop" />
+    <ImageView android:layout_gravity="bottom|center|right" android:id="@id/download_icon" android:layout_width="12.0dip" android:layout_height="12.0dip" android:src="@drawable/ic_sticker_download" />
+    <View android:layout_gravity="center|right|top" android:id="@id/red_point" android:background="@drawable/small_red_point" android:visibility="gone" android:layout_width="4.0dip" android:layout_height="4.0dip" />
+    <com.magiccamera.zfunction.main.loading.RotateLoading android:layout_gravity="center" android:id="@id/progress_bar" android:padding="2.0dip" android:visibility="invisible" android:layout_width="35.0dip" android:layout_height="35.0dip" app:loading_speed="14" app:loading_width="3.0dip" />
+    <TextView android:textSize="8.0dip" android:textStyle="bold" android:textColor="#ffffffff" android:layout_gravity="center" android:id="@id/download_progress" android:visibility="gone" android:layout_width="wrap_content" android:layout_height="wrap_content" />
+</FrameLayout>

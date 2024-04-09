@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout android:layout_width="fill_parent" android:layout_height="fill_parent"
+  xmlns:android="http://schemas.android.com/apk/res/android" xmlns:ripple="http://schemas.android.com/apk/res-auto">
+    <com.gallery.imageselector.view.MyViewPager android:id="@id/vp_image" android:background="#ff272828" android:layout_width="fill_parent" android:layout_height="fill_parent" />
+    <RelativeLayout android:orientation="vertical" android:id="@id/rl_top_bar" android:background="#ffffffff" android:clickable="true" android:layout_width="fill_parent" android:layout_height="48.0dip">
+        <com.gallery.imageselector.view.RippleView android:orientation="horizontal" android:id="@id/btn_back" android:paddingRight="13.0dip" android:layout_width="wrap_content" android:layout_height="fill_parent" android:layout_alignParentLeft="true" ripple:rv_type="rectangle">
+            <ImageView android:layout_gravity="center" android:layout_width="35.0dip" android:layout_height="35.0dip" android:src="@drawable/back_arrow" />
+            <TextView android:textSize="18.0dip" android:textColor="#ff999999" android:layout_gravity="center" android:id="@id/tv_indicator" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginLeft="6.0dip" android:text="@string/image" />
+        </com.gallery.imageselector.view.RippleView>
+        <com.gallery.imageselector.view.RippleView android:id="@id/btn_confirm" android:layout_width="wrap_content" android:layout_height="fill_parent" android:layout_alignParentRight="true" ripple:rv_type="rectangle">
+            <TextView android:textSize="18.0dip" android:textColor="#ff999999" android:gravity="center" android:id="@id/tv_confirm" android:paddingLeft="12.0dip" android:paddingRight="12.0dip" android:layout_width="wrap_content" android:layout_height="fill_parent" android:text="@string/confirm" />
+        </com.gallery.imageselector.view.RippleView>
+    </RelativeLayout>
+    <RelativeLayout android:id="@id/rl_bottom_bar" android:background="#ffffffff" android:clickable="true" android:layout_width="fill_parent" android:layout_height="48.0dip" android:layout_alignParentBottom="true">
+        <TextView android:textSize="18.0dip" android:textColor="#ff999999" android:gravity="center" android:id="@id/tv_select" android:paddingLeft="12.0dip" android:paddingRight="12.0dip" android:layout_width="wrap_content" android:layout_height="fill_parent" android:text="@string/select" android:drawableLeft="@drawable/ic_image_un_select" android:drawablePadding="10.0dip" android:layout_alignParentRight="true" />
+    </RelativeLayout>
+</RelativeLayout>

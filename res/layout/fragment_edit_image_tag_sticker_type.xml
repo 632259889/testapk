@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ViewFlipper android:id="@id/flipper" android:layout_width="fill_parent" android:layout_height="@dimen/bottom_banner_height" android:flipInterval="1000"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <FrameLayout android:layout_width="fill_parent" android:layout_height="fill_parent">
+        <LinearLayout android:orientation="horizontal" android:layout_width="fill_parent" android:layout_height="fill_parent">
+            <ImageView android:layout_gravity="center_vertical" android:id="@id/back_to_main" android:visibility="gone" android:layout_width="40.0dip" android:layout_height="wrap_content" android:src="@drawable/image_edit_back" />
+            <androidx.recyclerview.widget.RecyclerView android:layout_gravity="center_vertical" android:id="@id/stickers_list" android:scrollbars="none" android:layout_width="fill_parent" android:layout_height="wrap_content" android:overScrollMode="never" />
+        </LinearLayout>
+    </FrameLayout>
+    <include layout="@layout/fragment_edit_image_tag_add_text" />
+</ViewFlipper>

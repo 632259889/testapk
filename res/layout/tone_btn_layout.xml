@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout android:gravity="center" android:orientation="horizontal" android:layout_width="fill_parent" android:layout_height="wrap_content"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <FrameLayout android:layout_width="0.0dip" android:layout_height="wrap_content" android:layout_weight="1.0">
+        <FrameLayout android:layout_gravity="center" android:id="@id/tone_level_none" android:background="@drawable/bg_beauty_level_btn" android:layout_width="40.0dip" android:layout_height="40.0dip">
+            <ImageView android:layout_gravity="center" android:id="@id/tone_none_icon" android:layout_width="25.0dip" android:layout_height="25.0dip" android:src="@drawable/ic_beauty_none" />
+        </FrameLayout>
+    </FrameLayout>
+    <FrameLayout android:layout_width="0.0dip" android:layout_height="wrap_content" android:layout_weight="1.0">
+        <TextView android:textSize="14.0dip" android:textColor="#ffffffff" android:gravity="center" android:layout_gravity="center" android:id="@id/tone_level_1" android:background="@drawable/bg_beauty_level_btn" android:layout_width="40.0dip" android:layout_height="40.0dip" android:text="1" />
+    </FrameLayout>
+    <FrameLayout android:layout_width="0.0dip" android:layout_height="wrap_content" android:layout_weight="1.0">
+        <TextView android:textSize="14.0dip" android:textColor="#ffffffff" android:gravity="center" android:layout_gravity="center" android:id="@id/tone_level_2" android:background="@drawable/bg_beauty_level_btn" android:layout_width="40.0dip" android:layout_height="40.0dip" android:text="2" />
+    </FrameLayout>
+    <FrameLayout android:layout_width="0.0dip" android:layout_height="wrap_content" android:layout_weight="1.0">
+        <TextView android:textSize="14.0dip" android:textColor="#ffffffff" android:gravity="center" android:layout_gravity="center" android:id="@id/tone_level_3" android:background="@drawable/bg_beauty_level_btn" android:layout_width="40.0dip" android:layout_height="40.0dip" android:text="3" />
+    </FrameLayout>
+    <FrameLayout android:layout_width="0.0dip" android:layout_height="wrap_content" android:layout_weight="1.0">
+        <TextView android:textSize="14.0dip" android:textColor="#ffffffff" android:gravity="center" android:layout_gravity="center" android:id="@id/tone_level_4" android:background="@drawable/bg_beauty_level_btn" android:layout_width="40.0dip" android:layout_height="40.0dip" android:text="4" />
+    </FrameLayout>
+    <FrameLayout android:layout_width="0.0dip" android:layout_height="wrap_content" android:layout_weight="1.0">
+        <TextView android:textSize="14.0dip" android:textColor="#ffffffff" android:gravity="center" android:layout_gravity="center" android:id="@id/tone_level_5" android:background="@drawable/bg_beauty_level_btn" android:layout_width="40.0dip" android:layout_height="40.0dip" android:text="5" />
+    </FrameLayout>
+</LinearLayout>

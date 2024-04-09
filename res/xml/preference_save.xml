@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<PreferenceScreen android:key="preference_root"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <Preference android:title="preference_1" android:key="preference_1" />
+    <Preference android:title="@string/preference_save_location" android:key="preference_save_location" android:summary="@string/preference_save_location_summary" />
+</PreferenceScreen>

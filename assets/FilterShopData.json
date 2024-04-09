@@ -1,0 +1,128 @@
+{
+
+  "address": "https://aiphotos.top/camera_filter/s20_camera/Lut/",
+  "directory": "filter/",
+  "filterData": [
+    {
+      "filterGroupClass": "Outside",
+      "filterGroupSubClass": [
+        {
+          "filterGroupName": "Retro",
+          "filterGroupLocalDirectory": "outside_r",
+          "totalAmount": "3",
+          "size": "0.61M"
+        }
+      ],
+      "filterGroupSubClassAmount": 1
+    },
+    {
+      "filterGroupClass": "BlackWhite",
+      "filterGroupSubClass": [
+        {
+          "filterGroupName": "Classic",
+          "filterGroupLocalDirectory": "blackwhite",
+          "totalAmount": "3",
+          "size": "0.34M"
+        }
+      ],
+      "filterGroupSubClassAmount": 1
+    },
+    {
+      "filterGroupClass": "Life",
+      "filterGroupSubClass": [
+        {
+          "filterGroupName": "Festive",
+          "filterGroupLocalDirectory": "life",
+          "totalAmount": "2",
+          "size": "0.53M"
+        }
+      ],
+      "filterGroupSubClassAmount": 1
+    },
+    {
+      "filterGroupClass": "Portrait",
+      "filterGroupSubClass": [
+        {
+          "filterGroupName": "Blonde",
+          "filterGroupLocalDirectory": "portrait_b",
+          "totalAmount": "3",
+          "size": "0.68M"
+        },
+        {
+          "filterGroupName": "Mellow",
+          "filterGroupLocalDirectory": "portrait_m",
+          "totalAmount": "10",
+          "size": "1.86M"
+        }
+      ],
+      "filterGroupSubClassAmount": 2
+    },
+    {
+      "filterGroupClass": "Seaside",
+      "filterGroupSubClass": [
+        {
+          "filterGroupName": "Analog",
+          "filterGroupLocalDirectory": "seaside_a",
+          "totalAmount": "2",
+          "size": "0.22M"
+        }
+      ],
+      "filterGroupSubClassAmount": 1
+    },
+    {
+      "filterGroupClass": "Foodie",
+      "filterGroupSubClass": [
+        {
+          "filterGroupName": "Analog",
+          "filterGroupLocalDirectory": "foodie_a",
+          "totalAmount": "3",
+          "size": "0.72M"
+        }
+      ],
+      "filterGroupSubClassAmount": 1
+    },
+    {
+      "filterGroupClass": "Still Life",
+      "filterGroupSubClass": [
+        {
+          "filterGroupName": "Chromatic",
+          "filterGroupLocalDirectory": "stilllife_c",
+          "totalAmount": "6",
+          "size": "1.41M"
+        }
+      ],
+      "filterGroupSubClassAmount": 1
+    },
+    {
+      "filterGroupClass": "Architecture",
+      "filterGroupSubClass": [
+        {
+          "filterGroupName": "Minimumism",
+          "filterGroupLocalDirectory": "architecture_m",
+          "totalAmount": "4",
+          "size": "0.95M"
+        }
+      ],
+      "filterGroupSubClassAmount": 1
+    },
+    {
+      "filterGroupClass": "Outside",
+      "filterGroupSubClass": [
+        {
+          "filterGroupName": "Vibrant",
+          "filterGroupLocalDirectory": "outside_v",
+          "totalAmount": "3",
+          "size": "0.73M"
+        },
+        {
+          "filterGroupName": "Season",
+          "filterGroupLocalDirectory": "season",
+          "totalAmount": "11",
+          "size": "1.97M"
+        }
+      ],
+      "filterGroupSubClassAmount": 2
+    }
+  ]
+}
+

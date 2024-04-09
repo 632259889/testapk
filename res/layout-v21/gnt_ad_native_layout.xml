@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<merge android:gravity="center" android:orientation="vertical" android:layout_width="fill_parent" android:layout_height="fill_parent"
+  xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto">
+    <ImageView android:layout_gravity="start" android:id="@id/close" android:tag="layout/gnt_ad_native_layout_0" android:layout_width="30.0dip" android:layout_height="30.0dip" android:src="@drawable/native_ad_btn_close" />
+    <androidx.cardview.widget.CardView android:layout_gravity="center" android:tag="layout/gnt_ad_native_layout_1" android:focusable="true" android:clickable="true" android:layout_width="fill_parent" android:layout_height="wrap_content" android:elevation="3.0dip" app:cardBackgroundColor="@color/card_background" app:cardCornerRadius="5.0dip">
+        <include android:id="@id/medium" layout="@layout/gnt_medium_template_view" />
+    </androidx.cardview.widget.CardView>
+</merge>

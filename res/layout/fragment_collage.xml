@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout android:orientation="vertical" android:layout_width="fill_parent" android:layout_height="wrap_content"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <LinearLayout android:orientation="vertical" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginTop="13.0dip">
+        <RelativeLayout android:id="@id/collage_layout_1" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginStart="43.0dip" android:layout_marginEnd="43.0dip">
+            <ImageButton android:id="@id/ib_ratio_16x9" android:background="@null" android:layout_width="50.0dip" android:layout_height="50.0dip" android:src="@drawable/ratio_16x9" android:layout_alignParentStart="true" />
+            <ImageButton android:id="@id/ib_ratio_1x1" android:background="@null" android:layout_width="50.0dip" android:layout_height="50.0dip" android:src="@drawable/ratio_1x1" android:layout_centerHorizontal="true" />
+            <ImageButton android:id="@id/ib_ratio_4x3" android:background="@null" android:layout_width="50.0dip" android:layout_height="50.0dip" android:src="@drawable/ratio_4x3" android:layout_alignParentEnd="true" />
+        </RelativeLayout>
+        <RelativeLayout android:id="@id/collage_layout_2" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginTop="86.0dip" android:layout_marginStart="43.0dip" android:layout_marginEnd="43.0dip">
+            <ImageButton android:id="@id/ib_collage_1x2" android:background="@null" android:layout_width="50.0dip" android:layout_height="50.0dip" android:src="@drawable/collage_1x2" android:layout_alignParentStart="true" />
+            <ImageButton android:id="@id/ib_collage_2x1" android:background="@null" android:layout_width="50.0dip" android:layout_height="50.0dip" android:src="@drawable/collage_2x1" android:layout_centerHorizontal="true" />
+            <ImageButton android:id="@id/ib_collage_2x2" android:background="@null" android:layout_width="50.0dip" android:layout_height="50.0dip" android:src="@drawable/collage_2x2" android:layout_alignParentEnd="true" />
+        </RelativeLayout>
+        <RelativeLayout android:id="@id/collage_layout_3" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginTop="86.0dip" android:layout_marginStart="43.0dip" android:layout_marginEnd="43.0dip">
+            <ImageButton android:id="@id/ib_collage_1x3" android:background="@null" android:layout_width="50.0dip" android:layout_height="50.0dip" android:src="@drawable/collage_1x3" android:layout_alignParentStart="true" />
+            <ImageButton android:id="@id/ib_collage_3x1" android:background="@null" android:layout_width="50.0dip" android:layout_height="50.0dip" android:src="@drawable/collage_3x1" android:layout_centerHorizontal="true" />
+            <ImageButton android:id="@id/ib_collage_3x3" android:background="@null" android:layout_width="50.0dip" android:layout_height="50.0dip" android:src="@drawable/collage_3x3" android:layout_alignParentEnd="true" />
+        </RelativeLayout>
+    </LinearLayout>
+</LinearLayout>

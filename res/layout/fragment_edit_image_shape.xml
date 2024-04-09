@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout android:orientation="vertical" android:layout_width="fill_parent" android:layout_height="fill_parent"
+  xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto">
+    <HorizontalScrollView android:id="@id/frame_tab_layout" android:scrollbars="none" android:layout_width="fill_parent" android:layout_height="wrap_content" android:overScrollMode="never">
+        <LinearLayout android:gravity="center" android:orientation="horizontal" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="2.0dip" android:layout_marginBottom="2.0dip">
+            <FrameLayout android:layout_gravity="center" android:orientation="vertical" android:id="@id/frame_color" android:layout_width="wrap_content" android:layout_height="30.0dip" android:layout_marginStart="@dimen/filters_tab_margin">
+                <TextView android:textSize="14.0dip" android:textColor="#ffffffff" android:gravity="center" android:layout_gravity="center" android:id="@id/frame_color_text" android:paddingTop="3.0dip" android:paddingBottom="3.0dip" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/shape_color" android:paddingStart="12.0dip" android:paddingEnd="12.0dip" android:layout_marginStart="8.0dip" android:layout_marginEnd="8.0dip" />
+            </FrameLayout>
+            <FrameLayout android:orientation="vertical" android:id="@id/frame_simple" android:layout_width="wrap_content" android:layout_height="30.0dip" android:layout_marginStart="@dimen/filters_tab_margin">
+                <TextView android:textSize="14.0dip" android:textColor="#ffffffff" android:gravity="center" android:layout_gravity="center" android:id="@id/frame_simple_text" android:paddingTop="3.0dip" android:paddingBottom="3.0dip" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/shape_simple" android:paddingStart="12.0dip" android:paddingEnd="12.0dip" android:layout_marginStart="8.0dip" android:layout_marginEnd="8.0dip" />
+                <ImageView android:layout_gravity="end|bottom|center" android:id="@id/download_simple" android:layout_width="15.0dip" android:layout_height="15.0dip" android:src="@drawable/ic_download" android:layout_marginEnd="10.0dip" />
+                <com.base.common.loading.RotateLoading android:layout_gravity="center" android:id="@id/loading_simple" android:padding="2.0dip" android:layout_width="25.0dip" android:layout_height="25.0dip" app:loading_speed="12" app:loading_width="2.0dip" />
+            </FrameLayout>
+        </LinearLayout>
+    </HorizontalScrollView>
+    <LinearLayout android:orientation="horizontal" android:layout_width="fill_parent" android:layout_height="fill_parent">
+        <androidx.recyclerview.widget.RecyclerView android:layout_gravity="center_vertical" android:id="@id/frame_list" android:scrollbars="none" android:layout_width="fill_parent" android:layout_height="fill_parent" android:overScrollMode="never" />
+    </LinearLayout>
+</LinearLayout>

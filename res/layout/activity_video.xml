@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout android:id="@id/root_view" android:background="#ff000000" android:layout_width="fill_parent" android:layout_height="fill_parent"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <FrameLayout android:id="@id/top_layout" android:layout_width="fill_parent" android:layout_height="@dimen/title_bar_height">
+        <ImageView android:layout_gravity="start|center" android:id="@id/btn_cancel" android:layout_width="25.0dip" android:layout_height="25.0dip" android:src="@drawable/ic_activity_back" android:rotationY="@integer/rotation" android:layout_marginStart="8.0dip" />
+        <ImageView android:layout_gravity="end|center" android:id="@id/btn_info" android:layout_width="30.0dip" android:layout_height="30.0dip" android:src="@drawable/camera_btn_info" android:layout_marginEnd="12.0dip" />
+    </FrameLayout>
+    <FrameLayout android:id="@id/video_frame" android:layout_width="fill_parent" android:layout_height="fill_parent" android:layout_above="@id/bottom_layout" android:layout_below="@id/top_layout" android:layout_centerInParent="true">
+        <SurfaceView android:layout_gravity="center" android:id="@id/surface_view" android:layout_width="wrap_content" android:layout_height="wrap_content" />
+    </FrameLayout>
+    <LinearLayout android:orientation="vertical" android:id="@id/bottom_layout" android:paddingBottom="20.0dip" android:layout_width="fill_parent" android:layout_height="180.0dip" android:layout_alignParentBottom="true">
+        <LinearLayout android:gravity="center_vertical" android:layout_gravity="top" android:id="@id/sb_layout" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginTop="15.0dip" android:layout_marginBottom="5.0dip">
+            <TextView android:textSize="14.0dip" android:textColor="#ffffffff" android:id="@id/video_position_text" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="00:00" android:layout_marginStart="15.0dip" />
+            <SeekBar android:id="@id/video_sb" android:layout_width="0.0dip" android:layout_height="wrap_content" android:maxHeight="2.0dip" android:progressDrawable="@drawable/layerlist_drawable_seekbar_progress" android:minHeight="2.0dip" android:thumb="@drawable/selector_seekbar_drawable_thumb" android:layout_weight="1.0" />
+            <TextView android:textSize="14.0dip" android:textColor="#ffffffff" android:id="@id/video_duration_text" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="00:00" android:layout_marginEnd="16.0dip" />
+        </LinearLayout>
+        <LinearLayout android:gravity="center" android:layout_width="fill_parent" android:layout_height="40.0dip" android:layout_marginStart="11.0dip" android:layout_marginEnd="4.0dip">
+            <TextView android:textSize="14.0dip" android:textColor="#ffffffff" android:gravity="center" android:layout_width="0.0dip" android:layout_height="fill_parent" android:text="Speed:" android:layout_weight="1.0" />
+            <TextView android:textSize="14.0dip" android:textColor="#ffffffff" android:gravity="center" android:id="@id/speed_0_5" android:layout_width="0.0dip" android:layout_height="fill_parent" android:text="0.5x" android:layout_weight="1.0" />
+            <TextView android:textSize="14.0dip" android:textColor="#ffffffff" android:gravity="center" android:id="@id/speed_0_75" android:layout_width="0.0dip" android:layout_height="fill_parent" android:text="0.75x" android:layout_weight="1.0" />
+            <TextView android:textSize="14.0dip" android:textColor="@color/accent_color" android:gravity="center" android:id="@id/speed_1" android:layout_width="0.0dip" android:layout_height="fill_parent" android:text="1.0x" android:layout_weight="1.0" />
+            <TextView android:textSize="14.0dip" android:textColor="#ffffffff" android:gravity="center" android:id="@id/speed_1_25" android:layout_width="0.0dip" android:layout_height="fill_parent" android:text="1.25x" android:layout_weight="1.0" />
+            <TextView android:textSize="14.0dip" android:textColor="#ffffffff" android:gravity="center" android:id="@id/speed_1_5" android:layout_width="0.0dip" android:layout_height="fill_parent" android:text="1.5x" android:layout_weight="1.0" />
+            <TextView android:textSize="14.0dip" android:textColor="#ffffffff" android:gravity="center" android:id="@id/speed_2" android:layout_width="0.0dip" android:layout_height="fill_parent" android:text="2.0x" android:layout_weight="1.0" />
+        </LinearLayout>
+        <FrameLayout android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginTop="20.0dip">
+            <ImageView android:layout_gravity="center" android:id="@id/btn_play" android:layout_width="60.0dip" android:layout_height="60.0dip" android:src="@drawable/video_play" />
+            <ImageView android:layout_gravity="end|center" android:id="@id/btn_loop" android:layout_width="50.0dip" android:layout_height="50.0dip" android:src="@drawable/ic_video_loop" android:layout_marginEnd="14.0dip" />
+            <ImageView android:layout_gravity="start|center" android:id="@id/btn_shoot" android:layout_width="50.0dip" android:layout_height="50.0dip" android:src="@drawable/ic_video_shoot" android:layout_marginStart="14.0dip" />
+        </FrameLayout>
+    </LinearLayout>
+</RelativeLayout>

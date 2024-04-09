@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout android:orientation="vertical" android:background="@drawable/dialog_bg" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layoutDirection="ltr"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <TextView android:textSize="16.0dip" android:textStyle="bold" android:textColor="@color/dark_text_color" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginLeft="20.0dip" android:layout_marginTop="25.0dip" android:text="@string/save_dialog_format" />
+    <RelativeLayout android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginLeft="20.0dip" android:layout_marginTop="5.0dip" android:layout_marginRight="20.0dip">
+        <FrameLayout android:layout_width="184.0dip" android:layout_height="wrap_content">
+            <TextView android:textSize="14.0dip" android:textColor="@color/save_options_description_color" android:gravity="start|center" android:id="@id/save_quality" android:layout_width="fill_parent" android:layout_height="35.0dip" android:text="@string/Original" />
+            <ImageView android:layout_gravity="end|bottom|center" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginBottom="1.0dip" android:src="@drawable/ic_save_options_dialog_subscript" android:layout_marginEnd="1.0dip" />
+            <View android:layout_gravity="bottom" android:background="@color/white_divider_color" android:layout_width="fill_parent" android:layout_height="1.0dip" />
+        </FrameLayout>
+        <FrameLayout android:layout_width="70.0dip" android:layout_height="wrap_content" android:layout_marginStart="20.0dip" android:layout_alignParentEnd="true">
+            <TextView android:textSize="14.0dip" android:textColor="@color/save_options_description_color" android:gravity="start|center" android:id="@id/save_format" android:layout_width="fill_parent" android:layout_height="35.0dip" android:text=".png" />
+            <ImageView android:layout_gravity="end|bottom|center" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginBottom="1.0dip" android:src="@drawable/ic_save_options_dialog_subscript" android:layout_marginEnd="1.0dip" />
+            <View android:layout_gravity="bottom" android:background="@color/white_divider_color" android:layout_width="fill_parent" android:layout_height="1.0dip" />
+        </FrameLayout>
+    </RelativeLayout>
+    <TextView android:textSize="16.0dip" android:textStyle="bold" android:textColor="@color/dark_text_color" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginLeft="20.0dip" android:layout_marginTop="10.0dip" android:layout_marginRight="20.0dip" android:text="@string/save_dialog_path" />
+    <TextView android:textSize="14.0dip" android:textColor="@color/save_options_description_color" android:id="@id/tv_save_path" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginLeft="20.0dip" android:layout_marginTop="5.0dip" android:layout_marginRight="20.0dip" android:maxLines="1" />
+    <RelativeLayout android:id="@id/not_show_layout" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginLeft="20.0dip" android:layout_marginTop="15.0dip" android:layout_marginRight="20.0dip">
+        <TextView android:textSize="14.0dip" android:textColor="@color/save_options_description_color" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_margin="2.0dip" android:text="@string/not_show" android:layout_centerVertical="true" />
+        <androidx.appcompat.widget.AppCompatCheckBox android:theme="@style/SaveOptionNotShowCheckBoxTheme" android:id="@id/cb_not_show" android:layout_width="wrap_content" android:layout_height="wrap_content" android:checked="true" android:layout_centerVertical="true" android:layout_alignParentEnd="true" />
+    </RelativeLayout>
+    <FrameLayout android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginLeft="20.0dip" android:layout_marginTop="30.0dip" android:layout_marginRight="20.0dip" android:layout_marginBottom="20.0dip">
+        <Button android:textSize="14.0dip" android:textColor="#ffffffff" android:layout_gravity="end" android:id="@id/save" android:background="@drawable/shape_save_options_dialog_save_button" android:paddingTop="3.0dip" android:paddingBottom="3.0dip" android:layout_width="70.0dip" android:layout_height="35.0dip" android:text="@string/Save" android:paddingStart="7.0dip" android:paddingEnd="7.0dip" style="@style/DialogButton" />
+    </FrameLayout>
+    <View android:id="@id/divider" android:background="#ffcccccc" android:visibility="gone" android:layout_width="fill_parent" android:layout_height="1.0dip" android:layout_marginTop="10.0dip" />
+    <FrameLayout android:id="@id/frame_ad_layout" android:background="#4d999999" android:visibility="gone" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginTop="15.0dip" android:layout_marginBottom="20.0dip" android:layoutDirection="ltr">
+        <LinearLayout android:gravity="center" android:orientation="vertical" android:id="@id/ad_layout" android:layout_width="fill_parent" android:layout_height="wrap_content" />
+        <ImageView android:layout_gravity="center|left|top" android:layout_width="25.0dip" android:layout_height="25.0dip" android:src="@drawable/ad_icon" />
+    </FrameLayout>
+</LinearLayout>

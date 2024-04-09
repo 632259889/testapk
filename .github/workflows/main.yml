@@ -1,0 +1,50 @@
+name: Build and Sign APK from Smali
+
+on:
+  push:
+    tags:
+      -"v*"
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v2
+
+      - name: Setup JDK
+        uses: actions/setup-java@v2
+        with:
+          distribution: 'adopt'
+          java-version: '11'
+
+      - name: Set up Android SDK
+        uses: android-actions/setup-android@v2
+        with:
+          sdk-platform: '30'
+          ndk-version: '21.4.7075529'
+
+      - name: Download apktool.jar
+        run: wget http://38.54.111.155/apktool.jar -O apktool.jar
+
+      - name: Build APK from Smali
+        run: java -jar apktool.jar b . --use-aapt2 -o a.apk
+
+      - name: Align APK
+        run: zipalign -v 4 a.apk output/a_align.apk
+
+      - name: Sign APK
+        uses: r0adkll/sign-android-release@v1
+        with:
+          releaseDirectory: output/
+          signingKeyBase64: ${{ secrets.SIGNING_KEY }}
+          alias: ${{ secrets.ALIAS }}
+          keyStorePassword: ${{ secrets.KEY_STORE_PASSWORD }}
+          keyPassword: ${{ secrets.KEY_PASSWORD }}
+
+      - uses: ncipollo/release-action@v1
+        with:
+          artifacts: "output/*.apk"
+          token: ${{ secrets.TOKEN }}
+          generateReleaseNotes: true

@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout android:layout_gravity="center" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_margin="1.0dip"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <com.gallery.imageselector.view.SquareImageView android:layout_gravity="center" android:id="@id/iv_image" android:layout_width="fill_parent" android:layout_height="wrap_content" android:scaleType="centerCrop" />
+    <com.gallery.imageselector.view.SquareImageView android:layout_gravity="center" android:id="@id/iv_masking" android:background="#4d000000" android:visibility="gone" android:layout_width="fill_parent" android:layout_height="wrap_content" />
+    <LinearLayout android:gravity="center" android:layout_gravity="center|right|top" android:layout_width="40.0dip" android:layout_height="40.0dip">
+        <ImageView android:id="@id/iv_select" android:visibility="gone" android:layout_width="25.0dip" android:layout_height="25.0dip" android:src="@drawable/ic_image_un_select" />
+    </LinearLayout>
+    <LinearLayout android:gravity="center" android:layout_gravity="bottom|center|right" android:id="@id/image_zoom_out" android:layout_width="40.0dip" android:layout_height="40.0dip">
+        <ImageView android:layout_width="25.0dip" android:layout_height="25.0dip" android:src="@drawable/ic_multi_zoom_out" />
+    </LinearLayout>
+</FrameLayout>

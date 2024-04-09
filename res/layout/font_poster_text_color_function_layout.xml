@@ -1,0 +1,138 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.zmagicc.example.fontlibs.FontTextColorFunctionLayout android:id="@id/textcolor_layout" android:visibility="gone" android:layout_width="fill_parent" android:layout_height="fill_parent" android:layout_marginTop="10.0dip"
+  xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto">
+    <ScrollView android:scrollbars="none" android:layout_width="fill_parent" android:layout_height="wrap_content" android:overScrollMode="never">
+        <LinearLayout android:orientation="vertical" android:paddingBottom="15.0dip" android:layout_width="fill_parent" android:layout_height="wrap_content">
+            <androidx.recyclerview.widget.RecyclerView android:id="@id/rv_textstyle" android:scrollbars="none" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginLeft="-2.0dip" android:layout_marginRight="16.0dip" android:overScrollMode="never" />
+            <View android:id="@id/divider" android:background="#80303030" android:layout_width="fill_parent" android:layout_height="1.0dip" android:layout_marginTop="11.0dip" android:layout_marginStart="13.0dip" android:layout_marginEnd="13.0dip" />
+            <HorizontalScrollView android:scrollbars="none" android:layout_width="fill_parent" android:layout_height="wrap_content" android:overScrollMode="never">
+                <LinearLayout android:orientation="horizontal" android:id="@id/color_function_tabs_layout" android:layout_width="wrap_content" android:layout_height="30.0dip" android:layout_marginTop="15.0dip">
+                    <TextView android:textSize="14.0dip" android:textColor="@color/font_theme_default_summary_text_color" android:id="@id/tab_text" android:layout_width="wrap_content" android:layout_height="fill_parent" android:layout_marginLeft="13.0dip" android:text="Text" />
+                    <TextView android:textSize="14.0dip" android:textColor="@color/font_theme_default_summary_text_color" android:id="@id/tab_format" android:layout_width="wrap_content" android:layout_height="fill_parent" android:layout_marginLeft="15.0dip" android:text="Format" />
+                    <TextView android:textSize="14.0dip" android:textColor="@color/font_theme_default_summary_text_color" android:id="@id/tab_label" android:layout_width="wrap_content" android:layout_height="fill_parent" android:layout_marginLeft="15.0dip" android:text="Background" />
+                    <TextView android:textSize="14.0dip" android:textColor="@color/font_theme_default_summary_text_color" android:id="@id/tab_stroke" android:layout_width="wrap_content" android:layout_height="fill_parent" android:layout_marginLeft="15.0dip" android:text="Stroke" />
+                    <TextView android:textSize="14.0dip" android:textColor="@color/font_theme_default_summary_text_color" android:id="@id/tab_shadow" android:layout_width="wrap_content" android:layout_height="fill_parent" android:layout_marginLeft="15.0dip" android:text="Shadow" />
+                    <TextView android:textSize="14.0dip" android:textColor="@color/font_theme_default_summary_text_color" android:id="@id/tab_bending" android:layout_width="wrap_content" android:layout_height="fill_parent" android:layout_marginLeft="15.0dip" android:layout_marginRight="13.0dip" android:text="Bending" />
+                </LinearLayout>
+            </HorizontalScrollView>
+            <RelativeLayout android:orientation="vertical" android:id="@id/text_function_layout" android:layout_width="fill_parent" android:layout_height="wrap_content">
+                <androidx.recyclerview.widget.RecyclerView android:id="@id/rv_textcolor" android:scrollbars="none" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginLeft="3.0dip" android:layout_marginTop="10.0dip" android:layout_marginRight="16.0dip" android:overScrollMode="never" />
+                <LinearLayout android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginTop="11.0dip" android:layout_below="@id/rv_textcolor">
+                    <TextView android:textSize="14.0dip" android:textStyle="normal" android:textColor="@color/font_theme_default_summary_text_color" android:layout_width="120.0dip" android:layout_height="wrap_content" android:layout_marginLeft="13.0dip" android:layout_marginTop="10.0dip" android:text="Text Size:" />
+                    <SeekBar android:id="@id/text_size_seekbar" android:layout_width="0.0dip" android:layout_height="wrap_content" android:layout_marginLeft="5.0dip" android:layout_marginTop="11.0dip" android:maxHeight="2.0dip" android:max="30" android:progressDrawable="@drawable/font_poster_layerlist_drawable_seekbar_progress" android:minHeight="2.0dip" android:thumb="@drawable/font_poster_selector_seekbar_drawable_thumb" android:layout_weight="1.0" />
+                </LinearLayout>
+                <LinearLayout android:orientation="horizontal" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginTop="59.0dip" android:layout_below="@id/rv_textcolor">
+                    <LinearLayout android:layout_width="120.0dip" android:layout_height="wrap_content">
+                        <TextView android:textSize="14.0dip" android:textColor="@color/font_theme_default_summary_text_color" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginLeft="13.0dip" android:text="Opacity: " />
+                        <TextView android:textSize="14.0dip" android:textColor="@color/font_theme_default_summary_text_color" android:id="@id/tv_text_alpha_precent" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginLeft="10.0dip" android:text="100%" />
+                    </LinearLayout>
+                    <SeekBar android:id="@id/text_alpha_seekbar" android:layout_width="0.0dip" android:layout_height="wrap_content" android:layout_marginTop="2.0dip" android:maxHeight="2.0dip" android:max="100" android:progressDrawable="@drawable/font_poster_layerlist_drawable_seekbar_progress" android:minHeight="2.0dip" android:thumb="@drawable/font_poster_selector_seekbar_drawable_thumb" android:layout_weight="1.0" />
+                </LinearLayout>
+            </RelativeLayout>
+            <ScrollView android:id="@id/text_format_layout" android:visibility="gone" android:scrollbars="none" android:layout_width="fill_parent" android:layout_height="wrap_content" android:overScrollMode="never">
+                <LinearLayout android:orientation="vertical" android:paddingBottom="5.0dip" android:layout_width="fill_parent" android:layout_height="wrap_content">
+                    <LinearLayout android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginTop="10.0dip">
+                        <FrameLayout android:layout_width="0.0dip" android:layout_height="30.0dip" android:layout_weight="1.0">
+                            <FrameLayout android:layout_gravity="center" android:id="@id/text_bold_item" android:background="#ff303030" android:layout_width="30.0dip" android:layout_height="30.0dip">
+                                <ImageView android:layout_gravity="center" android:id="@id/text_bold" android:layout_width="25.0dip" android:layout_height="25.0dip" android:src="@drawable/font_ic_bold" />
+                            </FrameLayout>
+                        </FrameLayout>
+                        <FrameLayout android:layout_width="0.0dip" android:layout_height="30.0dip" android:layout_weight="1.0">
+                            <FrameLayout android:layout_gravity="center" android:id="@id/text_italic_item" android:background="#ff303030" android:layout_width="30.0dip" android:layout_height="30.0dip">
+                                <ImageView android:layout_gravity="center" android:id="@id/text_italic" android:layout_width="25.0dip" android:layout_height="25.0dip" android:src="@drawable/font_ic_italic" />
+                            </FrameLayout>
+                        </FrameLayout>
+                        <FrameLayout android:layout_width="0.0dip" android:layout_height="30.0dip" android:layout_weight="1.0">
+                            <FrameLayout android:layout_gravity="center" android:id="@id/text_underline_item" android:background="#ff303030" android:layout_width="30.0dip" android:layout_height="30.0dip">
+                                <ImageView android:layout_gravity="center" android:id="@id/text_underline" android:layout_width="25.0dip" android:layout_height="25.0dip" android:src="@drawable/font_ic_underline" />
+                            </FrameLayout>
+                        </FrameLayout>
+                        <FrameLayout android:layout_width="0.0dip" android:layout_height="30.0dip" android:layout_weight="1.0">
+                            <FrameLayout android:layout_gravity="center" android:id="@id/text_strikethru_item" android:background="#ff303030" android:layout_width="30.0dip" android:layout_height="30.0dip">
+                                <ImageView android:layout_gravity="center" android:id="@id/text_strikethru" android:layout_width="25.0dip" android:layout_height="25.0dip" android:src="@drawable/font_ic_strikethru" />
+                            </FrameLayout>
+                        </FrameLayout>
+                    </LinearLayout>
+                    <View android:background="#80303030" android:layout_width="fill_parent" android:layout_height="1.0dip" android:layout_marginTop="10.0dip" android:layout_marginStart="13.0dip" android:layout_marginEnd="13.0dip" />
+                    <LinearLayout android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginTop="10.0dip">
+                        <ImageView android:layout_gravity="center" android:id="@id/text_align_left" android:layout_width="0.0dip" android:layout_height="25.0dip" android:src="@drawable/font_ic_align_left" android:layout_weight="1.0" />
+                        <ImageView android:layout_gravity="center" android:id="@id/text_align_center" android:layout_width="0.0dip" android:layout_height="25.0dip" android:src="@drawable/font_ic_align_center_selected" android:layout_weight="1.0" />
+                        <ImageView android:layout_gravity="center" android:id="@id/text_align_right" android:layout_width="0.0dip" android:layout_height="25.0dip" android:src="@drawable/font_ic_align_right" android:layout_weight="1.0" />
+                    </LinearLayout>
+                    <LinearLayout android:layout_width="fill_parent" android:layout_height="wrap_content">
+                        <TextView android:textSize="14.0dip" android:textStyle="normal" android:textColor="@color/font_theme_default_summary_text_color" android:layout_width="120.0dip" android:layout_height="wrap_content" android:layout_marginLeft="13.0dip" android:layout_marginTop="10.0dip" android:text="Character Spacing:" />
+                        <SeekBar android:id="@id/text_charspac_seekbar" android:layout_width="0.0dip" android:layout_height="wrap_content" android:layout_marginLeft="5.0dip" android:layout_marginTop="11.0dip" android:maxHeight="2.0dip" android:max="10" android:progressDrawable="@drawable/font_poster_layerlist_drawable_seekbar_progress" android:minHeight="2.0dip" android:thumb="@drawable/font_poster_selector_seekbar_drawable_thumb" android:layout_weight="1.0" />
+                    </LinearLayout>
+                    <LinearLayout android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginTop="10.0dip">
+                        <TextView android:textSize="14.0dip" android:textStyle="normal" android:textColor="@color/font_theme_default_summary_text_color" android:layout_width="120.0dip" android:layout_height="wrap_content" android:layout_marginLeft="13.0dip" android:layout_marginTop="10.0dip" android:text="Line Spacing:" />
+                        <SeekBar android:id="@id/text_linespac_seekbar" android:layout_width="0.0dip" android:layout_height="wrap_content" android:layout_marginLeft="5.0dip" android:layout_marginTop="11.0dip" android:maxHeight="2.0dip" android:max="100" android:progressDrawable="@drawable/font_poster_layerlist_drawable_seekbar_progress" android:minHeight="2.0dip" android:thumb="@drawable/font_poster_selector_seekbar_drawable_thumb" android:layout_weight="1.0" />
+                    </LinearLayout>
+                </LinearLayout>
+            </ScrollView>
+            <RelativeLayout android:orientation="vertical" android:id="@id/label_function_layout" android:visibility="gone" android:layout_width="fill_parent" android:layout_height="wrap_content">
+                <androidx.recyclerview.widget.RecyclerView android:id="@id/rv_labelcolor" android:scrollbars="none" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginLeft="3.0dip" android:layout_marginTop="10.0dip" android:layout_marginRight="16.0dip" android:overScrollMode="never" />
+                <LinearLayout android:orientation="vertical" android:id="@id/background_seekbar_layout" android:visibility="gone" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_below="@id/rv_labelcolor">
+                    <LinearLayout android:orientation="horizontal" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginTop="20.0dip">
+                        <LinearLayout android:layout_width="120.0dip" android:layout_height="wrap_content">
+                            <TextView android:textSize="14.0dip" android:textColor="@color/font_theme_default_summary_text_color" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginLeft="13.0dip" android:text="Opacity: " />
+                            <TextView android:textSize="14.0dip" android:textColor="@color/font_theme_default_summary_text_color" android:id="@id/tv_label_alpha_precent" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginLeft="10.0dip" android:text="0%" />
+                        </LinearLayout>
+                        <SeekBar android:id="@id/text_bg_alpha_seekbar" android:layout_width="0.0dip" android:layout_height="wrap_content" android:layout_marginTop="2.0dip" android:maxHeight="2.0dip" android:max="100" android:progressDrawable="@drawable/font_poster_layerlist_drawable_seekbar_progress" android:minHeight="2.0dip" android:thumb="@drawable/font_poster_selector_seekbar_drawable_thumb" android:layout_weight="1.0" />
+                    </LinearLayout>
+                    <LinearLayout android:orientation="horizontal" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginTop="20.0dip">
+                        <LinearLayout android:layout_width="120.0dip" android:layout_height="wrap_content">
+                            <TextView android:textSize="14.0dip" android:textColor="@color/font_theme_default_summary_text_color" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginLeft="13.0dip" android:text="Corner: " />
+                            <TextView android:textSize="14.0dip" android:textColor="@color/font_theme_default_summary_text_color" android:id="@id/tv_bg_corner_precent" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginLeft="10.0dip" android:text="0%" />
+                        </LinearLayout>
+                        <SeekBar android:id="@id/text_bg_corner_seekbar" android:layout_width="0.0dip" android:layout_height="wrap_content" android:layout_marginTop="2.0dip" android:maxHeight="2.0dip" android:max="100" android:progressDrawable="@drawable/font_poster_layerlist_drawable_seekbar_progress" android:minHeight="2.0dip" android:thumb="@drawable/font_poster_selector_seekbar_drawable_thumb" android:layout_weight="1.0" />
+                    </LinearLayout>
+                </LinearLayout>
+            </RelativeLayout>
+            <RelativeLayout android:orientation="vertical" android:id="@id/stroke_function_layout" android:layout_width="fill_parent" android:layout_height="wrap_content">
+                <androidx.recyclerview.widget.RecyclerView android:id="@id/rv_strokecolor" android:scrollbars="none" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginLeft="3.0dip" android:layout_marginTop="10.0dip" android:layout_marginRight="16.0dip" android:overScrollMode="never" />
+                <LinearLayout android:orientation="horizontal" android:id="@id/stroke_seekbar_layout" android:visibility="gone" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginTop="20.0dip" android:layout_below="@id/rv_strokecolor">
+                    <LinearLayout android:layout_width="130.0dip" android:layout_height="wrap_content">
+                        <TextView android:textSize="14.0dip" android:textStyle="normal" android:textColor="@color/font_theme_default_summary_text_color" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginLeft="13.0dip" android:text="Thickness: " />
+                        <TextView android:textSize="14.0dip" android:textStyle="normal" android:textColor="@color/font_theme_default_summary_text_color" android:id="@id/tv_stroke_precent" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginLeft="10.0dip" android:text="0%" />
+                    </LinearLayout>
+                    <SeekBar android:id="@id/text_stroke_seekbar" android:layout_width="0.0dip" android:layout_height="wrap_content" android:layout_marginTop="2.0dip" android:maxHeight="2.0dip" android:max="20" android:progressDrawable="@drawable/font_poster_layerlist_drawable_seekbar_progress" android:minHeight="2.0dip" android:thumb="@drawable/font_poster_selector_seekbar_drawable_thumb" android:layout_weight="1.0" />
+                </LinearLayout>
+            </RelativeLayout>
+            <RelativeLayout android:orientation="vertical" android:id="@id/shadow_function_layout" android:visibility="gone" android:layout_width="fill_parent" android:layout_height="wrap_content">
+                <androidx.recyclerview.widget.RecyclerView android:id="@id/rv_shadowcolor" android:scrollbars="none" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginLeft="3.0dip" android:layout_marginTop="10.0dip" android:layout_marginRight="16.0dip" android:overScrollMode="never" />
+                <LinearLayout android:orientation="vertical" android:id="@id/shadow_seekbar_layout" android:visibility="gone" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_below="@id/rv_shadowcolor">
+                    <LinearLayout android:orientation="horizontal" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginTop="20.0dip">
+                        <LinearLayout android:layout_width="140.0dip" android:layout_height="wrap_content">
+                            <TextView android:textSize="14.0dip" android:textColor="@color/font_theme_default_summary_text_color" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginLeft="13.0dip" android:text="Distance-X: " />
+                            <TextView android:textSize="14.0dip" android:textColor="@color/font_theme_default_summary_text_color" android:id="@id/shadow_x_precent" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginLeft="10.0dip" android:text="0%" />
+                        </LinearLayout>
+                        <SeekBar android:id="@id/shadow_x_seekbar" android:layout_width="0.0dip" android:layout_height="wrap_content" android:layout_marginTop="2.0dip" android:maxHeight="2.0dip" android:progressDrawable="@drawable/font_poster_layerlist_drawable_seekbar_same_progress" android:minHeight="2.0dip" android:thumb="@drawable/font_poster_selector_seekbar_drawable_thumb" android:layout_weight="1.0" />
+                    </LinearLayout>
+                    <LinearLayout android:orientation="horizontal" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginTop="20.0dip">
+                        <LinearLayout android:layout_width="140.0dip" android:layout_height="wrap_content">
+                            <TextView android:textSize="14.0dip" android:textColor="@color/font_theme_default_summary_text_color" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginLeft="13.0dip" android:text="Distance-Y: " />
+                            <TextView android:textSize="14.0dip" android:textColor="@color/font_theme_default_summary_text_color" android:id="@id/shadow_y_precent" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginLeft="10.0dip" android:text="0%" />
+                        </LinearLayout>
+                        <SeekBar android:id="@id/shadow_y_seekbar" android:layout_width="0.0dip" android:layout_height="wrap_content" android:layout_marginTop="2.0dip" android:maxHeight="2.0dip" android:progressDrawable="@drawable/font_poster_layerlist_drawable_seekbar_same_progress" android:minHeight="2.0dip" android:thumb="@drawable/font_poster_selector_seekbar_drawable_thumb" android:layout_weight="1.0" />
+                    </LinearLayout>
+                    <LinearLayout android:orientation="horizontal" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginTop="20.0dip">
+                        <LinearLayout android:layout_width="140.0dip" android:layout_height="wrap_content">
+                            <TextView android:textSize="14.0dip" android:textColor="@color/font_theme_default_summary_text_color" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginLeft="13.0dip" android:text="Blur: " />
+                            <TextView android:textSize="14.0dip" android:textColor="@color/font_theme_default_summary_text_color" android:id="@id/tv_shadow_precent" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginLeft="10.0dip" android:text="0%" />
+                        </LinearLayout>
+                        <SeekBar android:id="@id/shadow_distance_seekbar" android:layout_width="0.0dip" android:layout_height="wrap_content" android:layout_marginTop="2.0dip" android:maxHeight="2.0dip" android:max="100" android:progressDrawable="@drawable/font_poster_layerlist_drawable_seekbar_progress" android:minHeight="2.0dip" android:thumb="@drawable/font_poster_selector_seekbar_drawable_thumb" android:layout_weight="1.0" />
+                    </LinearLayout>
+                </LinearLayout>
+            </RelativeLayout>
+            <RelativeLayout android:orientation="vertical" android:id="@id/bending_function_layout" android:visibility="gone" android:layout_width="fill_parent" android:layout_height="wrap_content">
+                <LinearLayout android:orientation="horizontal" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginTop="20.0dip">
+                    <LinearLayout android:layout_width="120.0dip" android:layout_height="wrap_content">
+                        <TextView android:textSize="14.0dip" android:textStyle="normal" android:textColor="@color/font_theme_default_summary_text_color" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginLeft="13.0dip" android:text="Bending: " />
+                        <TextView android:textSize="14.0dip" android:textStyle="normal" android:textColor="@color/font_theme_default_summary_text_color" android:id="@id/tv_bending_precent" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginLeft="10.0dip" android:text="0%" />
+                    </LinearLayout>
+                    <SeekBar android:id="@id/text_bending_seekbar" android:layout_width="0.0dip" android:layout_height="wrap_content" android:layout_marginTop="2.0dip" android:maxHeight="2.0dip" android:max="100" android:progressDrawable="@drawable/font_poster_layerlist_drawable_seekbar_progress" android:minHeight="2.0dip" android:thumb="@drawable/font_poster_selector_seekbar_drawable_thumb" android:layout_weight="1.0" />
+                </LinearLayout>
+            </RelativeLayout>
+        </LinearLayout>
+    </ScrollView>
+</com.zmagicc.example.fontlibs.FontTextColorFunctionLayout>

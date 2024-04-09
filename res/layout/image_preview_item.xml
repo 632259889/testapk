@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout android:id="@id/item" android:layout_width="70.0dip" android:layout_height="70.0dip" android:layout_marginLeft="6.0dip" android:layout_marginTop="5.0dip"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <ImageView android:layout_gravity="center" android:id="@id/image" android:layout_width="55.0dip" android:layout_height="55.0dip" android:scaleType="centerCrop" />
+    <ImageView android:layout_gravity="center|left|top" android:layout_width="20.0dip" android:layout_height="20.0dip" android:src="@drawable/cancel_image_icon" />
+</FrameLayout>

@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <item type="drawable" name="color_pressed">#30ffffff</item>
+    <item type="drawable" name="color_translucent">#00000000</item>
+    <item type="drawable" name="feedback_btn_blud">#00000000</item>
+    <item type="drawable" name="feedback_btn_press">#00000000</item>
+    <item type="drawable" name="notification_template_icon_bg">#3333b5e5</item>
+    <item type="drawable" name="notification_template_icon_low_bg">#0cffffff</item>
+</resources>

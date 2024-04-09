@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout android:layout_width="wrap_content" android:layout_height="wrap_content"
+  xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto">
+    <FrameLayout android:id="@id/item_layout" android:layout_width="wrap_content" android:layout_height="wrap_content">
+        <View android:id="@id/bg_view" android:layout_width="26.0dip" android:layout_height="39.0dip" />
+        <View android:id="@id/select_view" android:layout_width="26.0dip" android:layout_height="39.0dip" />
+    </FrameLayout>
+</FrameLayout>

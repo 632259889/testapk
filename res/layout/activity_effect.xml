@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout android:layout_width="fill_parent" android:layout_height="fill_parent"
+  xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto">
+    <LinearLayout android:id="@id/Tool" android:background="#ff1c1c1c" android:layout_width="fill_parent" android:layout_height="55.0dip" android:layout_alignParentTop="true" android:layout_alignParentStart="true">
+        <ImageView android:layout_gravity="start|center" android:id="@id/back_btn" android:layout_width="25.0dip" android:layout_height="25.0dip" android:src="@drawable/ic_activity_back" android:layout_marginStart="8.0dip" />
+    </LinearLayout>
+    <com.photoeffect.gesture.views.GestureFrameLayout android:layout_gravity="center" android:id="@id/vagueViewL" android:background="#ff000000" android:layout_width="fill_parent" android:layout_height="fill_parent" android:layout_above="@id/effect_layout" android:layout_below="@id/Tool">
+        <com.zmagicc.example.effectlibrary.EffectView android:layout_gravity="center" android:id="@id/VagueView" android:visibility="gone" android:layout_width="fill_parent" android:layout_height="fill_parent" />
+    </com.photoeffect.gesture.views.GestureFrameLayout>
+    <View android:id="@id/cover_view" android:background="#ff000000" android:layout_width="fill_parent" android:layout_height="fill_parent" android:layout_above="@id/effect_layout" android:layout_below="@id/Tool" />
+    <LinearLayout android:orientation="vertical" android:id="@id/sideLL" android:background="#401c1c1c" android:paddingLeft="11.0dip" android:paddingRight="11.0dip" android:visibility="gone" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_above="@id/effect_layout">
+        <RelativeLayout android:id="@id/undo_layout" android:visibility="gone" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginTop="5.0dip">
+            <ImageView android:id="@id/IvUndo" android:layout_width="26.0dip" android:layout_height="26.0dip" android:layout_marginTop="2.0dip" android:src="@drawable/effect_undo_inactive" />
+            <ImageView android:id="@id/IvRedo" android:layout_width="26.0dip" android:layout_height="26.0dip" android:layout_marginLeft="8.0dip" android:layout_marginTop="2.0dip" android:src="@drawable/effect_redo_inactive" android:layout_toRightOf="@id/IvUndo" />
+            <ImageView android:id="@id/IvOpen" android:layout_width="30.0dip" android:layout_height="30.0dip" android:layout_marginLeft="5.0dip" android:src="@drawable/ic_effect_up" android:layout_alignParentRight="true" />
+        </RelativeLayout>
+        <LinearLayout android:orientation="vertical" android:id="@id/ALLSeekbarL" android:visibility="gone" android:layout_width="fill_parent" android:layout_height="wrap_content">
+            <LinearLayout android:orientation="vertical" android:id="@id/ALLSeekbar" android:visibility="visible" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginLeft="4.0dip">
+                <LinearLayout android:orientation="horizontal" android:id="@id/FirstSeekbarL" android:visibility="visible" android:layout_width="fill_parent" android:layout_height="wrap_content">
+                    <TextView android:textSize="12.0dip" android:textColor="@color/white_text_color" android:gravity="center_vertical" android:layout_gravity="center_vertical" android:id="@id/FirstText" android:layout_width="55.0dip" android:layout_height="wrap_content" android:text="First" />
+                    <SeekBar android:id="@id/FirstSeekbar" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginTop="10.0dip" android:layout_marginBottom="10.0dip" android:maxHeight="2.0dip" android:max="100" android:progress="20" android:progressDrawable="@drawable/layerlist_drawable_seekbar_progress" android:minHeight="2.0dip" android:thumb="@drawable/selector_seekbar_drawable_thumb" android:layout_weight="1.0" />
+                </LinearLayout>
+                <LinearLayout android:orientation="horizontal" android:id="@id/SecondSeekbarL" android:visibility="visible" android:layout_width="fill_parent" android:layout_height="wrap_content">
+                    <TextView android:textSize="12.0dip" android:textColor="@color/white_text_color" android:gravity="center_vertical" android:layout_gravity="center_vertical" android:id="@id/SecondText" android:layout_width="55.0dip" android:layout_height="wrap_content" android:text="Second" />
+                    <SeekBar android:id="@id/SecondSeekbar" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginTop="10.0dip" android:layout_marginBottom="10.0dip" android:maxHeight="2.0dip" android:max="100" android:progress="20" android:progressDrawable="@drawable/layerlist_drawable_seekbar_progress" android:minHeight="2.0dip" android:thumb="@drawable/selector_seekbar_drawable_thumb" android:layout_weight="1.0" />
+                </LinearLayout>
+                <LinearLayout android:orientation="horizontal" android:id="@id/ThirdSeekbarL" android:visibility="visible" android:layout_width="fill_parent" android:layout_height="wrap_content">
+                    <TextView android:textSize="12.0dip" android:textColor="@color/white_text_color" android:gravity="center_vertical" android:layout_gravity="center_vertical" android:id="@id/ThirdText" android:layout_width="55.0dip" android:layout_height="wrap_content" android:text="Third" />
+                    <SeekBar android:id="@id/ThirdSeekbar" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginTop="10.0dip" android:layout_marginBottom="10.0dip" android:maxHeight="2.0dip" android:max="100" android:progress="20" android:progressDrawable="@drawable/layerlist_drawable_seekbar_progress" android:minHeight="2.0dip" android:thumb="@drawable/selector_seekbar_drawable_thumb" android:layout_weight="1.0" />
+                </LinearLayout>
+                <LinearLayout android:orientation="horizontal" android:id="@id/FourthSeekbarL" android:visibility="visible" android:layout_width="fill_parent" android:layout_height="wrap_content">
+                    <TextView android:textSize="12.0dip" android:textColor="@color/white_text_color" android:gravity="center_vertical" android:layout_gravity="center_vertical" android:id="@id/FourthText" android:layout_width="55.0dip" android:layout_height="wrap_content" android:text="Fourth" />
+                    <SeekBar android:id="@id/FourthSeekbar" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginTop="10.0dip" android:layout_marginBottom="10.0dip" android:maxHeight="2.0dip" android:max="100" android:progress="20" android:progressDrawable="@drawable/layerlist_drawable_seekbar_progress" android:minHeight="2.0dip" android:thumb="@drawable/selector_seekbar_drawable_thumb" android:layout_weight="1.0" />
+                </LinearLayout>
+                <LinearLayout android:orientation="horizontal" android:id="@id/FifthSeekbarL" android:visibility="visible" android:layout_width="fill_parent" android:layout_height="wrap_content">
+                    <TextView android:textSize="12.0dip" android:textColor="@color/white_text_color" android:gravity="center_vertical" android:layout_gravity="center_vertical" android:id="@id/FifthText" android:layout_width="55.0dip" android:layout_height="wrap_content" android:text="Fifth" />
+                    <SeekBar android:id="@id/FifthSeekbar" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginTop="10.0dip" android:layout_marginBottom="10.0dip" android:maxHeight="2.0dip" android:max="100" android:progress="20" android:progressDrawable="@drawable/layerlist_drawable_seekbar_progress" android:minHeight="2.0dip" android:thumb="@drawable/selector_seekbar_drawable_thumb" android:layout_weight="1.0" />
+                </LinearLayout>
+            </LinearLayout>
+        </LinearLayout>
+    </LinearLayout>
+    <FrameLayout android:layout_gravity="center_vertical" android:id="@id/effect_layout" android:background="#ff1c1c1c" android:visibility="gone" android:layout_width="fill_parent" android:layout_height="190.0dip" android:layout_above="@id/Rl">
+        <ScrollView android:id="@id/scrollView" android:scrollbars="none" android:layout_width="fill_parent" android:layout_height="fill_parent" android:overScrollMode="never">
+            <LinearLayout android:orientation="vertical" android:layout_width="fill_parent" android:layout_height="fill_parent">
+                <androidx.recyclerview.widget.RecyclerView android:layout_gravity="center" android:id="@id/effect_list" android:scrollbars="none" android:layout_width="wrap_content" android:layout_height="fill_parent" android:layout_marginTop="5.0dip" android:overScrollMode="never" />
+                <FrameLayout android:layout_gravity="center_horizontal" android:id="@id/effect_more" android:background="@drawable/effect_more_bg" android:layout_width="80.0dip" android:layout_height="30.0dip" android:layout_marginTop="5.0dip" android:layout_marginBottom="5.0dip">
+                    <TextView android:textSize="14.0dip" android:textColor="#ffffffff" android:layout_gravity="center" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="More" />
+                </FrameLayout>
+            </LinearLayout>
+        </ScrollView>
+    </FrameLayout>
+    <RelativeLayout android:id="@id/Rl" android:background="#ff1c1c1c" android:visibility="gone" android:layout_width="fill_parent" android:layout_height="50.0dip" android:layout_alignParentBottom="true">
+        <ImageView android:id="@id/ic_close" android:layout_width="35.0dip" android:layout_height="35.0dip" android:layout_marginLeft="7.0dip" android:src="@drawable/btn_exit" android:layout_alignParentLeft="true" android:layout_centerVertical="true" />
+        <TextView android:textSize="14.0dip" android:textColor="@color/white_text_color" android:gravity="center" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="Effect" android:layout_centerInParent="true" />
+        <ImageView android:id="@id/ic_confirm" android:layout_width="35.0dip" android:layout_height="35.0dip" android:layout_marginRight="10.0dip" android:src="@drawable/btn_commit" android:layout_alignParentRight="true" android:layout_centerVertical="true" />
+    </RelativeLayout>
+    <TextView android:textSize="35.0dip" android:textColor="@color/white_text_color" android:id="@id/seekbarNum" android:visibility="gone" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="220.0dip" android:shadowColor="#401c1c1c" android:shadowDx="5.0" android:shadowDy="5.0" android:shadowRadius="10.0" android:layout_alignParentTop="true" android:layout_centerHorizontal="true" />
+    <com.base.common.loading.RotateLoading android:id="@id/loading_image" android:padding="2.0dip" android:visibility="gone" android:layout_width="60.0dip" android:layout_height="60.0dip" android:layout_centerInParent="true" app:loading_color="@color/accent_color" app:loading_speed="12" app:loading_width="2.0dip" />
+</RelativeLayout>

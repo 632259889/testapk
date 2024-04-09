@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout android:layout_width="fill_parent" android:layout_height="fill_parent"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <LinearLayout android:orientation="vertical" android:paddingTop="4.0dip" android:layout_width="0.0dip" android:layout_height="fill_parent" android:layout_weight="1.0" android:layout_marginStart="11.0dip">
+        <LinearLayout android:gravity="center_vertical" android:orientation="horizontal" android:id="@id/ll_border" android:layout_width="fill_parent" android:layout_height="0.0dip" android:layout_weight="1.0">
+            <ImageView android:id="@id/ic_border" android:layout_width="23.0dip" android:layout_height="23.0dip" android:src="@drawable/ic_bordersize_collage" />
+            <FrameLayout android:id="@id/seekbar_border_touch_layout" android:layout_width="fill_parent" android:layout_height="22.0dip">
+                <SeekBar android:layout_gravity="center" android:id="@id/seekbar_border" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginRight="10.0dip" android:maxHeight="2.0dip" android:progressDrawable="@drawable/layerlist_drawable_seekbar_progress" android:minHeight="2.0dip" android:thumb="@drawable/selector_seekbar_drawable_thumb" />
+            </FrameLayout>
+        </LinearLayout>
+        <LinearLayout android:gravity="center_vertical" android:orientation="horizontal" android:id="@id/ll_corner" android:layout_width="fill_parent" android:layout_height="0.0dip" android:layout_marginTop="10.0dip" android:layout_weight="1.0">
+            <ImageView android:id="@id/ic_corner" android:layout_width="23.0dip" android:layout_height="23.0dip" android:src="@drawable/ic_circular_bead_collage" />
+            <FrameLayout android:id="@id/seekbar_corner_touch_layout" android:layout_width="fill_parent" android:layout_height="22.0dip">
+                <SeekBar android:layout_gravity="center" android:id="@id/seekbar_corner" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginRight="10.0dip" android:maxHeight="2.0dip" android:progressDrawable="@drawable/layerlist_drawable_seekbar_progress" android:minHeight="2.0dip" android:thumb="@drawable/selector_seekbar_drawable_thumb" />
+            </FrameLayout>
+        </LinearLayout>
+        <LinearLayout android:gravity="center_vertical" android:orientation="horizontal" android:id="@id/ll_shadow" android:layout_width="fill_parent" android:layout_height="0.0dip" android:layout_marginTop="10.0dip" android:layout_weight="1.0">
+            <ImageView android:id="@id/ic_shadow" android:layout_width="23.0dip" android:layout_height="23.0dip" android:src="@drawable/ic_shadow_collage" />
+            <FrameLayout android:id="@id/seekbar_shadow_touch_layout" android:layout_width="fill_parent" android:layout_height="22.0dip">
+                <SeekBar android:layout_gravity="center" android:id="@id/seekbar_shadow" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginRight="10.0dip" android:maxHeight="2.0dip" android:progressDrawable="@drawable/layerlist_drawable_seekbar_progress" android:minHeight="2.0dip" android:thumb="@drawable/selector_seekbar_drawable_thumb" />
+            </FrameLayout>
+        </LinearLayout>
+    </LinearLayout>
+    <View android:id="@id/divider" android:background="@color/dark_seek_divider_color" android:layout_width="1.0dip" android:layout_height="fill_parent" android:layout_marginTop="14.0dip" android:layout_marginRight="8.0dip" android:layout_marginBottom="10.0dip" />
+    <LinearLayout android:layout_gravity="center" android:orientation="vertical" android:id="@id/ll_border_background_collage" android:layout_width="wrap_content" android:layout_height="fill_parent" android:layout_marginRight="10.0dip">
+        <ImageView android:layout_gravity="center" android:id="@id/ic_color" android:layout_width="65.0dip" android:layout_height="65.0dip" android:layout_marginTop="6.0dip" android:src="@drawable/ic_bordercolor_collage" />
+        <TextView android:textSize="@dimen/image_edit_text_size" android:textColor="@color/white_text_color" android:gravity="center" android:layout_gravity="center" android:id="@id/tv_border_background" android:visibility="gone" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/border_background_color" />
+    </LinearLayout>
+</LinearLayout>

@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout android:id="@id/root" android:background="#ff000000" android:fitsSystemWindows="true" android:layout_width="fill_parent" android:layout_height="fill_parent"
+  xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto">
+    <FrameLayout android:id="@id/top_view" android:background="@color/top_and_bottom_bar_color" android:layout_width="fill_parent" android:layout_height="@dimen/title_bar_height" android:layout_alignParentTop="true">
+        <ImageView android:layout_gravity="start|center" android:id="@id/back_btn" android:layout_width="25.0dip" android:layout_height="25.0dip" android:src="@drawable/ic_activity_back" android:layout_marginStart="8.0dip" />
+    </FrameLayout>
+    <FrameLayout android:layout_width="fill_parent" android:layout_height="fill_parent" android:layout_above="@id/bottom_view" android:layout_below="@id/top_view">
+        <com.zmagicc.example.blendexposure.ExposureView android:layout_gravity="center" android:id="@id/exposure" android:visibility="invisible" android:layout_width="fill_parent" android:layout_height="fill_parent" />
+        <com.base.common.loading.RotateLoading android:layout_gravity="center" android:id="@id/loading_image" android:padding="2.0dip" android:visibility="gone" android:layout_width="60.0dip" android:layout_height="60.0dip" app:loading_color="@color/accent_color" app:loading_speed="12" app:loading_width="2.0dip" />
+    </FrameLayout>
+    <View android:id="@id/bottom_view" android:visibility="invisible" android:layout_width="fill_parent" android:layout_height="70.0dip" android:layout_alignParentBottom="true" />
+</RelativeLayout>

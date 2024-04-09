@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout android:layout_width="wrap_content" android:layout_height="wrap_content"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <ImageView android:layout_gravity="left" android:id="@id/iv_delete" android:visibility="visible" android:layout_width="20.0dip" android:layout_height="20.0dip" android:src="@drawable/sticker_delete_white" />
+    <com.edit.imageeditlibrary.editimage.view.MyTextView android:textSize="11.0dip" android:textColor="#ff000000" android:ellipsize="end" android:gravity="center" android:layout_gravity="center" android:id="@id/tv_tag" android:longClickable="false" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_margin="20.0dip" android:hint="@string/input_hint" android:maxLines="1" android:inputType="text" android:textIsSelectable="false" />
+    <ImageView android:layout_gravity="end|bottom|center" android:id="@id/iv_rotate" android:visibility="visible" android:layout_width="20.0dip" android:layout_height="20.0dip" android:src="@drawable/sticker_rotate_white" />
+</FrameLayout>

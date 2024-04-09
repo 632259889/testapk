@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout android:id="@id/root_view" android:background="#ffffffff" android:layout_width="fill_parent" android:layout_height="fill_parent"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <FrameLayout android:id="@id/top_layout" android:layout_width="fill_parent" android:layout_height="@dimen/title_bar_height" android:layout_alignParentTop="true">
+        <RelativeLayout android:layout_gravity="start|center" android:orientation="horizontal" android:id="@id/back_up_gallery" android:background="@drawable/ripple_no_mask" android:layout_width="wrap_content" android:layout_height="fill_parent" android:paddingStart="8.0dip" android:paddingEnd="8.0dip">
+            <ImageView android:id="@id/back_icon" android:layout_width="24.0dip" android:layout_height="24.0dip" android:src="@drawable/ic_gallery_back_arrow" android:layout_centerVertical="true" android:rotationY="@integer/rotation" android:layout_alignParentStart="true" />
+            <ImageView android:id="@id/album_icon" android:layout_width="30.0dip" android:layout_height="30.0dip" android:src="@drawable/ic_album" android:layout_centerVertical="true" android:layout_marginStart="6.0dip" android:layout_toEndOf="@id/back_icon" />
+            <TextView android:textSize="16.0dip" android:textColor="@color/dark_text_color" android:id="@id/album_text" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/albums" android:layout_centerVertical="true" android:layout_marginStart="2.0dip" android:layout_toEndOf="@id/album_icon" />
+        </RelativeLayout>
+        <LinearLayout android:gravity="center" android:layout_gravity="end|center" android:id="@id/prime" android:background="@drawable/shape_pro_bg" android:visibility="gone" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginEnd="55.0dip">
+            <ImageView android:layout_gravity="center" android:id="@id/prime_icon" android:padding="1.0dip" android:layout_width="23.0dip" android:layout_height="23.0dip" android:src="@drawable/ic_pro_icon" android:layout_marginStart="4.0dip" />
+            <TextView android:textSize="14.0dip" android:textColor="#ffffffff" android:layout_gravity="center" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="Pro" android:layout_marginStart="5.0dip" android:layout_marginEnd="5.0dip" />
+        </LinearLayout>
+        <LinearLayout android:layout_gravity="end|center" android:id="@id/coin_layout" android:background="@drawable/shape_coin_bg" android:visibility="gone" android:layout_width="wrap_content" android:layout_height="25.0dip" android:layout_marginEnd="55.0dip">
+            <ImageView android:layout_gravity="center" android:layout_width="18.0dip" android:layout_height="18.0dip" android:src="@drawable/ic_coin" android:layout_marginStart="4.0dip" />
+            <TextView android:textSize="14.0dip" android:textColor="#ffffffff" android:layout_gravity="center" android:id="@id/coin_text" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="20" android:layout_marginStart="7.0dip" android:layout_marginEnd="7.0dip" />
+            <ImageView android:layout_gravity="center" android:layout_width="16.0dip" android:layout_height="16.0dip" android:src="@drawable/ic_add_coin" android:layout_marginEnd="4.0dip" />
+        </LinearLayout>
+        <LinearLayout android:gravity="center" android:layout_gravity="end|center" android:id="@id/back_to_main" android:background="@drawable/ripple_no_mask" android:layout_width="40.0dip" android:layout_height="40.0dip" android:layout_marginEnd="5.0dip">
+            <ImageView android:id="@id/back_to_main_icon" android:layout_width="30.0dip" android:layout_height="30.0dip" android:src="@drawable/ic_close" />
+        </LinearLayout>
+        <View android:layout_gravity="bottom" android:id="@id/top_divider" android:background="@color/white_divider_color" android:layout_width="fill_parent" android:layout_height="1.0dip" />
+    </FrameLayout>
+    <FrameLayout android:layout_width="fill_parent" android:layout_height="fill_parent" android:layout_above="@id/bottom_layout" android:layout_below="@id/top_layout">
+        <com.zimage.zselector.view.SpeedRecyclerView android:layout_gravity="center" android:id="@id/recyclerview" android:layout_width="fill_parent" android:layout_height="fill_parent" android:overScrollMode="never" />
+        <LinearLayout android:gravity="center" android:orientation="vertical" android:id="@id/camera_x_nophototip" android:visibility="gone" android:layout_width="fill_parent" android:layout_height="fill_parent">
+            <ImageView android:layout_gravity="center" android:id="@id/iv_backtomain" android:layout_width="80.0dip" android:layout_height="80.0dip" />
+            <TextView android:textSize="12.0dip" android:textColor="@color/dark_text_color" android:layout_gravity="center" android:id="@id/tv_nophoto" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="No photos found.Click camera icon to capture." />
+        </LinearLayout>
+    </FrameLayout>
+    <LinearLayout android:orientation="vertical" android:id="@id/bottom_layout" android:layout_width="fill_parent" android:layout_height="100.0dip" android:layout_alignParentBottom="true">
+        <View android:id="@id/bottom_divider" android:background="@color/white_divider_color" android:layout_width="fill_parent" android:layout_height="1.0dip" />
+        <LinearLayout android:orientation="horizontal" android:layout_width="fill_parent" android:layout_height="50.0dip">
+            <LinearLayout android:gravity="center" android:id="@id/delete" android:background="@drawable/ripple_no_mask" android:layout_width="0.0dip" android:layout_height="40.0dip" android:layout_weight="1.0">
+                <ImageView android:id="@id/delete_icon" android:layout_width="30.0dip" android:layout_height="30.0dip" android:src="@drawable/delete_icon" />
+            </LinearLayout>
+            <LinearLayout android:gravity="center" android:id="@id/favorite" android:background="@drawable/ripple_no_mask" android:layout_width="0.0dip" android:layout_height="40.0dip" android:layout_weight="1.0">
+                <ImageView android:id="@id/favorite_icon" android:layout_width="30.0dip" android:layout_height="30.0dip" android:src="@drawable/ic_favorite_default" />
+            </LinearLayout>
+            <LinearLayout android:gravity="center" android:id="@id/share" android:background="@drawable/ripple_no_mask" android:layout_width="0.0dip" android:layout_height="40.0dip" android:layout_weight="1.0">
+                <ImageView android:id="@id/share_icon" android:layout_width="30.0dip" android:layout_height="30.0dip" android:src="@drawable/share_icon" />
+            </LinearLayout>
+            <LinearLayout android:gravity="center" android:id="@id/rate" android:background="@drawable/ripple_no_mask" android:layout_width="0.0dip" android:layout_height="40.0dip" android:layout_weight="1.0">
+                <ImageView android:id="@id/rate_image" android:layout_width="30.0dip" android:layout_height="30.0dip" android:src="@drawable/rate_icon" />
+            </LinearLayout>
+            <LinearLayout android:gravity="center" android:id="@id/detail" android:background="@drawable/ripple_no_mask" android:layout_width="0.0dip" android:layout_height="40.0dip" android:layout_weight="1.0">
+                <ImageView android:id="@id/detail_icon" android:layout_width="30.0dip" android:layout_height="30.0dip" android:src="@drawable/share_icon" />
+            </LinearLayout>
+        </LinearLayout>
+        <LinearLayout android:gravity="center" android:layout_gravity="bottom|center" android:id="@id/edit" android:background="@drawable/ripple_no_mask" android:layout_width="50.0dip" android:layout_height="50.0dip">
+            <FrameLayout android:id="@id/edit_icon_bg" android:layout_width="45.0dip" android:layout_height="45.0dip" android:layout_marginBottom="5.0dip">
+                <ImageView android:layout_gravity="center" android:id="@id/edit_icon" android:layout_width="fill_parent" android:layout_height="fill_parent" android:src="@drawable/edit_icon" />
+            </FrameLayout>
+        </LinearLayout>
+    </LinearLayout>
+    <FrameLayout android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_alignParentBottom="true">
+        <LinearLayout android:orientation="vertical" android:id="@id/my_snackbar" android:background="#ffffffff" android:visibility="gone" android:layout_width="fill_parent" android:layout_height="wrap_content">
+            <LinearLayout android:gravity="center_vertical" android:orientation="horizontal" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginTop="10.0dip">
+                <LinearLayout android:gravity="center" android:orientation="vertical" android:id="@id/facebook" android:layout_width="0.0dip" android:layout_height="wrap_content" android:layout_weight="1.0">
+                    <ImageView android:layout_width="40.0dip" android:layout_height="40.0dip" android:src="@drawable/share_facebook_icon" />
+                    <TextView android:textSize="14.0dip" android:textColor="@color/dark_text_color" android:gravity="center" android:id="@id/facebook_text" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="10.0dip" android:text="Facebook" />
+                </LinearLayout>
+                <LinearLayout android:gravity="center" android:orientation="vertical" android:id="@id/whatsapp" android:layout_width="0.0dip" android:layout_height="wrap_content" android:layout_weight="1.0">
+                    <ImageView android:layout_width="40.0dip" android:layout_height="40.0dip" android:src="@drawable/share_whatsapp_icon" />
+                    <TextView android:textSize="14.0dip" android:textColor="@color/dark_text_color" android:gravity="center" android:id="@id/whatsapp_text" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="10.0dip" android:text="Whatsapp" />
+                </LinearLayout>
+                <LinearLayout android:gravity="center" android:orientation="vertical" android:id="@id/instagram" android:layout_width="0.0dip" android:layout_height="wrap_content" android:layout_weight="1.0">
+                    <ImageView android:layout_width="40.0dip" android:layout_height="40.0dip" android:src="@drawable/share_instagram_icon" />
+                    <TextView android:textSize="14.0dip" android:textColor="@color/dark_text_color" android:gravity="center" android:id="@id/instagram_text" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="10.0dip" android:text="Instagram" />
+                </LinearLayout>
+                <LinearLayout android:gravity="center" android:orientation="vertical" android:id="@id/twitter" android:layout_width="0.0dip" android:layout_height="wrap_content" android:layout_weight="1.0">
+                    <ImageView android:layout_width="40.0dip" android:layout_height="40.0dip" android:src="@drawable/share_twitter_icon" />
+                    <TextView android:textSize="14.0dip" android:textColor="@color/dark_text_color" android:gravity="center" android:id="@id/twitter_text" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="10.0dip" android:text="Twitter" />
+                </LinearLayout>
+                <LinearLayout android:gravity="center" android:orientation="vertical" android:id="@id/more_share" android:layout_width="0.0dip" android:layout_height="wrap_content" android:layout_weight="1.0">
+                    <ImageView android:layout_width="40.0dip" android:layout_height="40.0dip" android:src="@drawable/share_more_icon" />
+                    <TextView android:textSize="14.0dip" android:textColor="@color/dark_text_color" android:gravity="center" android:id="@id/more_share_text" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="10.0dip" android:text="@string/more" />
+                </LinearLayout>
+            </LinearLayout>
+            <LinearLayout android:gravity="center" android:orientation="horizontal" android:id="@id/down_btn" android:layout_width="fill_parent" android:layout_height="48.0dip">
+                <ImageView android:layout_gravity="center" android:id="@id/down_btn_icon" android:layout_width="38.0dip" android:layout_height="26.0dip" android:src="@drawable/down_back" />
+            </LinearLayout>
+        </LinearLayout>
+    </FrameLayout>
+    <FrameLayout android:layout_gravity="bottom" android:id="@id/prime_banner_layout" android:visibility="gone" android:layout_width="fill_parent" android:layout_height="60.0dip" android:layout_above="@id/bottom_layout">
+        <ImageView android:layout_width="fill_parent" android:layout_height="fill_parent" android:src="@drawable/ic_prime_banner_bg" android:scaleType="centerCrop" />
+        <ImageView android:layout_gravity="end|center|top" android:id="@id/prime_banner_close" android:layout_width="23.0dip" android:layout_height="23.0dip" android:layout_marginTop="7.0dip" android:src="@drawable/ic_prime_banner_close" android:layout_marginEnd="7.0dip" />
+        <LinearLayout android:gravity="start|center" android:layout_gravity="start|center" android:orientation="vertical" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginStart="30.0dip">
+            <TextView android:textSize="16.0dip" android:textColor="#fffffefe" android:gravity="start" android:layout_gravity="start" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="Upgrade Prime Version" />
+        </LinearLayout>
+        <TextView android:textSize="14.0dip" android:textColor="#fffffefe" android:layout_gravity="end|center" android:background="@drawable/shape_prime_btn_bg" android:paddingTop="5.0dip" android:paddingBottom="5.0dip" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="Upgrade Now" android:paddingStart="8.0dip" android:paddingEnd="8.0dip" android:layout_marginEnd="50.0dip" />
+    </FrameLayout>
+    <FrameLayout android:layout_gravity="bottom" android:id="@id/prime_remove_ad_banner_layout" android:visibility="gone" android:layout_width="fill_parent" android:layout_height="60.0dip" android:layout_above="@id/bottom_layout">
+        <ImageView android:layout_width="fill_parent" android:layout_height="fill_parent" android:src="@drawable/ic_prime_banner_bg" android:scaleType="centerCrop" />
+        <ImageView android:layout_gravity="end|center|top" android:id="@id/prime_remove_ad_banner_close" android:layout_width="21.0dip" android:layout_height="21.0dip" android:layout_marginTop="7.0dip" android:src="@drawable/ic_prime_banner_close" android:layout_marginEnd="7.0dip" />
+        <LinearLayout android:gravity="center" android:layout_gravity="center" android:orientation="vertical" android:layout_width="wrap_content" android:layout_height="wrap_content">
+            <ImageView android:id="@id/vip_icon" android:layout_width="94.0dip" android:layout_height="35.0dip" android:src="@drawable/join_vip_00000" />
+        </LinearLayout>
+    </FrameLayout>
+</RelativeLayout>

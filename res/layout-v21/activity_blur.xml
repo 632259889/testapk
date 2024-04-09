@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout android:orientation="vertical" android:layout_width="fill_parent" android:layout_height="fill_parent"
+  xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto">
+    <FrameLayout android:id="@id/banner" android:background="@color/top_and_bottom_bar_color" android:layout_width="fill_parent" android:layout_height="@dimen/title_bar_height">
+        <ImageView android:layout_gravity="start|center" android:id="@id/back_btn" android:layout_width="25.0dip" android:layout_height="25.0dip" android:src="@drawable/ic_activity_back" android:rotationY="@integer/rotation" android:layout_marginStart="8.0dip" />
+    </FrameLayout>
+    <FrameLayout android:background="#ff000000" android:layout_width="fill_parent" android:layout_height="0.0dip" android:layout_weight="1.0">
+        <FrameLayout android:id="@id/work_space" android:layout_width="fill_parent" android:layout_height="fill_parent">
+            <FrameLayout android:layout_width="fill_parent" android:layout_height="fill_parent">
+                <com.photo.blur.BlurSquareRelativeLayout android:layout_gravity="center" android:id="@id/blur_panel_layout" android:visibility="gone" android:layout_width="fill_parent" android:layout_height="fill_parent">
+                    <com.photo.blur.BlurImageView android:id="@id/blur_panel" android:layout_width="fill_parent" android:layout_height="fill_parent" android:scaleType="fitCenter" />
+                    <RelativeLayout android:id="@id/add_layout_blur" android:layout_width="fill_parent" android:layout_height="fill_parent" />
+                </com.photo.blur.BlurSquareRelativeLayout>
+            </FrameLayout>
+            <com.photo.blur.BlurVagueView android:layout_gravity="center" android:id="@id/blur_vagueView" android:visibility="gone" android:layout_width="fill_parent" android:layout_height="fill_parent" />
+            <com.base.common.imagezoom.ImageViewTouch android:layout_gravity="center" android:id="@id/main_image" android:layout_width="fill_parent" android:layout_height="fill_parent" />
+        </FrameLayout>
+        <TextView android:textSize="35.0dip" android:textColor="@color/white_text_color" android:layout_gravity="center" android:id="@id/circle_blur_text" android:visibility="gone" android:layout_width="wrap_content" android:layout_height="wrap_content" android:shadowColor="#80000000" android:shadowDx="5.0" android:shadowDy="5.0" android:shadowRadius="10.0" />
+        <com.base.common.loading.RotateLoading android:layout_gravity="center" android:id="@id/loading_image" android:padding="2.0dip" android:visibility="gone" android:layout_width="60.0dip" android:layout_height="60.0dip" app:loading_color="@color/accent_color" app:loading_speed="12" app:loading_width="2.0dip" />
+        <LinearLayout android:layout_gravity="bottom" android:id="@id/auto_blur_seekbar_layout" android:background="#401c1c1c" android:visibility="gone" android:layout_width="fill_parent" android:layout_height="40.0dip">
+            <TextView android:textSize="12.0dip" android:textColor="@color/white_text_color" android:gravity="center_vertical" android:layout_gravity="center_vertical" android:layout_width="55.0dip" android:layout_height="wrap_content" android:text="Strength" android:layout_marginStart="15.0dip" />
+            <SeekBar android:layout_gravity="center" android:id="@id/auto_blur_seekbar" android:layout_width="fill_parent" android:layout_height="wrap_content" android:maxHeight="2.0dip" android:max="100" android:progressDrawable="@drawable/layerlist_drawable_seekbar_progress" android:minHeight="2.0dip" android:thumb="@drawable/selector_seekbar_drawable_thumb" android:layout_marginEnd="10.0dip" />
+        </LinearLayout>
+        <LinearLayout android:layout_gravity="bottom" android:id="@id/circle_blur_seekbar_layout" android:background="#401c1c1c" android:visibility="gone" android:layout_width="fill_parent" android:layout_height="40.0dip">
+            <TextView android:textSize="12.0dip" android:textColor="@color/white_text_color" android:gravity="center_vertical" android:layout_gravity="center_vertical" android:layout_width="55.0dip" android:layout_height="wrap_content" android:text="Strength" android:layout_marginStart="15.0dip" />
+            <SeekBar android:layout_gravity="center" android:id="@id/circle_blur_seekbar" android:layout_width="fill_parent" android:layout_height="wrap_content" android:maxHeight="2.0dip" android:max="100" android:progressDrawable="@drawable/layerlist_drawable_seekbar_progress" android:minHeight="2.0dip" android:thumb="@drawable/selector_seekbar_drawable_thumb" android:layout_marginEnd="10.0dip" />
+        </LinearLayout>
+        <LinearLayout android:layout_gravity="bottom" android:orientation="vertical" android:id="@id/other_blur_seekbar_layout" android:background="#401c1c1c" android:visibility="gone" android:layout_width="fill_parent" android:layout_height="wrap_content">
+            <LinearLayout android:orientation="horizontal" android:visibility="visible" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginStart="15.0dip">
+                <TextView android:textSize="12.0dip" android:textColor="@color/white_text_color" android:gravity="center_vertical" android:layout_gravity="center_vertical" android:id="@id/first_text" android:layout_width="55.0dip" android:layout_height="wrap_content" android:text="First" />
+                <SeekBar android:id="@id/first_seekbar" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginTop="10.0dip" android:layout_marginBottom="10.0dip" android:maxHeight="2.0dip" android:max="100" android:progress="20" android:progressDrawable="@drawable/layerlist_drawable_seekbar_progress" android:minHeight="2.0dip" android:thumb="@drawable/selector_seekbar_drawable_thumb" android:layout_weight="1.0" android:layout_marginEnd="10.0dip" android:splitTrack="false" />
+            </LinearLayout>
+            <LinearLayout android:orientation="horizontal" android:visibility="visible" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginStart="15.0dip">
+                <TextView android:textSize="12.0dip" android:textColor="@color/white_text_color" android:gravity="center_vertical" android:layout_gravity="center_vertical" android:id="@id/second_text" android:layout_width="55.0dip" android:layout_height="wrap_content" android:text="Second" />
+                <SeekBar android:id="@id/second_seekbar" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginTop="10.0dip" android:layout_marginBottom="10.0dip" android:maxHeight="2.0dip" android:max="100" android:progress="20" android:progressDrawable="@drawable/layerlist_drawable_seekbar_progress" android:minHeight="2.0dip" android:thumb="@drawable/selector_seekbar_drawable_thumb" android:layout_weight="1.0" android:layout_marginEnd="10.0dip" android:splitTrack="false" />
+            </LinearLayout>
+        </LinearLayout>
+    </FrameLayout>
+    <HorizontalScrollView android:background="@color/top_and_bottom_bar_color" android:scrollbars="none" android:layout_width="fill_parent" android:layout_height="wrap_content" android:overScrollMode="never">
+        <LinearLayout android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginTop="2.0dip" android:layout_marginBottom="2.0dip">
+            <FrameLayout android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginStart="4.0dip">
+                <ImageView android:id="@id/blur_classic" android:layout_width="55.0dip" android:layout_height="70.0dip" android:src="@drawable/ic_classic_thumb" android:scaleType="centerCrop" />
+                <TextView android:textSize="10.0dip" android:textColor="#80ffffff" android:gravity="center" android:layout_gravity="bottom" android:background="#80000000" android:layout_width="55.0dip" android:layout_height="12.0dip" android:text="Classic" />
+                <ImageView android:id="@id/blur_classic_select" android:visibility="gone" android:layout_width="55.0dip" android:layout_height="70.0dip" android:src="@drawable/blur_item_select" android:scaleType="centerCrop" />
+                <View android:background="@drawable/item_image_bg" android:layout_width="55.0dip" android:layout_height="70.0dip" />
+            </FrameLayout>
+            <FrameLayout android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginStart="8.0dip">
+                <ImageView android:id="@id/blur_ai" android:layout_width="55.0dip" android:layout_height="70.0dip" android:src="@drawable/ic_ai_thumb" android:scaleType="centerCrop" />
+                <TextView android:textSize="10.0dip" android:textColor="#80ffffff" android:gravity="center" android:layout_gravity="bottom" android:background="#80000000" android:layout_width="55.0dip" android:layout_height="12.0dip" android:text="Auto" />
+                <ImageView android:id="@id/blur_ai_select" android:visibility="gone" android:layout_width="55.0dip" android:layout_height="70.0dip" android:src="@drawable/blur_item_select" android:scaleType="centerCrop" />
+                <View android:background="@drawable/item_image_bg" android:layout_width="55.0dip" android:layout_height="70.0dip" />
+                <ImageView android:layout_gravity="end|center|top" android:id="@id/auto_prime_icon" android:visibility="gone" android:layout_width="16.0dip" android:layout_height="16.0dip" android:layout_marginTop="2.0dip" android:src="@drawable/ic_prime_tab" android:layout_marginEnd="2.0dip" />
+            </FrameLayout>
+            <FrameLayout android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginStart="8.0dip">
+                <ImageView android:id="@id/blur_circle" android:layout_width="55.0dip" android:layout_height="70.0dip" android:src="@drawable/ic_circle_thumb" android:scaleType="centerCrop" />
+                <TextView android:textSize="10.0dip" android:textColor="#80ffffff" android:gravity="center" android:layout_gravity="bottom" android:background="#80000000" android:layout_width="55.0dip" android:layout_height="12.0dip" android:text="Circle" />
+                <ImageView android:id="@id/blur_circle_select" android:visibility="gone" android:layout_width="55.0dip" android:layout_height="70.0dip" android:src="@drawable/blur_item_select" android:scaleType="centerCrop" />
+                <View android:background="@drawable/item_image_bg" android:layout_width="55.0dip" android:layout_height="70.0dip" />
+                <ImageView android:layout_gravity="end|center|top" android:id="@id/blur_circle_prime_icon" android:visibility="gone" android:layout_width="16.0dip" android:layout_height="16.0dip" android:layout_marginTop="2.0dip" android:src="@drawable/ic_prime_tab" android:layout_marginEnd="2.0dip" />
+            </FrameLayout>
+            <FrameLayout android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginStart="8.0dip">
+                <ImageView android:id="@id/blur_linear" android:layout_width="55.0dip" android:layout_height="70.0dip" android:src="@drawable/ic_linear_thumb" android:scaleType="centerCrop" />
+                <TextView android:textSize="10.0dip" android:textColor="#80ffffff" android:gravity="center" android:layout_gravity="bottom" android:background="#80000000" android:layout_width="55.0dip" android:layout_height="12.0dip" android:text="Linear" />
+                <ImageView android:id="@id/blur_linear_select" android:visibility="gone" android:layout_width="55.0dip" android:layout_height="70.0dip" android:src="@drawable/blur_item_select" android:scaleType="centerCrop" />
+                <View android:background="@drawable/item_image_bg" android:layout_width="55.0dip" android:layout_height="70.0dip" />
+                <ImageView android:layout_gravity="end|center|top" android:id="@id/blur_linear_prime_icon" android:visibility="gone" android:layout_width="16.0dip" android:layout_height="16.0dip" android:layout_marginTop="2.0dip" android:src="@drawable/ic_prime_tab" android:layout_marginEnd="2.0dip" />
+            </FrameLayout>
+            <FrameLayout android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginStart="8.0dip">
+                <ImageView android:id="@id/blur_dynamic" android:layout_width="55.0dip" android:layout_height="70.0dip" android:src="@drawable/ic_dynamic_thumb" android:scaleType="centerCrop" />
+                <TextView android:textSize="10.0dip" android:textColor="#80ffffff" android:gravity="center" android:layout_gravity="bottom" android:background="#80000000" android:layout_width="55.0dip" android:layout_height="12.0dip" android:text="Dynamic" />
+                <ImageView android:id="@id/blur_dynamic_select" android:visibility="gone" android:layout_width="55.0dip" android:layout_height="70.0dip" android:src="@drawable/blur_item_select" android:scaleType="centerCrop" />
+                <View android:background="@drawable/item_image_bg" android:layout_width="55.0dip" android:layout_height="70.0dip" />
+                <ImageView android:layout_gravity="end|center|top" android:id="@id/blur_dynamic_prime_icon" android:visibility="gone" android:layout_width="16.0dip" android:layout_height="16.0dip" android:layout_marginTop="2.0dip" android:src="@drawable/ic_prime_tab" android:layout_marginEnd="2.0dip" />
+            </FrameLayout>
+            <FrameLayout android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginStart="8.0dip" android:layout_marginEnd="4.0dip">
+                <ImageView android:id="@id/blur_radiation" android:layout_width="55.0dip" android:layout_height="70.0dip" android:src="@drawable/ic_radiation_thumb" android:scaleType="centerCrop" />
+                <TextView android:textSize="10.0dip" android:textColor="#80ffffff" android:gravity="center" android:layout_gravity="bottom" android:background="#80000000" android:layout_width="55.0dip" android:layout_height="12.0dip" android:text="Radiation" />
+                <ImageView android:id="@id/blur_radiation_select" android:visibility="gone" android:layout_width="55.0dip" android:layout_height="70.0dip" android:src="@drawable/blur_item_select" android:scaleType="centerCrop" />
+                <View android:background="@drawable/item_image_bg" android:layout_width="55.0dip" android:layout_height="70.0dip" />
+                <ImageView android:layout_gravity="end|center|top" android:id="@id/radiation_prime_icon" android:visibility="gone" android:layout_width="16.0dip" android:layout_height="16.0dip" android:layout_marginTop="2.0dip" android:src="@drawable/ic_prime_tab" android:layout_marginEnd="2.0dip" />
+            </FrameLayout>
+        </LinearLayout>
+    </HorizontalScrollView>
+    <RelativeLayout android:id="@id/bottom_btn_layout" android:background="@color/top_and_bottom_bar_color" android:layout_width="fill_parent" android:layout_height="50.0dip">
+        <ImageView android:id="@id/btn_exit" android:layout_width="35.0dip" android:layout_height="35.0dip" android:layout_marginLeft="7.0dip" android:src="@drawable/btn_exit" android:layout_alignParentLeft="true" android:layout_centerVertical="true" />
+        <TextView android:textSize="14.0dip" android:textColor="@color/function_item_text_color_white" android:id="@id/current_edit_name" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="Blur" android:layout_centerHorizontal="true" android:layout_centerVertical="true" />
+        <ImageView android:id="@id/btn_commit" android:layout_width="35.0dip" android:layout_height="35.0dip" android:layout_marginRight="11.0dip" android:src="@drawable/btn_commit" android:layout_alignParentRight="true" android:layout_centerVertical="true" />
+    </RelativeLayout>
+</LinearLayout>

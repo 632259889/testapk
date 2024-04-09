@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout android:orientation="vertical" android:layout_width="fill_parent" android:layout_height="fill_parent"
+  xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto">
+    <HorizontalScrollView android:scrollbars="none" android:layout_width="fill_parent" android:layout_height="30.0dip" android:overScrollMode="never">
+        <LinearLayout android:gravity="center" android:orientation="horizontal" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="2.0dip" android:layout_marginBottom="2.0dip">
+            <FrameLayout android:layout_gravity="center" android:orientation="vertical" android:id="@id/cartoon" android:layout_width="wrap_content" android:layout_height="30.0dip" android:layout_marginStart="@dimen/filters_tab_margin">
+                <TextView android:textSize="14.0dip" android:textColor="#ffffffff" android:gravity="center" android:layout_gravity="center" android:id="@id/cartoon_text" android:paddingTop="3.0dip" android:paddingBottom="3.0dip" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="Cartoon" android:paddingStart="12.0dip" android:paddingEnd="12.0dip" android:layout_marginStart="8.0dip" android:layout_marginEnd="8.0dip" />
+            </FrameLayout>
+            <FrameLayout android:orientation="vertical" android:id="@id/festival" android:layout_width="wrap_content" android:layout_height="30.0dip" android:layout_marginStart="@dimen/filters_tab_margin">
+                <TextView android:textSize="14.0dip" android:textColor="#ffffffff" android:gravity="center" android:layout_gravity="center" android:id="@id/festival_text" android:paddingTop="3.0dip" android:paddingBottom="3.0dip" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="Festival" android:paddingStart="12.0dip" android:paddingEnd="12.0dip" android:layout_marginStart="8.0dip" android:layout_marginEnd="8.0dip" />
+            </FrameLayout>
+            <FrameLayout android:orientation="vertical" android:id="@id/flower" android:layout_width="wrap_content" android:layout_height="30.0dip" android:layout_marginStart="@dimen/filters_tab_margin">
+                <TextView android:textSize="14.0dip" android:textColor="#ffffffff" android:gravity="center" android:layout_gravity="center" android:id="@id/flower_text" android:paddingTop="3.0dip" android:paddingBottom="3.0dip" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="Flower" android:paddingStart="12.0dip" android:paddingEnd="12.0dip" android:layout_marginStart="8.0dip" android:layout_marginEnd="8.0dip" />
+            </FrameLayout>
+            <FrameLayout android:orientation="vertical" android:id="@id/nature" android:layout_width="wrap_content" android:layout_height="30.0dip" android:layout_marginStart="@dimen/filters_tab_margin">
+                <TextView android:textSize="14.0dip" android:textColor="#ffffffff" android:gravity="center" android:layout_gravity="center" android:id="@id/nature_text" android:paddingTop="3.0dip" android:paddingBottom="3.0dip" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="Nature" android:paddingStart="12.0dip" android:paddingEnd="12.0dip" android:layout_marginStart="8.0dip" android:layout_marginEnd="8.0dip" />
+            </FrameLayout>
+        </LinearLayout>
+    </HorizontalScrollView>
+    <androidx.recyclerview.widget.RecyclerView android:layout_gravity="center_vertical" android:id="@id/frame_list" android:scrollbars="none" android:layout_width="fill_parent" android:layout_height="70.0dip" android:overScrollMode="never" android:layout_marginStart="4.0dip" android:layout_marginEnd="4.0dip" />
+    <RelativeLayout android:visibility="gone" android:layout_width="fill_parent" android:layout_height="50.0dip">
+        <ImageView android:id="@id/btn_exit" android:layout_width="35.0dip" android:layout_height="35.0dip" android:layout_marginLeft="7.0dip" android:src="@drawable/btn_exit" android:layout_alignParentLeft="true" android:layout_centerVertical="true" />
+        <TextView android:textSize="14.0dip" android:textColor="@color/function_item_text_color_white" android:id="@id/current_edit_name" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="Frame" android:layout_centerHorizontal="true" android:layout_centerVertical="true" />
+        <ImageView android:id="@id/btn_commit" android:layout_width="35.0dip" android:layout_height="35.0dip" android:layout_marginRight="14.0dip" android:src="@drawable/btn_commit" android:layout_alignParentRight="true" android:layout_centerVertical="true" />
+    </RelativeLayout>
+</LinearLayout>

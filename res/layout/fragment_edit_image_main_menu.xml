@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout android:id="@id/tools" android:background="@color/top_and_bottom_bar_color" android:layout_width="wrap_content" android:layout_height="fill_parent"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <HorizontalScrollView android:scrollbars="none" android:layout_width="0.0dip" android:layout_height="fill_parent" android:layout_weight="1.0" android:overScrollMode="never">
+        <LinearLayout android:orientation="horizontal" android:id="@id/item_layout" android:layout_width="wrap_content" android:layout_height="fill_parent">
+            <LinearLayout android:gravity="center" android:layout_gravity="center_vertical" android:orientation="vertical" android:id="@id/btn_fliter" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginStart="25.0dip">
+                <ImageView android:layout_width="@dimen/editor_tab_size" android:layout_height="@dimen/editor_tab_size" android:src="@drawable/ic_filter_icon" />
+                <TextView android:textSize="@dimen/image_edit_text_size" android:textColor="@color/function_item_text_color_white" android:gravity="center" android:layout_gravity="center" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="@dimen/editor_tab_text_margin_top" android:text="@string/fliter" />
+            </LinearLayout>
+            <LinearLayout android:gravity="center" android:layout_gravity="center_vertical" android:orientation="vertical" android:id="@id/btn_crop" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginStart="40.0dip">
+                <ImageView android:layout_width="@dimen/editor_tab_size" android:layout_height="@dimen/editor_tab_size" android:src="@drawable/ic_crop_icon" />
+                <TextView android:textSize="@dimen/image_edit_text_size" android:textColor="@color/function_item_text_color_white" android:gravity="center" android:layout_gravity="center" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="@dimen/editor_tab_text_margin_top" android:text="@string/crop" />
+            </LinearLayout>
+            <LinearLayout android:gravity="center" android:layout_gravity="center_vertical" android:orientation="vertical" android:id="@id/btn_rotate" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginStart="40.0dip">
+                <ImageView android:layout_width="@dimen/editor_tab_size" android:layout_height="@dimen/editor_tab_size" android:src="@drawable/ic_rotate_icon" />
+                <TextView android:textSize="@dimen/image_edit_text_size" android:textColor="@color/function_item_text_color_white" android:gravity="center" android:layout_gravity="center" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="@dimen/editor_tab_text_margin_top" android:text="@string/rotate" />
+            </LinearLayout>
+            <LinearLayout android:gravity="center" android:layout_gravity="center_vertical" android:orientation="vertical" android:id="@id/btn_colormatrix" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginStart="40.0dip">
+                <ImageView android:layout_width="@dimen/editor_tab_size" android:layout_height="@dimen/editor_tab_size" android:src="@drawable/ic_adjust_icon" />
+                <TextView android:textSize="@dimen/image_edit_text_size" android:textColor="@color/function_item_text_color_white" android:gravity="center" android:layout_gravity="center" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="@dimen/editor_tab_text_margin_top" android:text="@string/adjust" />
+            </LinearLayout>
+            <LinearLayout android:gravity="center" android:layout_gravity="center_vertical" android:orientation="vertical" android:id="@id/btn_tiltshift" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginStart="40.0dip">
+                <ImageView android:layout_width="@dimen/editor_tab_size" android:layout_height="@dimen/editor_tab_size" android:src="@drawable/ic_tiltshift_icon" />
+                <TextView android:textSize="@dimen/image_edit_text_size" android:textColor="@color/function_item_text_color_white" android:gravity="center" android:layout_gravity="center" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="@dimen/editor_tab_text_margin_top" android:text="@string/tilt_shift" />
+            </LinearLayout>
+            <LinearLayout android:gravity="center" android:layout_gravity="center_vertical" android:orientation="vertical" android:id="@id/btn_vignette" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginStart="40.0dip">
+                <ImageView android:layout_width="@dimen/editor_tab_size" android:layout_height="@dimen/editor_tab_size" android:src="@drawable/ic_vignette_icon" />
+                <TextView android:textSize="@dimen/image_edit_text_size" android:textColor="@color/function_item_text_color_white" android:gravity="center" android:layout_gravity="center" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="@dimen/editor_tab_text_margin_top" android:text="@string/vignette" />
+            </LinearLayout>
+            <LinearLayout android:gravity="center" android:layout_gravity="center_vertical" android:orientation="vertical" android:id="@id/btn_background" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginStart="40.0dip">
+                <ImageView android:layout_width="@dimen/editor_tab_size" android:layout_height="@dimen/editor_tab_size" android:src="@drawable/ic_background_icon" />
+                <TextView android:textSize="@dimen/image_edit_text_size" android:textColor="@color/function_item_text_color_white" android:gravity="center" android:layout_gravity="center" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="@dimen/editor_tab_text_margin_top" android:text="@string/edit_background" />
+            </LinearLayout>
+            <LinearLayout android:gravity="center" android:layout_gravity="center_vertical" android:orientation="vertical" android:id="@id/btn_stickers" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginStart="40.0dip">
+                <ImageView android:layout_width="@dimen/editor_tab_size" android:layout_height="@dimen/editor_tab_size" android:src="@drawable/ic_sticker_icon" />
+                <TextView android:textSize="@dimen/image_edit_text_size" android:textColor="@color/function_item_text_color_white" android:gravity="center" android:layout_gravity="center" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="@dimen/editor_tab_text_margin_top" android:text="@string/stickers" />
+            </LinearLayout>
+            <LinearLayout android:gravity="center" android:layout_gravity="center_vertical" android:orientation="vertical" android:id="@id/btn_text" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginStart="40.0dip">
+                <ImageView android:layout_width="@dimen/editor_tab_size" android:layout_height="@dimen/editor_tab_size" android:src="@drawable/ic_text_icon" />
+                <TextView android:textSize="@dimen/image_edit_text_size" android:textColor="@color/function_item_text_color_white" android:gravity="center" android:layout_gravity="center" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="@dimen/editor_tab_text_margin_top" android:text="@string/text" />
+            </LinearLayout>
+            <LinearLayout android:gravity="center" android:layout_gravity="center_vertical" android:orientation="vertical" android:id="@id/btn_paint" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginStart="40.0dip">
+                <ImageView android:layout_width="@dimen/editor_tab_size" android:layout_height="@dimen/editor_tab_size" android:src="@drawable/ic_doodle_icon" />
+                <TextView android:textSize="@dimen/image_edit_text_size" android:textColor="@color/function_item_text_color_white" android:gravity="center" android:layout_gravity="center" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="@dimen/editor_tab_text_margin_top" android:text="@string/doodle" />
+            </LinearLayout>
+            <LinearLayout android:gravity="center" android:layout_gravity="center_vertical" android:orientation="vertical" android:id="@id/btn_border" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginStart="40.0dip">
+                <ImageView android:layout_width="@dimen/editor_tab_size" android:layout_height="@dimen/editor_tab_size" android:src="@drawable/ic_border_icon" />
+                <TextView android:textSize="@dimen/image_edit_text_size" android:textColor="@color/function_item_text_color_white" android:gravity="center" android:layout_gravity="center" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="@dimen/editor_tab_text_margin_top" android:text="@string/border" />
+            </LinearLayout>
+            <LinearLayout android:gravity="center" android:layout_gravity="center_vertical" android:orientation="vertical" android:id="@id/btn_tag" android:visibility="visible" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginStart="40.0dip">
+                <ImageView android:layout_width="@dimen/editor_tab_size" android:layout_height="@dimen/editor_tab_size" android:src="@drawable/ic_tag_icon" />
+                <TextView android:textSize="@dimen/image_edit_text_size" android:textColor="@color/function_item_text_color_white" android:gravity="center" android:layout_gravity="center" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="@dimen/editor_tab_text_margin_top" android:text="@string/tag" />
+            </LinearLayout>
+            <LinearLayout android:gravity="center" android:layout_gravity="center_vertical" android:orientation="vertical" android:id="@id/btn_shape" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginStart="40.0dip" android:layout_marginEnd="25.0dip">
+                <ImageView android:layout_width="@dimen/editor_tab_size" android:layout_height="@dimen/editor_tab_size" android:src="@drawable/ic_shape_icon" />
+                <TextView android:textSize="@dimen/image_edit_text_size" android:textColor="@color/function_item_text_color_white" android:gravity="center" android:layout_gravity="center" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="@dimen/editor_tab_text_margin_top" android:text="@string/shape" />
+            </LinearLayout>
+        </LinearLayout>
+    </HorizontalScrollView>
+    <View android:background="#ff4c4c4c" android:layout_width="1.0dip" android:layout_height="fill_parent" android:layout_marginTop="8.0dip" android:layout_marginBottom="8.0dip" />
+    <LinearLayout android:gravity="center" android:layout_gravity="center_vertical" android:orientation="vertical" android:id="@id/goto_beauty" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginStart="15.0dip" android:layout_marginEnd="15.0dip">
+        <ImageView android:layout_width="@dimen/editor_tab_size" android:layout_height="@dimen/editor_tab_size" android:src="@drawable/ic_edit_to_beauty" />
+        <TextView android:textSize="@dimen/image_edit_text_size" android:textColor="@color/function_item_text_color_white" android:gravity="center" android:layout_gravity="center" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="@dimen/editor_tab_text_margin_top" android:text="@string/main_makeup" />
+    </LinearLayout>
+</LinearLayout>

@@ -1,0 +1,172 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout android:id="@id/root" android:layout_width="fill_parent" android:layout_height="fill_parent"
+  xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto">
+    <SurfaceView android:background="#00000000" android:layout_width="fill_parent" android:layout_height="fill_parent" />
+    <FrameLayout android:id="@id/preview" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_centerHorizontal="true" />
+    <FrameLayout android:id="@id/mask_view" android:background="@color/black" android:visibility="gone" android:layout_width="fill_parent" android:layout_height="fill_parent">
+        <ImageView android:id="@id/iv_blur_mask" android:layout_width="fill_parent" android:layout_height="fill_parent" android:scaleType="centerCrop" />
+    </FrameLayout>
+    <ImageView android:id="@id/mask_square1" android:background="@color/black" android:visibility="gone" android:layout_width="fill_parent" android:layout_height="wrap_content" />
+    <ImageView android:id="@id/mask_square2" android:background="@color/black" android:visibility="gone" android:layout_width="fill_parent" android:layout_height="wrap_content" />
+    <FrameLayout android:id="@id/blur_view" android:visibility="gone" android:layout_width="fill_parent" android:layout_height="fill_parent">
+        <ImageView android:id="@id/blur_image1" android:background="@color/white" android:layout_width="fill_parent" android:layout_height="fill_parent" android:scaleType="centerCrop" />
+        <ImageView android:id="@id/blur_image2" android:background="@color/white" android:layout_width="fill_parent" android:layout_height="fill_parent" android:scaleType="centerCrop" />
+    </FrameLayout>
+    <LinearLayout android:orientation="horizontal" android:id="@id/top_bar" android:background="@color/translucent_bar_background" android:layout_width="fill_parent" android:layout_height="45.0dip">
+        <ImageButton android:id="@id/ib_homepage" android:background="@drawable/ripple_effect" android:padding="10.0dip" android:layout_width="0.0dip" android:layout_height="fill_parent" android:src="@drawable/ic_homepage" android:layout_weight="1.0" />
+        <ImageButton android:id="@id/ib_switch_camera" android:background="@drawable/ripple_effect" android:padding="10.0dip" android:layout_width="0.0dip" android:layout_height="fill_parent" android:src="@drawable/ic_switch_camera" android:layout_weight="1.0" />
+        <FrameLayout android:id="@id/flash_layout" android:layout_width="0.0dip" android:layout_height="fill_parent" android:layout_weight="1.0">
+            <ImageButton android:layout_gravity="center" android:id="@id/ib_flash" android:background="@drawable/ripple_effect" android:padding="10.0dip" android:layout_width="wrap_content" android:layout_height="wrap_content" android:src="@drawable/ic_flash_off" />
+            <ImageButton android:layout_gravity="center" android:id="@id/ib_led" android:background="@drawable/ripple_effect" android:padding="10.0dip" android:layout_width="wrap_content" android:layout_height="wrap_content" android:src="@drawable/ic_led_off" />
+        </FrameLayout>
+        <ImageButton android:id="@id/ib_collage" android:background="@drawable/ripple_effect" android:padding="10.0dip" android:layout_width="0.0dip" android:layout_height="fill_parent" android:src="@drawable/ic_ratio_fs" android:layout_weight="1.0" />
+        <ImageButton android:id="@id/ib_video_size" android:background="@drawable/ripple_effect" android:padding="10.0dip" android:visibility="gone" android:layout_width="0.0dip" android:layout_height="fill_parent" android:src="@drawable/ic_video_fhd" android:layout_weight="1.0" />
+        <FrameLayout android:id="@id/prime_layout" android:background="@drawable/ripple_effect" android:visibility="gone" android:layout_width="0.0dip" android:layout_height="fill_parent" android:layout_weight="1.0">
+            <LinearLayout android:layout_gravity="center" android:background="@drawable/shape_pro_bg" android:layout_width="wrap_content" android:layout_height="wrap_content">
+                <ImageView android:layout_gravity="center" android:padding="1.0dip" android:layout_width="22.0dip" android:layout_height="22.0dip" android:src="@drawable/ic_pro_icon" android:layout_marginStart="4.0dip" />
+                <TextView android:textSize="14.0dip" android:textColor="#ffffffff" android:layout_gravity="center" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="Pro" android:layout_marginStart="5.0dip" android:layout_marginEnd="5.0dip" />
+            </LinearLayout>
+        </FrameLayout>
+        <ImageButton android:id="@id/ib_more" android:background="@drawable/ripple_effect" android:padding="10.0dip" android:layout_width="0.0dip" android:layout_height="fill_parent" android:src="@drawable/ic_more" android:layout_weight="1.0" />
+    </LinearLayout>
+    <include layout="@layout/more_video_size_layout" />
+    <FrameLayout android:id="@id/rl_more" android:visibility="gone" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_below="@id/top_bar">
+        <androidx.recyclerview.widget.RecyclerView android:id="@id/rv_more" android:background="@drawable/bg_more" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_centerVertical="true" android:overScrollMode="never" android:layout_marginStart="10.0dip" android:layout_marginEnd="10.0dip" />
+    </FrameLayout>
+    <LinearLayout android:orientation="horizontal" android:id="@id/cancel_pro_mode" android:background="@drawable/bg_cancel_pro_mode" android:visibility="invisible" android:clickable="true" android:layout_width="wrap_content" android:layout_height="24.0dip" android:layout_marginTop="5.0dip" android:layout_below="@id/top_bar" android:layout_centerHorizontal="true">
+        <TextView android:textSize="12.0dip" android:textColor="@color/white" android:layout_gravity="center" android:id="@id/tv_pro_mode" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginStart="20.0dip" android:layout_marginEnd="15.0dip" />
+        <ImageView android:layout_gravity="center" android:layout_width="14.0dip" android:layout_height="14.0dip" android:src="@drawable/ic_pro_close" android:layout_marginEnd="9.0dip" />
+    </LinearLayout>
+    <TextView android:textSize="18.0dip" android:textColor="@color/white" android:id="@id/tv_camera_mode" android:visibility="gone" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="60.0dip" android:text="Auto" android:layout_centerHorizontal="true" />
+    <TextView android:textSize="80.0dip" android:textColor="@color/white" android:id="@id/tv_frag_camera_time_lapse_number" android:visibility="gone" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_centerInParent="true" />
+    <com.magiccamera.zfunction.main.ui.module.ColorTemperatureSeekBar android:id="@id/sb_color_temperature" android:visibility="invisible" android:layout_width="250.0dip" android:layout_height="20.0dip" android:layout_centerHorizontal="true" />
+    <RelativeLayout android:id="@id/bottom_bar" android:visibility="invisible" android:layout_width="fill_parent" android:layout_height="fill_parent">
+        <ImageButton android:id="@id/ib_beauty" android:background="@null" android:layout_width="29.0dip" android:layout_height="29.0dip" android:layout_marginTop="3.0dip" android:src="@drawable/selector_beauty" android:scaleType="centerInside" android:layout_marginStart="16.0dip" />
+        <ImageButton android:id="@id/ib_color_temperature" android:background="@null" android:visibility="invisible" android:layout_width="29.0dip" android:layout_height="29.0dip" android:layout_marginTop="3.0dip" android:src="@drawable/selector_color_temperature" android:scaleType="fitCenter" android:layout_marginStart="16.0dip" />
+        <ImageButton android:id="@id/ib_filter" android:background="@null" android:visibility="visible" android:layout_width="29.0dip" android:layout_height="29.0dip" android:layout_marginTop="3.0dip" android:src="@drawable/selector_filter" android:scaleType="centerInside" android:layout_marginStart="23.5dip" android:layout_toEndOf="@id/ib_beauty" />
+        <ImageButton android:id="@id/ib_sticker" android:background="@null" android:visibility="visible" android:layout_width="29.0dip" android:layout_height="29.0dip" android:layout_marginTop="3.0dip" android:src="@drawable/selector_sticker" android:scaleType="centerInside" android:layout_marginEnd="16.0dip" android:layout_alignParentEnd="true" />
+        <ImageButton android:id="@id/ib_auto_collage" android:background="@null" android:visibility="invisible" android:layout_width="wrap_content" android:layout_height="29.0dip" android:layout_marginTop="3.0dip" android:src="@drawable/ic_auto_collage_manual" android:scaleType="centerInside" android:layout_marginEnd="23.5dip" android:layout_toStartOf="@id/ib_sticker" />
+    </RelativeLayout>
+    <TextView android:textSize="30.0dip" android:textColor="#ffffffff" android:id="@id/take_photo_count" android:visibility="gone" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_centerHorizontal="true" />
+    <de.hdodenhof.circleimageview.CircleImageView android:id="@id/civ_gallery" android:background="@drawable/bg_gallery_s8" android:visibility="invisible" android:layout_width="52.0dip" android:layout_height="52.0dip" android:src="@drawable/ic_gallery_none" android:scaleType="centerCrop" android:layout_marginEnd="50.0dip" android:layout_alignParentEnd="true" />
+    <de.hdodenhof.circleimageview.CircleImageView android:id="@id/ib_switch_video" android:background="@drawable/bg_switch_video_s8" android:padding="1.0dip" android:visibility="invisible" android:layout_width="52.0dip" android:layout_height="52.0dip" android:src="@drawable/selector_switch_video" android:scaleType="centerCrop" android:layout_marginStart="50.0dip" android:layout_alignParentStart="true" />
+    <com.magiccamera.zfunction.main.ui.module.CircleProgressBar android:id="@id/video_progress" android:visibility="invisible" android:layout_width="fill_parent" android:layout_height="80.0dip" app:background_color="#fff9f9f9" app:line_width="6.0dip" app:progress_background_color="#fff9f9f9" app:progress_end_color="@color/s2_accent_color" app:progress_shader="sweep" app:progress_start_color="@color/s2_accent_color" app:progress_stroke_cap="round" app:progress_stroke_width="6.0dip" app:style="solid_line" />
+    <com.magiccamera.zfunction.main.ui.module.TakePhotoButton android:id="@id/tpb" android:visibility="invisible" android:layout_width="fill_parent" android:layout_height="55.5dip" />
+    <SeekBar android:id="@id/sb_vignette" android:visibility="gone" android:layout_width="170.0dip" android:layout_height="wrap_content" android:layout_marginTop="265.0dip" android:maxHeight="1.0dip" android:progressDrawable="@drawable/vignette_seekbar_style" android:minHeight="1.0dip" android:alpha="0.99" android:rotation="-90.0" android:layout_marginStart="-65.0dip" android:layout_alignParentStart="true" android:thumbTint="@color/white" />
+    <ImageButton android:id="@id/exposure_plus" android:background="@null" android:visibility="invisible" android:layout_width="15.0dip" android:layout_height="15.0dip" android:layout_marginTop="170.0dip" android:src="@drawable/exposure_plus" android:scaleType="centerInside" android:layout_marginEnd="13.0dip" android:layout_alignParentEnd="true" />
+    <SeekBar android:id="@id/sb_exposure" android:visibility="invisible" android:layout_width="170.0dip" android:layout_height="wrap_content" android:layout_marginTop="265.0dip" android:maxHeight="2.0dip" android:progressDrawable="@drawable/layerlist_exposure_seekbar_progress" android:minHeight="2.0dip" android:thumb="@drawable/ic_exposure" android:rotation="-90.0" android:layout_marginEnd="-65.0dip" android:layout_alignParentEnd="true" />
+    <ImageView android:id="@id/exposure_less" android:background="@null" android:visibility="invisible" android:layout_width="15.0dip" android:layout_height="15.0dip" android:layout_marginTop="360.0dip" android:src="@drawable/exposure_less" android:scaleType="centerInside" android:layout_marginEnd="13.0dip" android:layout_alignParentEnd="true" />
+    <ImageButton android:id="@id/exposure_lock" android:background="@null" android:visibility="gone" android:layout_width="20.0dip" android:layout_height="20.0dip" android:layout_marginTop="380.0dip" android:src="@drawable/exposure_unlocked" android:scaleType="centerInside" android:layout_marginEnd="12.0dip" android:layout_alignParentEnd="true" />
+    <RelativeLayout android:id="@id/zoom_lens_layout" android:layout_width="fill_parent" android:layout_height="fill_parent">
+        <FrameLayout android:layout_width="fill_parent" android:layout_height="wrap_content">
+            <LinearLayout android:layout_gravity="center_horizontal" android:orientation="horizontal" android:id="@id/rear_zoom_layout" android:visibility="gone" android:layout_width="wrap_content" android:layout_height="wrap_content">
+                <ImageView android:id="@id/rear_zoom" android:layout_width="30.0dip" android:layout_height="30.0dip" android:layout_marginTop="2.0dip" android:src="@drawable/ic_rear_camera_faous_1x_select" />
+            </LinearLayout>
+            <LinearLayout android:layout_gravity="center_horizontal" android:orientation="horizontal" android:id="@id/front_zoom_layout" android:visibility="gone" android:layout_width="wrap_content" android:layout_height="wrap_content">
+                <ImageView android:id="@id/front_zoom" android:layout_width="30.0dip" android:layout_height="30.0dip" android:layout_marginTop="2.0dip" android:src="@drawable/ic_front_camera_faous_1x_select" />
+            </LinearLayout>
+        </FrameLayout>
+    </RelativeLayout>
+    <RelativeLayout android:orientation="horizontal" android:id="@id/pro_mode" android:visibility="invisible" android:layout_width="fill_parent" android:layout_height="wrap_content">
+        <RelativeLayout android:id="@id/pro_mode_content" android:layout_width="fill_parent" android:layout_height="wrap_content">
+            <TextView android:textSize="18.0dip" android:textColor="@color/white" android:id="@id/pro_mode_name" android:visibility="invisible" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginBottom="10.0dip" android:layout_centerHorizontal="true" />
+            <androidx.recyclerview.widget.RecyclerView android:id="@id/rv_iso" android:visibility="invisible" android:layout_width="wrap_content" android:layout_height="50.0dip" android:layout_below="@id/pro_mode_name" android:layout_centerHorizontal="true" android:overScrollMode="never" />
+            <androidx.recyclerview.widget.RecyclerView android:id="@id/rv_scene" android:visibility="invisible" android:layout_width="wrap_content" android:layout_height="50.0dip" android:layout_below="@id/pro_mode_name" android:layout_centerHorizontal="true" android:overScrollMode="never" />
+            <androidx.recyclerview.widget.RecyclerView android:id="@id/rv_color" android:visibility="invisible" android:layout_width="wrap_content" android:layout_height="50.0dip" android:layout_below="@id/pro_mode_name" android:layout_centerHorizontal="true" android:overScrollMode="never" />
+            <androidx.recyclerview.widget.RecyclerView android:id="@id/rv_white_balance" android:visibility="invisible" android:layout_width="wrap_content" android:layout_height="50.0dip" android:layout_below="@id/pro_mode_name" android:layout_centerHorizontal="true" android:overScrollMode="never" />
+            <com.magiccamera.zfunction.main.ui.seekbar.BubbleSeekBar android:id="@id/bsb_exposure" android:visibility="invisible" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_below="@id/pro_mode_name" android:layout_centerHorizontal="true" android:layout_marginStart="10.0dip" android:layout_marginEnd="10.0dip" app:bsb_draw_one_track_width="1.0dip" app:bsb_draw_second_track="false" app:bsb_draw_thumb_line_width="2.0dip" app:bsb_draw_vertical_line_width="1.0dip" app:bsb_hide_bubble="true" app:bsb_second_track_color="@color/primary_color" app:bsb_section_text_size="12.0dip" app:bsb_show_section_vertical_line="true" app:bsb_thumb_radius_on_dragging="10.0dip" app:bsb_thumb_vertical_line_half_size="10.0dip" app:bsb_touch_to_seek="true" app:bsb_track_color="@color/white" />
+            <androidx.recyclerview.widget.RecyclerView android:id="@id/rv_focus" android:visibility="invisible" android:layout_width="wrap_content" android:layout_height="50.0dip" android:layout_below="@id/pro_mode_name" android:layout_centerHorizontal="true" android:overScrollMode="never" />
+        </RelativeLayout>
+        <LinearLayout android:orientation="horizontal" android:id="@id/pro_mode_tab" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginTop="3.0dip" android:baselineAligned="false" android:layout_below="@id/pro_mode_content">
+            <LinearLayout android:orientation="vertical" android:id="@id/ll_iso" android:layout_width="0.0dip" android:layout_height="wrap_content" android:layout_weight="1.0">
+                <ImageButton android:id="@id/ib_iso" android:background="@null" android:padding="2.0dip" android:clickable="false" android:layout_width="fill_parent" android:layout_height="30.0dip" android:src="@drawable/ic_iso" android:scaleType="centerInside" />
+                <com.magiccamera.zfunction.main.ui.MarqueeTextView android:textSize="12.0dip" android:textColor="@color/white" android:ellipsize="marquee" android:gravity="center" android:layout_gravity="center_vertical" android:id="@id/tv_iso" android:layout_width="fill_parent" android:layout_height="wrap_content" android:singleLine="true" android:marqueeRepeatLimit="marquee_forever" android:paddingStart="5.0dip" android:paddingEnd="5.0dip" />
+            </LinearLayout>
+            <LinearLayout android:orientation="vertical" android:id="@id/ll_scene" android:layout_width="0.0dip" android:layout_height="wrap_content" android:layout_weight="1.0">
+                <ImageButton android:id="@id/ib_scene" android:background="@null" android:padding="2.0dip" android:clickable="false" android:layout_width="fill_parent" android:layout_height="30.0dip" android:src="@drawable/ic_scene" android:scaleType="centerInside" />
+                <com.magiccamera.zfunction.main.ui.MarqueeTextView android:textSize="12.0dip" android:textColor="@color/white" android:ellipsize="marquee" android:gravity="center" android:layout_gravity="center_vertical" android:id="@id/tv_scene" android:layout_width="fill_parent" android:layout_height="wrap_content" android:singleLine="true" android:marqueeRepeatLimit="marquee_forever" android:paddingStart="5.0dip" android:paddingEnd="5.0dip" />
+            </LinearLayout>
+            <LinearLayout android:orientation="vertical" android:id="@id/ll_color" android:layout_width="0.0dip" android:layout_height="wrap_content" android:layout_weight="1.0">
+                <ImageButton android:id="@id/ib_color" android:background="@null" android:padding="2.0dip" android:clickable="false" android:layout_width="fill_parent" android:layout_height="30.0dip" android:src="@drawable/ic_color" android:scaleType="centerInside" />
+                <com.magiccamera.zfunction.main.ui.MarqueeTextView android:textSize="12.0dip" android:textColor="@color/white" android:ellipsize="marquee" android:gravity="center" android:layout_gravity="center_vertical" android:id="@id/tv_color" android:layout_width="fill_parent" android:layout_height="wrap_content" android:singleLine="true" android:marqueeRepeatLimit="marquee_forever" android:paddingStart="5.0dip" android:paddingEnd="5.0dip" />
+            </LinearLayout>
+            <LinearLayout android:orientation="vertical" android:id="@id/ll_white_balance" android:layout_width="0.0dip" android:layout_height="wrap_content" android:layout_weight="1.0">
+                <ImageButton android:id="@id/ib_white_balance" android:background="@null" android:padding="2.0dip" android:clickable="false" android:layout_width="fill_parent" android:layout_height="30.0dip" android:src="@drawable/ic_white_balance" android:scaleType="centerInside" />
+                <com.magiccamera.zfunction.main.ui.MarqueeTextView android:textSize="12.0dip" android:textColor="@color/white" android:ellipsize="marquee" android:gravity="center" android:layout_gravity="center_vertical" android:id="@id/tv_white_balance" android:layout_width="fill_parent" android:layout_height="wrap_content" android:singleLine="true" android:marqueeRepeatLimit="marquee_forever" android:paddingStart="5.0dip" android:paddingEnd="5.0dip" />
+            </LinearLayout>
+            <LinearLayout android:orientation="vertical" android:id="@id/ll_exposure" android:layout_width="0.0dip" android:layout_height="wrap_content" android:layout_weight="1.0">
+                <ImageButton android:id="@id/ib_exposure" android:background="@null" android:padding="2.0dip" android:clickable="false" android:layout_width="fill_parent" android:layout_height="30.0dip" android:src="@drawable/ic_exposure_btn" android:scaleType="centerInside" />
+                <com.magiccamera.zfunction.main.ui.MarqueeTextView android:textSize="12.0dip" android:textColor="@color/white" android:ellipsize="marquee" android:gravity="center" android:layout_gravity="center_vertical" android:id="@id/tv_exposure" android:layout_width="fill_parent" android:layout_height="wrap_content" android:singleLine="true" android:marqueeRepeatLimit="marquee_forever" android:paddingStart="5.0dip" android:paddingEnd="5.0dip" />
+            </LinearLayout>
+            <LinearLayout android:orientation="vertical" android:id="@id/ll_focus" android:layout_width="0.0dip" android:layout_height="wrap_content" android:layout_weight="1.0">
+                <ImageButton android:id="@id/ib_focus" android:background="@null" android:padding="2.0dip" android:clickable="false" android:layout_width="fill_parent" android:layout_height="30.0dip" android:src="@drawable/ic_focus" android:scaleType="centerInside" />
+                <com.magiccamera.zfunction.main.ui.MarqueeTextView android:textSize="12.0dip" android:textColor="@color/white" android:ellipsize="marquee" android:gravity="center" android:layout_gravity="center_vertical" android:id="@id/tv_focus" android:layout_width="fill_parent" android:layout_height="wrap_content" android:text="auto" android:singleLine="true" android:marqueeRepeatLimit="marquee_forever" android:paddingStart="5.0dip" android:paddingEnd="5.0dip" />
+            </LinearLayout>
+        </LinearLayout>
+    </RelativeLayout>
+    <RelativeLayout android:id="@id/filter_auxiliary_layout" android:layout_width="fill_parent" android:layout_height="67.5dip" android:layout_alignBottom="@id/tpb">
+        <FrameLayout android:layout_width="wrap_content" android:layout_height="fill_parent" android:layout_centerVertical="true" android:paddingStart="6.0dip" android:paddingEnd="6.0dip" android:layout_marginStart="5.0dip" android:layout_alignParentStart="true">
+            <FrameLayout android:layout_gravity="center" android:id="@id/remove_filter_effect" android:visibility="invisible" android:layout_width="wrap_content" android:layout_height="fill_parent">
+                <TextView android:textSize="12.0dip" android:textColor="@color/white" android:gravity="center" android:layout_gravity="center" android:background="@drawable/bg_remove_effect" android:layout_width="wrap_content" android:layout_height="22.0dip" android:layout_marginTop="2.0dip" android:text="@string/remove_effect" android:paddingStart="7.0dip" android:paddingEnd="7.0dip" />
+            </FrameLayout>
+            <FrameLayout android:layout_gravity="center" android:id="@id/remove_sticker_effect" android:visibility="invisible" android:layout_width="wrap_content" android:layout_height="fill_parent">
+                <TextView android:textSize="12.0dip" android:textColor="@color/white" android:gravity="center" android:layout_gravity="center" android:background="@drawable/bg_remove_effect" android:layout_width="wrap_content" android:layout_height="22.0dip" android:layout_marginTop="2.0dip" android:text="@string/remove_effect" android:paddingStart="7.0dip" android:paddingEnd="7.0dip" />
+            </FrameLayout>
+        </FrameLayout>
+        <FrameLayout android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_centerVertical="true" android:layout_marginEnd="5.0dip" android:layout_alignParentEnd="true">
+            <ImageButton android:layout_gravity="center" android:id="@id/ib_compare" android:background="@null" android:paddingTop="5.0dip" android:paddingBottom="5.0dip" android:visibility="invisible" android:layout_width="wrap_content" android:layout_height="wrap_content" android:src="@drawable/ic_compare" android:paddingStart="10.0dip" android:paddingEnd="10.0dip" />
+            <View android:layout_gravity="center" android:id="@id/compare_mask_view" android:background="@color/black" android:layout_width="fill_parent" android:layout_height="fill_parent" />
+        </FrameLayout>
+        <ImageButton android:id="@id/ib_random_filter" android:background="@null" android:paddingTop="5.0dip" android:paddingBottom="5.0dip" android:visibility="invisible" android:layout_width="wrap_content" android:layout_height="wrap_content" android:src="@drawable/selector_random_filter" android:layout_centerVertical="true" android:paddingStart="10.0dip" android:paddingEnd="10.0dip" android:layout_marginEnd="65.0dip" android:layout_alignParentEnd="true" />
+    </RelativeLayout>
+    <FrameLayout android:id="@id/rl_effect" android:visibility="gone" android:layout_width="fill_parent" android:layout_height="fill_parent">
+        <androidx.recyclerview.widget.RecyclerView android:layout_gravity="bottom" android:id="@id/filter_list" android:padding="0.5dip" android:scrollbars="none" android:layout_width="fill_parent" android:layout_height="181.0dip" android:overScrollMode="never" />
+        <FrameLayout android:gravity="center" android:layout_gravity="bottom" android:orientation="vertical" android:id="@id/beauty_layout" android:background="@color/translucent_effect_background" android:layout_width="fill_parent" android:layout_height="181.0dip">
+            <include layout="@layout/beauty_layout_s8" />
+        </FrameLayout>
+        <LinearLayout android:layout_gravity="bottom" android:orientation="vertical" android:layout_width="fill_parent" android:layout_height="wrap_content">
+            <View android:id="@id/effect_top_divider" android:layout_width="fill_parent" android:layout_height="4.0dip" />
+            <FrameLayout android:layout_width="fill_parent" android:layout_height="210.0dip">
+                <androidx.recyclerview.widget.RecyclerView android:scrollbarSize="2.5dip" android:scrollbarThumbVertical="@drawable/scroll_bar_bg" android:scrollbarStyle="insideOverlay" android:id="@id/sticker_list" android:scrollbars="vertical" android:layout_width="fill_parent" android:layout_height="wrap_content" android:fadeScrollbars="false" android:overScrollMode="never" />
+                <ScrollView android:scrollbarSize="2.5dip" android:scrollbarThumbVertical="@drawable/scroll_bar_bg" android:scrollbarStyle="insideOverlay" android:id="@id/effect_scrollview" android:scrollbars="vertical" android:layout_width="fill_parent" android:layout_height="wrap_content" android:fadeScrollbars="false" android:overScrollMode="never">
+                    <LinearLayout android:orientation="vertical" android:layout_width="fill_parent" android:layout_height="wrap_content">
+                        <RelativeLayout android:descendantFocusability="blocksDescendants" android:layout_width="fill_parent" android:layout_height="wrap_content">
+                            <androidx.recyclerview.widget.RecyclerView android:id="@id/effect_list" android:scrollbars="none" android:layout_width="fill_parent" android:layout_height="wrap_content" android:paddingStart="3.0dip" />
+                        </RelativeLayout>
+                        <RelativeLayout android:descendantFocusability="blocksDescendants" android:layout_width="fill_parent" android:layout_height="wrap_content">
+                            <androidx.recyclerview.widget.RecyclerView android:id="@id/online_effect_list" android:scrollbars="none" android:layout_width="fill_parent" android:layout_height="wrap_content" android:paddingStart="3.0dip" />
+                        </RelativeLayout>
+                    </LinearLayout>
+                </ScrollView>
+            </FrameLayout>
+            <View android:id="@id/effect_bottom_divider" android:layout_width="fill_parent" android:layout_height="4.0dip" />
+            <FrameLayout android:layout_width="fill_parent" android:layout_height="wrap_content">
+                <androidx.recyclerview.widget.RecyclerView android:id="@id/sticker_tab_list" android:background="@color/translucent_effect_background" android:scrollbars="none" android:layout_width="fill_parent" android:layout_height="wrap_content" android:foreground="@null" android:overScrollMode="never" />
+                <View android:layout_gravity="top" android:id="@id/sticker_tab_divider" android:background="#19ffffff" android:layout_width="fill_parent" android:layout_height="1.0dip" />
+            </FrameLayout>
+        </LinearLayout>
+    </FrameLayout>
+    <RelativeLayout android:gravity="center" android:id="@id/ll_video_time" android:visibility="gone" android:layout_width="fill_parent" android:layout_height="30.0dip" android:layout_marginTop="5.0dip">
+        <ImageView android:id="@id/video_time_icon" android:background="@drawable/bg_video_time_circle" android:layout_width="15.0dip" android:layout_height="15.0dip" android:layout_centerVertical="true" />
+        <TextView android:textSize="15.0dip" android:textColor="@color/white" android:gravity="center_vertical" android:id="@id/tv_video_time" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginLeft="10.0dip" android:text="00:00:00" android:layout_toRightOf="@id/video_time_icon" android:layout_centerVertical="true" />
+    </RelativeLayout>
+    <com.magiccamera.zfunction.main.ui.FloatingCameraButton android:id="@id/floating_camera_button" android:visibility="gone" android:layout_width="wrap_content" android:layout_height="wrap_content" />
+    <com.magiccamera.zfunction.main.sticker.StickerView android:id="@id/sticker_view" android:layout_width="fill_parent" android:layout_height="fill_parent" />
+    <View android:id="@id/take_photo_flash_view" android:background="#80ffffff" android:visibility="invisible" android:layout_width="fill_parent" android:layout_height="fill_parent" />
+    <TextView android:textColor="@color/white" android:id="@id/show_message" android:visibility="gone" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_centerInParent="true" />
+    <FrameLayout android:id="@id/rl_collage_bg" android:background="@drawable/bg_more" android:paddingBottom="20.0dip" android:visibility="gone" android:clickable="true" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_below="@id/top_bar" android:onClick="clickCollageBg" android:layout_marginStart="10.0dip" android:layout_marginEnd="10.0dip">
+        <fragment android:name="com.magiccamera.zfunction.main.ui.CollageFragment" android:id="@id/fragment_collage" android:layout_width="fill_parent" android:layout_height="wrap_content" />
+    </FrameLayout>
+    <FrameLayout android:id="@id/rl_collage_indicator" android:layout_width="fill_parent" android:layout_height="fill_parent">
+        <com.magiccamera.zfunction.main.ui.module.CollageIndicatorView android:layout_gravity="center" android:id="@id/collage_indicator_view" android:visibility="gone" android:layout_width="50.0dip" android:layout_height="50.0dip" />
+    </FrameLayout>
+    <TextView android:textSize="14.0dip" android:textColor="#ffffffff" android:gravity="center" android:id="@id/long_press_tip" android:background="@drawable/bg_long_press_tip" android:paddingTop="5.0dip" android:paddingBottom="15.0dip" android:visibility="gone" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginBottom="110.0dip" android:text="@string/long_press_tip" android:layout_alignParentBottom="true" android:layout_centerHorizontal="true" android:paddingStart="20.0dip" android:paddingEnd="20.0dip" />
+    <TextView android:textSize="16.0dip" android:textColor="#ffffffff" android:gravity="center" android:id="@id/sleep_tip" android:background="#ff000000" android:visibility="gone" android:layout_width="fill_parent" android:layout_height="fill_parent" android:text="@string/sleep_tip" />
+    <FrameLayout android:id="@id/white_screen_view" android:background="#ffffffff" android:visibility="gone" android:layout_width="fill_parent" android:layout_height="fill_parent">
+        <ImageView android:layout_gravity="center" android:layout_width="40.0dip" android:layout_height="40.0dip" android:src="@drawable/ic_front_flash_on_take" />
+    </FrameLayout>
+    <LinearLayout android:gravity="center" android:orientation="vertical" android:id="@id/hdr_wait_view" android:background="#80000000" android:visibility="gone" android:layout_width="fill_parent" android:layout_height="fill_parent">
+        <com.magiccamera.zfunction.main.loading.RotateLoading android:layout_gravity="center" android:id="@id/hdr_loading_view" android:padding="2.0dip" android:layout_width="80.0dip" android:layout_height="80.0dip" app:loading_speed="14" app:loading_width="3.0dip" />
+        <TextView android:textSize="14.0dip" android:textColor="#ffffffff" android:layout_gravity="center" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="10.0dip" android:text="@string/hdr_generating" />
+    </LinearLayout>
+</RelativeLayout>

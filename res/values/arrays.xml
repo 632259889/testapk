@@ -1,0 +1,280 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="architecture_m_filters">
+        <item>Original</item>
+        <item>m1</item>
+        <item>m2</item>
+        <item>m3</item>
+        <item>m4</item>
+    </string-array>
+    <string-array name="blackwhite_filters">
+        <item>Original</item>
+        <item>C1</item>
+        <item>C2</item>
+        <item>C3</item>
+    </string-array>
+    <string-array name="focus_mode_entries">
+        <item>Focus Auto</item>
+        <item>Focus Infinity</item>
+        <item>Focus Macro</item>
+        <item>Focus Locked</item>
+        <item>Focus Manual</item>
+        <item>Focus Fixed</item>
+        <item>Focus EDOF</item>
+        <item>Focus Continuous Picture</item>
+        <item>Focus Continuous Video</item>
+    </string-array>
+    <string-array name="focus_mode_values">
+        <item>focus_mode_auto</item>
+        <item>focus_mode_infinity</item>
+        <item>focus_mode_macro</item>
+        <item>focus_mode_locked</item>
+        <item>focus_mode_manual2</item>
+        <item>focus_mode_fixed</item>
+        <item>focus_mode_edof</item>
+        <item>focus_mode_continuous_picture</item>
+        <item>focus_mode_continuous_video</item>
+    </string-array>
+    <string-array name="foodie_a_filters">
+        <item>Original</item>
+        <item>A1</item>
+        <item>A2</item>
+        <item>A3</item>
+    </string-array>
+    <string-array name="fruit_filters">
+        <item>Original</item>
+        <item>Luscious</item>
+        <item>Fresh</item>
+        <item>Crisp</item>
+        <item>Chewy</item>
+        <item>NightWhisper</item>
+    </string-array>
+    <string-array name="life_filters">
+        <item>Original</item>
+        <item>F1</item>
+        <item>F2</item>
+    </string-array>
+    <string-array name="outside_r_filters">
+        <item>Original</item>
+        <item>R1</item>
+        <item>R2</item>
+        <item>R3</item>
+    </string-array>
+    <string-array name="outside_v_filters">
+        <item>Original</item>
+        <item>v1</item>
+        <item>v2</item>
+        <item>v3</item>
+    </string-array>
+    <string-array name="portrait_b_filters">
+        <item>Original</item>
+        <item>B1</item>
+        <item>B2</item>
+        <item>B3</item>
+    </string-array>
+    <string-array name="portrait_m_filters">
+        <item>Original</item>
+        <item>M1</item>
+        <item>M2</item>
+        <item>M3</item>
+        <item>M4</item>
+        <item>M5</item>
+        <item>M6</item>
+        <item>M7</item>
+        <item>M8</item>
+        <item>M9</item>
+        <item>M10</item>
+    </string-array>
+    <string-array name="preference_default_camera_entries">
+        <item>@string/preference_rear_camera</item>
+        <item>@string/preference_front_camera</item>
+    </string-array>
+    <string-array name="preference_default_camera_values">
+        <item>default_rear_camera</item>
+        <item>default_front_camera</item>
+    </string-array>
+    <string-array name="preference_front_video_size_entries">
+        <item>FHD , 1920x1080</item>
+        <item>HD , 1280x720</item>
+        <item>VGA , 640x480</item>
+    </string-array>
+    <string-array name="preference_front_video_size_square_entries">
+        <item>FHD , 1920x1080</item>
+        <item>1:1 , 1400x1400</item>
+        <item>HD , 1280x720</item>
+        <item>VGA , 640x480</item>
+    </string-array>
+    <string-array name="preference_front_video_size_square_values">
+        <item>video_size_fhd</item>
+        <item>video_size_1_1</item>
+        <item>video_size_hd</item>
+        <item>video_size_vga</item>
+    </string-array>
+    <string-array name="preference_front_video_size_values">
+        <item>video_size_fhd</item>
+        <item>video_size_hd</item>
+        <item>video_size_vga</item>
+    </string-array>
+    <string-array name="preference_grid_entries">
+        <item>@string/preference_none</item>
+        <item>3x3</item>
+    </string-array>
+    <string-array name="preference_grid_values">
+        <item>preference_grid_none</item>
+        <item>preference_grid_3x3</item>
+    </string-array>
+    <string-array name="preference_long_press_entries">
+        <item>@string/preference_long_press_record_video</item>
+        <item>@string/preference_long_press_take_pictures</item>
+    </string-array>
+    <string-array name="preference_long_press_values">
+        <item>long_press_record_video</item>
+        <item>long_press_take_pictures</item>
+    </string-array>
+    <string-array name="preference_rear_video_size_entries">
+        <item>FHD , 1920x1080</item>
+        <item>HD , 1280x720</item>
+        <item>VGA , 640x480</item>
+    </string-array>
+    <string-array name="preference_rear_video_size_square_entries">
+        <item>FHD , 1920x1080</item>
+        <item>1:1 , 1400x1400</item>
+        <item>HD , 1280x720</item>
+        <item>VGA , 640x480</item>
+    </string-array>
+    <string-array name="preference_rear_video_size_square_values">
+        <item>video_size_fhd</item>
+        <item>video_size_1_1</item>
+        <item>video_size_hd</item>
+        <item>video_size_vga</item>
+    </string-array>
+    <string-array name="preference_rear_video_size_values">
+        <item>video_size_fhd</item>
+        <item>video_size_hd</item>
+        <item>video_size_vga</item>
+    </string-array>
+    <string-array name="preference_stamp_dateformat_entries">
+        <item>@string/preference_default</item>
+        <item>yyyy/mm/dd</item>
+        <item>dd/mm/yyyy</item>
+        <item>mm/dd/yyyy</item>
+        <item>@string/preference_none</item>
+    </string-array>
+    <string-array name="preference_stamp_dateformat_values">
+        <item>preference_stamp_dateformat_default</item>
+        <item>preference_stamp_dateformat_yyyymmdd</item>
+        <item>preference_stamp_dateformat_ddmmyyyy</item>
+        <item>preference_stamp_dateformat_mmddyyyy</item>
+        <item>preference_stamp_dateformat_none</item>
+    </string-array>
+    <string-array name="preference_stamp_timeformat_entries">
+        <item>@string/preference_default</item>
+        <item>@string/preference_12_hour</item>
+        <item>@string/preference_24_hour</item>
+        <item>@string/preference_none</item>
+    </string-array>
+    <string-array name="preference_stamp_timeformat_values">
+        <item>preference_stamp_timeformat_default</item>
+        <item>preference_stamp_timeformat_12hour</item>
+        <item>preference_stamp_timeformat_24hour</item>
+        <item>preference_stamp_timeformat_none</item>
+    </string-array>
+    <string-array name="preference_timer_entries">
+        <item>@string/preference_0_s</item>
+        <item>@string/preference_3_s</item>
+        <item>@string/preference_5_s</item>
+        <item>@string/preference_10_s</item>
+        <item>@string/preference_15_s</item>
+    </string-array>
+    <string-array name="preference_timer_values">
+        <item>0</item>
+        <item>3</item>
+        <item>5</item>
+        <item>10</item>
+        <item>15</item>
+    </string-array>
+    <string-array name="preference_video_size_entries">
+        <item>UHD 4K, 3840x2160</item>
+        <item>FHD , 1920x1080</item>
+        <item>HD , 1280x720</item>
+        <item>VGA , 640x480</item>
+    </string-array>
+    <string-array name="preference_video_size_square_entries">
+        <item>UHD 4K, 3840x2160</item>
+        <item>FHD , 1920x1080</item>
+        <item>1:1 , 1400x1400</item>
+        <item>HD , 1280x720</item>
+        <item>VGA , 640x480</item>
+    </string-array>
+    <string-array name="preference_video_size_square_values">
+        <item>video_size_uhd</item>
+        <item>video_size_fhd</item>
+        <item>video_size_1_1</item>
+        <item>video_size_hd</item>
+        <item>video_size_vga</item>
+    </string-array>
+    <string-array name="preference_video_size_values">
+        <item>video_size_uhd</item>
+        <item>video_size_fhd</item>
+        <item>video_size_hd</item>
+        <item>video_size_vga</item>
+    </string-array>
+    <string-array name="preference_volume_entries">
+        <item>@string/preference_take_pictures</item>
+        <item>@string/preference_record_video</item>
+        <item>@string/preference_zoom</item>
+        <item>@string/preference_system_volum</item>
+    </string-array>
+    <string-array name="preference_volume_values">
+        <item>volume_take_pictures</item>
+        <item>volume_record_video</item>
+        <item>volume_zoom</item>
+        <item>volume_system_volume</item>
+    </string-array>
+    <string-array name="save_format_options">
+        <item>.png</item>
+        <item>.jpg</item>
+    </string-array>
+    <string-array name="seaside_a_filters">
+        <item>Original</item>
+        <item>A1</item>
+        <item>A2</item>
+    </string-array>
+    <string-array name="season_filters">
+        <item>Original</item>
+        <item>S0</item>
+        <item>S1</item>
+        <item>S2</item>
+        <item>W0</item>
+        <item>W1</item>
+        <item>W2</item>
+        <item>W3</item>
+        <item>Venus</item>
+        <item>Warm</item>
+        <item>Blue</item>
+        <item>Yellow</item>
+    </string-array>
+    <string-array name="stilllife_c_filters">
+        <item>Original</item>
+        <item>C1</item>
+        <item>C2</item>
+        <item>C3</item>
+        <item>C4</item>
+        <item>C5</item>
+        <item>C6</item>
+    </string-array>
+    <string-array name="vintage_filters">
+        <item>Original</item>
+        <item>Soft</item>
+        <item>Black</item>
+        <item>Classic</item>
+        <item>Gorgeous</item>
+        <item>Retro</item>
+        <item>Grace</item>
+        <item>Film</item>
+        <item>Memory</item>
+        <item>Yogurt</item>
+        <item>Fleeting</item>
+        <item>Shine</item>
+    </string-array>
+</resources>

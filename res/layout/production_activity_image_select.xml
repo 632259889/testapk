@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout android:orientation="vertical" android:id="@id/root_view" android:background="#ffffffff" android:layout_width="fill_parent" android:layout_height="fill_parent"
+  xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto">
+    <RelativeLayout android:id="@id/rl_top_bar" android:layout_width="fill_parent" android:layout_height="@dimen/title_bar_height">
+        <FrameLayout android:layout_width="wrap_content" android:layout_height="fill_parent" android:layout_centerVertical="true" android:layout_alignParentStart="true">
+            <RelativeLayout android:layout_gravity="start|center" android:orientation="horizontal" android:id="@id/btn_back" android:background="@drawable/ripple_no_mask" android:layout_width="wrap_content" android:layout_height="fill_parent" android:paddingStart="8.0dip" android:paddingEnd="8.0dip">
+                <ImageView android:id="@id/back_icon" android:layout_width="25.0dip" android:layout_height="25.0dip" android:src="@drawable/ic_gallery_back_arrow" android:layout_centerVertical="true" android:rotationY="@integer/rotation" android:layout_alignParentStart="true" />
+                <TextView android:textSize="16.0dip" android:textColor="@color/dark_text_color" android:id="@id/tv_folder_name" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/albums" android:layout_centerVertical="true" android:layout_marginStart="6.0dip" android:layout_toEndOf="@id/back_icon" />
+            </RelativeLayout>
+            <RelativeLayout android:layout_gravity="start|center" android:orientation="horizontal" android:id="@id/btn_close" android:background="@drawable/ripple_no_mask" android:visibility="gone" android:layout_width="wrap_content" android:layout_height="fill_parent" android:paddingStart="8.0dip" android:paddingEnd="8.0dip">
+                <ImageView android:id="@id/close_icon" android:layout_width="30.0dip" android:layout_height="30.0dip" android:src="@drawable/ic_gallery_close_choose" android:layout_centerVertical="true" android:layout_alignParentStart="true" />
+                <TextView android:textSize="16.0dip" android:textColor="@color/dark_text_color" android:id="@id/select_count_text" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_centerVertical="true" android:layout_marginStart="6.0dip" android:layout_toEndOf="@id/close_icon" />
+            </RelativeLayout>
+        </FrameLayout>
+        <ImageView android:id="@id/share_image" android:background="@drawable/ripple_no_mask" android:visibility="gone" android:layout_width="30.0dip" android:layout_height="30.0dip" android:src="@drawable/share_icon" android:layout_centerVertical="true" android:layout_marginEnd="10.0dip" android:layout_alignParentEnd="true" />
+        <ImageView android:id="@id/favorite_image" android:background="@drawable/ripple_no_mask" android:visibility="gone" android:layout_width="30.0dip" android:layout_height="30.0dip" android:src="@drawable/ic_favorite_default" android:layout_centerVertical="true" android:layout_marginEnd="50.0dip" android:layout_alignParentEnd="true" />
+        <ImageView android:id="@id/delete_image" android:background="@drawable/ripple_no_mask" android:visibility="gone" android:layout_width="30.0dip" android:layout_height="30.0dip" android:src="@drawable/delete_icon" android:layout_centerVertical="true" android:layout_marginEnd="90.0dip" android:layout_alignParentEnd="true" />
+        <LinearLayout android:id="@id/prime" android:background="@drawable/shape_pro_bg" android:visibility="gone" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_centerVertical="true" android:layout_marginEnd="15.0dip" android:layout_alignParentEnd="true">
+            <ImageView android:layout_gravity="center" android:padding="1.0dip" android:layout_width="23.0dip" android:layout_height="23.0dip" android:src="@drawable/ic_pro_icon" android:layout_marginStart="4.0dip" />
+            <TextView android:textSize="14.0dip" android:textColor="#ffffffff" android:layout_gravity="center" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="Pro" android:layout_marginStart="5.0dip" android:layout_marginEnd="5.0dip" />
+        </LinearLayout>
+        <LinearLayout android:id="@id/coin_layout" android:background="@drawable/shape_coin_bg" android:visibility="gone" android:layout_width="wrap_content" android:layout_height="25.0dip" android:layout_centerVertical="true" android:layout_marginEnd="15.0dip" android:layout_alignParentEnd="true">
+            <ImageView android:layout_gravity="center" android:layout_width="18.0dip" android:layout_height="18.0dip" android:src="@drawable/ic_coin" android:layout_marginStart="4.0dip" />
+            <TextView android:textSize="14.0dip" android:textColor="#ffffffff" android:layout_gravity="center" android:id="@id/coin_text" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="20" android:layout_marginStart="7.0dip" android:layout_marginEnd="7.0dip" />
+            <ImageView android:layout_gravity="center" android:layout_width="16.0dip" android:layout_height="16.0dip" android:src="@drawable/ic_add_coin" android:layout_marginEnd="4.0dip" />
+        </LinearLayout>
+    </RelativeLayout>
+    <com.zimage.zselector.viewpageslidetab.AdvancedPagerSlidingTabStrip android:id="@id/tabs" android:layout_width="fill_parent" android:layout_height="45.0dip" android:layoutDirection="ltr" app:apTabBackground="@color/transparent" app:apTabDividerColor="#00000000" app:apTabIndicatorColor="@color/accent_color" app:apTabIndicatorHeight="2.0dip" app:apTabShouldExpand="false" />
+    <FrameLayout android:id="@id/viewpager_layout" android:paddingBottom="13.0dip" android:layout_width="fill_parent" android:layout_height="0.0dip" android:layout_weight="1.0">
+        <com.zimage.zselector.view.CustomViewPager android:id="@id/viewPager" android:scrollbars="none" android:layout_width="fill_parent" android:layout_height="fill_parent" android:overScrollMode="never" />
+        <FrameLayout android:layout_gravity="bottom|center" android:id="@id/smooth_to_top" android:visibility="gone" android:layout_width="60.0dip" android:layout_height="60.0dip" android:layout_marginBottom="20.0dip">
+            <ImageView android:layout_gravity="bottom|center" android:layout_width="40.0dip" android:layout_height="40.0dip" android:src="@drawable/gallery_to_top" />
+        </FrameLayout>
+    </FrameLayout>
+</LinearLayout>

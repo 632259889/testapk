@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout android:id="@id/effect_root" android:layout_width="wrap_content" android:layout_height="wrap_content" android:paddingStart="10.0dip" android:paddingEnd="1.0dip"
+  xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto">
+    <FrameLayout android:id="@id/effect_img_panel" android:padding="2.0dip" android:layout_width="50.0dip" android:layout_height="50.0dip" android:layout_marginBottom="8.0dip">
+        <ImageView android:id="@id/effect_thumb_image" android:layout_width="fill_parent" android:layout_height="fill_parent" android:scaleType="centerInside" />
+        <ImageView android:id="@id/prime_video" android:visibility="gone" android:layout_width="fill_parent" android:layout_height="fill_parent" android:src="@drawable/ic_sticker_video" android:scaleType="fitXY" />
+        <ImageView android:layout_gravity="bottom|center|right" android:id="@id/download_icon" android:layout_width="18.0dip" android:layout_height="18.0dip" android:src="@drawable/ic_sticker_download" />
+        <View android:layout_gravity="center|right|top" android:id="@id/red_point" android:background="@drawable/small_red_point" android:visibility="gone" android:layout_width="4.0dip" android:layout_height="4.0dip" />
+        <com.magiccamera.zfunction.main.loading.RotateLoading android:id="@id/progress_bar" android:padding="2.0dip" android:visibility="gone" android:layout_width="fill_parent" android:layout_height="fill_parent" app:loading_speed="14" app:loading_width="3.0dip" />
+        <TextView android:textSize="10.0dip" android:textStyle="bold" android:textColor="#ffffffff" android:layout_gravity="center" android:id="@id/download_progress" android:visibility="gone" android:layout_width="wrap_content" android:layout_height="wrap_content" />
+    </FrameLayout>
+    <ImageView android:layout_gravity="start|center|top" android:id="@id/prime_icon" android:visibility="gone" android:layout_width="50.0dip" android:layout_height="50.0dip" android:layout_marginTop="4.0dip" android:src="@drawable/ic_sticker_video" android:layout_marginStart="4.0dip" />
+</FrameLayout>

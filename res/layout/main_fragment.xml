@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout android:layout_width="wrap_content" android:layout_height="fill_parent"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <HorizontalScrollView android:id="@id/beauty_tools" android:scrollbars="none" android:layout_width="0.0dip" android:layout_height="fill_parent" android:layout_weight="1.0" android:overScrollMode="never">
+        <LinearLayout android:orientation="horizontal" android:id="@id/item_layout" android:layout_width="wrap_content" android:layout_height="fill_parent">
+            <LinearLayout android:gravity="center" android:layout_gravity="center" android:orientation="vertical" android:id="@id/ll_beauty_filter" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginLeft="25.0dip">
+                <ImageView android:layout_width="@dimen/editor_tab_size" android:layout_height="@dimen/editor_tab_size" android:src="@drawable/ic_filter_icon" />
+                <TextView android:textSize="12.0dip" android:textColor="@color/function_item_text_color_white" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="@dimen/editor_tab_text_margin_top" android:text="@string/beauty_filter" />
+            </LinearLayout>
+            <LinearLayout android:gravity="center" android:layout_gravity="center" android:orientation="vertical" android:id="@id/ll_smoother" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginLeft="40.0dip">
+                <ImageView android:layout_width="@dimen/editor_tab_size" android:layout_height="@dimen/editor_tab_size" android:src="@drawable/beauty_ic_smoother" />
+                <TextView android:textSize="12.0dip" android:textColor="@color/function_item_text_color_white" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="@dimen/editor_tab_text_margin_top" android:text="@string/smoother" />
+            </LinearLayout>
+            <LinearLayout android:gravity="center" android:layout_gravity="center" android:orientation="vertical" android:id="@id/ll_bright_skin" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginLeft="40.0dip">
+                <ImageView android:layout_width="@dimen/editor_tab_size" android:layout_height="@dimen/editor_tab_size" android:src="@drawable/beauty_ic_brighten" />
+                <TextView android:textSize="12.0dip" android:textColor="@color/function_item_text_color_white" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="@dimen/editor_tab_text_margin_top" android:text="@string/bright_color" />
+            </LinearLayout>
+            <LinearLayout android:gravity="center" android:layout_gravity="center" android:orientation="vertical" android:id="@id/ll_lip_color" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginLeft="40.0dip">
+                <ImageView android:layout_width="@dimen/editor_tab_size" android:layout_height="@dimen/editor_tab_size" android:src="@drawable/beauty_ic_lipstick" />
+                <TextView android:textSize="12.0dip" android:textColor="@color/function_item_text_color_white" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="@dimen/editor_tab_text_margin_top" android:text="@string/lipstick" />
+            </LinearLayout>
+            <LinearLayout android:gravity="center" android:layout_gravity="center" android:orientation="vertical" android:id="@id/ll_skin_color" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginLeft="40.0dip">
+                <ImageView android:layout_width="@dimen/editor_tab_size" android:layout_height="@dimen/editor_tab_size" android:src="@drawable/beauty_ic_skintone" />
+                <TextView android:textSize="12.0dip" android:textColor="@color/function_item_text_color_white" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="@dimen/editor_tab_text_margin_top" android:text="@string/skin_color" />
+            </LinearLayout>
+            <LinearLayout android:gravity="center" android:layout_gravity="center" android:orientation="vertical" android:id="@id/ll_slim_face" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginLeft="40.0dip">
+                <ImageView android:layout_width="@dimen/editor_tab_size" android:layout_height="@dimen/editor_tab_size" android:src="@drawable/beauty_ic_slimface" />
+                <TextView android:textSize="12.0dip" android:textColor="@color/function_item_text_color_white" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="@dimen/editor_tab_text_margin_top" android:text="@string/slim_face" />
+            </LinearLayout>
+            <LinearLayout android:gravity="center" android:layout_gravity="center" android:orientation="vertical" android:id="@id/ll_big_eyes" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginLeft="40.0dip">
+                <ImageView android:layout_width="@dimen/editor_tab_size" android:layout_height="@dimen/editor_tab_size" android:src="@drawable/beauty_ic_bigeyes" />
+                <TextView android:textSize="12.0dip" android:textColor="@color/function_item_text_color_white" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="@dimen/editor_tab_text_margin_top" android:text="@string/big_eyes" />
+            </LinearLayout>
+            <LinearLayout android:gravity="center" android:layout_gravity="center" android:orientation="vertical" android:id="@id/ll_bright_eyes" android:visibility="gone" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginLeft="40.0dip">
+                <ImageView android:layout_width="@dimen/editor_tab_size" android:layout_height="@dimen/editor_tab_size" android:src="@drawable/beauty_ic_bright_eyes" />
+                <TextView android:textSize="12.0dip" android:textColor="@color/function_item_text_color_white" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="@dimen/editor_tab_text_margin_top" android:text="@string/bright_eyes" />
+            </LinearLayout>
+            <LinearLayout android:gravity="center" android:layout_gravity="center" android:orientation="vertical" android:id="@id/ll_abs" android:visibility="gone" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginLeft="40.0dip">
+                <ImageView android:layout_width="@dimen/editor_tab_size" android:layout_height="@dimen/editor_tab_size" android:src="@drawable/beauty_ic_abs" />
+                <TextView android:textSize="12.0dip" android:textColor="@color/function_item_text_color_white" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="@dimen/editor_tab_text_margin_top" android:text="@string/beauty_abs" />
+            </LinearLayout>
+            <LinearLayout android:gravity="center" android:layout_gravity="center" android:orientation="vertical" android:id="@id/ll_pecs" android:visibility="gone" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginLeft="40.0dip">
+                <ImageView android:layout_width="@dimen/editor_tab_size" android:layout_height="@dimen/editor_tab_size" android:src="@drawable/beauty_ic_pecs" />
+                <TextView android:textSize="12.0dip" android:textColor="@color/function_item_text_color_white" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="@dimen/editor_tab_text_margin_top" android:text="@string/beauty_pecs" />
+            </LinearLayout>
+            <LinearLayout android:gravity="center" android:layout_gravity="center" android:orientation="vertical" android:id="@id/ll_arm" android:visibility="gone" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginLeft="40.0dip">
+                <ImageView android:layout_width="@dimen/editor_tab_size" android:layout_height="@dimen/editor_tab_size" android:src="@drawable/beauty_ic_arm" />
+                <TextView android:textSize="12.0dip" android:textColor="@color/function_item_text_color_white" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="@dimen/editor_tab_text_margin_top" android:text="@string/beauty_arm" />
+            </LinearLayout>
+            <LinearLayout android:gravity="center" android:layout_gravity="center" android:orientation="vertical" android:id="@id/ll_blush" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginLeft="40.0dip">
+                <ImageView android:layout_width="@dimen/editor_tab_size" android:layout_height="@dimen/editor_tab_size" android:src="@drawable/beauty_ic_blush" />
+                <TextView android:textSize="12.0dip" android:textColor="@color/function_item_text_color_white" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="@dimen/editor_tab_text_margin_top" android:text="@string/beauty_blush" />
+            </LinearLayout>
+            <LinearLayout android:gravity="center" android:layout_gravity="center" android:orientation="vertical" android:id="@id/ll_eye_brow" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginLeft="40.0dip">
+                <ImageView android:layout_width="@dimen/editor_tab_size" android:layout_height="@dimen/editor_tab_size" android:src="@drawable/beauty_ic_eye_brow" />
+                <TextView android:textSize="12.0dip" android:textColor="@color/function_item_text_color_white" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="@dimen/editor_tab_text_margin_top" android:text="@string/beauty_eye_brow" />
+            </LinearLayout>
+            <LinearLayout android:gravity="center" android:layout_gravity="center" android:orientation="vertical" android:id="@id/ll_eye_lash" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginLeft="40.0dip">
+                <ImageView android:layout_width="@dimen/editor_tab_size" android:layout_height="@dimen/editor_tab_size" android:src="@drawable/beauty_ic_eye_lash" />
+                <TextView android:textSize="12.0dip" android:textColor="@color/function_item_text_color_white" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="@dimen/editor_tab_text_margin_top" android:text="@string/beauty_eye_lash" />
+            </LinearLayout>
+            <LinearLayout android:gravity="center" android:layout_gravity="center" android:orientation="vertical" android:id="@id/ll_eye_shadow" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginLeft="40.0dip">
+                <ImageView android:layout_width="@dimen/editor_tab_size" android:layout_height="@dimen/editor_tab_size" android:src="@drawable/beauty_ic_eye_shadow" />
+                <TextView android:textSize="12.0dip" android:textColor="@color/function_item_text_color_white" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="@dimen/editor_tab_text_margin_top" android:text="@string/beauty_eye_shadow" />
+            </LinearLayout>
+            <LinearLayout android:gravity="center" android:layout_gravity="center" android:orientation="vertical" android:id="@id/ll_contacts" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginLeft="40.0dip">
+                <ImageView android:layout_width="@dimen/editor_tab_size" android:layout_height="@dimen/editor_tab_size" android:src="@drawable/beauty_ic_bright_eyes" />
+                <TextView android:textSize="12.0dip" android:textColor="@color/function_item_text_color_white" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="@dimen/editor_tab_text_margin_top" android:text="@string/beauty_contacts" />
+            </LinearLayout>
+            <LinearLayout android:gravity="center" android:layout_gravity="center" android:orientation="vertical" android:id="@id/ll_hair_color" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginLeft="40.0dip">
+                <ImageView android:layout_width="@dimen/editor_tab_size" android:layout_height="@dimen/editor_tab_size" android:src="@drawable/beauty_ic_hair" />
+                <TextView android:textSize="12.0dip" android:textColor="@color/function_item_text_color_white" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="@dimen/editor_tab_text_margin_top" android:text="@string/hair_color" />
+            </LinearLayout>
+            <LinearLayout android:gravity="center" android:layout_gravity="center" android:orientation="vertical" android:id="@id/ll_teeth_white" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginLeft="40.0dip">
+                <ImageView android:layout_width="@dimen/editor_tab_size" android:layout_height="@dimen/editor_tab_size" android:src="@drawable/beauty_ic_teeth" />
+                <TextView android:textSize="12.0dip" android:textColor="@color/function_item_text_color_white" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="@dimen/editor_tab_text_margin_top" android:text="@string/teeth_white" />
+            </LinearLayout>
+            <LinearLayout android:gravity="center" android:layout_gravity="center" android:orientation="vertical" android:id="@id/ll_bodyshape" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginLeft="40.0dip" android:layout_marginRight="25.0dip">
+                <ImageView android:layout_width="@dimen/editor_tab_size" android:layout_height="@dimen/editor_tab_size" android:src="@drawable/ic_beauty_to_bodyshape" />
+                <TextView android:textSize="12.0dip" android:textColor="@color/function_item_text_color_white" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="@dimen/editor_tab_text_margin_top" android:text="@string/beauty_to_bodyshape" />
+            </LinearLayout>
+            <LinearLayout android:gravity="center" android:layout_gravity="center" android:orientation="vertical" android:id="@id/ll_retouch" android:visibility="gone" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginLeft="40.0dip">
+                <ImageView android:layout_width="@dimen/editor_tab_size" android:layout_height="@dimen/editor_tab_size" android:src="@drawable/beauty_ic_retouch" />
+                <TextView android:textSize="12.0dip" android:textColor="@color/function_item_text_color_white" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="@dimen/editor_tab_text_margin_top" android:text="@string/retouch" />
+            </LinearLayout>
+        </LinearLayout>
+    </HorizontalScrollView>
+</LinearLayout>

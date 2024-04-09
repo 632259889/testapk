@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout android:layout_width="fill_parent" android:layout_height="fill_parent"
+  xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto">
+    <LinearLayout android:orientation="vertical" android:layout_width="fill_parent" android:layout_height="fill_parent">
+        <FrameLayout android:id="@id/banner" android:background="@color/top_and_bottom_bar_color" android:layout_width="fill_parent" android:layout_height="@dimen/title_bar_height">
+            <ImageView android:layout_gravity="center|left" android:id="@id/back_up" android:layout_width="25.0dip" android:layout_height="25.0dip" android:layout_marginLeft="8.0dip" android:src="@drawable/ic_activity_back" />
+            <TextView android:textSize="16.0dip" android:textColor="@color/accent_color" android:layout_gravity="center|right" android:id="@id/save" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginRight="16.0dip" android:text="@string/save" />
+            <ImageView android:layout_gravity="end|center|top" android:id="@id/prime_icon" android:visibility="gone" android:layout_width="20.0dip" android:layout_height="20.0dip" android:layout_marginTop="8.0dip" android:src="@drawable/ic_sticker_prime" android:layout_marginEnd="12.0dip" />
+        </FrameLayout>
+        <FrameLayout android:background="@color/middle_view_bg_color" android:layout_width="fill_parent" android:layout_height="0.0dip" android:layout_weight="1.0">
+            <FrameLayout android:layout_width="fill_parent" android:layout_height="fill_parent">
+                <include layout="@layout/include_framelayout_collage_workplace" />
+            </FrameLayout>
+            <FrameLayout android:layout_gravity="bottom" android:background="#b21c1c1c" android:layout_width="fill_parent" android:layout_height="wrap_content">
+                <LinearLayout android:id="@id/paint_stokewidth_seekbar_layout" android:visibility="gone" android:layout_width="fill_parent" android:layout_height="60.0dip">
+                    <FrameLayout android:layout_gravity="center" android:id="@id/paint_stokewidth_seekbar_touch_layout" android:layout_width="fill_parent" android:layout_height="fill_parent" android:layout_marginLeft="30.0dip" android:layout_marginRight="30.0dip">
+                        <com.base.common.imageanim.MySeekBarView android:layout_gravity="center" android:id="@id/paint_stokewidth_seekbar" android:layout_width="fill_parent" android:layout_height="25.0dip" android:layout_marginLeft="10.0dip" android:layout_marginRight="10.0dip" />
+                    </FrameLayout>
+                </LinearLayout>
+            </FrameLayout>
+            <TextView android:textSize="35.0dip" android:textColor="#ffffffff" android:gravity="center" android:layout_gravity="center" android:id="@id/filter_alpha_text" android:visibility="gone" android:layout_width="wrap_content" android:layout_height="wrap_content" />
+            <FrameLayout android:layout_gravity="bottom" android:background="#401c1c1c" android:layout_width="fill_parent" android:layout_height="wrap_content">
+                <LinearLayout android:id="@id/filter_seekbar_layout" android:visibility="gone" android:layout_width="fill_parent" android:layout_height="60.0dip">
+                    <FrameLayout android:layout_gravity="center" android:id="@id/filter_alpha_seekbar_touch_layout" android:layout_width="fill_parent" android:layout_height="fill_parent" android:layout_marginLeft="30.0dip" android:layout_marginRight="30.0dip">
+                        <SeekBar android:layout_gravity="center" android:id="@id/filter_alpha_seekbar" android:layout_width="fill_parent" android:layout_height="wrap_content" android:maxHeight="2.0dip" android:max="100" android:progressDrawable="@drawable/layerlist_drawable_seekbar_progress" android:minHeight="2.0dip" android:thumb="@drawable/selector_seekbar_drawable_thumb" />
+                    </FrameLayout>
+                </LinearLayout>
+            </FrameLayout>
+            <com.base.common.loading.RotateLoading android:layout_gravity="center" android:id="@id/loading_image" android:padding="2.0dip" android:layout_width="60.0dip" android:layout_height="60.0dip" app:loading_color="@color/accent_color" app:loading_speed="12" app:loading_width="2.0dip" />
+        </FrameLayout>
+        <FrameLayout android:layout_width="fill_parent" android:layout_height="wrap_content">
+            <LinearLayout android:orientation="horizontal" android:id="@id/ll_puzzle_panel" android:background="@color/top_and_bottom_bar_color" android:layout_width="fill_parent" android:layout_height="wrap_content">
+                <LinearLayout android:orientation="vertical" android:layout_width="50.0dip" android:layout_height="70.0dip" android:layout_marginStart="5.0dip" android:layout_marginEnd="5.0dip">
+                    <FrameLayout android:layout_gravity="center" android:layout_width="fill_parent" android:layout_height="fill_parent">
+                        <com.collage.photolib.collage.view.SquareImageView android:layout_gravity="center" android:id="@id/btn_free_puzzle" android:layout_width="@dimen/collage_size_thumb" android:layout_height="@dimen/collage_size_thumb" android:src="@drawable/ic_free_puzzle" android:scaleType="centerCrop" />
+                        <com.collage.photolib.collage.view.SquareImageView android:layout_gravity="center" android:id="@id/free_puzzle_choose" android:visibility="gone" android:layout_width="@dimen/collage_size_thumb" android:layout_height="@dimen/collage_size_thumb" android:src="@drawable/collage_item_choose" android:scaleType="centerCrop" />
+                    </FrameLayout>
+                </LinearLayout>
+                <HorizontalScrollView android:scrollbars="none" android:layout_width="fill_parent" android:layout_height="70.0dip" android:overScrollMode="never">
+                    <LinearLayout android:orientation="horizontal" android:layout_width="wrap_content" android:layout_height="wrap_content">
+                        <androidx.recyclerview.widget.RecyclerView android:id="@id/puzzle_list" android:scrollbars="none" android:layout_width="wrap_content" android:layout_height="wrap_content" android:overScrollMode="never" />
+                        <androidx.recyclerview.widget.RecyclerView android:id="@id/free_path_list" android:scrollbars="none" android:layout_width="wrap_content" android:layout_height="wrap_content" android:overScrollMode="never" />
+                    </LinearLayout>
+                </HorizontalScrollView>
+            </LinearLayout>
+            <LinearLayout android:orientation="horizontal" android:id="@id/splice_layout" android:background="@color/top_and_bottom_bar_color" android:visibility="gone" android:layout_width="fill_parent" android:layout_height="70.0dip">
+                <ImageView android:layout_gravity="center" android:id="@id/splice_vertical" android:layout_width="50.0dip" android:layout_height="50.0dip" android:src="@drawable/ic_splice_v" android:layout_marginStart="7.0dip" />
+                <ImageView android:layout_gravity="center" android:id="@id/splice_horizontal" android:layout_width="50.0dip" android:layout_height="50.0dip" android:src="@drawable/ic_splice_h" android:layout_marginStart="12.0dip" />
+            </LinearLayout>
+        </FrameLayout>
+        <com.edit.imageeditlibrary.editimage.view.CustomViewPager android:id="@id/bottom_gallery_collage" android:background="@color/top_and_bottom_bar_color" android:scrollbars="none" android:layout_width="fill_parent" android:layout_height="50.0dip" android:overScrollMode="never" />
+        <View android:id="@id/bottom_margin_view" android:background="@color/top_and_bottom_bar_color" android:layout_width="fill_parent" android:layout_height="9.0dip" />
+        <RelativeLayout android:id="@id/bottom_btn_layout_collage" android:background="@color/top_and_bottom_bar_color" android:visibility="gone" android:layout_width="fill_parent" android:layout_height="50.0dip">
+            <ImageView android:id="@id/btn_exit_collage" android:layout_width="35.0dip" android:layout_height="35.0dip" android:layout_marginLeft="7.0dip" android:src="@drawable/btn_exit" android:layout_alignParentLeft="true" android:layout_centerVertical="true" />
+            <TextView android:textSize="14.0dip" android:textColor="@color/function_item_text_color_white" android:id="@id/current_edit_name_collage" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_centerHorizontal="true" android:layout_centerVertical="true" />
+            <ImageView android:id="@id/btn_commit_collage" android:visibility="gone" android:layout_width="35.0dip" android:layout_height="35.0dip" android:layout_marginRight="10.0dip" android:src="@drawable/btn_commit" android:layout_alignParentRight="true" android:layout_centerVertical="true" />
+        </RelativeLayout>
+    </LinearLayout>
+    <com.zmagicc.example.fontlibs.FontTextStickerEditLayout android:layout_gravity="bottom" android:id="@id/text_sticker_edit_layout" android:layout_width="fill_parent" android:layout_height="wrap_content" />
+</FrameLayout>

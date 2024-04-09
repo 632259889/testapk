@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout android:orientation="vertical" android:layout_width="fill_parent" android:layout_height="fill_parent"
+  xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto">
+    <FrameLayout android:id="@id/banner" android:background="@color/top_and_bottom_bar_color" android:layout_width="fill_parent" android:layout_height="@dimen/title_bar_height">
+        <ImageView android:layout_gravity="start|center" android:id="@id/back_btn" android:layout_width="25.0dip" android:layout_height="25.0dip" android:src="@drawable/ic_activity_back" android:rotationY="@integer/rotation" android:layout_marginStart="8.0dip" />
+    </FrameLayout>
+    <FrameLayout android:background="#ff000000" android:layout_width="fill_parent" android:layout_height="0.0dip" android:layout_weight="1.0">
+        <FrameLayout android:id="@id/image_layout" android:layout_width="fill_parent" android:layout_height="fill_parent">
+            <com.base.common.imagezoom.ImageViewTouch android:layout_gravity="center" android:id="@id/main_image" android:layout_width="fill_parent" android:layout_height="fill_parent" />
+            <com.photo.cropandrotate.ImageSkewView android:layout_gravity="center" android:id="@id/skew_view" android:visibility="gone" android:layout_width="fill_parent" android:layout_height="fill_parent" />
+        </FrameLayout>
+        <com.photo.cropandrotate.CropImageView android:layout_gravity="center" android:id="@id/crop_panel" android:visibility="gone" android:layout_width="fill_parent" android:layout_height="fill_parent" />
+        <com.photo.cropandrotate.CoverView android:layout_gravity="center" android:id="@id/cover_view" android:layout_width="fill_parent" android:layout_height="fill_parent" />
+        <TextView android:textSize="35.0dip" android:textColor="@color/white_text_color" android:layout_gravity="center" android:id="@id/rotate_text" android:visibility="gone" android:layout_width="wrap_content" android:layout_height="wrap_content" android:shadowColor="#80000000" android:shadowDx="5.0" android:shadowDy="5.0" android:shadowRadius="10.0" />
+        <com.base.common.loading.RotateLoading android:layout_gravity="center" android:id="@id/loading_image" android:padding="2.0dip" android:visibility="gone" android:layout_width="60.0dip" android:layout_height="60.0dip" app:loading_color="@color/accent_color" app:loading_speed="12" app:loading_width="2.0dip" />
+    </FrameLayout>
+    <LinearLayout android:orientation="vertical" android:background="@color/top_and_bottom_bar_color" android:layout_width="fill_parent" android:layout_height="wrap_content">
+        <LinearLayout android:orientation="horizontal" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginTop="10.0dip">
+            <ImageView android:layout_gravity="center_vertical" android:id="@id/rotate_ccw" android:background="@drawable/ripple_no_mask" android:layout_width="37.0dip" android:layout_height="37.0dip" android:layout_marginLeft="6.0dip" android:src="@drawable/rotate_ccw" />
+            <FrameLayout android:layout_width="0.0dip" android:layout_height="40.0dip" android:layout_weight="1.0">
+                <SeekBar android:layout_gravity="center" android:id="@id/rotate_seekbar" android:layout_width="fill_parent" android:layout_height="wrap_content" android:maxHeight="2.0dip" android:max="90" android:progressDrawable="@drawable/layerlist_drawable_seekbar_progress" android:minHeight="2.0dip" android:thumb="@drawable/selector_seekbar_drawable_thumb" />
+            </FrameLayout>
+            <ImageView android:layout_gravity="center_vertical" android:id="@id/horizontal_mirror" android:background="@drawable/ripple_no_mask" android:layout_width="35.0dip" android:layout_height="35.0dip" android:layout_marginRight="10.0dip" android:src="@drawable/horizontal_mirror" />
+        </LinearLayout>
+        <LinearLayout android:gravity="center" android:orientation="horizontal" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginTop="5.0dip">
+            <ImageView android:id="@id/skew_x" android:layout_width="35.0dip" android:layout_height="35.0dip" android:src="@drawable/skew_x" />
+            <ImageView android:id="@id/rotate" android:layout_width="35.0dip" android:layout_height="35.0dip" android:layout_marginLeft="73.0dip" android:layout_marginRight="73.0dip" android:src="@drawable/rotate_selected" />
+            <ImageView android:id="@id/skew_y" android:layout_width="35.0dip" android:layout_height="35.0dip" android:src="@drawable/skew_y" />
+        </LinearLayout>
+        <HorizontalScrollView android:layout_gravity="center" android:id="@id/crop_btn_layout" android:scrollbars="none" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginTop="10.0dip" android:layout_marginBottom="10.0dip" android:overScrollMode="never">
+            <LinearLayout android:gravity="center" android:orientation="horizontal" android:id="@id/ratio_list_group" android:layout_width="wrap_content" android:layout_height="fill_parent">
+                <LinearLayout android:gravity="center" android:orientation="vertical" android:id="@id/crop_custom" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginStart="15.0dip">
+                    <ImageView android:id="@id/crop_custom_image" android:layout_width="35.0dip" android:layout_height="35.0dip" android:src="@drawable/ratio_original" />
+                    <TextView android:textSize="12.0dip" android:textColor="#ffffffff" android:id="@id/crop_custom_text" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="2.0dip" android:text="Custom" />
+                </LinearLayout>
+                <LinearLayout android:gravity="center" android:orientation="vertical" android:id="@id/crop_1_1" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginStart="15.0dip">
+                    <ImageView android:id="@id/crop_1_1_image" android:layout_width="35.0dip" android:layout_height="35.0dip" android:src="@drawable/ratio_1_1" />
+                    <TextView android:textSize="12.0dip" android:textColor="#ffffffff" android:id="@id/crop_1_1_text" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="2.0dip" android:text="1:1" />
+                </LinearLayout>
+                <LinearLayout android:gravity="center" android:orientation="vertical" android:id="@id/crop_4_5" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginStart="15.0dip">
+                    <ImageView android:id="@id/crop_4_5_image" android:layout_width="35.0dip" android:layout_height="35.0dip" android:src="@drawable/ratio_4_5" />
+                    <TextView android:textSize="12.0dip" android:textColor="#ffffffff" android:id="@id/crop_4_5_text" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="2.0dip" android:text="4:5" />
+                </LinearLayout>
+                <LinearLayout android:gravity="center" android:orientation="vertical" android:id="@id/crop_4_3" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginStart="15.0dip">
+                    <ImageView android:id="@id/crop_4_3_image" android:layout_width="35.0dip" android:layout_height="35.0dip" android:src="@drawable/ratio_4_3" />
+                    <TextView android:textSize="12.0dip" android:textColor="#ffffffff" android:id="@id/crop_4_3_text" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="2.0dip" android:text="4:3" />
+                </LinearLayout>
+                <LinearLayout android:gravity="center" android:orientation="vertical" android:id="@id/crop_2_1" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginStart="15.0dip">
+                    <ImageView android:id="@id/crop_2_1_image" android:layout_width="35.0dip" android:layout_height="35.0dip" android:src="@drawable/ratio_2_1" />
+                    <TextView android:textSize="12.0dip" android:textColor="#ffffffff" android:id="@id/crop_2_1_text" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="2.0dip" android:text="2:1" />
+                </LinearLayout>
+                <LinearLayout android:gravity="center" android:orientation="vertical" android:id="@id/crop_2_3" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginStart="15.0dip">
+                    <ImageView android:id="@id/crop_2_3_image" android:layout_width="35.0dip" android:layout_height="35.0dip" android:src="@drawable/ratio_2_3" />
+                    <TextView android:textSize="12.0dip" android:textColor="#ffffffff" android:id="@id/crop_2_3_text" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="2.0dip" android:text="2:3" />
+                </LinearLayout>
+                <LinearLayout android:gravity="center" android:orientation="vertical" android:id="@id/crop_cover" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginStart="15.0dip">
+                    <ImageView android:id="@id/crop_cover_image" android:layout_width="35.0dip" android:layout_height="35.0dip" android:src="@drawable/ratio_f" />
+                    <TextView android:textSize="12.0dip" android:textColor="#ffffffff" android:id="@id/crop_cover_text" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="2.0dip" android:text="Cover" />
+                </LinearLayout>
+                <LinearLayout android:gravity="center" android:orientation="vertical" android:id="@id/crop_16_9" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginStart="15.0dip">
+                    <ImageView android:id="@id/crop_16_9_image" android:layout_width="35.0dip" android:layout_height="35.0dip" android:src="@drawable/ratio_16_9" />
+                    <TextView android:textSize="12.0dip" android:textColor="#ffffffff" android:id="@id/crop_16_9_text" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="2.0dip" android:text="16:9" />
+                </LinearLayout>
+                <LinearLayout android:gravity="center" android:orientation="vertical" android:id="@id/crop_9_16" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginStart="15.0dip">
+                    <ImageView android:id="@id/crop_9_16_image" android:layout_width="35.0dip" android:layout_height="35.0dip" android:src="@drawable/ratio_9_16" />
+                    <TextView android:textSize="12.0dip" android:textColor="#ffffffff" android:id="@id/crop_9_16_text" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="2.0dip" android:text="9:16" />
+                </LinearLayout>
+                <LinearLayout android:gravity="center" android:orientation="vertical" android:id="@id/crop_3_4" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginStart="15.0dip">
+                    <ImageView android:id="@id/crop_3_4_image" android:layout_width="35.0dip" android:layout_height="35.0dip" android:src="@drawable/ratio_3_4" />
+                    <TextView android:textSize="12.0dip" android:textColor="#ffffffff" android:id="@id/crop_3_4_text" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="2.0dip" android:text="3:4" />
+                </LinearLayout>
+                <LinearLayout android:gravity="center" android:orientation="vertical" android:id="@id/crop_3_2" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginStart="15.0dip" android:layout_marginEnd="15.0dip">
+                    <ImageView android:id="@id/crop_3_2_image" android:layout_width="35.0dip" android:layout_height="35.0dip" android:src="@drawable/ratio_3_2" />
+                    <TextView android:textSize="12.0dip" android:textColor="#ffffffff" android:id="@id/crop_3_2_text" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="2.0dip" android:text="3:2" />
+                </LinearLayout>
+            </LinearLayout>
+        </HorizontalScrollView>
+        <RelativeLayout android:id="@id/bottom_btn_layout" android:layout_width="fill_parent" android:layout_height="50.0dip">
+            <ImageView android:id="@id/btn_exit" android:layout_width="35.0dip" android:layout_height="35.0dip" android:layout_marginLeft="7.0dip" android:src="@drawable/btn_exit" android:layout_alignParentLeft="true" android:layout_centerVertical="true" />
+            <TextView android:textSize="14.0dip" android:textColor="@color/function_item_text_color_white" android:id="@id/current_edit_name" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="Crop" android:layout_centerHorizontal="true" android:layout_centerVertical="true" />
+            <ImageView android:id="@id/btn_commit" android:layout_width="35.0dip" android:layout_height="35.0dip" android:layout_marginRight="11.0dip" android:src="@drawable/btn_commit" android:layout_alignParentRight="true" android:layout_centerVertical="true" />
+        </RelativeLayout>
+    </LinearLayout>
+</LinearLayout>

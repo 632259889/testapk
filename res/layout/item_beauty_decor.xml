@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout android:gravity="center" android:orientation="vertical" android:layout_width="wrap_content" android:layout_height="fill_parent" android:layout_marginLeft="8.0dip" android:layout_marginRight="8.0dip"
+  xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto">
+    <FrameLayout android:gravity="center" android:layout_gravity="center" android:id="@id/layout" android:padding="2.0dip" android:layout_width="wrap_content" android:layout_height="wrap_content">
+        <ImageView android:layout_gravity="center" android:id="@id/iv_decor" android:layout_width="40.0dip" android:layout_height="40.0dip" />
+        <ImageView android:layout_gravity="end|bottom|center" android:id="@id/download" android:layout_width="18.0dip" android:layout_height="18.0dip" android:src="@drawable/ic_download" />
+        <ImageView android:layout_gravity="end|center|top" android:id="@id/prime_icon" android:visibility="gone" android:layout_width="16.0dip" android:layout_height="16.0dip" android:src="@drawable/ic_beauty_prime" />
+        <com.base.common.loading.RotateLoading android:layout_gravity="center" android:id="@id/loading" android:padding="2.0dip" android:layout_width="30.0dip" android:layout_height="30.0dip" app:loading_speed="12" app:loading_width="2.0dip" />
+    </FrameLayout>
+</LinearLayout>

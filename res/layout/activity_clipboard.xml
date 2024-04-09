@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout android:orientation="vertical" android:layout_width="fill_parent" android:layout_height="fill_parent"
+  xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto">
+    <FrameLayout android:id="@id/top_layout" android:background="@color/top_and_bottom_bar_color" android:layout_width="fill_parent" android:layout_height="@dimen/title_bar_height" android:layout_alignParentTop="true">
+        <ImageView android:layout_gravity="start|center" android:id="@id/back_btn" android:layout_width="25.0dip" android:layout_height="25.0dip" android:src="@drawable/ic_activity_back" android:rotationY="@integer/rotation" android:layout_marginStart="8.0dip" />
+        <TextView android:textSize="16.0dip" android:textColor="@color/accent_color" android:gravity="center" android:layout_gravity="end|center" android:id="@id/save_btn" android:layout_width="wrap_content" android:layout_height="fill_parent" android:text="@string/save" android:layout_marginEnd="16.0dip" />
+        <ImageView android:layout_gravity="end|center" android:id="@id/done_btn" android:visibility="gone" android:layout_width="32.0dip" android:layout_height="32.0dip" android:src="@drawable/btn_commit" android:layout_marginEnd="14.0dip" />
+    </FrameLayout>
+    <FrameLayout android:id="@id/work_space" android:background="@color/middle_view_bg_color" android:layout_width="fill_parent" android:layout_height="fill_parent" android:layout_above="@id/bg_blur_layout" android:layout_below="@id/top_layout">
+        <com.photo.sticker.StickerView android:layout_gravity="center" android:id="@id/sticker_view" android:layout_width="fill_parent" android:layout_height="fill_parent" app:showBorder="true" app:showIcons="true">
+            <com.base.common.imagezoom.ImageViewTouch android:layout_gravity="center" android:id="@id/main_image" android:layout_width="fill_parent" android:layout_height="fill_parent" />
+        </com.photo.sticker.StickerView>
+        <com.photo.clipboard.ClipboardFrameView android:id="@id/clipboard_frame_view" android:layout_width="fill_parent" android:layout_height="fill_parent" />
+        <com.photo.clipboard.ClipboardColorView android:id="@id/clipboard_color_view" android:visibility="gone" android:layout_width="fill_parent" android:layout_height="fill_parent" />
+    </FrameLayout>
+    <LinearLayout android:gravity="center" android:id="@id/bg_blur_layout" android:background="@color/middle_view_bg_color" android:layout_width="fill_parent" android:layout_height="35.0dip" android:layout_above="@id/bottom_layout">
+        <TextView android:textSize="@dimen/image_edit_text_size" android:textColor="@color/white_text_color" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginLeft="30.0dip" android:text="Blur: " />
+        <SeekBar android:layout_gravity="center" android:id="@id/bg_blur_seekbar" android:layout_width="0.0dip" android:layout_height="wrap_content" android:layout_marginLeft="10.0dip" android:layout_marginRight="30.0dip" android:maxHeight="2.0dip" android:max="100" android:progress="0" android:progressDrawable="@drawable/layerlist_drawable_seekbar_progress" android:minHeight="2.0dip" android:thumb="@drawable/selector_seekbar_drawable_thumb" android:layout_weight="1.0" />
+    </LinearLayout>
+    <FrameLayout android:id="@id/bottom_layout" android:background="@color/top_and_bottom_bar_color" android:layout_width="fill_parent" android:layout_height="70.0dip" android:layout_alignParentBottom="true">
+        <LinearLayout android:orientation="horizontal" android:layout_width="fill_parent" android:layout_height="fill_parent">
+            <LinearLayout android:gravity="center" android:layout_gravity="center_vertical" android:orientation="vertical" android:id="@id/btn_add" android:layout_width="0.0dip" android:layout_height="wrap_content" android:layout_marginTop="3.0dip" android:layout_weight="1.0">
+                <ImageView android:id="@id/btn_add_icon" android:layout_width="@dimen/editor_tab_size" android:layout_height="@dimen/editor_tab_size" android:src="@drawable/ic_clipboard_add" />
+                <TextView android:textSize="@dimen/image_edit_text_size" android:textColor="@color/function_item_text_color_white" android:gravity="center" android:layout_gravity="center" android:id="@id/btn_add_text" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="@dimen/editor_tab_text_margin_top" android:text="Add" />
+            </LinearLayout>
+            <LinearLayout android:gravity="center" android:layout_gravity="center_vertical" android:orientation="vertical" android:id="@id/btn_scale" android:layout_width="0.0dip" android:layout_height="wrap_content" android:layout_marginTop="3.0dip" android:layout_weight="1.0">
+                <ImageView android:id="@id/btn_scale_icon" android:layout_width="@dimen/editor_tab_size" android:layout_height="@dimen/editor_tab_size" android:src="@drawable/ic_clipboard_scale" />
+                <TextView android:textSize="@dimen/image_edit_text_size" android:textColor="@color/function_item_text_color_white" android:gravity="center" android:layout_gravity="center" android:id="@id/btn_scale_text" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="@dimen/editor_tab_text_margin_top" android:text="Scale" />
+            </LinearLayout>
+            <LinearLayout android:gravity="center" android:layout_gravity="center_vertical" android:orientation="vertical" android:id="@id/btn_bg" android:layout_width="0.0dip" android:layout_height="wrap_content" android:layout_marginTop="3.0dip" android:layout_weight="1.0">
+                <ImageView android:id="@id/btn_bg_icon" android:layout_width="@dimen/editor_tab_size" android:layout_height="@dimen/editor_tab_size" android:src="@drawable/ic_clipboard_background" />
+                <TextView android:textSize="@dimen/image_edit_text_size" android:textColor="@color/function_item_text_color_white" android:gravity="center" android:layout_gravity="center" android:id="@id/btn_bg_text" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="@dimen/editor_tab_text_margin_top" android:text="BG" />
+            </LinearLayout>
+            <LinearLayout android:gravity="center" android:layout_gravity="center_vertical" android:orientation="vertical" android:id="@id/btn_border" android:layout_width="0.0dip" android:layout_height="wrap_content" android:layout_marginTop="3.0dip" android:layout_weight="1.0">
+                <ImageView android:id="@id/btn_border_icon" android:layout_width="@dimen/editor_tab_size" android:layout_height="@dimen/editor_tab_size" android:src="@drawable/ic_clipboard_border" />
+                <TextView android:textSize="@dimen/image_edit_text_size" android:textColor="@color/function_item_text_color_white" android:gravity="center" android:layout_gravity="center" android:id="@id/btn_border_text" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="@dimen/editor_tab_text_margin_top" android:text="Border" />
+            </LinearLayout>
+            <LinearLayout android:gravity="center" android:layout_gravity="center_vertical" android:orientation="vertical" android:id="@id/btn_frame" android:layout_width="0.0dip" android:layout_height="wrap_content" android:layout_marginTop="3.0dip" android:layout_weight="1.0">
+                <ImageView android:id="@id/btn_frame_icon" android:layout_width="@dimen/editor_tab_size" android:layout_height="@dimen/editor_tab_size" android:src="@drawable/ic_clipboard_frame" />
+                <TextView android:textSize="@dimen/image_edit_text_size" android:textColor="@color/function_item_text_color_white" android:gravity="center" android:layout_gravity="center" android:id="@id/btn_frame_text" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="@dimen/editor_tab_text_margin_top" android:text="Frame" />
+            </LinearLayout>
+        </LinearLayout>
+    </FrameLayout>
+    <com.base.common.loading.RotateLoading android:id="@id/loading_image" android:padding="2.0dip" android:visibility="gone" android:layout_width="60.0dip" android:layout_height="60.0dip" android:layout_centerInParent="true" app:loading_color="@color/accent_color" app:loading_speed="12" app:loading_width="2.0dip" />
+    <FrameLayout android:id="@id/scale_fragment_layout" android:background="@color/top_and_bottom_bar_color" android:visibility="gone" android:layout_width="fill_parent" android:layout_height="100.0dip" android:layout_above="@id/bottom_layout" />
+    <FrameLayout android:id="@id/bg_fragment_layout" android:background="@color/top_and_bottom_bar_color" android:visibility="gone" android:layout_width="fill_parent" android:layout_height="100.0dip" android:layout_above="@id/bottom_layout" />
+    <FrameLayout android:id="@id/border_fragment_layout" android:visibility="gone" android:layout_width="fill_parent" android:layout_height="160.0dip" android:layout_above="@id/bottom_layout" />
+    <FrameLayout android:id="@id/frame_fragment_layout" android:background="@color/top_and_bottom_bar_color" android:visibility="gone" android:layout_width="fill_parent" android:layout_height="100.0dip" android:layout_above="@id/bottom_layout" />
+    <RelativeLayout android:id="@id/pick_color_layout" android:background="@color/top_and_bottom_bar_color" android:visibility="gone" android:layout_width="fill_parent" android:layout_height="70.0dip" android:layout_alignParentBottom="true">
+        <ImageView android:id="@id/pick_color_cancel" android:layout_width="35.0dip" android:layout_height="35.0dip" android:layout_marginLeft="7.0dip" android:src="@drawable/btn_exit" android:layout_alignParentLeft="true" android:layout_centerVertical="true" />
+        <TextView android:textSize="14.0dip" android:textColor="@color/function_item_text_color_white" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="Move to pick a color" android:layout_centerHorizontal="true" android:layout_centerVertical="true" />
+        <ImageView android:id="@id/pick_color_commit" android:layout_width="35.0dip" android:layout_height="35.0dip" android:layout_marginRight="14.0dip" android:src="@drawable/btn_commit" android:layout_alignParentRight="true" android:layout_centerVertical="true" />
+    </RelativeLayout>
+</RelativeLayout>

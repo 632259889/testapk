@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout android:orientation="vertical" android:background="@color/font_theme_default_bg_color" android:layout_width="fill_parent" android:layout_height="wrap_content"
+  xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto">
+    <androidx.constraintlayout.widget.ConstraintLayout android:layout_width="fill_parent" android:layout_height="54.0dip" android:layout_alignParentBottom="true">
+        <EditText android:textSize="14.0dip" android:textColor="@color/font_theme_default_text_color" android:textColorHint="#80ffffff" android:id="@id/ed_content" android:background="@drawable/font_bubble_edittext_shape" android:paddingLeft="6.0dip" android:focusable="true" android:focusableInTouchMode="true" android:layout_width="0.0dip" android:layout_height="40.0dip" android:layout_marginBottom="2.0dip" android:hint="Input Text..." android:layout_toLeftOf="@id/iv_confirm" android:layout_centerVertical="true" android:layout_marginStart="13.0dip" android:layout_marginEnd="60.0dip" app:layout_constraintBottom_toBottomOf="parent" app:layout_constraintEnd_toEndOf="parent" app:layout_constraintStart_toStartOf="parent" app:layout_constraintTop_toTopOf="@id/iv_confirm" />
+        <ImageView android:id="@id/iv_confirm" android:layout_width="35.0dip" android:layout_height="35.0dip" android:layout_marginTop="12.0dip" android:layout_marginBottom="2.0dip" android:src="@drawable/font_ic_comfirm" android:layout_alignParentRight="true" android:layout_centerVertical="true" android:layout_marginStart="10.0dip" android:layout_marginEnd="10.0dip" app:layout_constraintBottom_toBottomOf="parent" app:layout_constraintEnd_toEndOf="parent" app:layout_constraintStart_toEndOf="@id/ed_content" app:layout_constraintTop_toTopOf="parent" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+    <LinearLayout android:orientation="horizontal" android:layout_width="fill_parent" android:layout_height="52.0dip">
+        <TextView android:textSize="14.0dip" android:textColor="@color/font_theme_default_text_color" android:gravity="center" android:layout_gravity="center" android:id="@id/text_font" android:paddingTop="3.0dip" android:paddingBottom="3.0dip" android:layout_width="0.0dip" android:layout_height="wrap_content" android:text="Font" android:layout_weight="1.0" android:paddingStart="12.0dip" android:paddingEnd="12.0dip" />
+        <TextView android:textSize="14.0dip" android:textColor="@color/font_theme_default_text_color" android:gravity="center" android:layout_gravity="center" android:id="@id/text_size" android:paddingTop="3.0dip" android:paddingBottom="3.0dip" android:visibility="gone" android:layout_width="0.0dip" android:layout_height="wrap_content" android:text="Format" android:layout_weight="1.0" android:paddingStart="12.0dip" android:paddingEnd="12.0dip" />
+        <TextView android:textSize="14.0dip" android:textColor="@color/font_theme_default_text_color" android:gravity="center" android:layout_gravity="center" android:id="@id/text_color" android:paddingTop="3.0dip" android:paddingBottom="3.0dip" android:layout_width="0.0dip" android:layout_height="wrap_content" android:text="Style" android:layout_weight="1.0" android:paddingStart="12.0dip" android:paddingEnd="12.0dip" />
+        <TextView android:textSize="14.0dip" android:textColor="@color/font_theme_default_text_color" android:gravity="center" android:layout_gravity="center" android:id="@id/text_art" android:paddingTop="3.0dip" android:paddingBottom="3.0dip" android:layout_width="0.0dip" android:layout_height="wrap_content" android:text="Art" android:layout_weight="1.0" android:paddingStart="12.0dip" android:paddingEnd="12.0dip" />
+        <TextView android:textSize="14.0dip" android:textColor="@color/font_theme_default_text_color" android:gravity="center" android:layout_gravity="center" android:id="@id/text_bubble" android:paddingTop="3.0dip" android:paddingBottom="3.0dip" android:layout_width="0.0dip" android:layout_height="wrap_content" android:text="Bubble" android:layout_weight="1.0" android:paddingStart="12.0dip" android:paddingEnd="12.0dip" />
+        <TextView android:textSize="14.0dip" android:textColor="@color/font_theme_default_text_color" android:gravity="center" android:layout_gravity="center" android:id="@id/text_keyboard" android:visibility="gone" android:layout_width="0.0dip" android:layout_height="wrap_content" android:text="Keyboard" android:layout_weight="1.0" />
+    </LinearLayout>
+    <View android:background="#80303030" android:layout_width="fill_parent" android:layout_height="1.0dip" android:layout_marginStart="13.0dip" android:layout_marginEnd="13.0dip" />
+    <include layout="@layout/font_poster_text_color_function_layout" />
+    <LinearLayout android:gravity="center" android:id="@id/fontlist_layout" android:visibility="gone" android:layout_width="fill_parent" android:layout_height="fill_parent">
+        <androidx.recyclerview.widget.RecyclerView android:id="@id/paint_font_list" android:paddingBottom="5.0dip" android:scrollbars="none" android:layout_width="wrap_content" android:layout_height="fill_parent" android:overScrollMode="never" />
+    </LinearLayout>
+    <ScrollView android:scrollbars="none" android:layout_width="fill_parent" android:layout_height="wrap_content" android:overScrollMode="never">
+        <LinearLayout android:orientation="vertical" android:id="@id/text_size_layout" android:paddingBottom="15.0dip" android:visibility="gone" android:layout_width="fill_parent" android:layout_height="wrap_content">
+            <LinearLayout android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginTop="12.0dip">
+                <FrameLayout android:layout_width="0.0dip" android:layout_height="40.0dip" android:layout_weight="1.0">
+                    <FrameLayout android:layout_gravity="center" android:id="@id/text_bold_item" android:background="#ff303030" android:layout_width="40.0dip" android:layout_height="40.0dip">
+                        <ImageView android:layout_gravity="center" android:id="@id/text_bold" android:layout_width="33.0dip" android:layout_height="33.0dip" android:src="@drawable/font_ic_bold" />
+                    </FrameLayout>
+                </FrameLayout>
+                <FrameLayout android:layout_width="0.0dip" android:layout_height="40.0dip" android:layout_weight="1.0">
+                    <FrameLayout android:layout_gravity="center" android:id="@id/text_italic_item" android:background="#ff303030" android:layout_width="40.0dip" android:layout_height="40.0dip">
+                        <ImageView android:layout_gravity="center" android:id="@id/text_italic" android:layout_width="33.0dip" android:layout_height="33.0dip" android:src="@drawable/font_ic_italic" />
+                    </FrameLayout>
+                </FrameLayout>
+                <FrameLayout android:layout_width="0.0dip" android:layout_height="40.0dip" android:layout_weight="1.0">
+                    <FrameLayout android:layout_gravity="center" android:id="@id/text_underline_item" android:background="#ff303030" android:layout_width="40.0dip" android:layout_height="40.0dip">
+                        <ImageView android:layout_gravity="center" android:id="@id/text_underline" android:layout_width="33.0dip" android:layout_height="33.0dip" android:src="@drawable/font_ic_underline" />
+                    </FrameLayout>
+                </FrameLayout>
+                <FrameLayout android:layout_width="0.0dip" android:layout_height="40.0dip" android:layout_weight="1.0">
+                    <FrameLayout android:layout_gravity="center" android:id="@id/text_strikethru_item" android:background="#ff303030" android:layout_width="40.0dip" android:layout_height="40.0dip">
+                        <ImageView android:layout_gravity="center" android:id="@id/text_strikethru" android:layout_width="33.0dip" android:layout_height="33.0dip" android:src="@drawable/font_ic_strikethru" />
+                    </FrameLayout>
+                </FrameLayout>
+            </LinearLayout>
+            <View android:background="#80303030" android:layout_width="fill_parent" android:layout_height="1.0dip" android:layout_marginTop="13.0dip" android:layout_marginStart="13.0dip" android:layout_marginEnd="13.0dip" />
+            <LinearLayout android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginTop="20.0dip">
+                <ImageView android:layout_gravity="center" android:id="@id/text_align_left" android:paddingTop="5.0dip" android:paddingBottom="5.0dip" android:layout_width="0.0dip" android:layout_height="35.0dip" android:src="@drawable/font_ic_align_left" android:layout_weight="1.0" />
+                <ImageView android:layout_gravity="center" android:id="@id/text_align_center" android:paddingTop="5.0dip" android:paddingBottom="5.0dip" android:layout_width="0.0dip" android:layout_height="35.0dip" android:src="@drawable/font_ic_align_center_selected" android:layout_weight="1.0" />
+                <ImageView android:layout_gravity="center" android:id="@id/text_align_right" android:paddingTop="5.0dip" android:paddingBottom="5.0dip" android:layout_width="0.0dip" android:layout_height="35.0dip" android:src="@drawable/font_ic_align_right" android:layout_weight="1.0" />
+            </LinearLayout>
+            <LinearLayout android:layout_width="fill_parent" android:layout_height="wrap_content">
+                <TextView android:textSize="14.0dip" android:textStyle="normal" android:textColor="@color/font_theme_default_summary_text_color" android:layout_width="120.0dip" android:layout_height="wrap_content" android:layout_marginLeft="13.0dip" android:layout_marginTop="20.0dip" android:text="Text Size:" />
+                <SeekBar android:id="@id/text_size_seekbar" android:layout_width="0.0dip" android:layout_height="wrap_content" android:layout_marginLeft="5.0dip" android:layout_marginTop="23.0dip" android:maxHeight="2.0dip" android:max="30" android:progressDrawable="@drawable/font_poster_layerlist_drawable_seekbar_progress" android:minHeight="2.0dip" android:thumb="@drawable/font_poster_selector_seekbar_drawable_thumb" android:layout_weight="1.0" />
+            </LinearLayout>
+            <LinearLayout android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginTop="10.0dip">
+                <TextView android:textSize="14.0dip" android:textStyle="normal" android:textColor="@color/font_theme_default_summary_text_color" android:layout_width="120.0dip" android:layout_height="wrap_content" android:layout_marginLeft="13.0dip" android:layout_marginTop="20.0dip" android:text="Character Spacing:" />
+                <SeekBar android:id="@id/text_charspac_seekbar" android:layout_width="0.0dip" android:layout_height="wrap_content" android:layout_marginLeft="5.0dip" android:layout_marginTop="23.0dip" android:maxHeight="2.0dip" android:max="10" android:progressDrawable="@drawable/font_poster_layerlist_drawable_seekbar_progress" android:minHeight="2.0dip" android:thumb="@drawable/font_poster_selector_seekbar_drawable_thumb" android:layout_weight="1.0" />
+            </LinearLayout>
+            <LinearLayout android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginTop="10.0dip">
+                <TextView android:textSize="14.0dip" android:textStyle="normal" android:textColor="@color/font_theme_default_summary_text_color" android:layout_width="120.0dip" android:layout_height="wrap_content" android:layout_marginLeft="13.0dip" android:layout_marginTop="20.0dip" android:text="Line Spacing:" />
+                <SeekBar android:id="@id/text_linespac_seekbar" android:layout_width="0.0dip" android:layout_height="wrap_content" android:layout_marginLeft="5.0dip" android:layout_marginTop="23.0dip" android:maxHeight="2.0dip" android:max="100" android:progressDrawable="@drawable/font_poster_layerlist_drawable_seekbar_progress" android:minHeight="2.0dip" android:thumb="@drawable/font_poster_selector_seekbar_drawable_thumb" android:layout_weight="1.0" />
+            </LinearLayout>
+        </LinearLayout>
+    </ScrollView>
+    <LinearLayout android:gravity="center" android:id="@id/bubblelist_layout" android:visibility="gone" android:layout_width="fill_parent" android:layout_height="fill_parent">
+        <androidx.recyclerview.widget.RecyclerView android:id="@id/bubble_list" android:paddingBottom="5.0dip" android:scrollbars="none" android:layout_width="wrap_content" android:layout_height="fill_parent" android:overScrollMode="never" />
+    </LinearLayout>
+    <LinearLayout android:gravity="center" android:id="@id/artlist_layout" android:visibility="gone" android:layout_width="fill_parent" android:layout_height="fill_parent">
+        <androidx.recyclerview.widget.RecyclerView android:id="@id/art_list" android:paddingBottom="5.0dip" android:scrollbars="none" android:layout_width="wrap_content" android:layout_height="fill_parent" android:overScrollMode="never" />
+    </LinearLayout>
+</LinearLayout>

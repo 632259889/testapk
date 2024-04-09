@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout android:background="@drawable/shape_dialog_background_collage" android:layout_width="fill_parent" android:layout_height="80.0dip"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <LinearLayout android:gravity="center" android:layout_gravity="center" android:orientation="horizontal" android:layout_width="fill_parent" android:layout_height="fill_parent" android:layout_margin="5.0dip">
+        <LinearLayout android:gravity="center" android:layout_gravity="center_vertical" android:orientation="vertical" android:id="@id/btn_album" android:padding="2.0dip" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_weight="1.0">
+            <ImageView android:padding="2.0dip" android:layout_width="25.0dip" android:layout_height="25.0dip" android:src="@drawable/collage_ic_album" android:scaleType="centerCrop" />
+            <TextView android:textSize="12.0dip" android:textColor="@color/white_text_color" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/collage_album" />
+        </LinearLayout>
+        <LinearLayout android:gravity="center" android:layout_gravity="center_vertical" android:orientation="vertical" android:id="@id/btn_rotate" android:padding="2.0dip" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_weight="1.0">
+            <ImageView android:padding="2.0dip" android:layout_width="25.0dip" android:layout_height="25.0dip" android:src="@drawable/ic_rotate" android:scaleType="centerCrop" />
+            <TextView android:textSize="12.0dip" android:textColor="@color/white_text_color" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/collage_rotate" />
+        </LinearLayout>
+        <LinearLayout android:gravity="center" android:layout_gravity="center_vertical" android:orientation="vertical" android:id="@id/btn_mirror" android:padding="2.0dip" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_weight="1.0">
+            <ImageView android:padding="2.0dip" android:layout_width="25.0dip" android:layout_height="25.0dip" android:src="@drawable/ic_mirror" android:scaleType="centerCrop" />
+            <TextView android:textSize="12.0dip" android:textColor="@color/white_text_color" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/collage_mirror" />
+        </LinearLayout>
+        <LinearLayout android:gravity="center" android:layout_gravity="center_vertical" android:orientation="vertical" android:id="@id/btn_reversal" android:padding="2.0dip" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_weight="1.0">
+            <ImageView android:padding="2.0dip" android:layout_width="25.0dip" android:layout_height="25.0dip" android:src="@drawable/ic_reversal" android:scaleType="centerCrop" />
+            <TextView android:textSize="12.0dip" android:textColor="@color/white_text_color" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/collage_reversal" />
+        </LinearLayout>
+    </LinearLayout>
+</FrameLayout>

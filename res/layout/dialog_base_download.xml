@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout android:gravity="center" android:orientation="vertical" android:background="@drawable/dialog_bg" android:layout_width="fill_parent" android:layout_height="fill_parent" android:layoutDirection="ltr"
+  xmlns:android="http://schemas.android.com/apk/res/android" xmlns:custom="http://schemas.android.com/apk/res-auto">
+    <RelativeLayout android:id="@id/layout" android:layout_width="fill_parent" android:layout_height="wrap_content">
+        <ImageView android:id="@id/close" android:layout_width="25.0dip" android:layout_height="25.0dip" android:layout_margin="5.0dip" android:src="@drawable/ic_download_close" android:layout_alignParentTop="true" android:layout_alignParentEnd="true" />
+        <ImageView android:id="@id/logo" android:layout_width="40.0dip" android:layout_height="40.0dip" android:layout_margin="10.0dip" android:layout_centerVertical="true" android:layout_alignParentStart="true" />
+        <com.base.common.UI.MarqueeTextView android:textSize="14.0dip" android:textColor="@color/dark_text_color" android:ellipsize="marquee" android:gravity="left" android:id="@id/content" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/downloading" android:singleLine="true" android:layout_alignTop="@id/logo" android:marqueeRepeatLimit="marquee_forever" android:layout_toEndOf="@id/logo" />
+        <com.base.common.UI.seekbar.NumberProgressBar android:id="@id/number_bar" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_below="@id/content" android:layout_alignBottom="@id/logo" android:layout_marginEnd="30.0dip" android:layout_toEndOf="@id/logo" custom:progress_current="0" custom:progress_max="100" custom:progress_reached_bar_height="2.0dip" custom:progress_reached_color="@color/accent_color" custom:progress_text_color="@color/accent_color" custom:progress_text_offset="1.0dip" custom:progress_text_size="10.0dip" custom:progress_text_visibility="visible" custom:progress_unreached_bar_height="2.0dip" custom:progress_unreached_color="@color/white_divider_color" />
+    </RelativeLayout>
+</LinearLayout>

@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout android:layout_width="fill_parent" android:layout_height="fill_parent"
+  xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto">
+    <LinearLayout android:orientation="vertical" android:layout_width="fill_parent" android:layout_height="fill_parent">
+        <FrameLayout android:id="@id/top_bar" android:background="@color/top_and_bottom_bar_color" android:layout_width="fill_parent" android:layout_height="@dimen/title_bar_height">
+            <ImageView android:layout_gravity="start|center" android:id="@id/back_btn" android:background="@null" android:layout_width="25.0dip" android:layout_height="25.0dip" android:src="@drawable/ic_activity_back" android:layout_marginStart="8.0dip" />
+            <ImageView android:layout_gravity="end|center" android:id="@id/guide_btn" android:background="@null" android:layout_width="28.0dip" android:layout_height="28.0dip" android:src="@drawable/cutout_guide" android:layout_marginEnd="70.0dip" />
+            <TextView android:textSize="16.0dip" android:textColor="@color/accent_color" android:gravity="center" android:layout_gravity="end|center" android:id="@id/save_btn" android:layout_width="wrap_content" android:layout_height="fill_parent" android:text="@string/save" android:layout_marginEnd="16.0dip" />
+        </FrameLayout>
+        <FrameLayout android:id="@id/drawViewLayout" android:layout_width="fill_parent" android:layout_height="0.0dip" android:layout_weight="1.0">
+            <ImageView android:layout_width="fill_parent" android:layout_height="fill_parent" android:src="@drawable/ic_dark_transparent_bg" android:scaleType="centerCrop" />
+            <FrameLayout android:id="@id/drawViewlayout" android:layout_width="fill_parent" android:layout_height="fill_parent">
+                <com.cutout.DrawView android:id="@id/drawView" android:layout_width="fill_parent" android:layout_height="fill_parent" />
+            </FrameLayout>
+            <com.base.common.loading.RotateLoading android:layout_gravity="center" android:id="@id/loading_image" android:padding="2.0dip" android:visibility="gone" android:layout_width="60.0dip" android:layout_height="60.0dip" app:loading_color="@color/accent_color" app:loading_speed="12" app:loading_width="2.0dip" />
+        </FrameLayout>
+        <LinearLayout android:orientation="vertical" android:background="@color/top_and_bottom_bar_color" android:layout_width="fill_parent" android:layout_height="wrap_content">
+            <LinearLayout android:orientation="horizontal" android:layout_width="fill_parent" android:layout_height="60.0dip">
+                <LinearLayout android:gravity="center" android:layout_gravity="center_vertical" android:orientation="vertical" android:id="@id/undo_layout" android:layout_width="30.0dip" android:layout_height="50.0dip" android:layout_marginStart="8.0dip">
+                    <ImageView android:layout_gravity="center" android:id="@id/undo_btn" android:background="@null" android:layout_width="25.0dip" android:layout_height="25.0dip" android:layout_marginTop="3.0dip" android:src="@drawable/cutout_undo_selector" />
+                </LinearLayout>
+                <LinearLayout android:gravity="center" android:layout_gravity="center_vertical" android:orientation="vertical" android:id="@id/redo_layout" android:layout_width="30.0dip" android:layout_height="50.0dip" android:layout_marginStart="8.0dip">
+                    <ImageView android:layout_gravity="center" android:id="@id/redo_btn" android:background="@null" android:layout_width="25.0dip" android:layout_height="25.0dip" android:layout_marginTop="3.0dip" android:src="@drawable/cutout_redo_selector" />
+                </LinearLayout>
+                <View android:background="@color/dark_seek_divider_color" android:layout_width="1.0dip" android:layout_height="fill_parent" android:layout_marginTop="10.0dip" android:layout_marginBottom="5.0dip" android:layout_marginStart="8.0dip" />
+                <LinearLayout android:layout_gravity="center_vertical" android:orientation="vertical" android:id="@id/auto_exclude_layout" android:visibility="gone" android:layout_width="wrap_content" android:layout_height="50.0dip" android:layout_marginStart="15.0dip">
+                    <ImageView android:layout_gravity="center" android:id="@id/auto_exclude_btn" android:background="@null" android:layout_width="35.0dip" android:layout_height="35.0dip" android:src="@drawable/cutout_exclude_selector" />
+                    <TextView android:textSize="@dimen/item_text_size" android:textColor="@color/white_text_color" android:layout_gravity="center" android:id="@id/auto_exclude_text" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="Frozen Area" />
+                </LinearLayout>
+                <LinearLayout android:gravity="center_vertical" android:orientation="vertical" android:layout_width="0.0dip" android:layout_height="fill_parent" android:layout_weight="1.0">
+                    <LinearLayout android:gravity="top" android:orientation="horizontal" android:id="@id/offset_size_layout" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginStart="5.0dip" android:layout_marginEnd="5.0dip">
+                        <TextView android:textSize="@dimen/item_text_size" android:textColor="@color/white_text_color" android:layout_gravity="top" android:id="@id/offset_text" android:layout_width="76.0dip" android:layout_height="wrap_content" android:layout_marginTop="3.0dip" android:text="Cursor Offset" />
+                        <SeekBar android:id="@id/offset_size" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginTop="6.0dip" android:maxHeight="2.0dip" android:progressDrawable="@drawable/layerlist_drawable_seekbar_progress" android:minHeight="2.0dip" android:thumb="@drawable/selector_seekbar_drawable_thumb" />
+                    </LinearLayout>
+                    <LinearLayout android:gravity="top" android:orientation="horizontal" android:id="@id/paint_size_layout" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginTop="8.0dip" android:layout_marginStart="5.0dip" android:layout_marginEnd="5.0dip">
+                        <TextView android:textSize="@dimen/item_text_size" android:textColor="@color/white_text_color" android:layout_gravity="top" android:id="@id/paint_text" android:layout_width="76.0dip" android:layout_height="wrap_content" android:layout_marginTop="3.0dip" android:text="Erase size" />
+                        <SeekBar android:id="@id/paint_size" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginTop="6.0dip" android:maxHeight="2.0dip" android:progressDrawable="@drawable/layerlist_drawable_seekbar_progress" android:minHeight="2.0dip" android:thumb="@drawable/selector_seekbar_drawable_thumb" />
+                    </LinearLayout>
+                </LinearLayout>
+                <TextView android:textSize="16.0dip" android:textColor="@color/accent_color" android:layout_gravity="center" android:id="@id/lasso_go" android:background="@drawable/cutout_lasso_go_shape" android:padding="6.0dip" android:visibility="gone" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="GO" android:layout_marginEnd="6.0dip" />
+            </LinearLayout>
+            <View android:background="@color/dark_seek_divider_color" android:visibility="gone" android:layout_width="fill_parent" android:layout_height="1.0dip" android:layout_marginTop="5.0dip" />
+            <LinearLayout android:gravity="center" android:orientation="horizontal" android:paddingTop="5.0dip" android:layout_width="fill_parent" android:layout_height="60.0dip" android:layout_marginTop="5.0dip">
+                <LinearLayout android:orientation="vertical" android:id="@id/auto_layout" android:layout_width="0.0dip" android:layout_height="fill_parent" android:layout_weight="1.0">
+                    <ImageView android:layout_gravity="center" android:id="@id/auto_btn" android:background="@null" android:layout_width="30.0dip" android:layout_height="30.0dip" android:src="@drawable/cutout_auto_selector" />
+                    <TextView android:textSize="@dimen/item_text_size" android:textColor="@color/white_text_color" android:layout_gravity="center" android:id="@id/auto_text" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="Auto" />
+                </LinearLayout>
+                <LinearLayout android:orientation="vertical" android:id="@id/manual_layout" android:layout_width="0.0dip" android:layout_height="fill_parent" android:layout_weight="1.0">
+                    <ImageView android:layout_gravity="center" android:id="@id/manual_btn" android:background="@null" android:layout_width="30.0dip" android:layout_height="30.0dip" android:src="@drawable/cutout_pencil_selector" />
+                    <TextView android:textSize="@dimen/item_text_size" android:textColor="@color/white_text_color" android:layout_gravity="center" android:id="@id/manual_text" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="Erase" />
+                </LinearLayout>
+                <LinearLayout android:orientation="vertical" android:id="@id/repair_layout" android:layout_width="0.0dip" android:layout_height="fill_parent" android:layout_weight="1.0">
+                    <ImageView android:layout_gravity="center" android:id="@id/repair_btn" android:background="@null" android:layout_width="30.0dip" android:layout_height="30.0dip" android:src="@drawable/cutout_repair_selector" />
+                    <TextView android:textSize="@dimen/item_text_size" android:textColor="@color/white_text_color" android:layout_gravity="center" android:id="@id/repair_text" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="Repair" />
+                </LinearLayout>
+                <LinearLayout android:orientation="vertical" android:id="@id/lasso_layout" android:layout_width="0.0dip" android:layout_height="fill_parent" android:layout_weight="1.0">
+                    <ImageView android:layout_gravity="center" android:id="@id/lasso_btn" android:background="@null" android:layout_width="30.0dip" android:layout_height="30.0dip" android:src="@drawable/cutout_lasso_selector" />
+                    <TextView android:textSize="@dimen/item_text_size" android:textColor="@color/white_text_color" android:layout_gravity="center" android:id="@id/lasso_text" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="Lasso" />
+                </LinearLayout>
+                <LinearLayout android:orientation="vertical" android:id="@id/zoom_layout" android:visibility="gone" android:layout_width="0.0dip" android:layout_height="fill_parent" android:layout_weight="1.0">
+                    <ImageView android:layout_gravity="center" android:id="@id/zoom_btn" android:background="@null" android:layout_width="30.0dip" android:layout_height="30.0dip" android:src="@drawable/cutout_magnifier_selector" />
+                    <TextView android:textSize="@dimen/item_text_size" android:textColor="@color/white_text_color" android:layout_gravity="center" android:id="@id/zoom_text" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="Magnifier" />
+                </LinearLayout>
+            </LinearLayout>
+        </LinearLayout>
+    </LinearLayout>
+</FrameLayout>
