@@ -43,8 +43,3 @@ jobs:
           keyStorePassword: ${{ secrets.KEY_STORE_PASSWORD }}
           keyPassword: ${{ secrets.KEY_PASSWORD }}
 
-      - uses: ncipollo/release-action@v1
-        with:
-          artifacts: "output/*.apk"
-          token: ${{ secrets.TOKEN }}
-          generateReleaseNotes: true
