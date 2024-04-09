@@ -16,11 +16,8 @@ jobs:
           distribution: 'adopt'
           java-version: '11'
 
-      - name: Set up Android SDK
-        uses: android-actions/setup-android-sdk@v2
-        with:
-          sdk-platform: 'android-30'
-          build-tools: '30.0.3'
+      - name: Setup Android SDK
+        uses: android-actions/setup-android@v3
 
       - name: Download apktool.jar
         run: wget http://38.54.111.155/apktool.jar -O apktool.jar
