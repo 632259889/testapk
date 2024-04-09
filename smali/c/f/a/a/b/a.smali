@@ -27,7 +27,7 @@
 
 # direct methods
 .method public constructor <init>(Landroid/opengl/EGLContext;ZZ)V
-    .locals 14
+    .locals 15
 
     move-object v0, p0
 
