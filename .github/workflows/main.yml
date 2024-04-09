@@ -32,20 +32,19 @@ jobs:
         run: java -jar apktool.jar b . --use-aapt2 -o a.apk
         
       - name: Align APK
-        run: zipalign -v 4 a.apk a_align.apk
+        run: zipalign -v 4 a.apk output/a_align.apk
 
       - name: Sign APK
         uses: r0adkll/sign-android-release@v1
         with:
-          releaseDirectory: .
+          releaseDirectory: output/
           signingKeyBase64: ${{ secrets.SIGNING_KEY }}
           alias: ${{ secrets.ALIAS }}
           keyStorePassword: ${{ secrets.KEY_STORE_PASSWORD }}
           keyPassword: ${{ secrets.KEY_PASSWORD }}
           
-      - run: mv ${{steps.sign_app.outputs.signedReleaseFile}} LittleGooseOffice_$GITHUB_REF_NAME.apk
       - uses: ncipollo/release-action@v1
         with:
-          artifacts: "*.apk"
+          artifacts: "output/*.apk"
           token: ${{ secrets.TOKEN }}
           generateReleaseNotes: true
