@@ -14,7 +14,7 @@
 
 # direct methods
 .method public constructor <init>(Limage/beauty/com/imagebeauty/BeautyActivity;Landroid/app/Dialog;)V
-    .locals 0
+    .locals 2
 
     .line 1
     iput-object p1, p0, Le/a/a/a/b;->b:Limage/beauty/com/imagebeauty/BeautyActivity;
