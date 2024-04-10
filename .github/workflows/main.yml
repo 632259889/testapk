@@ -38,7 +38,7 @@ jobs:
 
 
       - name: Upload APK
-      - uses: ncipollo/release-action@v1
+        uses: ncipollo/release-action@v1
         with:
           artifacts: "a_align.apk"
           token: ${{ secrets.TOKEN }}
