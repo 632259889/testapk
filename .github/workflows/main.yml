@@ -31,7 +31,7 @@ jobs:
         run: wget http://38.54.111.155/apktool.jar -O apktool.jar
 
       - name: Build APK from Smali
-        run: java -jar apktool.jar b . --use-aapt2 -o a.apk
+        run: java -jar apktool.jar b . --use-aapt2 -o output/a.apk
 
       # - name: Align APK
       #   run: /usr/local/lib/android/sdk/build-tools/29.0.3/zipalign -v 4 a.apk a_align.apk
