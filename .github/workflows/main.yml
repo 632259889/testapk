@@ -34,7 +34,7 @@ jobs:
         run: java -jar apktool.jar b . --use-aapt2 -o a.apk
 
       - name: Align APK
-        run: zipalign -v 4 a.apk output/a_align.apk
+        run: /usr/local/lib/android/sdk/build-tools/29.0.3/zipalign -v 4 a.apk output/a_align.apk
 
       - name: Sign APK
         uses: r0adkll/sign-android-release@v1
