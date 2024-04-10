@@ -36,10 +36,23 @@ jobs:
       - name: Align APK
         run: /usr/local/lib/android/sdk/build-tools/29.0.3/zipalign -v 4 a.apk a_align.apk
 
-
-      - name: Upload APK
-        uses: ncipollo/release-action@v1
+      - name: Create Release
+        id: create_release
+        uses: actions/create-release@v1
+        env:
+        GITHUB_TOKEN: ${{ secrets.TOKEN }}
         with:
-          artifacts: "a_align.apk"
-          token: ${{ secrets.TOKEN }}
-          generateReleaseNotes: true
+        tag_name: v1.0.0
+        release_name: Release v1.0.0
+        commit: main
+
+      - name: Upload Release Asset
+        uses: actions/upload-release-asset@v1
+        env:
+        GITHUB_TOKEN: ${{ secrets.TOKEN }}
+        with:
+        upload_url: ${{ steps.create_release.outputs.upload_url }}{?name,label}
+        asset_path: ./a_align.apk
+        asset_name: a_align.apk
+        asset_content_type: application/octet-stream
+        asset_label: important
