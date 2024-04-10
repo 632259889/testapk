@@ -20,8 +20,8 @@ jobs:
         uses: android-actions/setup-android@v3
         with:
           packages: 'tools platform-tools build-tools;33.0.1'
-          cmdline-tools-version: 10406996
-          
+          cmdline-tools-version: 9862592
+
 
       - name: Download apktool.jar
         run: wget http://38.54.111.155/apktool.jar -O apktool.jar
