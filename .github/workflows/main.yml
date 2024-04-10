@@ -50,12 +50,12 @@ jobs:
       # - name: Sign APK
       #   run: /usr/local/lib/android/sdk/build-tools/29.0.3/apksigner sign --ks release.keystore --ks-pass pass:'${{ secrets.KEY_STORE_PASSWORD }}' --out a_align_sign.apk a_align.apk
 
-      - name: Upload APK
-        uses: actions/upload-release-asset@v1
-        env:
-          GITHUB_TOKEN: ${{ secrets.TOKEN }}
-        with:
-          upload_url: "https://uploads.github.com/repos/octocat/632259889/testapk/releases/1/assets{?name,label}"
-          asset_path: ./a_align.apk  # 替换为您的 APK 文件的路径
-          asset_name: a_align_sign.apk  # 替换为您的 APK 文件的名称
-          asset_content_type: application/vnd.android.package-archive
+      # - name: Upload APK
+      #   uses: actions/upload-release-asset@v1
+      #   env:
+      #     GITHUB_TOKEN: ${{ secrets.TOKEN }}
+      #   with:
+      #     upload_url: "https://uploads.github.com/repos/octocat/632259889/testapk/releases/1/assets{?name,label}"
+      #     asset_path: ./a_align.apk  # 替换为您的 APK 文件的路径
+      #     asset_name: a_align_sign.apk  # 替换为您的 APK 文件的名称
+      #     asset_content_type: application/vnd.android.package-archive
