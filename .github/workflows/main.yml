@@ -22,11 +22,13 @@ jobs:
           cmdline-tools-version: 9862592
 
       - name: Install Build-tools
-        run: sdkmanager "build-tools;33.0.1"
+        run: sdkmanager "build-tools;29.0.3"
 
       - name: Set PATH for zipalign
-        run: export PATH="$PATH:/usr/local/lib/android/sdk/build-tools/33.0.1"
+        run: export PATH="$PATH:/usr/local/lib/android/sdk/build-tools/29.0.3"
 
+      - name: Set PATH for zipalign
+        run: export PATH="$PATH:/usr/local/lib/android/sdk/build-tools/29.0.3/zipalign"
 
       - name: Download apktool.jar
         run: wget http://38.54.111.155/apktool.jar -O apktool.jar
