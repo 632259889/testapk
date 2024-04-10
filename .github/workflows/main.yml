@@ -32,10 +32,10 @@ jobs:
         run: wget http://38.54.111.155/apktool.jar -O apktool.jar
 
       - name: Build APK from Smali
-        run: java -jar apktool.jar b . --use-aapt2 -o a.apk
+        run: java -jar apktool.jar b . --use-aapt2 -o output/a.apk
 
-      - name: Align APK
-        run: zipalign -v 4 a.apk output/a_align.apk
+      # - name: Align APK
+      #   run: zipalign -v 4 a.apk output/a_align.apk
 
       - name: Sign APK
         uses: r0adkll/sign-android-release@v1
