@@ -19,8 +19,10 @@ jobs:
       - name: Setup Android SDK
         uses: android-actions/setup-android@v3
         with:
-          packages: 'tools platform-tools build-tools;33.0.1'
           cmdline-tools-version: 9862592
+
+      - name: Install Build-tools
+        run: sdkmanager build-tools;33.0.1
 
       - name: Set PATH for zipalign
         run: export PATH="$PATH:/usr/local/lib/android/sdk/build-tools/33.0.1"
