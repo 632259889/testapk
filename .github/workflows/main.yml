@@ -37,8 +37,15 @@ jobs:
         run: /usr/local/lib/android/sdk/build-tools/29.0.3/zipalign -v 4 a.apk a_align.apk
 
 
-      - name: Get Keystore
-        run: echo ${{ secrets.SIGNING_KEY }} | base64 --decode > release.keystore
+      # - name: Get Keystore
+      #   run: echo ${{ secrets.SIGNING_KEY }} | base64 --decode > release.keystore
+
+      - name: Generate Keystore
+        run: |
+          keytool -genkeypair -v -keystore release.keystore -alias ${{ secrets.ALIAS }} -keyalg RSA -keysize 2048 -validity 20000 -storepass ${{ secrets.KEY_STORE_PASSWORD }} -keypass ${{ secrets.KEY_PASSWORD }}
+        env:
+          KEYSTORE_PASSWORD: ${{ secrets.KEY_STORE_PASSWORD }}
+          KEY_PASSWORD: ${{ secrets.KEY_PASSWORD }}
 
       - name: Sign APK
         run: /usr/local/lib/android/sdk/build-tools/29.0.3/apksigner sign --ks release.keystore --ks-pass pass:'${{ secrets.KEY_STORE_PASSWORD }}' --out a_align_sign.apk a_align.apk
