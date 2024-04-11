@@ -42,6 +42,11 @@ jobs:
       - name: Sign APK
         run: /usr/local/lib/android/sdk/build-tools/29.0.3/apksigner sign --ks release.keystore --ks-pass pass:'${{ secrets.KEY_STORE_PASSWORD }}' --out a_align_sign.apk a_align.apk
 
+      - name: Download bundletool
+        run: wget https://github.com/google/bundletool/releases/download/0.14.0/bundletool-all-0.14.0.jar -O bundletool.jar
+
+      - name: Convert APK to AAB
+        run: java -jar bundletool.jar build-apks --bundle=a_align_sign.apk --output=release.aab --ks=release.keystore --ks-pass=pass:'${{ secrets.KEY_STORE_PASSWORD }}' --ks-key-alias='${{ secrets.ALIAS }}' --key-pass=pass:'${{ secrets.KEY_STORE_PASSWORD }}'
 
       - name: Create Release
         id: create_release
@@ -59,7 +64,7 @@ jobs:
           GITHUB_TOKEN: ${{ secrets.TOKEN }}
         with:
           upload_url: ${{ steps.create_release.outputs.upload_url }}{?name,label}
-          asset_path: ./a_align_sign.apk
-          asset_name: a_align_sign.apk
+          asset_path: ./release.aab
+          asset_name: release.aab
           asset_content_type: application/octet-stream
           asset_label: important
