@@ -41,14 +41,14 @@ jobs:
           ls
 
       - name: Align APK
-        run: /usr/local/lib/android/sdk/build-tools/29.0.3/zipalign -v 4 a.apk a_align.apk
+        run: /Users/runner/Library/Android/sdk/build-tools/29.0.3/zipalign -v 4 a.apk a_align.apk
 
       - name: Download Keystore
         run: wget https://github.com/632259889/testapk/releases/download/v1.4/am.keystore -O release.keystore
 
 
       - name: Sign APK
-        run: /usr/local/lib/android/sdk/build-tools/29.0.3/apksigner sign --ks release.keystore --ks-pass pass:'${{ secrets.KEY_STORE_PASSWORD }}' --out a_align_sign.apk a_align.apk
+        run: /Users/runner/Library/Android/sdk/build-tools/29.0.3/apksigner sign --ks release.keystore --ks-pass pass:'${{ secrets.KEY_STORE_PASSWORD }}' --out a_align_sign.apk a_align.apk
 
       - name: Download buildaab
         run: wget https://github.com/632259889/testapk/releases/download/v1.2/buildaabdestory.zip -O buildaabdestory.zip
@@ -61,15 +61,15 @@ jobs:
 
       - name: Install apktool
         run: |
-          wget https://raw.githubusercontent.com/iBotPeaches/Apktool/master/scripts/linux/apktool -O /usr/local/bin/apktool
-          chmod +x /usr/local/bin/apktool
+          wget https://raw.githubusercontent.com/iBotPeaches/Apktool/master/scripts/linux/apktool -O /Users/runner/bin/apktool
+          chmod +x /Users/runner/bin/apktool
 
       - name: Add buildaab env
         run: |
-          echo "aapt2=/usr/local/lib/android/sdk/build-tools/29.0.3/aapt2" > ./buildaabdestory/project.config
-          echo "bundletool=/usr/local/lib/buildaab/bundletool-all-1.15.6.jar" >> ./buildaabdestory/project.config
-          echo "android=/usr/local/lib/Android/sdk/platforms/android-34/android.jar" >> ./buildaabdestory/project.config
-          echo "apktool=/usr/local/bin/apktool" >> ./buildaabdestory/project.config
+          echo "aapt2=/Users/runner/Library/Android/sdk/build-tools/29.0.3/aapt2" > ./buildaabdestory/project.config
+          echo "bundletool=/Users/runner/work/testapk/testapk/buildaab/bundletool-all-1.15.6.jar" >> ./buildaabdestory/project.config
+          echo "android=/Users/runner/Library/Android/sdk/platforms/android-34/android.jar" >> ./buildaabdestory/project.config
+          echo "apktool=/Users/runner/bin/apktool" >> ./buildaabdestory/project.config
           echo "pwd=123456" >> ./buildaabdestory/project.config
 
 
