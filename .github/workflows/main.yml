@@ -50,7 +50,7 @@ jobs:
       - name: Unzip buildaab
         run: |
           unzip buildaabdestory.zip -d ./buildaabdestory
-          ls -l ./buildaabdestory
+          ls -l ./buildaabdestory/
           chmod +x ./buildaabdestory/buildaab
 
       - name: Install apktool
