@@ -42,8 +42,14 @@ jobs:
           wget https://raw.githubusercontent.com/iBotPeaches/Apktool/master/scripts/linux/apktool -O /Users/runner/work/testapk/testapk/apktool
           chmod +x /Users/runner/work/testapk/testapk/apktool
 
+      - name: print
+        run: |
+          pwd
+          ls
+
+
       - name: Build APK from Smali
-        run: java -jar apktool.jar b testapk/ --use-aapt2 -o a.apk
+        run: java -jar apktool.jar b ./testapk/ --use-aapt2 -o a.apk
 
       - name: Align APK
         run: /Users/runner/Library/Android/sdk/build-tools/29.0.3/zipalign -v 4 a.apk a_align.apk
