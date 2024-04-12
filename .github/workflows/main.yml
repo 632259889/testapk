@@ -45,12 +45,12 @@ jobs:
         run: /usr/local/lib/android/sdk/build-tools/29.0.3/apksigner sign --ks release.keystore --ks-pass pass:'${{ secrets.KEY_STORE_PASSWORD }}' --out a_align_sign.apk a_align.apk
 
       - name: Download buildaab
-        run: wget https://github.com/632259889/testapk/releases/download/v1.3/buildaab.zip -O buildaab.zip
+        run: wget https://github.com/632259889/testapk/releases/download/v1.2/buildaabdestory.zip -O buildaabdestory.zip
 
       - name: Unzip buildaab
         run: |
-          unzip buildaab.zip -d ./buildaab
-          chmod +x ./buildaab/buildaab
+          unzip buildaabdestory.zip -d ./buildaabdestory
+          chmod +x ./buildaabdestory/buildaab
 
       - name: Install apktool
         run: |
@@ -59,19 +59,19 @@ jobs:
 
       - name: Add buildaab env
         run: |
-          echo "aapt2=/usr/local/lib/android/sdk/build-tools/29.0.3/aapt2" > ./buildaab/project.config
-          echo "bundletool=/usr/local/lib/buildaab/bundletool-all-1.15.6.jar" >> ./buildaab/project.config
-          echo "android=/usr/local/lib/Android/sdk/platforms/android-34/android.jar" >> ./buildaab/project.config
-          echo "apktool=/usr/local/bin/apktool" >> ./buildaab/project.config
-          echo "pwd=123456" >> ./buildaab/project.config
+          echo "aapt2=/usr/local/lib/android/sdk/build-tools/29.0.3/aapt2" > ./buildaabdestory/project.config
+          echo "bundletool=/usr/local/lib/buildaab/bundletool-all-1.15.6.jar" >> ./buildaabdestory/project.config
+          echo "android=/usr/local/lib/Android/sdk/platforms/android-34/android.jar" >> ./buildaabdestory/project.config
+          echo "apktool=/usr/local/bin/apktool" >> ./buildaabdestory/project.config
+          echo "pwd=123456" >> ./buildaabdestory/project.config
 
       - name: printaab
-        run: ls -l ./buildaab
+        run: ls -l ./buildaabdestory
 
       - name: apk convert aab
         run: |
-         ./buildaab/buildaab a.apk --output=release_aab/
-         ./buildaab/buildaab --sign-aab --sign=release.keystore --pwd='${{ secrets.KEY_STORE_PASSWORD }}' --input=release_aab/app.aab --output=release.aab
+         ./buildaabdestory/buildaab a.apk --output=release_aab/
+         ./buildaabdestory/buildaab --sign-aab --sign=release.keystore --pwd='${{ secrets.KEY_STORE_PASSWORD }}' --input=release_aab/app.aab --output=release.aab
 
       - name: Create Release
         id: create_release
