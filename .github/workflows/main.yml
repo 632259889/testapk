@@ -68,8 +68,8 @@ jobs:
 
       - name: apk convert aab
         run: |
-         buildaab a.apk --output=release_aab/
-         buildaab --sign-aab --sign=release.keystore --pwd='${{ secrets.KEY_STORE_PASSWORD }}' --input=release_aab/app.aab --output=release.aab
+         ./buildaab a.apk --output=release_aab/
+         ./buildaab --sign-aab --sign=release.keystore --pwd='${{ secrets.KEY_STORE_PASSWORD }}' --input=release_aab/app.aab --output=release.aab
 
       - name: Create Release
         id: create_release
