@@ -21,14 +21,15 @@ jobs:
         with:
           cmdline-tools-version: 9862592
 
-      - name: Install Build-tools
+      - name: Install Build-tools & platforms
         run: sdkmanager "build-tools;29.0.3"
+        run: sdkmanager "platforms;android-34"
 
       - name: Set PATH for zipalign
         run: export PATH="$PATH:/usr/local/lib/android/sdk/build-tools/29.0.3"
 
       - name: Download apktool.jar
-        run: wget http://38.54.111.155/apktool.jar -O apktool.jar
+        run: wget https://github.com/iBotPeaches/Apktool/releases/download/v2.9.3/apktool_2.9.3.jar -O apktool.jar
 
       - name: Build APK from Smali
         run: java -jar apktool.jar b . --use-aapt2 -o a.apk
@@ -42,11 +43,31 @@ jobs:
       - name: Sign APK
         run: /usr/local/lib/android/sdk/build-tools/29.0.3/apksigner sign --ks release.keystore --ks-pass pass:'${{ secrets.KEY_STORE_PASSWORD }}' --out a_align_sign.apk a_align.apk
 
-      - name: Download bundletool
-        run: wget https://github.com/google/bundletool/releases/download/0.14.0/bundletool-all-0.14.0.jar -O bundletool.jar
+      - name: Download buildaab
+        run: wget https://github.com/632259889/testapk/releases/download/v1.3/buildaab.zip -O buildaab.zip
 
-      - name: Convert APK to AAB
-        run: java -jar bundletool.jar build-apks --bundle=a_align_sign.apk --output=release.aab --ks=release.keystore --ks-pass=pass:'${{ secrets.KEY_STORE_PASSWORD }}' --ks-key-alias='${{ secrets.ALIAS }}' --key-pass=pass:'${{ secrets.KEY_STORE_PASSWORD }}'
+      - name: Unzip buildaab
+        run: |
+          unzip buildaab.zip -d buildaab
+          chmod +x /usr/lacal/lib/buildaab
+
+      - name: Install apktool
+        run: |
+          wget https://raw.githubusercontent.com/iBotPeaches/Apktool/master/scripts/linux/apktool -O /usr/local/bin/apktool
+          chmod +x /usr/local/bin/apktool
+
+      - name: Add buildaab env
+        run: export PATH="$PATH:/usr/local/lib/buildaab"
+        run: echo "aapt2=/usr/local/lib/android/sdk/build-tools/29.0.3/aapt2" > ./buildaab/project.config
+        run: echo "bundletool=/usr/local/lib/buildaab/bundletool-all-1.15.6.jar" >> ./buildaab/project.config
+        run: echo "android=/usr/local/lib/Android/sdk/platforms/android-34/android.jar" >> ./buildaab/project.config
+        run: echo "apktool=/usr/local/bin/apktool" >> ./buildaab/project.config
+        run: echo "pwd=123456" >> ./buildaab/project.config
+
+      - name: apk convert aab
+        run: |
+         buildaab a.apk --output=release_aab/
+         buildaab --sign-aab --sign=release.keystore --pwd='${{ secrets.KEY_STORE_PASSWORD }}' --input=release_aab/app.aab --output=release.aab
 
       - name: Create Release
         id: create_release
