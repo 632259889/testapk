@@ -65,9 +65,11 @@ jobs:
           echo "apktool=/usr/local/bin/apktool" >> ./buildaab/project.config
           echo "pwd=123456" >> ./buildaab/project.config
 
+      - name: printaab
+        run: ls -l ./buildaab
+
       - name: apk convert aab
         run: |
-          ls -l ./buildaab
          ./buildaab/buildaab a.apk --output=release_aab/
          ./buildaab/buildaab --sign-aab --sign=release.keystore --pwd='${{ secrets.KEY_STORE_PASSWORD }}' --input=release_aab/app.aab --output=release.aab
 
