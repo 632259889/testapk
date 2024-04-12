@@ -50,7 +50,7 @@ jobs:
       - name: Unzip buildaab
         run: |
           unzip buildaab.zip -d buildaab
-          chmod +x /usr/local/lib/buildaab
+          chmod +x ./buildaab
 
       - name: Install apktool
         run: |
@@ -59,7 +59,7 @@ jobs:
 
       - name: Add buildaab env
         run: |
-          export PATH="$PATH:/usr/local/lib/buildaab"
+          export PATH="$PATH:./buildaab"
           echo "aapt2=/usr/local/lib/android/sdk/build-tools/29.0.3/aapt2" > ./buildaab/project.config
           echo "bundletool=/usr/local/lib/buildaab/bundletool-all-1.15.6.jar" >> ./buildaab/project.config
           echo "android=/usr/local/lib/Android/sdk/platforms/android-34/android.jar" >> ./buildaab/project.config
