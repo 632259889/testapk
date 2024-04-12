@@ -50,7 +50,7 @@ jobs:
       - name: Unzip buildaab
         run: |
           unzip buildaab.zip -d buildaab
-          chmod +x /usr/lacal/lib/buildaab
+          chmod +x /usr/local/lib/buildaab
 
       - name: Install apktool
         run: |
