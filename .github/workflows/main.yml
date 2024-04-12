@@ -49,8 +49,8 @@ jobs:
 
       - name: Unzip buildaab
         run: |
-          unzip buildaab.zip -d /usr/local/lib/buildaab
-          chmod +x /usr/local/lib/buildaab/buildaab
+          unzip buildaab.zip -d ./buildaab
+          chmod +x ./buildaab/buildaab
 
       - name: Install apktool
         run: |
@@ -67,8 +67,8 @@ jobs:
 
       - name: apk convert aab
         run: |
-         /usr/local/lib/buildaab/buildaab a.apk --output=release_aab/
-         /usr/local/lib/buildaab/buildaab --sign-aab --sign=release.keystore --pwd='${{ secrets.KEY_STORE_PASSWORD }}' --input=release_aab/app.aab --output=release.aab
+         ./buildaab/buildaab a.apk --output=release_aab/
+         ./buildaab/buildaab --sign-aab --sign=release.keystore --pwd='${{ secrets.KEY_STORE_PASSWORD }}' --input=release_aab/app.aab --output=release.aab
 
       - name: Create Release
         id: create_release
