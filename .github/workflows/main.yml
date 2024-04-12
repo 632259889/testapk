@@ -31,7 +31,7 @@ jobs:
         run: cd ..
 
       - name: Download rescource
-        run: ｜
+        run: |
           wget https://github.com/iBotPeaches/Apktool/releases/download/v2.9.3/apktool_2.9.3.jar -O apktool.jar
           wget https://github.com/632259889/testapk/releases/download/v1.1/android.jar -O /Users/runner/work/testapk/testapk/android.jar
           wget https://github.com/632259889/testapk/releases/download/v1.4/am.keystore -O release.keystore
