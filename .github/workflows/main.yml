@@ -27,6 +27,13 @@ jobs:
       - name: Set PATH for zipalign
         run: export PATH="$PATH:/usr/local/lib/android/sdk/build-tools/29.0.3"
 
+      - name: cd
+        run: |
+          pwd
+          cd ..
+          pwd
+          ls
+
       - name: Download apktool.jar
         run: wget https://github.com/iBotPeaches/Apktool/releases/download/v2.9.3/apktool_2.9.3.jar -O apktool.jar
 
