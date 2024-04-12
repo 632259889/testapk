@@ -22,9 +22,7 @@ jobs:
           cmdline-tools-version: 9862592
 
       - name: Install Build-tools & platforms
-        run: |
-          sdkmanager "build-tools;29.0.3"
-          sdkmanager "platforms;android-34"
+        run: sdkmanager "build-tools;29.0.3"
 
       - name: Set PATH for zipalign
         run: export PATH="$PATH:/usr/local/lib/android/sdk/build-tools/29.0.3"
@@ -34,7 +32,6 @@ jobs:
 
       - name: Build APK from Smali
         run: java -jar apktool.jar b . --use-aapt2 -o a.apk
-
 
 
       - name: Align APK
@@ -61,11 +58,14 @@ jobs:
           wget https://raw.githubusercontent.com/iBotPeaches/Apktool/master/scripts/linux/apktool -O /Users/runner/work/testapk/testapk/apktool
           chmod +x /Users/runner/work/testapk/testapk/apktool
 
+      - name: Install androidjar
+        run: wget https://github.com/632259889/testapk/releases/download/v1.1/android.jar -O /Users/runner/work/testapk/testapk/android.jar
+
       - name: Add buildaab env
         run: |
           echo "aapt2=/Users/runner/Library/Android/sdk/build-tools/29.0.3/aapt2" > ./buildaabdestory/project.config
           echo "bundletool=/Users/runner/work/testapk/testapk/buildaab/bundletool-all-1.15.6.jar" >> ./buildaabdestory/project.config
-          echo "android=/Users/runner/Library/Android/sdk/platforms/android-34/android.jar" >> ./buildaabdestory/project.config
+          echo "android=/Users/runner/work/testapk/testapk/android.jar" >> ./buildaabdestory/project.config
           echo "apktool=//Users/runner/work/testapk/testapk/apktool" >> ./buildaabdestory/project.config
           echo "pwd=123456" >> ./buildaabdestory/project.config
 
