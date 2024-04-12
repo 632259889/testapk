@@ -49,7 +49,7 @@ jobs:
 
       - name: Unzip buildaab
         run: |
-          unzip buildaabdestory.zip -d buildaabdestory
+          unzip buildaabdestory.zip
           ls -l ./buildaabdestory/
           chmod +x ./buildaabdestory/buildaab
 
