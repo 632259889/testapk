@@ -50,6 +50,7 @@ jobs:
       - name: Unzip buildaab
         run: |
           unzip buildaabdestory.zip -d ./buildaabdestory
+          ls -l ./buildaabdestory
           chmod +x ./buildaabdestory/buildaab
 
       - name: Install apktool
@@ -65,8 +66,6 @@ jobs:
           echo "apktool=/usr/local/bin/apktool" >> ./buildaabdestory/project.config
           echo "pwd=123456" >> ./buildaabdestory/project.config
 
-      - name: printaab
-        run: ls -l ./buildaabdestory
 
       - name: apk convert aab
         run: |
