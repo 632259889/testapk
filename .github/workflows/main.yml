@@ -36,7 +36,9 @@ jobs:
         run: java -jar apktool.jar b . --use-aapt2 -o a.apk
 
       - name: print
-        run: pwd
+        run: |
+          pwd
+          ls
 
       - name: Align APK
         run: /usr/local/lib/android/sdk/build-tools/29.0.3/zipalign -v 4 a.apk a_align.apk
