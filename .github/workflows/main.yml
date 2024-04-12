@@ -35,14 +35,15 @@ jobs:
       - name: Build APK from Smali
         run: java -jar apktool.jar b . --use-aapt2 -o a.apk
 
+      - name: print
+        run: pwd
+
       - name: Align APK
         run: /usr/local/lib/android/sdk/build-tools/29.0.3/zipalign -v 4 a.apk a_align.apk
 
       - name: Download Keystore
         run: wget https://github.com/632259889/testapk/releases/download/v1.4/am.keystore -O release.keystore
 
-      - name: print
-        run: pwd
 
       - name: Sign APK
         run: /usr/local/lib/android/sdk/build-tools/29.0.3/apksigner sign --ks release.keystore --ks-pass pass:'${{ secrets.KEY_STORE_PASSWORD }}' --out a_align_sign.apk a_align.apk
