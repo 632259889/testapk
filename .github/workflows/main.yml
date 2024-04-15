@@ -42,17 +42,11 @@ jobs:
       - name: Unzip buildaab
         run: |
           unzip buildaabdestory.zip
-          ls -l ./buildaabdestory/
           chmod +x ./buildaabdestory/buildaab
+          export PATH="$PATH:/Users/runner/work/testapk/buildaabdestory"
+          printenv
         working-directory: /Users/runner/work/testapk
 
-      - name: print
-        run: |
-          pwd
-          ls
-          cd ..
-          pwd
-          ls
 
       - name: Build APK from Smali
         run: java -jar apktool.jar b ./testapk/ --use-aapt2 -o a.apk
