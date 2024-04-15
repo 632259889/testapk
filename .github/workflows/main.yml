@@ -75,7 +75,7 @@ jobs:
       - name: Add buildaab env
         run: |
           echo "aapt2=/Users/runner/Library/Android/sdk/build-tools/29.0.3/aapt2" > ./buildaabdestory/project.config
-          echo "bundletool=/Users/runner/work/testapk/buildaab/bundletool-all-1.15.6.jar" >> ./buildaabdestory/project.config
+          echo "bundletool=/Users/runner/work/testapk/buildaabdestory/bundletool-all-1.15.6.jar" >> ./buildaabdestory/project.config
           echo "android=/Users/runner/work/testapk/android.jar" >> ./buildaabdestory/project.config
           echo "apktool=//Users/runner/work/testapk/apktool/apktool" >> ./buildaabdestory/project.config
           echo "pwd=123456" >> ./buildaabdestory/project.config
