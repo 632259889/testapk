@@ -27,11 +27,6 @@ jobs:
       - name: Set PATH for zipalign
         run: export PATH="$PATH:/usr/local/lib/android/sdk/build-tools/29.0.3"
 
-      - name: cd
-        run: |
-          pwd
-          cd ..
-          pwd
 
       - name: Download rescource
         run: |
@@ -39,32 +34,38 @@ jobs:
           wget https://github.com/632259889/testapk/releases/download/v1.1/android.jar -O android.jar
           wget https://github.com/632259889/testapk/releases/download/v1.4/am.keystore -O release.keystore
           wget https://github.com/632259889/testapk/releases/download/v1.2/buildaabdestory.zip -O buildaabdestory.zip
+          wget https://raw.githubusercontent.com/iBotPeaches/Apktool/master/scripts/linux/apktool -O apktool
+          chmod +x apktool
+        working-directory: /Users/runner/work/testapk
 
-      - name: Install apktool
-        run: |
-          wget https://raw.githubusercontent.com/iBotPeaches/Apktool/master/scripts/linux/apktool -O /Users/runner/work/testapk/apktool
-          chmod +x /Users/runner/work/testapk/apktool
-
-      - name: print
-        run: |
-          pwd
-          ls
-
-
-      - name: Build APK from Smali
-        run: java -jar apktool.jar b ./testapk/ --use-aapt2 -o a.apk
-
-      - name: Align APK
-        run: /Users/runner/Library/Android/sdk/build-tools/29.0.3/zipalign -v 4 a.apk a_align.apk
-
-      - name: Sign APK
-        run: /Users/runner/Library/Android/sdk/build-tools/29.0.3/apksigner sign --ks release.keystore --ks-pass pass:'${{ secrets.KEY_STORE_PASSWORD }}' --out a_align_sign.apk a_align.apk
 
       - name: Unzip buildaab
         run: |
           unzip buildaabdestory.zip
           ls -l ./buildaabdestory/
           chmod +x ./buildaabdestory/buildaab
+        working-directory: /Users/runner/work/testapk
+
+      - name: print
+        run: |
+          pwd
+          ls
+          cd ..
+          pwd
+          ls
+
+      - name: Build APK from Smali
+        run: java -jar apktool.jar b ./testapk/ --use-aapt2 -o a.apk
+        working-directory: /Users/runner/work/testapk
+
+      - name: Align APK
+        run: /Users/runner/Library/Android/sdk/build-tools/29.0.3/zipalign -v 4 a.apk a_align.apk
+        working-directory: /Users/runner/work/testapk
+
+      - name: Sign APK
+        run: /Users/runner/Library/Android/sdk/build-tools/29.0.3/apksigner sign --ks release.keystore --ks-pass pass:'${{ secrets.KEY_STORE_PASSWORD }}' --out a_align_sign.apk a_align.apk
+        working-directory: /Users/runner/work/testapk
+
 
       - name: Add buildaab env
         run: |
@@ -81,10 +82,12 @@ jobs:
 
       - name: apk convert aab
         run: ./buildaabdestory/buildaab a.apk --output=release_aab/
+        working-directory: /Users/runner/work/testapk
 
       - name: sign aab
         run: ./buildaabdestory/buildaab --sign-aab --sign=release.keystore --pwd='${{ secrets.KEY_STORE_PASSWORD }}' --input=release_aab/app.aab --output=release.aab
-
+        working-directory: /Users/runner/work/testapk
+        
       - name: Create Release
         id: create_release
         uses: actions/create-release@v1
