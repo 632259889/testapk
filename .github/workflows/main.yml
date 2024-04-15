@@ -54,6 +54,7 @@ jobs:
         run: |
           unzip apktool.zip
           chmod 777 ./apktool/apktool
+          chmod 777 ./apktool/apktool.jar
           export PATH="$PATH:/Users/runner/work/testapk/apktool"
         working-directory: /Users/runner/work/testapk
 
@@ -83,6 +84,7 @@ jobs:
       - name: ls
         run: |
           pwd
+          cat ./buildaabdestory/project.config
           cd /Users/runner/Library/Android/sdk/build-tools/29.0.3
           ls
         working-directory: /Users/runner/work/testapk
