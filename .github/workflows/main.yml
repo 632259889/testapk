@@ -74,6 +74,7 @@ jobs:
           echo "android=/Users/runner/work/testapk/android.jar" >> ./buildaabdestory/project.config
           echo "apktool=//Users/runner/work/testapk/apktool" >> ./buildaabdestory/project.config
           echo "pwd=123456" >> ./buildaabdestory/project.config
+        working-directory: /Users/runner/work/testapk
 
       - name: print
         run: |
@@ -87,7 +88,7 @@ jobs:
       - name: sign aab
         run: ./buildaabdestory/buildaab --sign-aab --sign=release.keystore --pwd='${{ secrets.KEY_STORE_PASSWORD }}' --input=release_aab/app.aab --output=release.aab
         working-directory: /Users/runner/work/testapk
-        
+
       - name: Create Release
         id: create_release
         uses: actions/create-release@v1
