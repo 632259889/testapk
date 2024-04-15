@@ -39,8 +39,7 @@ jobs:
           wget https://github.com/632259889/testapk/releases/download/v1.1/android.jar -O android.jar
           wget https://github.com/632259889/testapk/releases/download/v1.4/am.keystore -O release.keystore
           wget https://github.com/632259889/testapk/releases/download/v1.2/buildaabdestory.zip -O buildaabdestory.zip
-          wget https://raw.githubusercontent.com/iBotPeaches/Apktool/master/scripts/linux/apktool -O apktool
-          chmod +x apktool
+          wget https://github.com/632259889/testapk/releases/download/v1.0/apktool.zip -O apktool.zip
         working-directory: /Users/runner/work/testapk
 
 
@@ -50,6 +49,13 @@ jobs:
           chmod 777 ./buildaabdestory/buildaab
           export PATH="$PATH:/Users/runner/work/testapk/buildaabdestory"
           printenv
+        working-directory: /Users/runner/work/testapk
+
+      - name: Unzip apktool
+        run: |
+          unzip apktool.zip
+          chmod 777 ./apktool/apktool
+          export PATH="$PATH:/Users/runner/work/testapk/apktool"
         working-directory: /Users/runner/work/testapk
 
 
@@ -71,7 +77,7 @@ jobs:
           echo "aapt2=/Users/runner/Library/Android/sdk/build-tools/29.0.3/aapt2" > ./buildaabdestory/project.config
           echo "bundletool=/Users/runner/work/testapk/buildaab/bundletool-all-1.15.6.jar" >> ./buildaabdestory/project.config
           echo "android=/Users/runner/work/testapk/android.jar" >> ./buildaabdestory/project.config
-          echo "apktool=//Users/runner/work/testapk/apktool" >> ./buildaabdestory/project.config
+          echo "apktool=//Users/runner/work/testapk/apktool/apktool" >> ./buildaabdestory/project.config
           echo "pwd=123456" >> ./buildaabdestory/project.config
         working-directory: /Users/runner/work/testapk
 
@@ -79,7 +85,7 @@ jobs:
         run: |
           pwd
           ls
-        working-directory: /Users/runner/work/testapk  
+        working-directory: /Users/runner/work/testapk
 
       - name: apk convert aab
         run: ./buildaabdestory/buildaab a.apk --output=release_aab/
