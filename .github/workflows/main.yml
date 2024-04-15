@@ -85,6 +85,11 @@ jobs:
         run: |
           pwd
           ls
+          cd buildaabdestory
+          ls
+          cd ..
+          cd apktool
+          ls
         working-directory: /Users/runner/work/testapk
 
       - name: apk convert aab
