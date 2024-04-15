@@ -42,7 +42,7 @@ jobs:
       - name: Unzip buildaab
         run: |
           unzip buildaabdestory.zip
-          chmod +x ./buildaabdestory/buildaab
+          chmod chmod -R 777  ./buildaabdestory
           export PATH="$PATH:/Users/runner/work/testapk/buildaabdestory"
           printenv
         working-directory: /Users/runner/work/testapk
@@ -69,11 +69,6 @@ jobs:
           echo "apktool=//Users/runner/work/testapk/apktool" >> ./buildaabdestory/project.config
           echo "pwd=123456" >> ./buildaabdestory/project.config
         working-directory: /Users/runner/work/testapk
-
-      - name: print
-        run: |
-          pwd
-          ls
 
       - name: apk convert aab
         run: ./buildaabdestory/buildaab a.apk --output=release_aab/
@@ -103,3 +98,4 @@ jobs:
           asset_name: release.aab
           asset_content_type: application/octet-stream
           asset_label: important
+          working-directory: /Users/runner/work/testapk
