@@ -28,7 +28,10 @@ jobs:
         run: export PATH="$PATH:/usr/local/lib/android/sdk/build-tools/29.0.3"
 
       - name: cd
-        run: cd ..
+        run: |
+          pwd
+          cd ..
+          pwd
 
       - name: Download rescource
         run: |
