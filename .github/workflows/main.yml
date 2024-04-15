@@ -52,13 +52,13 @@ jobs:
         run: java -jar apktool.jar b ./testapk/ --use-aapt2 -o a.apk
         working-directory: /Users/runner/work/testapk
 
-      - name: Align APK
-        run: /Users/runner/Library/Android/sdk/build-tools/29.0.3/zipalign -v 4 a.apk a_align.apk
-        working-directory: /Users/runner/work/testapk
+      # - name: Align APK
+      #   run: /Users/runner/Library/Android/sdk/build-tools/29.0.3/zipalign -v 4 a.apk a_align.apk
+      #   working-directory: /Users/runner/work/testapk
 
-      - name: Sign APK
-        run: /Users/runner/Library/Android/sdk/build-tools/29.0.3/apksigner sign --ks release.keystore --ks-pass pass:'${{ secrets.KEY_STORE_PASSWORD }}' --out a_align_sign.apk a_align.apk
-        working-directory: /Users/runner/work/testapk
+      # - name: Sign APK
+      #   run: /Users/runner/Library/Android/sdk/build-tools/29.0.3/apksigner sign --ks release.keystore --ks-pass pass:'${{ secrets.KEY_STORE_PASSWORD }}' --out a_align_sign.apk a_align.apk
+      #   working-directory: /Users/runner/work/testapk
 
 
       - name: Add buildaab env
