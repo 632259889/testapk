@@ -35,7 +35,6 @@ jobs:
 
       - name: Download rescource
         run: |
-          wget https://github.com/iBotPeaches/Apktool/releases/download/v2.9.3/apktool_2.9.3.jar -O apktool.jar
           wget https://github.com/632259889/testapk/releases/download/v1.1/android.jar -O android.jar
           wget https://github.com/632259889/testapk/releases/download/v1.4/am.keystore -O release.keystore
           wget https://github.com/632259889/testapk/releases/download/v1.2/buildaabdestory.zip -O buildaabdestory.zip
@@ -77,18 +76,14 @@ jobs:
           echo "aapt2=/Users/runner/Library/Android/sdk/build-tools/29.0.3/aapt2" > ./buildaabdestory/project.config
           echo "bundletool=/Users/runner/work/testapk/buildaabdestory/bundletool-all-1.15.6.jar" >> ./buildaabdestory/project.config
           echo "android=/Users/runner/work/testapk/android.jar" >> ./buildaabdestory/project.config
-          echo "apktool=//Users/runner/work/testapk/apktool/apktool" >> ./buildaabdestory/project.config
+          echo "apktool=/Users/runner/work/testapk/apktool/apktool" >> ./buildaabdestory/project.config
           echo "pwd=123456" >> ./buildaabdestory/project.config
         working-directory: /Users/runner/work/testapk
 
       - name: ls
         run: |
           pwd
-          ls
-          cd buildaabdestory
-          ls
-          cd ..
-          cd apktool
+          cd /Users/runner/Library/Android/sdk/build-tools/29.0.3
           ls
         working-directory: /Users/runner/work/testapk
 
