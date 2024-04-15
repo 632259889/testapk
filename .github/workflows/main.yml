@@ -42,7 +42,7 @@ jobs:
       - name: Unzip buildaab
         run: |
           unzip buildaabdestory.zip
-          chmod chmod -R 777  ./buildaabdestory
+          chmod 777 ./buildaabdestory/buildaab
           export PATH="$PATH:/Users/runner/work/testapk/buildaabdestory"
           printenv
         working-directory: /Users/runner/work/testapk
