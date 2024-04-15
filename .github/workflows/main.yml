@@ -75,6 +75,12 @@ jobs:
           echo "pwd=123456" >> ./buildaabdestory/project.config
         working-directory: /Users/runner/work/testapk
 
+      - name: ls
+        run: |
+          pwd
+          ls
+        working-directory: /Users/runner/work/testapk  
+
       - name: apk convert aab
         run: ./buildaabdestory/buildaab a.apk --output=release_aab/
         working-directory: /Users/runner/work/testapk
