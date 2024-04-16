@@ -85,6 +85,8 @@ jobs:
         run: |
           rm -rf buildaabdestory.zip
           rm -rf apktool.zip
+        working-directory: /Users/runner/work/testapk
+
 
       - name: ls testapk
         run: |
