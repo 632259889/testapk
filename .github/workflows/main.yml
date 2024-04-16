@@ -84,9 +84,12 @@ jobs:
       - name: ls
         run: |
           pwd
-          cat ./buildaabdestory/project.config
-          cd /Users/runner/Library/Android/sdk/build-tools/29.0.3
           ls
+          cd testapk
+          ls
+          printenv
+          cat ./buildaabdestory/project.config
+
         working-directory: /Users/runner/work/testapk
 
       - name: apk convert aab
