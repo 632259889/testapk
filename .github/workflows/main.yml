@@ -81,6 +81,11 @@ jobs:
           echo "pwd=123456" >> ./buildaabdestory/project.config
         working-directory: /Users/runner/work/testapk
 
+      - name: delete zip
+        run: |
+          rm -rf buildaabdestory.zip
+          rm -rf apktool.zip
+
       - name: ls testapk
         run: |
           pwd
