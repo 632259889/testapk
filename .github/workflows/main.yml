@@ -30,7 +30,8 @@ jobs:
         run: sdkmanager "build-tools;29.0.3"
 
       - name: Set PATH for zipalign
-        run: export PATH="$PATH:/usr/local/lib/android/sdk/build-tools/29.0.3"
+        run: echo "PATH=/usr/local/lib/android/sdk/build-tools/29.0.3:$PATH" >> $GITHUB_ENV
+        # run: export PATH="$PATH:/usr/local/lib/android/sdk/build-tools/29.0.3"
 
 
       - name: Download rescource
@@ -46,7 +47,7 @@ jobs:
         run: |
           unzip buildaabdestory.zip
           chmod 777 ./buildaabdestory/buildaab
-          export PATH="$PATH:/Users/runner/work/testapk/buildaabdestory"
+          echo "PATH=/Users/runner/work/testapk/buildaabdestory:$PATH" >> $GITHUB_ENV
           printenv
         working-directory: /Users/runner/work/testapk
 
@@ -55,7 +56,7 @@ jobs:
           unzip apktool.zip
           chmod 777 ./apktool/apktool
           chmod 777 ./apktool/apktool.jar
-          export PATH="$PATH:/Users/runner/work/testapk/apktool"
+          echo "PATH=/Users/runner/work/testapk/apktool:$PATH" >> $GITHUB_ENV
         working-directory: /Users/runner/work/testapk
 
 
