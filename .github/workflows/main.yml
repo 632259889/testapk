@@ -31,8 +31,6 @@ jobs:
 
       - name: Set PATH for zipalign
         run: echo "PATH=/usr/local/lib/android/sdk/build-tools/29.0.3:$PATH" >> $GITHUB_ENV
-        # run: export PATH="$PATH:/usr/local/lib/android/sdk/build-tools/29.0.3"
-
 
       - name: Download rescource
         run: |
