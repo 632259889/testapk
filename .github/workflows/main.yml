@@ -86,15 +86,17 @@ jobs:
           rm -rf apktool.zip
         working-directory: /Users/runner/work/testapk
 
-      - name: mkdir direcotry
-        run: mkdir /tmp
-        working-directory: /Users/runner/work/testapk
+      # - name: mkdir direcotry
+      #   run: mkdir /tmp
+      #   working-directory: /Users/runner/work/testapk
 
 
       - name: ls testapk
         run: |
           pwd
           ls
+          cd /tmp
+          pwd
         working-directory: /Users/runner/work/testapk
 
       - name: ls testapk testapk
