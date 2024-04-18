@@ -65,6 +65,12 @@ jobs:
           /Users/runner/Library/Android/sdk/build-tools/34.0.0/aapt2 compile --dir old_apk_dir/res -o compiled_res.zip
         working-directory: /Users/runner/work/testapk
 
+      - name: ls testapk
+        run: |
+          pwd
+          ls
+        working-directory: /Users/runner/work/testapk
+
       - name: apk convert aab2
         run: |
           /Users/runner/Library/Android/sdk/build-tools/34.0.0/aapt2 link --proto-format -o base.apk -I /Users/runner/work/testapk/android.jar --min-sdk-version 26 --target-sdk-version 33 --version-code 100 --version-name 1.0.0 --manifest old_apk_dir/AndroidManifest.xml -R compiled_res.zip --auto-add-overlay
