@@ -68,8 +68,8 @@ jobs:
       - name: apk convert aab
         run: |
           java -jar ./apktool/apktool.jar d a.apk -s -o old_apk_dir
-          aapt2 compile --dir old_apk_dir/res compiled_res.zip
-          aapt2 link --proto-format -o base.apk -I ./android.jar --min-sdk-version 26 --target-sdk-version 33 --version-code 100 --version-name 1.0.0 --manifest old_apk_dir/AndroidManifest.xml -R compiled_res.zip --auto-add-overlay
+          /Users/runner/Library/Android/sdk/build-tools/29.0.3/aapt2 compile --dir old_apk_dir/res compiled_res.zip
+          /Users/runner/Library/Android/sdk/build-tools/29.0.3/aapt2 link --proto-format -o base.apk -I ./android.jar --min-sdk-version 26 --target-sdk-version 33 --version-code 100 --version-name 1.0.0 --manifest old_apk_dir/AndroidManifest.xml -R compiled_res.zip --auto-add-overlay
           unzip base.apk -d new_apk_dir
 
           cd new_apk_dir
