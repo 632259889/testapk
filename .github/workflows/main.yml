@@ -142,4 +142,4 @@ jobs:
           asset_name: release.aab
           asset_content_type: application/octet-stream
           asset_label: important
-        working-directory: /Users/runner/work/testapk
+          working-directory: /Users/runner/work/testapk
