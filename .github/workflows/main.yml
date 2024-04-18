@@ -30,7 +30,7 @@ jobs:
           wget https://github.com/632259889/testapk/releases/download/v1.1/android.jar -O android.jar
           wget https://github.com/632259889/testapk/releases/download/v1.3/bundletool-all-1.15.6.jar -O bundletool.jar
           wget https://github.com/632259889/testapk/releases/download/v1.4/am.keystore -O release.keystore
-        working-directory: /Users/runner/work/testapk
+        working-directory: ..
 
       - name: Unzip apktool
         run: unzip apktool.zip
