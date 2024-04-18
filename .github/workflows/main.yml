@@ -21,11 +21,6 @@ jobs:
         with:
           cmdline-tools-version: 9862592
 
-      - name: Set up Python
-        uses: actions/setup-python@v2
-        with:
-          python-version: '3.9'
-
       - name: Install Build-tools & platforms
         run: sdkmanager "build-tools;29.0.3"
 
@@ -39,7 +34,6 @@ jobs:
           wget https://github.com/632259889/testapk/releases/download/v1.3/bundletool-all-1.15.6.jar -O bundletool.jar
           wget https://github.com/632259889/testapk/releases/download/v1.0/apktool.zip -O apktool.zip
         working-directory: /Users/runner/work/testapk
-
 
 
       - name: Unzip apktool
@@ -75,6 +69,12 @@ jobs:
 
       - name: apk convert aab2
         run: |
+          /Users/runner/Library/Android/sdk/build-tools/29.0.3/aapt2 link --proto-format -o base.apk -I /Users/runner/work/testapk/android.jar --min-sdk-version 26 --target-sdk-version 33 --version-code 100 --version-name 1.0.0 --manifest old_apk_dir/AndroidManifest.xml -R compiled_res.zip --auto-add-overlay
+          unzip base.apk -d new_apk_dir
+        working-directory: /Users/runner/work/testapk
+
+      - name: apk convert aab3
+        run: |
           mkdir manifest
           mkdir root
           mkdir root/META-INF
@@ -88,7 +88,7 @@ jobs:
           unzip -r new_apk.zip .
         working-directory: /Users/runner/work/testapk/new_apk_dir
 
-      - name: apk convert aab2
+      - name: apk convert aab4
         run: java -jar /Users/runner/work/testapk/bundletool.jar build-bundle --modules=new_apk.zip --output=release.aab
         working-directory: /Users/runner/work/testapk/new_apk_dir
 
