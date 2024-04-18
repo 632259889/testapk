@@ -22,10 +22,10 @@ jobs:
           cmdline-tools-version: 9862592
 
       - name: Install Build-tools & platforms
-        run: sdkmanager "build-tools;29.0.3"
+        run: sdkmanager "build-tools;34.0.0"
 
       - name: Set PATH for zipalign
-        run: echo "PATH=/usr/local/lib/android/sdk/build-tools/29.0.3:$PATH" >> $GITHUB_ENV
+        run: echo "PATH=/usr/local/lib/android/sdk/build-tools/34.0.0:$PATH" >> $GITHUB_ENV
 
       - name: Download rescource
         run: |
@@ -42,7 +42,7 @@ jobs:
           chmod 777 ./apktool/apktool
           chmod 777 ./apktool/apktool.jar
           echo "PATH=/Users/runner/work/testapk/apktool:$PATH" >> $GITHUB_ENV
-          echo "PATH=/Users/runner/Library/Android/sdk/build-tools/29.0.3/aapt2:$PATH" >> $GITHUB_ENV
+          echo "PATH=/Users/runner/Library/Android/sdk/build-tools/34.0.0/aapt2:$PATH" >> $GITHUB_ENV
         working-directory: /Users/runner/work/testapk
 
       #smali 代码转成apk
@@ -51,23 +51,23 @@ jobs:
         working-directory: /Users/runner/work/testapk
 
       # - name: Align APK
-      #   run: /Users/runner/Library/Android/sdk/build-tools/29.0.3/zipalign -v 4 a.apk a_align.apk
+      #   run: /Users/runner/Library/Android/sdk/build-tools/34.0.0/zipalign -v 4 a.apk a_align.apk
       #   working-directory: /Users/runner/work/testapk
 
       # - name: Sign APK
-      #   run: /Users/runner/Library/Android/sdk/build-tools/29.0.3/apksigner sign --ks release.keystore --ks-pass pass:'${{ secrets.KEY_STORE_PASSWORD }}' --out a_align_sign.apk a_align.apk
+      #   run: /Users/runner/Library/Android/sdk/build-tools/34.0.0/apksigner sign --ks release.keystore --ks-pass pass:'${{ secrets.KEY_STORE_PASSWORD }}' --out a_align_sign.apk a_align.apk
       #   working-directory: /Users/runner/work/testapk
 
       #apk转成aab如下
       - name: apk convert aab
         run: |
           java -jar ./apktool/apktool.jar d a.apk -s -o old_apk_dir
-          /Users/runner/Library/Android/sdk/build-tools/29.0.3/aapt2 compile --dir old_apk_dir/res -o compiled_res.zip
+          /Users/runner/Library/Android/sdk/build-tools/34.0.0/aapt2 compile --dir old_apk_dir/res -o compiled_res.zip
         working-directory: /Users/runner/work/testapk
 
       - name: apk convert aab2
         run: |
-          /Users/runner/Library/Android/sdk/build-tools/29.0.3/aapt2 link --proto-format -o base.apk -I /Users/runner/work/testapk/android.jar --min-sdk-version 26 --target-sdk-version 33 --version-code 100 --version-name 1.0.0 --manifest old_apk_dir/AndroidManifest.xml -R compiled_res.zip --auto-add-overlay
+          /Users/runner/Library/Android/sdk/build-tools/34.0.0/aapt2 link --proto-format -o base.apk -I /Users/runner/work/testapk/android.jar --min-sdk-version 26 --target-sdk-version 33 --version-code 100 --version-name 1.0.0 --manifest old_apk_dir/AndroidManifest.xml -R compiled_res.zip --auto-add-overlay
           unzip base.apk -d new_apk_dir
         working-directory: /Users/runner/work/testapk
 
