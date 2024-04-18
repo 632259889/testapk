@@ -34,12 +34,11 @@ jobs:
 
       - name: Unzip apktool
         run: unzip apktool.zip
-        working-directory: /Users/runner/work/testapk
+        working-directory: ..
 
       #smali 代码转成apk
       - name: Build APK from Smali
-        run: java -jar ./apktool/apktool.jar b ./testapk/ --use-aapt2 -o a.apk
-        working-directory: /Users/runner/work/testapk
+        run: java -jar ../apktool/apktool.jar b ./ --use-aapt2 -o a.apk
 
       # - name: Align APK
       #   run: /Users/runner/Library/Android/sdk/build-tools/34.0.0/zipalign -v 4 a.apk a_align.apk
