@@ -42,11 +42,11 @@ jobs:
 
       # - name: Align APK
       #   run: /Users/runner/Library/Android/sdk/build-tools/34.0.0/zipalign -v 4 a.apk a_align.apk
-      #   working-directory: /Users/runner/work/testapk
+      #   working-directory: ..
 
       # - name: Sign APK
       #   run: /Users/runner/Library/Android/sdk/build-tools/34.0.0/apksigner sign --ks release.keystore --ks-pass pass:'${{ secrets.KEY_STORE_PASSWORD }}' --out a_align_sign.apk a_align.apk
-      #   working-directory: /Users/runner/work/testapk
+      #   working-directory: ..
 
       #apk转成aab如下
       #1.apktool解压apk
@@ -62,7 +62,7 @@ jobs:
       #3.aapt2 关联资源
       - name: AAPT2 Link Res
         run: |
-          /Users/runner/Library/Android/sdk/build-tools/34.0.0/aapt2 link --proto-format -o base.apk -I ./android.jar --min-sdk-version 26 --target-sdk-version 33 --version-code 100 --version-name 1.0.0 --manifest old_apk_dir/AndroidManifest.xml -R compiled_res.zip --auto-add-overlay
+          /Users/runner/Library/Android/sdk/build-tools/34.0.0/aapt2 link --proto-format -o base.apk -I ./android.jar --min-sdk-version '${{ secrets.SDK_MIN }}' --target-sdk-version '${{ secrets.SDK_TARGET }}' --version-code '${{ secrets.VERSION_CODE }}' --version-name '${{ secrets.VERSION_NAME }}' --manifest old_apk_dir/AndroidManifest.xml -R compiled_res.zip --auto-add-overlay
           unzip base.apk -d new_apk_dir
         working-directory: ..
 
@@ -99,24 +99,28 @@ jobs:
           ls
         working-directory: ..
 
-        #上传release
-      - name: Create Release
-        id: create_release
-        uses: actions/create-release@v1
-        env:
-          GITHUB_TOKEN: ${{ secrets.TOKEN }}
-        with:
-          tag_name: ${{ secrets.VERSION }}
-          release_name: Release ${{ secrets.VERSION }}
-          commit: main
 
-      - name: Upload Release Asset
-        uses: actions/upload-release-asset@v1
-        env:
-          GITHUB_TOKEN: ${{ secrets.TOKEN }}
-        with:
-          upload_url: ${{ steps.create_release.outputs.upload_url }}{?name,label}
-          asset_path: ../new_apk_dir/release.aab
-          asset_name: release.aab
-          asset_content_type: application/octet-stream
-          asset_label: important
+      - name: Transfer AAB to Windows VPS
+        run: scp -r ../new_apk_dir/release.aab administrator@38.54.104.15:C:\Users\Administrator\Desktop
+
+      #   #上传release
+      # - name: Create Release
+      #   id: create_release
+      #   uses: actions/create-release@v1
+      #   env:
+      #     GITHUB_TOKEN: ${{ secrets.TOKEN }}
+      #   with:
+      #     tag_name: ${{ secrets.VERSION_NAME }}
+      #     release_name: Release ${{ secrets.VERSION_NAME }}
+      #     commit: main
+      #
+      # - name: Upload Release Asset
+      #   uses: actions/upload-release-asset@v1
+      #   env:
+      #     GITHUB_TOKEN: ${{ secrets.TOKEN }}
+      #   with:
+      #     upload_url: ${{ steps.create_release.outputs.upload_url }}{?name,label}
+      #     asset_path: ../new_apk_dir/release.aab
+      #     asset_name: release.aab
+      #     asset_content_type: application/octet-stream
+      #     asset_label: important
