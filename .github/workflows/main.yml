@@ -138,8 +138,8 @@ jobs:
           GITHUB_TOKEN: ${{ secrets.TOKEN }}
         with:
           upload_url: ${{ steps.create_release.outputs.upload_url }}{?name,label}
-          asset_path: ./new_apk_dir/release.aab
+          asset_path: /Users/runner/work/testapk/new_apk_dir/release.aab
           asset_name: release.aab
           asset_content_type: application/octet-stream
           asset_label: important
-          working-directory: /Users/runner/work/testapk
+        working-directory: /Users/runner/work/testapk
