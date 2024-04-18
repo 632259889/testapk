@@ -112,7 +112,7 @@ jobs:
 
 
       - name: sign aab
-        run: jarsigner -digestalg SHA-256 -sigalg SHA256withRSA -keystore release.keystore -storepass '${{ secrets.KEY_STORE_PASSWORD }}' -keypass '${{ secrets.KEY_STORE_PASSWORD }}' ./new_apk_dir/elease.aab release
+        run: jarsigner -digestalg SHA-256 -sigalg SHA256withRSA -keystore release.keystore -storepass '${{ secrets.KEY_STORE_PASSWORD }}' -keypass '${{ secrets.KEY_STORE_PASSWORD }}' ./new_apk_dir/release.aab release
         working-directory: /Users/runner/work/testapk
 
 
