@@ -24,25 +24,16 @@ jobs:
       - name: Install Build-tools & platforms
         run: sdkmanager "build-tools;34.0.0"
 
-      - name: Set PATH for zipalign
-        run: echo "PATH=/usr/local/lib/android/sdk/build-tools/34.0.0:$PATH" >> $GITHUB_ENV
-
       - name: Download rescource
         run: |
-          wget https://github.com/632259889/testapk/releases/download/v1.1/android.jar -O android.jar
-          wget https://github.com/632259889/testapk/releases/download/v1.4/am.keystore -O release.keystore
-          wget https://github.com/632259889/testapk/releases/download/v1.3/bundletool-all-1.15.6.jar -O bundletool.jar
           wget https://github.com/632259889/testapk/releases/download/v1.0/apktool.zip -O apktool.zip
+          wget https://github.com/632259889/testapk/releases/download/v1.1/android.jar -O android.jar
+          wget https://github.com/632259889/testapk/releases/download/v1.3/bundletool-all-1.15.6.jar -O bundletool.jar
+          wget https://github.com/632259889/testapk/releases/download/v1.4/am.keystore -O release.keystore
         working-directory: /Users/runner/work/testapk
 
-
       - name: Unzip apktool
-        run: |
-          unzip apktool.zip
-          chmod 777 ./apktool/apktool
-          chmod 777 ./apktool/apktool.jar
-          echo "PATH=/Users/runner/work/testapk/apktool:$PATH" >> $GITHUB_ENV
-          echo "PATH=/Users/runner/Library/Android/sdk/build-tools/34.0.0/aapt2:$PATH" >> $GITHUB_ENV
+        run: unzip apktool.zip
         working-directory: /Users/runner/work/testapk
 
       #smali 代码转成apk
@@ -59,25 +50,25 @@ jobs:
       #   working-directory: /Users/runner/work/testapk
 
       #apk转成aab如下
-      - name: apk convert aab
-        run: |
-          java -jar ./apktool/apktool.jar d a.apk -s -o old_apk_dir
-          /Users/runner/Library/Android/sdk/build-tools/34.0.0/aapt2 compile --dir old_apk_dir/res -o compiled_res.zip
+      #1.apktool解压apk
+      - name: Apktool Unzip AAB
+        run: java -jar ./apktool/apktool.jar d a.apk -s -o old_apk_dir
         working-directory: /Users/runner/work/testapk
 
-      - name: ls testapk
-        run: |
-          pwd
-          ls
+      #2.aapt2 编译生成*.flat文件集合
+      - name: AAPT2 Compile Res
+        run: /Users/runner/Library/Android/sdk/build-tools/34.0.0/aapt2 compile --dir old_apk_dir/res -o compiled_res.zip
         working-directory: /Users/runner/work/testapk
 
-      - name: apk convert aab2
+      #3.aapt2 关联资源
+      - name: AAPT2 Link Res
         run: |
           /Users/runner/Library/Android/sdk/build-tools/34.0.0/aapt2 link --proto-format -o base.apk -I /Users/runner/work/testapk/android.jar --min-sdk-version 26 --target-sdk-version 33 --version-code 100 --version-name 1.0.0 --manifest old_apk_dir/AndroidManifest.xml -R compiled_res.zip --auto-add-overlay
           unzip base.apk -d new_apk_dir
         working-directory: /Users/runner/work/testapk
 
-      - name: apk convert aab3
+      #4.创建对应的结构目录
+      - name: Create App Bundle Destory
         run: |
           mkdir manifest
           mkdir root
@@ -90,36 +81,17 @@ jobs:
           cp -r /Users/runner/work/testapk/old_apk_dir/unknown/* ./root/
           cp -r /Users/runner/work/testapk/old_apk_dir/kotlin ./root
           cp -r /Users/runner/work/testapk/old_apk_dir/*.dex ./dex
-          ls
           zip -r new_apk.zip .
         working-directory: /Users/runner/work/testapk/new_apk_dir
 
-      - name: apk convert aab4
+        #5.利用budletool编译aab
+      - name: Bundletool Zip To AAB
         run: java -jar /Users/runner/work/testapk/bundletool.jar build-bundle --modules=new_apk.zip --output=release.aab
         working-directory: /Users/runner/work/testapk/new_apk_dir
 
-      - name: ls testapk
-        run: |
-          pwd
-          ls
-        working-directory: /Users/runner/work/testapk
-
-      - name: ls testapk testapk
-        run: |
-          pwd
-          ls
-        working-directory: /Users/runner/work/testapk/new_apk_dir
-
-
-      - name: sign aab
+        #6.利用jarsigner对aab进行签名
+      - name: Sign AAB
         run: jarsigner -digestalg SHA-256 -sigalg SHA256withRSA -keystore ./release.keystore -storepass '${{ secrets.KEY_STORE_PASSWORD }}' -keypass '${{ secrets.KEY_PASSWORD }}' ./new_apk_dir/release.aab '${{ secrets.ALIAS }}'
-        working-directory: /Users/runner/work/testapk
-
-
-      - name: ls testapk2
-        run: |
-          pwd
-          ls
         working-directory: /Users/runner/work/testapk
 
       - name: Create Release
