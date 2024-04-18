@@ -84,11 +84,13 @@ jobs:
           mkdir root/META-INF
           mkdir dex
           cp AndroidManifest.xml ./manifest
+          rm -rf AndroidManifest.xml
           cp -r /Users/runner/work/testapk/old_apk_dir/lib .
           cp -r /Users/runner/work/testapk/old_apk_dir/assets .
           cp -r /Users/runner/work/testapk/old_apk_dir/unknown/* ./root/
           cp -r /Users/runner/work/testapk/old_apk_dir/kotlin ./root
           cp -r /Users/runner/work/testapk/old_apk_dir/*.dex ./dex
+          ls
           zip -r new_apk.zip .
         working-directory: /Users/runner/work/testapk/new_apk_dir
 
