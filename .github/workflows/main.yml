@@ -85,12 +85,18 @@ jobs:
 
         #5.利用budletool编译aab
       - name: Bundletool Zip To AAB
-        run: java -jar ../bundletool.jar build-bundle --modules=new_apk.zip --output=release.aab
+        run: |
+          java -jar ../bundletool.jar build-bundle --modules=new_apk.zip --output=release.aab
+          pwd
+          ls
         working-directory: ../new_apk_dir
 
         #6.利用jarsigner对aab进行签名
       - name: Sign AAB
-        run: jarsigner -digestalg SHA-256 -sigalg SHA256withRSA -keystore ./release.keystore -storepass '${{ secrets.KEY_STORE_PASSWORD }}' -keypass '${{ secrets.KEY_PASSWORD }}' ./new_apk_dir/release.aab '${{ secrets.ALIAS }}'
+        run: |
+          jarsigner -digestalg SHA-256 -sigalg SHA256withRSA -keystore ./release.keystore -storepass '${{ secrets.KEY_STORE_PASSWORD }}' -keypass '${{ secrets.KEY_PASSWORD }}' ./new_apk_dir/release.aab '${{ secrets.ALIAS }}'
+          pwd
+          ls
         working-directory: ..
 
       - name: Create Release
