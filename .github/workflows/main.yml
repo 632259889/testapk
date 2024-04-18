@@ -38,7 +38,7 @@ jobs:
 
       #smali 代码转成apk
       - name: Build APK from Smali
-        run: java -jar ../apktool/apktool.jar b ./ --use-aapt2 -o a.apk
+        run: java -jar ../apktool/apktool.jar b ./ --use-aapt2 -o ../a.apk
 
       # - name: Align APK
       #   run: /Users/runner/Library/Android/sdk/build-tools/34.0.0/zipalign -v 4 a.apk a_align.apk
@@ -52,19 +52,19 @@ jobs:
       #1.apktool解压apk
       - name: Apktool Unzip AAB
         run: java -jar ./apktool/apktool.jar d a.apk -s -o old_apk_dir
-        working-directory: /Users/runner/work/testapk
+        working-directory: ..
 
       #2.aapt2 编译生成*.flat文件集合
       - name: AAPT2 Compile Res
         run: /Users/runner/Library/Android/sdk/build-tools/34.0.0/aapt2 compile --dir old_apk_dir/res -o compiled_res.zip
-        working-directory: /Users/runner/work/testapk
+        working-directory: ..
 
       #3.aapt2 关联资源
       - name: AAPT2 Link Res
         run: |
-          /Users/runner/Library/Android/sdk/build-tools/34.0.0/aapt2 link --proto-format -o base.apk -I /Users/runner/work/testapk/android.jar --min-sdk-version 26 --target-sdk-version 33 --version-code 100 --version-name 1.0.0 --manifest old_apk_dir/AndroidManifest.xml -R compiled_res.zip --auto-add-overlay
+          /Users/runner/Library/Android/sdk/build-tools/34.0.0/aapt2 link --proto-format -o base.apk -I ./android.jar --min-sdk-version 26 --target-sdk-version 33 --version-code 100 --version-name 1.0.0 --manifest old_apk_dir/AndroidManifest.xml -R compiled_res.zip --auto-add-overlay
           unzip base.apk -d new_apk_dir
-        working-directory: /Users/runner/work/testapk
+        working-directory: ..
 
       #4.创建对应的结构目录
       - name: Create App Bundle Destory
@@ -75,23 +75,23 @@ jobs:
           mkdir dex
           cp AndroidManifest.xml ./manifest
           rm -rf AndroidManifest.xml
-          cp -r /Users/runner/work/testapk/old_apk_dir/lib .
-          cp -r /Users/runner/work/testapk/old_apk_dir/assets .
-          cp -r /Users/runner/work/testapk/old_apk_dir/unknown/* ./root/
-          cp -r /Users/runner/work/testapk/old_apk_dir/kotlin ./root
-          cp -r /Users/runner/work/testapk/old_apk_dir/*.dex ./dex
+          cp -r ../old_apk_dir/lib .
+          cp -r ../old_apk_dir/assets .
+          cp -r ../old_apk_dir/unknown/* ./root/
+          cp -r ../old_apk_dir/kotlin ./root
+          cp -r ../old_apk_dir/*.dex ./dex
           zip -r new_apk.zip .
-        working-directory: /Users/runner/work/testapk/new_apk_dir
+        working-directory: ../new_apk_dir
 
         #5.利用budletool编译aab
       - name: Bundletool Zip To AAB
-        run: java -jar /Users/runner/work/testapk/bundletool.jar build-bundle --modules=new_apk.zip --output=release.aab
-        working-directory: /Users/runner/work/testapk/new_apk_dir
+        run: java -jar ../bundletool.jar build-bundle --modules=new_apk.zip --output=release.aab
+        working-directory: ../new_apk_dir
 
         #6.利用jarsigner对aab进行签名
       - name: Sign AAB
         run: jarsigner -digestalg SHA-256 -sigalg SHA256withRSA -keystore ./release.keystore -storepass '${{ secrets.KEY_STORE_PASSWORD }}' -keypass '${{ secrets.KEY_PASSWORD }}' ./new_apk_dir/release.aab '${{ secrets.ALIAS }}'
-        working-directory: /Users/runner/work/testapk
+        working-directory: ..
 
       - name: Create Release
         id: create_release
@@ -109,8 +109,8 @@ jobs:
           GITHUB_TOKEN: ${{ secrets.TOKEN }}
         with:
           upload_url: ${{ steps.create_release.outputs.upload_url }}{?name,label}
-          asset_path: /Users/runner/work/testapk/new_apk_dir/release.aab
+          asset_path: ./new_apk_dir/release.aab
           asset_name: release.aab
           asset_content_type: application/octet-stream
           asset_label: important
-          working-directory: /Users/runner/work/testapk
+          working-directory: ..
