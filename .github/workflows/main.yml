@@ -105,7 +105,10 @@ jobs:
         working-directory: ../new_apk_dir
 
       - name: Fastlane Init
-        run: fastlane init
+        run: |
+          export FASTLANE_OPT_OUT_USAGE=true
+          export FASTLANE_NON_INTERACTIVE=true
+          fastlane init
         working-directory: ../new_apk_dir
 
       - name: Test Google Play Connect
