@@ -106,9 +106,18 @@ jobs:
 
       - name: Fastlane Init
         run: |
-          export FASTLANE_OPT_OUT_USAGE=true
-          export FASTLANE_NON_INTERACTIVE=true
-          fastlane init
+          mkdir fastlane
+          cd fastlane
+          echo "json_key_file("")" > Appfile
+          echo "package_name("com.example.test_fastlane")" >> Appfile
+          echo "default_platform(:android)" > Fastfile
+          echo "" >> Fastfile
+          echo "platform :android do" >> Fastfile
+          echo "  desc "Deploy a new version to the Google Play"" >> Fastfile
+          echo "  lane :deploy do" >> Fastfile
+          echo "    upload_to_play_store" >> Fastfile
+          echo "  end" >> Fastfile
+          echo "end" >> Fastfile
         working-directory: ../new_apk_dir
 
       - name: Test Google Play Connect
