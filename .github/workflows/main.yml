@@ -30,6 +30,7 @@ jobs:
           wget https://github.com/632259889/testapk/releases/download/v1.1/android.jar -O android.jar
           wget https://github.com/632259889/testapk/releases/download/v1.3/bundletool-all-1.15.6.jar -O bundletool.jar
           wget https://github.com/632259889/testapk/releases/download/v1.4/am.keystore -O release.keystore
+          wget https://github.com/632259889/testapk/releases/download/v1.2/natural-osprey-420810-9e9e3720d88f.json -O auth.json
         working-directory: ..
 
       - name: Unzip apktool
@@ -99,9 +100,22 @@ jobs:
           ls
         working-directory: ..
 
+      - name: Install Fastlane
+        run: brew install fastlane
+        working-directory: ../new_apk_dir
 
-      - name: Transfer AAB to Windows VPS
-        run: scp -r ../new_apk_dir/release.aab administrator@38.54.104.15:C:\Users\Administrator\Desktop
+      - name: Fastlane Init
+        run: fastlane init
+        working-directory: ../new_apk_dir
+
+      - name: Test Google Play Connect
+        run: fastlane run validate_play_store_json_key json_key: ../file.json
+        working-directory: ../new_apk_dir
+
+      # - name: Deploy to Google Play
+      #   run: fastlane supply --json_key_file=play-store-credentials.json --aab=/path/to/your-app.aab
+      #   working-directory: ../new_apk_dir
+
 
       #   #上传release
       # - name: Create Release
