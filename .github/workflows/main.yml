@@ -1,6 +1,9 @@
 name: Build and Sign APK from Smali
 
-on: push
+on:
+  push:
+    tags:
+      - google
 
 jobs:
   build:
@@ -29,8 +32,8 @@ jobs:
           wget https://github.com/632259889/testapk/releases/download/v1.0/apktool.zip -O apktool.zip
           wget https://github.com/632259889/testapk/releases/download/v1.1/android.jar -O android.jar
           wget https://github.com/632259889/testapk/releases/download/v1.3/bundletool-all-1.15.6.jar -O bundletool.jar
-          wget https://github.com/632259889/testapk/releases/download/v1.4/am.keystore -O release.keystore
-          wget https://github.com/632259889/testapk/releases/download/v1.2/natural-osprey-420810-9e9e3720d88f.json -O auth.json
+          wget ${{ secrets.KEYSTORE_URL }} -O release.keystore
+          wget ${{ secrets.JSON_URL }} -O auth.json
         working-directory: ..
 
       - name: Unzip apktool
@@ -100,6 +103,8 @@ jobs:
           ls
         working-directory: ..
 
+
+        #上传aab文件到google play
       - name: Install Fastlane
         run: brew install fastlane
         working-directory: ../new_apk_dir
@@ -108,8 +113,8 @@ jobs:
         run: |
           mkdir fastlane
           cd fastlane
-          echo "json_key_file("")" > Appfile
-          echo "package_name("com.example.test_fastlane")" >> Appfile
+          echo "json_key_file("/Users/runner/work/testapk/new_apk_dir/auth.json")" > Appfile
+          echo "'package_name("${{ secrets.PACKAGENAME }}'")" >> Appfile
           echo "default_platform(:android)" > Fastfile
           echo "" >> Fastfile
           echo "platform :android do" >> Fastfile
@@ -124,9 +129,9 @@ jobs:
         run: fastlane run validate_play_store_json_key json_key:../auth.json
         working-directory: ../new_apk_dir
 
-      # - name: Deploy to Google Play
-      #   run: fastlane supply --json_key_file=play-store-credentials.json --aab=/path/to/your-app.aab
-      #   working-directory: ../new_apk_dir
+      - name: Deploy to Google Play
+        run: fastlane supply --json_key_file=play-store-credentials.json --aab=release.aab
+        working-directory: ../new_apk_dir
 
 
       #   #上传release
